@@ -1,0 +1,19 @@
+{
+  "name": "identity",
+  "private": true,
+  "version": "0.0.0",
+  "packageManager": "pnpm@9.15.0",
+  "engines": {
+    "node": ">=20"
+  },
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "api:dev": "pnpm --filter @identity/api start:dev",
+    "api:build": "pnpm --filter @identity/api build",
+    "mobile:start": "pnpm --filter @identity/mobile start",
+    "shared:build": "pnpm --filter @identity/shared build"
+  }
+}

@@ -1,0 +1,41 @@
+# dependencies
+node_modules/
+.pnpm-store/
+
+# env
+.env
+.env.local
+.env.*.local
+apps/api/.env
+apps/mobile/.env
+
+# build output
+dist/
+build/
+.expo/
+.expo-shared/
+web-build/
+
+# prisma
+apps/api/generated/
+
+# logs
+*.log
+npm-debug.log*
+pnpm-debug.log*
+
+# OS
+.DS_Store
+
+# editors
+.vscode/*
+!.vscode/extensions.json
+.idea/
+
+# native
+apps/mobile/ios/
+apps/mobile/android/
+
+# misc
+*.tsbuildinfo
+coverage/

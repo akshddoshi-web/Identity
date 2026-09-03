@@ -1,0 +1,55 @@
+// Phase 0: identity core only (User, IdentityThread, IdentityScoreSnapshot).
+// Later phases add Finance/Nutrition/Fantasy/Schedule models per the data model
+// in the project brief, each carrying an optional threadId tag back into
+// IdentityThread so the Correlation Engine (Phase 4) can join across pillars.
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id          String   @id @default(cuid())
+  clerkUserId String   @unique
+  email       String   @unique
+  name        String?
+  timezone    String   @default("UTC")
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  threads   IdentityThread[]
+  snapshots IdentityScoreSnapshot[]
+
+  @@map("users")
+}
+
+model IdentityThread {
+  id          String   @id @default(cuid())
+  userId      String
+  user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  label       String
+  description String?
+  /// Relative weight in the composite score; all of a user's threads sum to 1.0
+  weight      Float    @default(0.25)
+  createdAt   DateTime @default(now())
+
+  @@index([userId])
+  @@map("identity_threads")
+}
+
+model IdentityScoreSnapshot {
+  id             String   @id @default(cuid())
+  userId         String
+  user           User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  date           DateTime @default(now())
+  compositeScore Float
+  /// Array of { threadId, label, score, trend } — see @identity/shared ThreadScore
+  threadScores   Json
+
+  @@index([userId, date])
+  @@map("identity_score_snapshots")
+}
