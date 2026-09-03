@@ -17,6 +17,7 @@ import pandas as pd
 
 from data_pipeline.config import load_config
 from data_pipeline.db import connect
+from data_pipeline.queries import load_games, load_team_game_stats, load_odds_snapshots
 from edge.devig import devig, american_to_decimal
 from edge.edge_detection import compute_edge
 from edge.clv_tracker import record_clv, summarize_clv
@@ -25,7 +26,7 @@ from bankroll.bankroll_tracker import compute_bankroll_stats, bankroll_headline
 from bankroll.monte_carlo import simulate_bankroll_paths
 from guardrails.prediction_log import log_prediction, PreGameLockViolation
 from guardrails.disclaimers import full_disclaimer_block, small_sample_warning
-from models.features import build_feature_frame, feature_columns
+from models.features import build_feature_frame, feature_columns, select_populated_feature_columns
 from models.backtest import run_walk_forward_elo, run_walk_forward_gbm_classifier
 
 DEMO_MIN_TRAIN_GAMES = 250
@@ -33,31 +34,8 @@ DEMO_RETRAIN_EVERY = 60
 KICKOFF_HOUR = 18
 
 
-def load_games(conn, sport: str) -> pd.DataFrame:
-    df = pd.read_sql_query(
-        "SELECT * FROM games WHERE sport = ? ORDER BY game_date, game_id", conn, params=(sport,)
-    )
-    return df
-
-
-def load_team_game_stats(conn, sport: str) -> pd.DataFrame:
-    return pd.read_sql_query(
-        """SELECT tgs.* FROM team_game_stats tgs
-           JOIN games g ON g.game_id = tgs.game_id
-           WHERE g.sport = ?""",
-        conn,
-        params=(sport,),
-    )
-
-
 def load_odds(conn, sport: str, market: str, snapshot_type: str) -> pd.DataFrame:
-    return pd.read_sql_query(
-        """SELECT o.* FROM odds_snapshots o
-           JOIN games g ON g.game_id = o.game_id
-           WHERE g.sport = ? AND o.market = ? AND o.snapshot_type = ? AND o.book = 'synthetic_book'""",
-        conn,
-        params=(sport, market, snapshot_type),
-    )
+    return load_odds_snapshots(conn, sport, market, snapshot_type, book="synthetic_book")
 
 
 def run_sport(conn, sport: str, cfg: dict) -> dict:
@@ -81,7 +59,7 @@ def run_sport(conn, sport: str, cfg: dict) -> dict:
     # grades, which this synthetic generator never populates because PFF
     # requires a paid subscription (see ingest_advanced_stats.py). Requiring
     # a fully-null column in dropna() would silently drop every row.
-    feat_cols = [c for c in all_feat_cols if feat_df[c].notna().mean() > 0.5]
+    feat_cols = select_populated_feature_columns(feat_df, all_feat_cols)
     dropped = sorted(set(all_feat_cols) - set(feat_cols))
     if dropped:
         print(f"Dropping mostly-missing feature columns (not populated in this data source): {dropped}")

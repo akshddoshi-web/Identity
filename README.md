@@ -36,8 +36,8 @@ edge/                    De-vigging, edge detection, CLV tracking
 bankroll/                Fractional Kelly sizing, bankroll tracking, Monte Carlo simulation
 guardrails/              Immutable prediction logging, disclaimers, sample-size gating
 dashboard/               Streamlit dashboard
-scripts/                 Synthetic sample-data generator + end-to-end demo runner
-tests/                   Unit tests for the math-critical modules (de-vig, Kelly, Elo, CLV)
+scripts/                 Synthetic sample-data generator, end-to-end demo runner, daily live report
+tests/                   Unit tests for the math-critical modules (de-vig, Kelly, Elo, CLV, live features)
 ```
 
 ## Data sources (you must supply credentials)
@@ -87,6 +87,31 @@ export ODDS_API_KEY=your_key_here
 ```
 
 Swap in SportsDataIO or another provider by implementing the same `OddsClient` interface.
+
+## Daily live edge report
+
+```bash
+export ODDS_API_KEY=your_key_here
+python scripts/daily_report.py                 # console report
+python scripts/daily_report.py --csv today.csv  # also write a CSV
+python scripts/daily_report.py --edge-threshold 0.04 --bankroll 25000  # overrides
+```
+
+For each of NFL/NCAAF/NBA, this pulls today's scheduled games and pre-game odds, trains
+that sport's production models on all history currently in the database (refusing to do so,
+per sport, if there isn't enough validated history — see `models/production.py`), projects
+each team's real trailing form onto today's matchup with zero leakage
+(`models.features.build_live_feature_rows`), de-vigs the market price on moneyline/spread/
+total and compares to the model, flags games clearing the configured edge threshold, sizes a
+suggested stake with capped fractional Kelly against your current bankroll, and — before
+printing anything — logs each flagged prediction through `guardrails/prediction_log.py` so
+it's timestamped and cannot later be edited or cherry-picked. If nothing clears the bar that
+day, it says so explicitly rather than lowering the threshold to manufacture a pick.
+
+Team names returned by your odds provider must match the team names in your historical
+`games`/`team_game_stats` data for the rolling-form lookup to find them — reconcile any
+naming differences between your schedule/stats source and your odds source before relying
+on this in production.
 
 ## Kelly sizing & risk
 

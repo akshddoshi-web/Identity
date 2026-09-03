@@ -70,7 +70,7 @@ class OddsAPIClient:
         return resp.json()
 
 
-def _game_id_from_odds_event(sport: str, event: dict) -> str:
+def game_id_from_odds_event(sport: str, event: dict) -> str:
     # Stable synthetic ID: sport + commence_time + teams, since The Odds API's
     # event `id` is provider-internal and may not match your `games` table's
     # own game_id from the schedule source. If your schedule source's IDs are
@@ -82,7 +82,7 @@ def _game_id_from_odds_event(sport: str, event: dict) -> str:
 def parse_odds_api_event(sport: str, event: dict, snapshot_type: str, captured_at: str | None = None) -> list[OddsSnapshot]:
     """Flattens one Odds API event payload into per-book/per-market OddsSnapshot rows."""
     captured_at = captured_at or dt.datetime.utcnow().isoformat()
-    game_id = _game_id_from_odds_event(sport, event)
+    game_id = game_id_from_odds_event(sport, event)
     home_team = event["home_team"]
     away_team = event["away_team"]
     out: list[OddsSnapshot] = []

@@ -97,6 +97,42 @@ class WinProbabilityModel:
         return raw
 
 
+def fit_win_probability_model(
+    train_df: pd.DataFrame,
+    feature_cols: list[str],
+    target_col: str,
+    calibration_holdout_frac: float = 0.15,
+    params: dict | None = None,
+) -> WinProbabilityModel:
+    """Fits a WinProbabilityModel with an isotonic calibration holdout carved
+    from the CHRONOLOGICAL TAIL of `train_df` (the most recent games before
+    whatever comes next), never a random sample — calibrating on a random
+    slice would let some "future" games leak into calibration for a model
+    that's about to predict on games older than them. `train_df` must
+    already be sorted ascending by date.
+
+    Shared by models/backtest.py's walk-forward loop (one call per fold) and
+    models/production.py's final production fit (one call on the full
+    history) so both paths compute calibration identically.
+    """
+    cal_n = max(50, int(len(train_df) * calibration_holdout_frac))
+    cal_n = min(cal_n, len(train_df) - 50) if len(train_df) > 100 else 0
+
+    if cal_n > 0:
+        fit_df, cal_df = train_df.iloc[:-cal_n], train_df.iloc[-cal_n:]
+    else:
+        fit_df, cal_df = train_df, None
+
+    model = WinProbabilityModel(params)
+    model.fit(
+        fit_df[feature_cols],
+        fit_df[target_col],
+        X_cal=cal_df[feature_cols] if cal_df is not None else None,
+        y_cal=cal_df[target_col] if cal_df is not None else None,
+    )
+    return model
+
+
 class RegressionModel:
     """XGBoost regressor, used for both margin and total prediction."""
 

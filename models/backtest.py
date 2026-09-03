@@ -30,7 +30,13 @@ import numpy as np
 import pandas as pd
 
 from models.elo import EloModel
-from models.gbm_model import RegressionModel, WinProbabilityModel, evaluate_classifier, CalibrationReport
+from models.gbm_model import (
+    RegressionModel,
+    WinProbabilityModel,
+    evaluate_classifier,
+    fit_win_probability_model,
+    CalibrationReport,
+)
 
 
 @dataclass
@@ -43,7 +49,7 @@ class WalkForwardResult:
     regression_metrics: dict | None = None
 
 
-def run_walk_forward_elo(games_sorted: pd.DataFrame) -> pd.DataFrame:
+def run_walk_forward_elo(games_sorted: pd.DataFrame, elo_model: EloModel | None = None) -> pd.DataFrame:
     """games_sorted: chronologically sorted DataFrame with home_team, away_team,
     home_score, away_score, neutral_site, game_id, game_date.
 
@@ -51,8 +57,16 @@ def run_walk_forward_elo(games_sorted: pd.DataFrame) -> pd.DataFrame:
     (computed before that game updates the ratings) — this is what "walk
     forward" means for Elo: ratings only ever reflect games strictly earlier
     in time than the one being predicted.
+
+    Pass a sport-configured `elo_model` (see models.elo.build_elo_for_sport)
+    to use that sport's K-factor and home-advantage instead of EloModel()'s
+    generic defaults. The instance is mutated in place as games are
+    processed, so after this call `elo_model.ratings` holds each team's
+    CURRENT rating (as of the last game in `games_sorted`) — useful for
+    projecting ratings onto a team's next, not-yet-played game (see
+    models/production.py).
     """
-    model = EloModel()
+    model = elo_model if elo_model is not None else EloModel()
     rows = []
     for _, g in games_sorted.iterrows():
         prob_home = model.win_probability(g["home_team"], g["away_team"], g.get("neutral_site", False))
@@ -100,23 +114,9 @@ def run_walk_forward_gbm_classifier(
         if test_df.empty or train_df.empty:
             continue
 
-        # carve a chronological (not random) calibration holdout: the LAST
-        # slice of the training window, so calibration is fit on the most
-        # recent games before the test block, never on future games.
-        cal_n = max(50, int(len(train_df) * calibration_holdout_frac))
-        cal_n = min(cal_n, len(train_df) - 50) if len(train_df) > 100 else 0
-        if cal_n > 0:
-            fit_df, cal_df = train_df.iloc[:-cal_n], train_df.iloc[-cal_n:]
-        else:
-            fit_df, cal_df = train_df, None
-
-        model = WinProbabilityModel()
-        model.fit(
-            fit_df[feature_cols],
-            fit_df[target_col],
-            X_cal=cal_df[feature_cols] if cal_df is not None else None,
-            y_cal=cal_df[target_col] if cal_df is not None else None,
-        )
+        # chronological (not random) calibration holdout — see
+        # fit_win_probability_model's docstring for why.
+        model = fit_win_probability_model(train_df, feature_cols, target_col, calibration_holdout_frac)
         y_prob = model.predict_proba(test_df[feature_cols])
         fold_preds = pd.DataFrame(
             {

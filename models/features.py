@@ -12,6 +12,8 @@ from __future__ import annotations
 import numpy as np
 import pandas as pd
 
+from models.elo import DEFAULT_RATING
+
 FOOTBALL_STAT_COLS = [
     "epa_per_play",
     "success_rate",
@@ -142,3 +144,87 @@ def feature_columns(df: pd.DataFrame) -> list[str]:
         if df[c].dtype.kind in "biuf":  # bool/int/uint/float only
             cols.append(c)
     return cols
+
+
+def select_populated_feature_columns(df: pd.DataFrame, cols: list[str], min_frac: float = 0.5) -> list[str]:
+    """Drops feature columns that are missing more than `1 - min_frac` of the
+    time (e.g. PFF grades in a data source that doesn't supply them).
+    Training on a column that's entirely NaN would either crash a dropna-based
+    filter (every row gets dropped) or feed XGBoost a column with zero signal
+    — better to drop it up front and say so, which is what callers should log
+    (the dropped-vs-kept set is the return value's complement in `cols`).
+    """
+    return [c for c in cols if df[c].notna().mean() > min_frac]
+
+
+def build_live_feature_rows(
+    games_hist: pd.DataFrame,
+    stats_hist: pd.DataFrame,
+    games_today: pd.DataFrame,
+    sport: str,
+    elo_ratings: dict[str, float],
+    rolling_window: int = 8,
+) -> pd.DataFrame:
+    """Projects today's (unplayed) games into the SAME engineered-feature
+    space used at training time, with zero leakage from the game itself.
+
+    The trick: append one placeholder team_game_stats row per team for each
+    of today's games. `_rolling_team_stats` computes every rolling stat with
+    `shift(1)` before averaging, so a row's OWN stat values are never read
+    when computing that row's rolling feature — only the real, already-
+    completed games strictly before it are. That means the placeholder row's
+    values are irrelevant filler (NaN is fine); what actually lands in
+    today's feature row is each team's trailing rolling average over their
+    real last `rolling_window` completed games, exactly as if this were a
+    held-out game in a backtest fold. This keeps live prediction and
+    training feature engineering running through the identical code path
+    (build_feature_frame), which is what prevents train/serve skew.
+
+    `elo_ratings`: each team's CURRENT Elo rating (i.e. after their most
+    recent completed game) — see models/production.py for how this is
+    computed alongside the historical, walk-forward per-game ratings used
+    at training time.
+    """
+    stat_cols = FOOTBALL_STAT_COLS if sport in ("NFL", "NCAAF") else BASKETBALL_STAT_COLS
+
+    combined_games = pd.concat([games_hist, games_today], ignore_index=True, sort=False)
+    # games_today's numeric fields are frequently None (rest days unknown,
+    # travel/weather not sourced live yet — see scripts/daily_report.py). A
+    # column that's all-None in one half of a concat comes back dtype
+    # 'object' even when the other half is float64, which XGBoost rejects
+    # outright at predict time. Coercing to numeric fixes the dtype AND
+    # turns None into a proper NaN (which XGBoost natively handles as
+    # missing, same as it saw during training on real missing weather/dome
+    # games).
+    numeric_game_cols = [
+        "home_score", "away_score", "home_rest_days", "away_rest_days",
+        "home_travel_mi", "away_travel_mi", "weather_temp_f", "weather_wind_mph",
+    ]
+    for c in numeric_game_cols:
+        if c in combined_games.columns:
+            combined_games[c] = pd.to_numeric(combined_games[c], errors="coerce")
+
+    placeholder_rows = []
+    for _, g in games_today.iterrows():
+        for team, is_home in ((g["home_team"], 1), (g["away_team"], 0)):
+            row = {"game_id": g["game_id"], "team": team, "is_home": is_home}
+            row.update({c: np.nan for c in stat_cols})
+            placeholder_rows.append(row)
+    combined_stats = pd.concat([stats_hist, pd.DataFrame(placeholder_rows)], ignore_index=True, sort=False)
+    for c in stat_cols:
+        if c in combined_stats.columns:
+            combined_stats[c] = pd.to_numeric(combined_stats[c], errors="coerce")
+
+    elo_by_game = {
+        g["game_id"]: {
+            g["home_team"]: elo_ratings.get(g["home_team"], DEFAULT_RATING),
+            g["away_team"]: elo_ratings.get(g["away_team"], DEFAULT_RATING),
+        }
+        for _, g in games_today.iterrows()
+    }
+
+    feat_df = build_feature_frame(
+        combined_games, combined_stats, sport, elo_ratings_by_date=elo_by_game, rolling_window=rolling_window
+    )
+    today_ids = set(games_today["game_id"])
+    return feat_df[feat_df["game_id"].isin(today_ids)].reset_index(drop=True)
