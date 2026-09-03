@@ -161,6 +161,57 @@ Team names returned by your odds provider must match the team names in your hist
 naming differences between your schedule/stats source and your odds source before relying
 on this in production.
 
+## Deploying to Streamlit Community Cloud
+
+The dashboard (with its "Today's Bets" tab) can run as a free-tier Streamlit Community Cloud
+app with a public URL. Two things are worth understanding before you deploy, not after:
+
+1. **A fresh deploy needs a seed database.** Streamlit Cloud clones this repo from scratch;
+   `data/*.db` is gitignored so your local history wouldn't come along. This repo commits ONE
+   deliberate exception, `data/seed_betting.db` — real NFL + NCAAF history, zero logged
+   predictions — and `data_pipeline/db.py::ensure_seeded()` copies it into place as
+   `data/betting.db` automatically the first time anything touches the database, on any fresh
+   checkout (including your own local machine, if you clone this repo without ever running
+   `scripts/ingest_real_data.py` yourself). It never overwrites an existing live database.
+2. **The deployed app's local filesystem is not guaranteed to persist.** A free-tier app that
+   sleeps from inactivity and wakes back up keeps its filesystem; a redeploy (you push new
+   code) or the platform recycling the container does not — it resets to a fresh clone of
+   the repo, which means back to the seed data, losing any predictions the running app had
+   logged. For a "glance at today's picks" use case this is a non-issue (the app just
+   retrains and re-flags on next visit). If you want the prediction log itself to be durable
+   for real CLV tracking over time, either (a) use the sidebar's **Download database
+   backup** button periodically and keep the file somewhere durable, or (b) swap SQLite for a
+   real hosted database later (the schema in `data_pipeline/db.py` is plain ANSI SQL — see
+   its module docstring). This repo does not attempt (b) — know this going in rather than
+   discovering it after a redeploy wipes a week of logged predictions.
+
+### Steps
+
+1. Push this repo (or your fork of it) to GitHub — the branch you want deployed needs to be
+   there, including `data/seed_betting.db`, `requirements.txt`, and `runtime.txt`.
+2. Go to [share.streamlit.io](https://share.streamlit.io) and sign in with GitHub.
+3. Click **New app**, choose this repository and branch, and set **Main file path** to
+   `dashboard/app.py`.
+4. Before (or right after) the first deploy, open the app's **Settings -> Secrets** in the
+   Streamlit Cloud UI and add:
+   ```toml
+   ODDS_API_KEY = "sk-your-real-key-here"
+   ```
+   This is the Streamlit Cloud equivalent of the local `.env` file — `data_pipeline/config.py::odds_api_key()`
+   already checks `st.secrets["ODDS_API_KEY"]` automatically when a plain environment variable
+   isn't set, so no code change is needed for this to work. **Never put the key in the
+   repository itself** (not in `config/config.yaml`, not in a committed `.env` — that file is
+   gitignored specifically so this mistake is hard to make).
+5. Deploy. First boot installs `requirements.txt` (a few minutes) and seeds the database from
+   `data/seed_betting.db` on first use. Open the **Today's Bets** tab and click **Run today's
+   report** — the first click trains real production models on the seed data (can take a
+   minute or two on free-tier compute; the app tells you this while it's working) and pulls
+   live odds with your configured key.
+6. To refresh the underlying historical data later (a new NFL/NCAAF season, more seasons),
+   regenerate `data/seed_betting.db` locally (`python scripts/ingest_real_data.py --sport ALL`,
+   then copy `data/betting.db` over `data/seed_betting.db`), commit it, and push — Streamlit
+   Cloud redeploys automatically on a push to the watched branch.
+
 ## Validated backtest results (real data)
 
 Walk-forward results from `models/production.py` against the real NFL/NCAAF data described

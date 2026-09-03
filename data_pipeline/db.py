@@ -151,8 +151,34 @@ CREATE INDEX IF NOT EXISTS idx_ledger_prediction ON bet_ledger(prediction_id);
 """
 
 
+def ensure_seeded(path: Path | None = None) -> None:
+    """If the live DB doesn't exist yet but a committed seed DB does, copy
+    the seed into place first.
+
+    This exists for deployment: Streamlit Community Cloud (and any other
+    fresh-clone deploy) starts from a clean checkout of this repo, and
+    data/*.db is gitignored — a first-run deploy would otherwise have ZERO
+    historical games, and every sport would immediately fail
+    models.production.train_production_models's InsufficientHistoryError.
+    data/seed_betting.db is the one deliberate exception to that gitignore
+    rule (see .gitignore's comment there): a real NFL+NCAAF dataset with NO
+    logged predictions, committed specifically so a fresh deploy has
+    something to train on. Once a real live DB exists (locally, or written
+    by the running deployed app), this is a no-op — it never overwrites an
+    existing live DB, so predictions logged by a running deployment are
+    never at risk from this function.
+    """
+    import shutil
+
+    live_path = path or db_path(load_config())
+    seed_path = live_path.parent / "seed_betting.db"
+    if not live_path.exists() and seed_path.exists():
+        shutil.copy(seed_path, live_path)
+
+
 def get_connection(path: Path | None = None) -> sqlite3.Connection:
     p = path or db_path(load_config())
+    ensure_seeded(p)
     conn = sqlite3.connect(str(p))
     conn.row_factory = sqlite3.Row
     conn.execute("PRAGMA foreign_keys = ON;")

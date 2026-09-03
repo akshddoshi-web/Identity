@@ -18,7 +18,7 @@ import pandas as pd
 import plotly.graph_objects as go
 import streamlit as st
 
-from data_pipeline.config import load_config
+from data_pipeline.config import load_config, db_path
 from data_pipeline.db import connect
 from edge.clv_tracker import clv_by_sport_and_market, summarize_clv
 from bankroll.bankroll_tracker import compute_equity_curve, compute_bankroll_stats, bankroll_headline
@@ -96,6 +96,19 @@ except Exception as e:
 
 sports_present = sorted(predictions_df["sport"].unique()) if not predictions_df.empty else []
 sport_filter = st.sidebar.multiselect("Sport", options=sports_present, default=sports_present)
+
+with st.sidebar:
+    st.divider()
+    st.caption(
+        "On Streamlit Community Cloud, this app's local database is NOT guaranteed to survive "
+        "a redeploy or a sleep/wake cycle — download a backup periodically if you're logging "
+        "real predictions here and want to keep them."
+    )
+    try:
+        with open(db_path(cfg), "rb") as f:
+            st.download_button("Download database backup", f.read(), file_name="betting_backup.db", mime="application/octet-stream")
+    except FileNotFoundError:
+        pass
 
 pred_view = predictions_df[predictions_df["sport"].isin(sport_filter)] if sport_filter else predictions_df
 ledger_view = ledger_df[ledger_df["sport"].isin(sport_filter)] if sport_filter else ledger_df
