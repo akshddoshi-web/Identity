@@ -22,6 +22,7 @@ idempotent (safe to re-run) via `INSERT OR REPLACE` on the natural key.
 from __future__ import annotations
 
 import csv
+import math
 import sqlite3
 from dataclasses import asdict
 from pathlib import Path
@@ -125,6 +126,38 @@ def upsert_injuries(injuries: list[InjuryRecord], conn: sqlite3.Connection | Non
         return _write(conn)
     with connect() as c:
         return _write(c)
+
+
+def haversine_miles(coord_a: tuple[float, float] | None, coord_b: tuple[float, float] | None) -> float | None:
+    """Great-circle distance in miles between two (lat, lon) points. Returns
+    None if either coordinate is missing (unknown team city) rather than a
+    fabricated number."""
+    if coord_a is None or coord_b is None:
+        return None
+    lat1, lon1 = map(math.radians, coord_a)
+    lat2, lon2 = map(math.radians, coord_b)
+    dlat, dlon = lat2 - lat1, lon2 - lon1
+    a = math.sin(dlat / 2) ** 2 + math.cos(lat1) * math.cos(lat2) * math.sin(dlon / 2) ** 2
+    return 2 * 3958.8 * math.asin(math.sqrt(a))  # 3958.8mi = Earth radius
+
+
+def compute_rest_days(games_sorted) -> None:
+    """Fills in home_rest_days/away_rest_days on a list[GameRecord], SORTED
+    ASCENDING BY DATE, from each team's actual previous game in that same
+    list — mutates in place. The first game an ingested team appears in gets
+    None (no prior game in this dataset to measure from), which is honest:
+    treating it as a fixed "normal rest" value would fabricate a fact we
+    don't have (their true previous game may be outside the ingested window).
+    """
+    from datetime import date as _date
+
+    last_played: dict[str, _date] = {}
+    for g in games_sorted:
+        game_date = _date.fromisoformat(g.game_date[:10])
+        g.home_rest_days = (game_date - last_played[g.home_team]).days if g.home_team in last_played else None
+        g.away_rest_days = (game_date - last_played[g.away_team]).days if g.away_team in last_played else None
+        last_played[g.home_team] = game_date
+        last_played[g.away_team] = game_date
 
 
 def ingest_from_csv(games_csv: str | Path) -> int:

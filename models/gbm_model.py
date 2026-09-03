@@ -49,8 +49,13 @@ def calibration_table(y_true: np.ndarray, y_prob: np.ndarray, n_buckets: int = 1
 
 
 def evaluate_classifier(y_true: np.ndarray, y_prob: np.ndarray) -> CalibrationReport:
-    y_true = np.asarray(y_true)
-    y_prob = np.clip(np.asarray(y_prob), 1e-6, 1 - 1e-6)
+    # np.asarray() on a pandas nullable Int64 Series (which home_win is,
+    # from build_feature_frame) yields an OBJECT-dtype array, not int64 —
+    # sklearn's type_of_target then can't tell it's binary and raises. Force
+    # a concrete numeric dtype so this works regardless of the pandas dtype
+    # the caller happened to hand in.
+    y_true = np.asarray(y_true, dtype=np.float64)
+    y_prob = np.clip(np.asarray(y_prob, dtype=np.float64), 1e-6, 1 - 1e-6)
     return CalibrationReport(
         brier_score=float(brier_score_loss(y_true, y_prob)),
         log_loss=float(log_loss(y_true, y_prob)),
