@@ -1,0 +1,67 @@
+# Central configuration for the sports betting analytics system.
+# Nothing in this file is a recommendation to bet — it's the knob set the
+# framework code reads. Defaults are deliberately conservative.
+
+database:
+  path: "data/betting.db"
+
+sports:
+  NFL:
+    seasons_min: 10          # min. seasons of history required before training
+    elo_k: 20
+    elo_home_advantage: 55   # elo points
+    rolling_window_games: 500 # walk-forward training window, in games
+  NCAAF:
+    seasons_min: 8
+    elo_k: 24
+    elo_home_advantage: 65
+    rolling_window_games: 1500
+  NBA:
+    seasons_min: 10
+    elo_k: 18
+    elo_home_advantage: 60
+    rolling_window_games: 2000
+
+edge_detection:
+  # Minimum edge (model implied prob - de-vigged market implied prob) required
+  # to flag a bet, as an absolute probability difference. 0.03 = 3 percentage points.
+  min_edge_threshold: 0.03
+  # Never treat a sample below this many *settled* bets as statistically meaningful.
+  min_sample_size_for_significance: 200
+  # Confidence level used for interval estimates on ROI / CLV / hit-rate claims.
+  confidence_level: 0.95
+
+kelly:
+  # Fraction of full Kelly actually staked. 0.25 = quarter-Kelly, 0.5 = half-Kelly.
+  kelly_fraction: 0.25
+  # Hard cap on any single bet as a fraction of current bankroll, regardless of
+  # what the (fractional) Kelly formula outputs.
+  max_bet_pct_of_bankroll: 0.02
+  # Floor bankroll below which the system stops recommending stakes entirely.
+  min_bankroll_stop: 0.0
+
+bankroll:
+  starting_bankroll: 10000.0
+
+monte_carlo:
+  n_simulations: 5000
+  n_bets_per_simulation: 500
+
+guardrails:
+  disallow_parlays: true
+  disallow_same_game_parlays: true
+  disallow_leverage: true
+  require_pregame_timestamp_lock: true
+
+odds_api:
+  # The Odds API (https://the-odds-api.com/). Set ODDS_API_KEY env var.
+  base_url: "https://api.the-odds-api.com/v4"
+  regions: "us"
+  markets: "h2h,spreads,totals"
+  odds_format: "american"
+  bookmakers:
+    - pinnacle       # sharp reference book, used for de-vigging where available
+    - draftkings
+    - fanduel
+    - betmgm
+    - caesars
