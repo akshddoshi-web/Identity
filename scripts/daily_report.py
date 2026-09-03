@@ -50,7 +50,9 @@ from data_pipeline.schema import GameRecord, OddsSnapshot
 from edge.edge_detection import compute_edge
 from bankroll.kelly import size_bet
 from bankroll.bankroll_tracker import compute_bankroll_stats, bankroll_headline
-from guardrails.prediction_log import log_prediction, PreGameLockViolation
+import sqlite3
+
+from guardrails.prediction_log import log_prediction, make_prediction_id, PreGameLockViolation
 from guardrails.disclaimers import full_disclaimer_block, small_sample_warning
 from models.features import build_live_feature_rows
 from models.gbm_model import margin_to_win_prob
@@ -344,14 +346,53 @@ def process_sport(conn, client: OddsAPIClient, sport: str, cfg: dict, bankroll: 
                     market_devigged_prob_home=f["market_prob"] if f["side"] in ("home", "over") else 1 - f["market_prob"],
                     edge=f["edge"], flagged=True, conn=conn, _now_override=now_iso,
                 )
+                f["already_logged"] = False
             except PreGameLockViolation as e:
                 print(f"  SKIPPED (guardrail): {e}")
                 continue
+            except sqlite3.IntegrityError:
+                # UNIQUE constraint on prediction_id: this exact
+                # (game, model, market, side) was already logged earlier
+                # today (e.g. daily_report.py or the dashboard's "Today's
+                # Bets" tab ran once already). Not an error — re-running
+                # the same day's report should be idempotent, not crash.
+                # We do NOT re-log (the guardrail is append-only on
+                # purpose); we just surface the same prediction_id so the
+                # flag still shows up in this run's output.
+                prediction_id = make_prediction_id(gid, MODEL_NAME, MODEL_VERSION, f["market"], f["side"])
+                f["already_logged"] = True
             f["prediction_id"] = prediction_id
 
         all_flags.extend(flags)
 
     return all_flags, None
+
+
+def flags_to_dataframe(all_flags: list[dict]) -> pd.DataFrame:
+    """Shared by the console report (print_report, below) and
+    dashboard/app.py's "Today's Bets" tab, so both render exactly the same
+    numbers from exactly the same underlying flag dicts — never two
+    independently-formatted copies that could drift apart."""
+    if not all_flags:
+        return pd.DataFrame(
+            columns=["sport", "matchup", "kickoff_utc", "market", "side", "market_line", "model_line", "edge_pct", "suggested_stake", "book"]
+        )
+    report_rows = [
+        {
+            "sport": f["sport"],
+            "matchup": f"{f['away_team']} @ {f['home_team']}",
+            "kickoff_utc": f["commence_time"],
+            "market": f["market"],
+            "side": f["side"],
+            "market_line": format_market_line(f["market"], f["side"], f["price"], f["point"]),
+            "model_line": format_model_line(f["market"], f["side"], f["model_prob"], f["model_margin"], f["model_total"]),
+            "edge_pct": f["edge"],
+            "suggested_stake": f["stake"],
+            "book": f["book"],
+        }
+        for f in all_flags
+    ]
+    return pd.DataFrame(report_rows).sort_values("edge_pct", ascending=False).reset_index(drop=True)
 
 
 def print_report(all_flags: list[dict], skipped: dict[str, str], threshold: float) -> pd.DataFrame:
@@ -360,30 +401,13 @@ def print_report(all_flags: list[dict], skipped: dict[str, str], threshold: floa
     for sport, reason in skipped.items():
         print(f"{sport}: SKIPPED — {reason}")
 
-    if not all_flags:
+    df = flags_to_dataframe(all_flags)
+    if df.empty:
         print(
             f"\nNo games cleared the {threshold:.1%} edge threshold today across the sports checked. "
             "No bets are being suggested — the bar is not lowered to manufacture picks."
         )
-        return pd.DataFrame()
-
-    report_rows = []
-    for f in all_flags:
-        report_rows.append(
-            {
-                "sport": f["sport"],
-                "matchup": f"{f['away_team']} @ {f['home_team']}",
-                "kickoff_utc": f["commence_time"],
-                "market": f["market"],
-                "side": f["side"],
-                "market_line": format_market_line(f["market"], f["side"], f["price"], f["point"]),
-                "model_line": format_model_line(f["market"], f["side"], f["model_prob"], f["model_margin"], f["model_total"]),
-                "edge_pct": f["edge"],
-                "suggested_stake": f["stake"],
-                "book": f["book"],
-            }
-        )
-    df = pd.DataFrame(report_rows).sort_values("edge_pct", ascending=False).reset_index(drop=True)
+        return df
 
     display_df = df.copy()
     display_df["edge_pct"] = display_df["edge_pct"].map(lambda x: f"{x:+.1%}")
@@ -394,6 +418,62 @@ def print_report(all_flags: list[dict], skipped: dict[str, str], threshold: floa
     return df
 
 
+def run_daily_report(
+    cfg: dict | None = None,
+    edge_threshold: float | None = None,
+    bankroll_override: float | None = None,
+    sports: tuple[str, ...] = SPORTS,
+    progress_cb=None,
+) -> dict:
+    """Runs the full daily edge report and returns its results as data,
+    with no printing — shared by main() (below, for the CLI) and
+    dashboard/app.py's "Today's Bets" tab, so both drive the exact same
+    logic and neither can silently drift from the other.
+
+    `progress_cb(sport, message)`, if given, is called once per sport as
+    it's processed — the dashboard uses this to update a spinner/status
+    line during what can be a slow (model-training) operation; the CLI
+    doesn't need it (it prints directly via process_sport/print_report
+    instead, see main()).
+
+    Returns a dict: {flags: list[dict], skipped: dict[str,str],
+    bankroll_stats: BankrollStats, threshold: float, min_sig_n: int}.
+    Raises RuntimeError if no ODDS_API_KEY is configured (nothing to do
+    without live odds) — callers decide how to present that.
+    """
+    cfg = cfg or load_config()
+    if edge_threshold is not None:
+        cfg = {**cfg, "edge_detection": {**cfg["edge_detection"], "min_edge_threshold": edge_threshold}}
+    threshold = cfg["edge_detection"]["min_edge_threshold"]
+    min_sig_n = cfg["edge_detection"]["min_sample_size_for_significance"]
+
+    client = OddsAPIClient(cfg=cfg)  # raises RuntimeError if ODDS_API_KEY isn't set
+
+    with connect() as conn:
+        ledger = bet_ledger_all(conn)
+        starting_bankroll = cfg["bankroll"]["starting_bankroll"]
+        bankroll_stats = compute_bankroll_stats(ledger, starting_bankroll)
+        current_bankroll = bankroll_override if bankroll_override is not None else bankroll_stats.ending_bankroll
+
+        all_flags: list[dict] = []
+        skipped: dict[str, str] = {}
+        for sport in sports:
+            if progress_cb:
+                progress_cb(sport, f"Training {sport} production models and pulling today's odds...")
+            flags, skip_reason = process_sport(conn, client, sport, cfg, current_bankroll)
+            if skip_reason:
+                skipped[sport] = skip_reason
+            all_flags.extend(flags)
+
+    return {
+        "flags": all_flags,
+        "skipped": skipped,
+        "bankroll_stats": bankroll_stats,
+        "threshold": threshold,
+        "min_sig_n": min_sig_n,
+    }
+
+
 def main():
     parser = argparse.ArgumentParser(description="Daily pre-game edge report for NFL/NCAAF/NBA.")
     parser.add_argument("--csv", default=None, help="Optional path to also write the report as CSV.")
@@ -402,42 +482,29 @@ def main():
     args = parser.parse_args()
 
     cfg = load_config()
-    if args.edge_threshold is not None:
-        cfg["edge_detection"]["min_edge_threshold"] = args.edge_threshold
-    threshold = cfg["edge_detection"]["min_edge_threshold"]
     min_sig_n = cfg["edge_detection"]["min_sample_size_for_significance"]
 
+    def _cli_progress(sport, message):
+        print(f"\nChecking {sport}... ({message})")
+
     try:
-        client = OddsAPIClient(cfg=cfg)
+        result = run_daily_report(
+            cfg, edge_threshold=args.edge_threshold, bankroll_override=args.bankroll, progress_cb=_cli_progress
+        )
     except RuntimeError as e:
         print(e)
         print("Cannot generate a daily report without live pre-game odds. Exiting.")
         sys.exit(1)
 
-    with connect() as conn:
-        ledger = bet_ledger_all(conn)
-        starting_bankroll = cfg["bankroll"]["starting_bankroll"]
-        bankroll_stats = compute_bankroll_stats(ledger, starting_bankroll)
-        current_bankroll = args.bankroll if args.bankroll is not None else bankroll_stats.ending_bankroll
+    print(bankroll_headline(result["bankroll_stats"], min_sig_n))
+    warn = small_sample_warning(result["bankroll_stats"].n_bets, min_sig_n)
+    if warn:
+        print(f"NOTE: {warn}")
 
-        print(bankroll_headline(bankroll_stats, min_sig_n))
-        warn = small_sample_warning(bankroll_stats.n_bets, min_sig_n)
-        if warn:
-            print(f"NOTE: {warn}")
+    for sport, reason in result["skipped"].items():
+        print(f"{sport}: {reason}")
 
-        all_flags: list[dict] = []
-        skipped: dict[str, str] = {}
-        for sport in SPORTS:
-            print(f"\nChecking {sport}...")
-            flags, skip_reason = process_sport(conn, client, sport, cfg, current_bankroll)
-            if skip_reason:
-                print(f"  {sport}: {skip_reason}")
-                skipped[sport] = skip_reason
-            else:
-                print(f"  {sport}: {len(flags)} game/market combination(s) flagged")
-            all_flags.extend(flags)
-
-        report_df = print_report(all_flags, skipped, threshold)
+    report_df = print_report(result["flags"], result["skipped"], result["threshold"])
 
     if args.csv and not report_df.empty:
         report_df.to_csv(args.csv, index=False)
