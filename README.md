@@ -161,6 +161,37 @@ Team names returned by your odds provider must match the team names in your hist
 naming differences between your schedule/stats source and your odds source before relying
 on this in production.
 
+## Cross-book arbitrage scanner
+
+`arbitrage/` is pure cross-book price math — no model, no probability estimation, no
+opinion on who wins. For each game/market, it takes the best available price per outcome
+across ALL books, sums their raw (vig-included) implied probabilities, and flags a true
+arbitrage only when that sum is under 100% (a guaranteed edge regardless of outcome). A
+spread/total pairing is only considered when both legs quote the SAME line — mismatched
+lines can create a "middle" but are not a riskless arbitrage, and this scanner does not
+price middles.
+
+```bash
+export ODDS_API_KEY=your_key_here
+python scripts/arb_scan.py --live                       # pull fresh odds and scan now
+python scripts/arb_scan.py                               # scan the latest odds already stored in the DB
+python scripts/arb_scan.py --sport NFL --stake 5000       # restrict sport, set total stake to split
+python scripts/arb_scan.py --staleness-threshold 30 --csv arbs.csv
+```
+
+Output columns: `game`, `market`, `line`, each side's `book`/`odds`/`stake` (proportional
+split so payout is equal regardless of outcome), `arb_margin_pct`, `guaranteed_profit` for
+the configured stake, and the `captured_at` timestamps for each leg. `pull_gap_seconds` is
+the time between the two legs' odds pulls; anything over `--staleness-threshold` (default
+60s) is flagged `stale`, since a real arb can vanish within seconds as a book adjusts. An
+empty result table is the expected, common outcome — it is printed plainly, not treated as
+an error or a reason to lower the bar.
+
+Per-book bet-size limits are not available from The Odds API (or most affordable odds
+APIs), so this tool cannot tell you whether the full stake split is actually fillable —
+every non-empty result prints a fixed reminder to verify each book's max stake before
+staking anything.
+
 ## Deploying to Streamlit Community Cloud
 
 The dashboard (with its "Today's Bets" tab) can run as a free-tier Streamlit Community Cloud
