@@ -1,0 +1,427 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// ---------- Auth (Auth.js / NextAuth Prisma adapter shape) ----------
+
+model User {
+  id             String    @id @default(cuid())
+  email          String    @unique
+  hashedPassword String?
+  name           String?
+  image          String?
+  emailVerified  DateTime?
+  createdAt      DateTime  @default(now())
+  updatedAt      DateTime  @updatedAt
+
+  accounts Account[]
+  sessions Session[]
+
+  plaidItems          PlaidItem[]
+  financialAccounts   FinancialAccount[]
+  categorizationRules CategorizationRule[]
+  budgets             Budget[]
+  plannedExpenses     PlannedExpense[]
+
+  customFoods    Food[]
+  recipes        Recipe[]
+  mealLogEntries MealLogEntry[]
+  nutritionProfile NutritionProfile?
+  bodyWeightEntries BodyWeightEntry[]
+
+  workoutTemplates WorkoutTemplate[]
+  workoutSessions  WorkoutSession[]
+
+  plannedLifts PlannedLift[]
+  plannedMeals PlannedMeal[]
+
+  riskProfile RiskProfile?
+}
+
+// Standard Auth.js Prisma adapter shape. The finance domain's own accounts
+// are modeled separately as FinancialAccount, so no name clash here.
+model Account {
+  id                String  @id @default(cuid())
+  userId            String
+  type              String
+  provider          String
+  providerAccountId String
+  refresh_token     String? @db.Text
+  access_token      String? @db.Text
+  expires_at        Int?
+  token_type        String?
+  scope             String?
+  id_token          String? @db.Text
+  session_state     String?
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([provider, providerAccountId])
+}
+
+model Session {
+  id           String   @id @default(cuid())
+  sessionToken String   @unique
+  userId       String
+  expires      DateTime
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model VerificationToken {
+  identifier String
+  token      String   @unique
+  expires    DateTime
+
+  @@unique([identifier, token])
+}
+
+// ---------- Finance ----------
+
+enum FinancialAccountType {
+  checking
+  savings
+  credit
+  investment
+  loan
+}
+
+model PlaidItem {
+  id                   String   @id @default(cuid())
+  userId               String
+  plaidItemId          String   @unique
+  accessTokenEncrypted String
+  institutionName      String
+  transactionsCursor   String?
+  createdAt            DateTime @default(now())
+
+  user     User               @relation(fields: [userId], references: [id], onDelete: Cascade)
+  accounts FinancialAccount[]
+}
+
+model FinancialAccount {
+  id                    String               @id @default(cuid())
+  userId                String
+  plaidItemId           String?
+  plaidAccountId        String?              @unique
+  institutionName       String
+  name                  String
+  type                  FinancialAccountType
+  currentBalanceCents   Int
+  availableBalanceCents Int?
+  isLiability           Boolean              @default(false)
+  interestRateBps       Int?
+  statementDueDate      DateTime?
+  createdAt             DateTime             @default(now())
+
+  user         User          @relation(fields: [userId], references: [id], onDelete: Cascade)
+  plaidItem    PlaidItem?    @relation(fields: [plaidItemId], references: [id], onDelete: SetNull)
+  transactions Transaction[]
+}
+
+model Transaction {
+  id                  String   @id @default(cuid())
+  accountId           String
+  plaidTransactionId  String?  @unique
+  merchantName        String
+  amountCents         Int
+  category            String
+  isUserOverridden    Boolean  @default(false)
+  postedAt            DateTime
+  isPending           Boolean  @default(false)
+
+  account         FinancialAccount @relation(fields: [accountId], references: [id], onDelete: Cascade)
+  plannedExpenses PlannedExpense[]
+
+  @@index([accountId, postedAt])
+}
+
+model CategorizationRule {
+  id       String @id @default(cuid())
+  userId   String
+  pattern  String
+  category String
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model Budget {
+  id          String   @id @default(cuid())
+  userId      String
+  category    String
+  limitCents  Int
+  periodStart DateTime
+  periodEnd   DateTime
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId, periodStart])
+}
+
+model PlannedExpense {
+  id                      String    @id @default(cuid())
+  userId                  String
+  description             String
+  amountCents             Int
+  category                String
+  dueDate                 DateTime
+  reconciledTransactionId String?   @unique
+
+  user                  User         @relation(fields: [userId], references: [id], onDelete: Cascade)
+  reconciledTransaction Transaction? @relation(fields: [reconciledTransactionId], references: [id], onDelete: SetNull)
+}
+
+// ---------- Nutrition ----------
+
+enum FoodSource {
+  usda
+  custom
+}
+
+model Food {
+  id                String     @id @default(cuid())
+  source            FoodSource
+  externalId        String?
+  name              String
+  brand             String?
+  caloriesPer100g   Float
+  proteinGPer100g   Float
+  carbsGPer100g     Float
+  fatGPer100g       Float
+  fiberGPer100g     Float?
+  sugarGPer100g     Float?
+  sodiumMgPer100g   Float?
+  createdByUserId   String?
+
+  createdByUser      User?               @relation(fields: [createdByUserId], references: [id], onDelete: SetNull)
+  recipeIngredients  RecipeIngredient[]
+  mealLogEntries     MealLogEntry[]
+  plannedMeals       PlannedMeal[]
+
+  @@unique([source, externalId])
+}
+
+model Recipe {
+  id       String @id @default(cuid())
+  userId   String
+  name     String
+  servings Int
+
+  user        User               @relation(fields: [userId], references: [id], onDelete: Cascade)
+  ingredients RecipeIngredient[]
+  mealLogEntries MealLogEntry[]
+  plannedMeals   PlannedMeal[]
+}
+
+model RecipeIngredient {
+  id       String @id @default(cuid())
+  recipeId String
+  foodId   String
+  grams    Float
+
+  recipe Recipe @relation(fields: [recipeId], references: [id], onDelete: Cascade)
+  food   Food   @relation(fields: [foodId], references: [id], onDelete: Restrict)
+}
+
+enum MealLogSource {
+  food
+  recipe
+}
+
+model MealLogEntry {
+  id            String        @id @default(cuid())
+  userId        String
+  loggedAt      DateTime
+  source        MealLogSource
+  foodId        String?
+  recipeId      String?
+  quantityGrams Float?
+  servings      Float?
+  calories      Float
+  proteinG      Float
+  carbsG        Float
+  fatG          Float
+  fiberG        Float?
+  sugarG        Float?
+  sodiumMg      Float?
+
+  user   User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+  food   Food?   @relation(fields: [foodId], references: [id], onDelete: SetNull)
+  recipe Recipe? @relation(fields: [recipeId], references: [id], onDelete: SetNull)
+
+  @@index([userId, loggedAt])
+}
+
+enum ActivityLevel {
+  sedentary
+  lightly_active
+  moderately_active
+  very_active
+  extremely_active
+}
+
+enum NutritionGoal {
+  lose
+  maintain
+  gain
+}
+
+model NutritionProfile {
+  userId               String        @id
+  sex                  String
+  weightKg             Float
+  heightCm             Float
+  age                  Int
+  activityLevel        ActivityLevel
+  goal                 NutritionGoal
+  manualCalorieTarget  Int?
+  proteinPercent       Float
+  carbsPercent         Float
+  fatPercent           Float
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model BodyWeightEntry {
+  id       String   @id @default(cuid())
+  userId   String
+  loggedAt DateTime
+  weightKg Float
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId, loggedAt])
+}
+
+// ---------- Training ----------
+
+model WorkoutTemplate {
+  id     String @id @default(cuid())
+  userId String
+  name   String
+
+  user      User                      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  exercises WorkoutTemplateExercise[]
+  plannedLifts PlannedLift[]
+  workoutSessions WorkoutSession[]
+}
+
+model WorkoutTemplateExercise {
+  id           String @id @default(cuid())
+  templateId   String
+  exerciseName String
+  targetSets   Int
+  targetReps   Int
+  orderIndex   Int
+
+  template WorkoutTemplate @relation(fields: [templateId], references: [id], onDelete: Cascade)
+}
+
+model WorkoutSession {
+  id          String   @id @default(cuid())
+  userId      String
+  templateId  String?
+  performedAt DateTime
+
+  user     User             @relation(fields: [userId], references: [id], onDelete: Cascade)
+  template WorkoutTemplate? @relation(fields: [templateId], references: [id], onDelete: SetNull)
+  sets     SetLog[]
+  plannedLift PlannedLift?
+}
+
+model SetLog {
+  id               String  @id @default(cuid())
+  workoutSessionId String
+  exerciseName     String
+  setNumber        Int
+  weightKg         Float
+  reps             Int
+  rpe              Float?
+  notes            String?
+
+  session WorkoutSession @relation(fields: [workoutSessionId], references: [id], onDelete: Cascade)
+}
+
+// ---------- Unified planner ----------
+
+enum PlannedLiftStatus {
+  planned
+  completed
+  skipped
+}
+
+model PlannedLift {
+  id               String            @id @default(cuid())
+  userId           String
+  scheduledDate    DateTime
+  templateId       String?
+  label            String
+  status           PlannedLiftStatus @default(planned)
+  workoutSessionId String?           @unique
+
+  user           User             @relation(fields: [userId], references: [id], onDelete: Cascade)
+  template       WorkoutTemplate? @relation(fields: [templateId], references: [id], onDelete: SetNull)
+  workoutSession WorkoutSession?  @relation(fields: [workoutSessionId], references: [id], onDelete: SetNull)
+
+  @@index([userId, scheduledDate])
+}
+
+enum MealSlot {
+  breakfast
+  lunch
+  dinner
+  snack
+}
+
+model PlannedMeal {
+  id            String    @id @default(cuid())
+  userId        String
+  scheduledDate DateTime
+  slot          MealSlot
+  foodId        String?
+  recipeId      String?
+  quantityGrams Float?
+  servings      Float?
+  loggedEntryId String?   @unique
+
+  user   User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+  food   Food?   @relation(fields: [foodId], references: [id], onDelete: SetNull)
+  recipe Recipe? @relation(fields: [recipeId], references: [id], onDelete: SetNull)
+
+  @@index([userId, scheduledDate])
+}
+
+// ---------- Investing ----------
+
+model StockFactorSnapshot {
+  id             String   @id @default(cuid())
+  symbol         String
+  sector         String
+  asOfDate       DateTime
+  peRatio        Float?
+  pbRatio        Float?
+  momentum3m     Float?
+  momentum6m     Float?
+  momentum12m    Float?
+  volatility     Float?
+  volumeTrend    Float?
+  revenueGrowth  Float?
+  netMargin      Float?
+  debtToEquity   Float?
+
+  @@unique([symbol, asOfDate])
+  @@index([asOfDate])
+}
+
+model RiskProfile {
+  userId            String @id
+  timeHorizonYears  Int
+  riskTolerance     Int // 1 (conservative) - 5 (aggressive)
+  questionnaire     Json
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+}

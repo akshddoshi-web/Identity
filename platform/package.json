@@ -1,0 +1,23 @@
+{
+  "name": "identity-platform",
+  "private": true,
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "packageManager": "pnpm@10.33.0",
+  "scripts": {
+    "dev": "turbo run dev",
+    "dev:web": "turbo run dev --filter=web",
+    "build": "turbo run build",
+    "lint": "turbo run lint",
+    "test": "turbo run test",
+    "typecheck": "turbo run typecheck",
+    "db:migrate": "pnpm --filter @identity/api db:migrate",
+    "db:seed": "pnpm --filter @identity/api db:seed",
+    "db:generate": "pnpm --filter @identity/api db:generate"
+  },
+  "devDependencies": {
+    "turbo": "^2.3.3",
+    "typescript": "^5.7.2"
+  }
+}
