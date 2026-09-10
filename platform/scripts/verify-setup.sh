@@ -42,10 +42,11 @@ if [ ! -f .env ]; then
 else
   ok ".env already exists"
 fi
-set -a
-# shellcheck disable=SC1091
-source .env
-set +a
+# Deliberately NOT sourced into this script's shell env below — every
+# subsequent step calls the actual documented package.json scripts
+# (dotenv-cli-wrapped) so this test fails the same way a user's plain
+# `pnpm db:migrate` / `pnpm dev` run would, instead of masking a missing
+# env-loading step by pre-exporting variables here.
 
 # --- 4. Database --------------------------------------------------------
 step "Checking Postgres connectivity at DATABASE_URL"
@@ -59,7 +60,7 @@ fi
 
 DB_READY=false
 for _ in $(seq 1 20); do
-  if pnpm --filter @identity/api exec prisma db execute --stdin <<<"SELECT 1;" >/dev/null 2>&1; then
+  if pnpm exec dotenv -e .env -- pnpm --filter @identity/api exec prisma db execute --stdin <<<"SELECT 1;" >/dev/null 2>&1; then
     DB_READY=true
     break
   fi
@@ -75,14 +76,13 @@ step "Installing dependencies (pnpm install)"
 pnpm install
 ok "Dependencies installed"
 
-# --- 6. Migrate + generate ---------------------------------------------------
-step "Running Prisma migrations"
-pnpm --filter @identity/api exec prisma migrate deploy
-pnpm --filter @identity/api exec prisma generate
+# --- 6. Migrate + generate (the exact documented command) -------------------
+step "Running Prisma migrations (pnpm db:migrate)"
+pnpm db:migrate
 ok "Database schema is up to date"
 
-# --- 7. Seed ------------------------------------------------------------
-step "Seeding demo data"
+# --- 7. Seed (the exact documented command) ---------------------------------
+step "Seeding demo data (pnpm db:seed)"
 pnpm db:seed
 ok "Seed data loaded (demo@identity.local / password123)"
 
@@ -93,11 +93,13 @@ pnpm --filter @identity/api test
 ok "Unit tests passed"
 
 # --- 9. Boot the dev server and confirm it responds -------------------------
-step "Booting the web app dev server and checking it responds"
+# Uses the exact documented `pnpm dev` command (dotenv-wrapped turbo), not a
+# lower-level `next dev` invocation, so this proves what a user actually runs.
+step "Booting the web app dev server (pnpm dev) and checking it responds"
 PORT="${VERIFY_PORT:-3300}"
 # The `&` must be outside the subshell parens so `$!` (captured in the
 # parent shell, which has `set -u`) actually refers to this job.
-(cd apps/web && exec pnpm exec next dev -p "$PORT") > /tmp/identity-verify-dev.log 2>&1 &
+(exec env PORT="$PORT" pnpm dev:web) > /tmp/identity-verify-dev.log 2>&1 &
 DEV_PID=$!
 
 READY=false

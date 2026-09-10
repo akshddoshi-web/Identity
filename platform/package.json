@@ -6,17 +6,18 @@
   },
   "packageManager": "pnpm@10.33.0",
   "scripts": {
-    "dev": "turbo run dev",
-    "dev:web": "turbo run dev --filter=web",
-    "build": "turbo run build",
+    "dev": "dotenv -e .env -- turbo run dev",
+    "dev:web": "dotenv -e .env -- turbo run dev --filter=web",
+    "build": "dotenv -e .env -- turbo run build",
     "lint": "turbo run lint",
     "test": "turbo run test",
     "typecheck": "turbo run typecheck",
-    "db:migrate": "pnpm --filter @identity/api db:migrate",
-    "db:seed": "pnpm --filter @identity/api db:seed",
-    "db:generate": "pnpm --filter @identity/api db:generate"
+    "db:migrate": "dotenv -e .env -- pnpm --filter @identity/api db:migrate",
+    "db:seed": "dotenv -e .env -- pnpm --filter @identity/api db:seed",
+    "db:generate": "dotenv -e .env -- pnpm --filter @identity/api db:generate"
   },
   "devDependencies": {
+    "dotenv-cli": "^7.4.4",
     "turbo": "^2.3.3",
     "typescript": "^5.7.2"
   }
