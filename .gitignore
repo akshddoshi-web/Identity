@@ -1,18 +1,22 @@
-__pycache__/
-*.pyc
-.venv/
-venv/
-data/*.db
-data/*.sqlite
-# Exception: a committed, deploy-time seed DB (real NFL+NCAAF history, no
-# logged predictions) — see data_pipeline/db.py::ensure_seeded() and
-# README's "Deploying to Streamlit Community Cloud" section for why this
-# one file is intentionally tracked while every other .db is not.
-!data/seed_betting.db
-data/raw/
-data/cache/
-*.log
+# dependencies
+node_modules/
+
+# build output
+dist/
+dist-ssr/
+
+# env
 .env
+.env.local
+
+# logs
+*.log
+npm-debug.log*
+
+# editor / OS
 .DS_Store
-.pytest_cache/
-*.egg-info/
+.vscode/*
+!.vscode/extensions.json
+
+# typescript build info
+*.tsbuildinfo
