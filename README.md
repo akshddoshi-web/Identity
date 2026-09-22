@@ -11,10 +11,15 @@ transactions, budgets, and savings goals.
 and a stock detail page with a real line/candlestick chart toggle and
 working range pills.
 
-**Stage 3** (this repo, right now): the fully-built **Fantasy** tab — Lobby,
-Matchup, My Team, Ledger, both leagues, league-switching, a snake-draft
-board, and a real multi-league debt-simplification settle-up. Fitness and
-Planner are still placeholder tabs — the last stage.
+**Stage 3**: the fully-built **Fantasy** tab — Lobby, Matchup, My Team,
+Ledger, both leagues, league-switching, a snake-draft board, and a real
+multi-league debt-simplification settle-up.
+
+**Stage 4** (this repo, right now): the fully-built **Fitness** tab —
+Today, Nutrients, Lifts, Progress, set-by-set workout logging, a
+weekly-training-volume-by-muscle-group chart, and a personal PR/streak
+history — all wired into the same accountability engine Home's budgets use.
+Planner is the last placeholder tab, the final stage.
 
 ## Stack
 
@@ -37,7 +42,9 @@ npm run dev
 Then open **http://localhost:5173**.
 
 Run the unit tests (currently `src/lib/settleUp.ts`, the debt-simplification
-engine):
+engine — Fitness's new logic is exercised through the app itself rather than
+a second test file; see "Did the accountability engine actually
+generalize?" below for why nothing there needed new tests):
 
 ```bash
 npm run test
@@ -57,23 +64,30 @@ src/
                    prototype 1:1, price history is expanded into a full OHLC series (see below)
     fantasySeed.ts Sample data for the Fantasy tab, mirrors the prototype's two leagues 1:1;
                    draft board is new (see below)
+    fitnessSeed.ts Sample data for the Fitness tab; macros/meals/micronutrients/split/bodyweight
+                   mirror the prototype 1:1, lift history is expanded into a real set-by-set log
+                   (see below)
   lib/
     accountability.ts  Generic actual-vs-target alert engine (see below)
     stockInsights.ts   Stocks' rule-based "opinion" engine, built on accountability's evaluateTarget()
     ohlc.ts            Deterministic OHLC series generator + range-based slicing
     settleUp.ts        Generic multi-party debt-simplification engine (see below), with unit tests
     fantasyLedger.ts   Turns a league's standings into settle-up balances for settleUp.ts
+    liftStats.ts       Derives every lift stat (last session, trend, PR, volume, streaks) from set data
+    fitnessInsights.ts Fitness's rule-based alerts, built on accountability's evaluateTarget()
     format.ts, dates.ts, clsx.ts
   store/
     useHomeStore.ts    Zustand store for all Home tab data, persisted to localStorage
     useStocksStore.ts  Zustand store for Stocks tab data, persisted to localStorage
     useFantasyStore.ts Zustand store for Fantasy tab data (incl. active league), persisted to localStorage
+    useFitnessStore.ts Zustand store for Fitness tab data, persisted to localStorage
   tabs/
     home/        Home tab + its six sub-tabs (Insights, Overview, Accounts, Transactions, Budgets, Goals)
     stocks/      Stocks tab + its three sub-tabs (Portfolio, Watchlist, Insights) + stock detail view
     fantasy/     Fantasy tab + its four sub-tabs (Lobby, Matchup, My Team, Ledger) + draft board view
-    placeholder/ "Coming soon" placeholder used by Fitness/Planner
-  types/domain.ts, stocks.ts, fantasy.ts    Shared data types
+    fitness/     Fitness tab + its four sub-tabs (Today, Nutrients, Lifts, Progress) + lift detail view
+    placeholder/ "Coming soon" placeholder used by Planner
+  types/domain.ts, stocks.ts, fantasy.ts, fitness.ts    Shared data types
 ```
 
 ## The accountability engine
@@ -128,6 +142,51 @@ balances across every league to `settleUp()`. Because `settleUp()` merges
 repeated names before doing anything else, "You" being in both leagues
 collapses into one net number rather than two separate settle-ups — see
 `src/lib/settleUp.test.ts` for the merge behavior specifically.
+
+## Set-by-set lift logging and the derived stats
+
+The prototype's `lifts` array stored `last`, `trend`, `up`, and `pr` as
+separately-authored strings alongside a 10-point `history` sparkline — and,
+like the concentration/volatility numbers in Stage 2, they don't actually
+agree with their own `history` array (see "the prototype's trend labels
+didn't hold up," below). `src/data/fitnessSeed.ts` keeps only the real
+primitives (a lift's name, muscle group, training slot, and its set-by-set
+`sessions`) and ports the prototype's 10-point history faithfully as the
+sequence of weekly top-set weights; everything else — last session, 3-week
+trend, all-time PR, the sparkline, weekly training volume, working-set PRs,
+and training-split streaks — is computed from that log by
+`src/lib/liftStats.ts`. Each lift also carries one session dated well before
+the 10-week window, holding the single all-time-max-effort set that backs
+the PR line — a real 1-rep-max is a different record category from a
+"heaviest top set at your normal working reps," so both are tracked and
+neither is hard-coded.
+
+## Did the accountability engine actually generalize?
+
+Yes, cleanly, with zero changes to `evaluateTarget()` or its types.
+`src/lib/fitnessInsights.ts` is a fourth consumer built on the exact same
+shape as `buildAvenueAlerts()` (Stage 1) and the concentration check in
+`stockInsights.ts` (Stage 2) — build an `AccountabilityTarget`, call
+`evaluateTarget()`, attach copy:
+
+- **Calories vs. goal** — `direction: "ceiling"`, same shape as a budget.
+- **Protein vs. goal** — `direction: "floor"`; this is the one the
+  prototype's own `buildAlerts()` already special-cased inline (see
+  index.html's global accountability function), which is a strong signal
+  the engine's ceiling/floor split was already the right generalization —
+  Stage 1 just hadn't had a second consumer to prove it yet.
+- **Workout completion vs. planned** (2 of 3 Push/Legs/Pull slots this
+  week) — `direction: "floor"` again, the same shape as protein, just a
+  count instead of a gram measurement. This is the one genuinely new
+  proof point: a target that's neither money nor macros still drops into
+  `{ actual, target, direction }` without friction.
+
+The only new code is the domain module that builds those three targets and
+writes their copy — same division of labor as every consumer before it.
+Fitness alerts render on the Today sub-tab, not folded into Home's Overview
+card; each tab surfaces its own domain's alerts rather than one cross-tab
+rollup, keeping `accountability.ts` itself ignorant of which tab is calling
+it.
 
 ## Notable decisions not spelled out in the brief
 
@@ -192,3 +251,35 @@ collapses into one net number rather than two separate settle-ups — see
   the Vitest UI/mocker), not something that ships in the built app, and
   fixing it for real means a Vite 6+ upgrade — out of scope for adding tests
   to one module.
+- **A lift detail page gets a real URL** (`/fitness/lifts/bench-press`),
+  same reasoning as stock and league-draft detail pages: it's "one specific
+  thing I'm looking at right now." "Which day" and "which meal" never
+  needed a routing decision at all — Today is fixed to the current day (the
+  prototype has no historical diary to browse) and meals render inline with
+  no drill-down page, so neither one is "one specific thing" navigation in
+  what was actually built.
+- **The prototype's trend labels didn't hold up under real computation** —
+  a third instance of the pattern from Stages 2 (concentration %) and 3
+  (buy-in vs. pot). Comparing each lift's ported history 3 entries back
+  (its "3wk" framing, at one session/week) gives a uniform +5 lb for all
+  four lifts, including Deadlift — whose prototype label claims "flat."
+  Deadlift's real 10-week window genuinely does plateau (one working-set PR
+  in the whole window, at week 2 — see Progress's personal history), it's
+  just that the specific 3-week comparison window isn't where that
+  plateau shows up numerically. I kept the honest computed number rather
+  than re-engineering the data to force "flat" back out of it.
+- **"Planned training days" means 3 (Push/Legs/Pull), not the 5 non-rest
+  calendar days in `split`** — the split template calls for Push and Pull
+  twice each per week, but the lift log (like a real lifter's actual habits)
+  only reliably has one dated session per muscle group per week. Grading
+  against 5 when only 3 session-types exist in the data would make the
+  workout-completion check permanently and uninformatively "crit." 3 is
+  what the underlying set data can actually attest to.
+- **Workout "completion" is measured by session depth (2+ sets logged),
+  not by whether a session happened at all** — this keeps a lift's full
+  10-week weight-progression history intact (every week has a real
+  top-set weight, so the sparkline and PR detection never have gaps) while
+  still giving the accountability engine and the streak timeline a genuine,
+  set-data-derived signal: a single rushed set on deadlift day reads as an
+  incomplete Pull slot, exactly like the app's live demo state has it for
+  the current week.
