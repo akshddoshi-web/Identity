@@ -1,258 +1,543 @@
-# Sports Betting Analytics & Decision-Support System
+# Identity
 
-A rigorous edge-detection and bankroll-management framework for **NFL, NCAAF, and NBA**,
-modeled on how professional/sharp bettors actually operate.
+A personal life-OS web app. Home, Stocks, Fantasy, Fitness, Planner, and a
+cross-domain Status view, in one black/white, monochrome, mono-and-grotesk
+UI.
 
-## What this is NOT
+**Stage 1**: the app shell (5 tabs + sub-tab strip) and the fully-built
+**Home** tab — insights feed, spending overview, linked accounts,
+transactions, budgets, and savings goals.
 
-This is **not** a "guaranteed winner" system, a black box that spits out picks, or a
-promise of profit. Sports betting markets are efficient enough that durable edges are
-small (a few percent), noisy, and easy to talk yourself into seeing when they aren't
-there. Every output in this system is designed to make it hard to fool yourself:
+**Stage 2**: the fully-built **Stocks** tab — Portfolio, Watchlist, Insights,
+and a stock detail page with a real line/candlestick chart toggle and
+working range pills.
 
-- Model probabilities are always shown next to de-vigged market probabilities, not in
-  isolation.
-- No performance claim is presented without a sample size and a confidence interval.
-- Samples under **200 bets** are explicitly flagged as statistically meaningless — the
-  system will tell you this even when the record "looks good."
-- Every prediction is logged, timestamped, and immutable *before* the game happens.
-  There is no code path that lets you retroactively edit a logged prediction to cherry-pick
-  wins.
-- A Monte Carlo simulator shows you that even a genuine, durable 55% edge produces long
-  losing streaks — so a single backtest equity curve is never presented as "the" outcome.
+**Stage 3**: the fully-built **Fantasy** tab — Lobby, Matchup, My Team,
+Ledger, both leagues, league-switching, a snake-draft board, and a real
+multi-league debt-simplification settle-up.
 
-If you use this system for real-money decisions, understand that: (1) past model
-performance does not guarantee future performance, (2) sportsbooks limit or ban
-consistently winning accounts, (3) you can and will lose money even when the model is
-"right" in expectation, and (4) nothing here is financial advice.
+**Stage 4**: the fully-built **Fitness** tab — Today, Nutrients, Lifts,
+Progress, set-by-set workout logging, a weekly-training-volume-by-muscle-
+group chart, and a personal PR/streak history — all wired into the same
+accountability engine Home's budgets use.
 
-## Architecture
+**Stage 5**: the fully-built **Planner** tab — Week, Goals, a toggleable
+Google-Calendar-style time-grid view, Notion-style inline editing, and a
+Sunsama-style "plan tomorrow" end-of-day ritual. All five domain tabs are
+real; nothing was left as a placeholder.
 
-```
-config/                 YAML configuration (thresholds, Kelly fraction, bankroll caps)
-data_pipeline/           Ingestion: games, advanced stats, odds (opening/closing), DB layer
-models/                  Elo baseline, feature engineering, GBM models, walk-forward backtesting
-edge/                    De-vigging, edge detection, CLV tracking
-bankroll/                Fractional Kelly sizing, bankroll tracking, Monte Carlo simulation
-guardrails/              Immutable prediction logging, disclaimers, sample-size gating
-dashboard/               Streamlit dashboard
-scripts/                 Synthetic sample-data generator, end-to-end demo runner, daily live report
-tests/                   Unit tests for the math-critical modules (de-vig, Kelly, Elo, CLV, live features)
-```
+**Stage 6** (this repo, right now): **Status**, a 6th top-level view that
+pulls every domain's already-computed accountability alerts — budget,
+stock concentration, calories, workouts, schedule — into one list, ranked
+by actual severity across domains that share no units, each item linking
+back to its source. This is the payoff Stage 5 closed on: the engine was a
+real shared classification function across four tabs, but nothing tied
+them together for the person using the app. See "Is Status what makes the
+accountability engine a unifying core?" below for how the ranking works and
+what it does and doesn't prove.
 
-## Data source availability — honest status
+## Stack
 
-This section says, plainly, what is real and validated, what is real but unvalidated, and
-what is still synthetic, as of the last time this repo's own data was refreshed. Don't take
-any dashboard number on faith without checking this first.
+- [Vite](https://vitejs.dev/) + React + TypeScript
+- [Tailwind CSS](https://tailwindcss.com/), themed off the prototype's design
+  tokens (see `tailwind.config.ts` and the `:root` variables in
+  `src/index.css`)
+- [Zustand](https://github.com/pmndrs/zustand) for state, persisted to
+  `localStorage`
+- [react-router-dom](https://reactrouter.com/) for tab/sub-tab routing
+  (`/:tabId/:subSlug`)
 
-| Sport | Source | Status |
-|---|---|---|
-| **NFL** | [nflverse-data](https://github.com/nflverse/nflverse-data) play-by-play (public GitHub release assets, no key) | ✅ Real. Ingested and walk-forward backtested — see numbers below. |
-| **NCAAF** | [sportsdataverse/cfbfastr-data](https://github.com/sportsdataverse/cfbfastr-data) (schedules + play-by-play + embedded closing lines, public repo, no key) | ✅ Real. Ingested and walk-forward backtested — see numbers below. FBS-vs-FBS games only. |
-| **NBA** | [nba_api](https://github.com/swar/nba_api) (stats.nba.com) | ⚠️ Code written (`data_pipeline/sources/nba_nba_api.py`), **not executed or validated**. See that module's docstring for why and what to do about it. |
-| **Live odds (all sports)** | [The Odds API](https://the-odds-api.com/) | ⚠️ Client code written and wired to `ODDS_API_KEY` (see below), **not exercised against the live endpoint** in this repo's own development. Validate it yourself once you have a key and normal internet access. |
-
-Both real sports also came with **real historical closing lines** — nflverse and
-cfbfastR-data each embed the closing spread and total for every game — so the walk-forward
-Brier/log-loss/CLV-style comparisons below are against real market numbers, not fabricated
-ones. Neither source has historical moneyline, so moneyline market data is live-only (via
-The Odds API) for both sports right now. See `data_pipeline/sources/nfl_nflverse.py` and
-`data_pipeline/sources/ncaaf_cfbfastr.py`'s docstrings for the exact fields used, the sign
-conventions (verified against real blowout games, not assumed), and known gaps (no real
-travel distance for NCAAF, no weather for NCAAF, no referee data for either).
-
-### Real ingestion
+## Run it
 
 ```bash
-# NFL: no setup needed, pulls directly from nflverse-data's GitHub releases
-python scripts/ingest_real_data.py --sport NFL
-
-# NCAAF: clone the data repo once (public, no key; ~7GB, shallow clone keeps it manageable)
-GIT_LFS_SKIP_SMUDGE=1 git clone --depth 1 https://github.com/sportsdataverse/cfbfastr-data /home/user/sportsdataverse/cfbfastr-data
-python scripts/ingest_real_data.py --sport NCAAF
-
-# both at once, with the default ~9-10 season windows:
-python scripts/ingest_real_data.py --sport ALL
+npm install
+npm run dev
 ```
 
-**Do not `pip install nfl_data_py` or `nba_api` into this project's main environment.**
-`nfl_data_py` pins `pandas<2.0` and `nba_api` pins `numpy<2.0` — either one, installed
-alongside this repo's `pandas>=2.1`/`numpy>=1.26`, gets silently downgraded by pip's
-resolver and **corrupts the rolling-feature engineering in `models/features.py`** (this
-happened during development: `pip install nfl_data_py` downgraded pandas to 1.5.3 and broke
-a walk-forward feature-alignment test with no error, only a silently wrong value). This
-repo's own NFL/NCAAF ingestion never imports either package — it talks to the raw data
-files directly. If you need `nba_api`, install it in its own virtualenv (see
-`data_pipeline/sources/nba_nba_api.py`).
+Then open **http://localhost:5173**.
 
-### Odds API key setup
-
-1. Get a key from [the-odds-api.com](https://the-odds-api.com/) (free tier available).
-2. Copy `.env.example` to `.env` in the repo root and paste your key in:
-   ```bash
-   cp .env.example .env
-   # then edit .env: ODDS_API_KEY=sk-your-real-key-here
-   ```
-   `.env` is already in `.gitignore` — it will never be committed. `data_pipeline/config.py`
-   loads it automatically (via `python-dotenv`) on every run; you don't need to `export` it
-   yourself unless you'd rather set it as a real shell/CI environment variable instead.
-3. On Streamlit Community Cloud, don't use `.env` at all — see the **Deploying to Streamlit
-   Community Cloud** section below for the Secrets-store equivalent, which
-   `data_pipeline/config.py::odds_api_key()` also checks automatically.
-
-Because this repo's own development sandbox blocked outbound traffic to everything except
-GitHub and PyPI, **`api.the-odds-api.com` was never actually reached from that session** —
-the client code (`data_pipeline/ingest_odds.py`) is written against the real, documented
-API, but run `python scripts/daily_report.py` yourself once you have a key and confirm it
-pulls real games before trusting its output.
-
-## Quickstart (synthetic data — for testing pipeline mechanics only)
+Run the unit tests (`src/lib/settleUp.ts`, the debt-simplification engine,
+and `src/lib/statusOverview.ts`, Status's cross-domain ranking — Fitness and
+Planner's own logic is exercised through the app itself rather than a
+dedicated test file; see "Did the accountability engine actually
+generalize?" below for why nothing there needed new tests):
 
 ```bash
-pip install -r requirements.txt
-export PYTHONPATH=.                             # needed so the top-level packages import cleanly
-python scripts/generate_sample_data.py          # builds data/betting.db with FAKE data
-python scripts/run_pipeline_demo.py             # trains Elo + GBM, backtests, computes edges/CLV
-streamlit run dashboard/app.py                  # view the dashboard (also inserts repo root on sys.path itself)
+npm run test
 ```
 
-Run the test suite with `pytest` from the repo root (a `conftest.py` + `pytest.ini` handle the import path automatically, no `PYTHONPATH` needed there).
+## Project layout
 
-The synthetic generator exists **only** to exercise the pipeline end-to-end (schema
-validity, backtest mechanics, Kelly sizing, dashboard rendering) so you can see the system
-work before wiring in real data. Any "edges" or "performance" you see against synthetic
-data are meaningless by construction. **Prefer `scripts/ingest_real_data.py` (above) for
-anything you intend to actually look at.**
-
-## Live odds ingestion
-
-`data_pipeline/ingest_odds.py` implements a client for **The Odds API** as the reference
-integration (spreads, totals, moneylines, multiple books). Set:
-
-```bash
-export ODDS_API_KEY=your_key_here
+```
+src/
+  components/
+    layout/      App shell, top nav, sub-tab nav, tab routing glue
+    ui/          Design-system primitives (Card, Pill, Avatar, Dot, ProgressBar, Sparkline, BarChart)
+  config/tabs.ts Tab + sub-tab definitions
+  data/
+    homeSeed.ts    Sample data for the Home tab, mirrors the original prototype 1:1
+    stocksSeed.ts  Sample data for the Stocks tab; holding/watchlist fields mirror the
+                   prototype 1:1, price history is expanded into a full OHLC series (see below)
+    fantasySeed.ts Sample data for the Fantasy tab, mirrors the prototype's two leagues 1:1;
+                   draft board is new (see below)
+    fitnessSeed.ts Sample data for the Fitness tab; macros/meals/micronutrients/split/bodyweight
+                   mirror the prototype 1:1, lift history is expanded into a real set-by-set log
+                   (see below)
+    plannerSeed.ts Sample data for the Planner tab; blocks/categories/goals mirror the prototype
+                   1:1, each block gets a new start/end time for the time-grid view (see below)
+  lib/
+    accountability.ts  Generic actual-vs-target alert engine (see below)
+    stockInsights.ts   Stocks' rule-based "opinion" engine, built on accountability's evaluateTarget()
+    ohlc.ts            Deterministic OHLC series generator + range-based slicing
+    settleUp.ts        Generic multi-party debt-simplification engine (see below), with unit tests
+    fantasyLedger.ts   Turns a league's standings into settle-up balances for settleUp.ts
+    liftStats.ts       Derives every lift stat (last session, trend, PR, volume, streaks) from set data
+    fitnessInsights.ts Fitness's rule-based alerts, built on accountability's evaluateTarget()
+    plannerInsights.ts Planner's rule-based schedule alert, built on accountability's evaluateTarget()
+    plannerDates.ts    The shared "today" reference weekday, derived once from the app's reference date
+    statusOverview.ts  Pulls every domain's own alert function into one severity-ranked list (see below),
+                        with unit tests
+    format.ts, dates.ts, clsx.ts
+  store/
+    useHomeStore.ts    Zustand store for all Home tab data, persisted to localStorage
+    useStocksStore.ts  Zustand store for Stocks tab data, persisted to localStorage
+    useFantasyStore.ts Zustand store for Fantasy tab data (incl. active league), persisted to localStorage
+    useFitnessStore.ts Zustand store for Fitness tab data, persisted to localStorage
+    usePlannerStore.ts Zustand store for Planner tab data, persisted to localStorage
+    (Status has no store of its own — it only reads the other four)
+  tabs/
+    home/        Home tab + its six sub-tabs (Insights, Overview, Accounts, Transactions, Budgets, Goals)
+    stocks/      Stocks tab + its three sub-tabs (Portfolio, Watchlist, Insights) + stock detail view
+    fantasy/     Fantasy tab + its four sub-tabs (Lobby, Matchup, My Team, Ledger) + draft board view
+    fitness/     Fitness tab + its four sub-tabs (Today, Nutrients, Lifts, Progress) + lift detail view
+    planner/     Planner tab + its two sub-tabs (Week, Goals), the time-grid view, and the
+                 plan-tomorrow view
+    status/      StatusView — the 6th top-level tab, no sub-tabs
+    placeholder/ Kept as the defensive fallback for an unrecognized tabId typed into the URL bar
+  types/domain.ts, stocks.ts, fantasy.ts, fitness.ts, planner.ts    Shared data types
 ```
 
-Swap in SportsDataIO or another provider by implementing the same `OddsClient` interface.
+## The accountability engine
 
-## Daily live edge report
+`src/lib/accountability.ts` is deliberately generic: `evaluateTarget()` takes
+an `{ actual, target, direction }` reading — `direction: "ceiling"` for things
+that shouldn't be exceeded (a budget), `direction: "floor"` for things that
+shouldn't fall short (protein intake, task completion rate) — and returns a
+`crit` / `warn` / no-flag verdict, plus (since Stage 6) a `severity` number
+for ranking two flagged things against each other (see "Is Status what makes
+the accountability engine a unifying core?" below). `buildAvenueAlerts()` is
+the one concrete consumer today: it feeds Home's avenue (budget) data through the engine and
+attaches budget-specific copy. Later stages (Fitness, Planner) can reuse
+`evaluateTarget()` directly with their own targets and their own copy,
+without touching the engine itself.
 
-```bash
-export ODDS_API_KEY=your_key_here
-python scripts/daily_report.py                 # console report
-python scripts/daily_report.py --csv today.csv  # also write a CSV
-python scripts/daily_report.py --edge-threshold 0.04 --bankroll 25000  # overrides
-```
+## The stock insights engine
 
-For each of NFL/NCAAF/NBA, this pulls today's scheduled games and pre-game odds, trains
-that sport's production models on all history currently in the database (refusing to do so,
-per sport, if there isn't enough validated history — see `models/production.py`), projects
-each team's real trailing form onto today's matchup with zero leakage
-(`models.features.build_live_feature_rows`), de-vigs the market price on moneyline/spread/
-total and compares to the model, flags games clearing the configured edge threshold, sizes a
-suggested stake with capped fractional Kelly against your current bankroll, and — before
-printing anything — logs each flagged prediction through `guardrails/prediction_log.py` so
-it's timestamped and cannot later be edited or cherry-picked. If nothing clears the bar that
-day, it says so explicitly rather than lowering the threshold to manufacture a pick.
+`src/lib/stockInsights.ts` follows the exact same pattern as the
+accountability engine — pure functions that take data and return a verdict,
+not tone/note strings sitting in the seed data. It reuses
+`evaluateTarget()` directly for the concentration check (a ceiling: position
+value as a fraction of held equity vs. a 35% single-position guideline) and
+adds two more rules of its own: day-range-as-%-of-price for volatility, and
+a sector-coverage check for "does this watchlist stock fill a gap in your
+holdings." `buildStockInsights()` runs all three rules per stock and keeps
+the highest-severity result, generating the reasoning text from the real
+numbers rather than hard-coding it.
 
-Team names returned by your odds provider must match the team names in your historical
-`games`/`team_game_stats` data for the rolling-form lookup to find them — reconcile any
-naming differences between your schedule/stats source and your odds source before relying
-on this in production.
+## OHLC data and the range pills
 
-## Deploying to Streamlit Community Cloud
+The prototype's `history` array was 10 bare numbers with no notion of a
+date, and its range pills (1D/1W/.../ALL) didn't actually filter anything —
+selecting one just changed which button looked active. `src/lib/ohlc.ts`
+generates a full ~1-trading-year, date-indexed OHLC series per stock (seeded
+deterministically per ticker, so it's stable across reloads), with the
+prototype's original 10 values pinned as the most recent closes. Both the
+line chart and the new candlestick chart read from the same sliced series,
+and the range pills now genuinely change how much of it is shown.
 
-The dashboard (with its "Today's Bets" tab) can run as a free-tier Streamlit Community Cloud
-app with a public URL. Two things are worth understanding before you deploy, not after:
+## The settle-up engine
 
-1. **A fresh deploy needs a seed database.** Streamlit Cloud clones this repo from scratch;
-   `data/*.db` is gitignored so your local history wouldn't come along. This repo commits ONE
-   deliberate exception, `data/seed_betting.db` — real NFL + NCAAF history, zero logged
-   predictions — and `data_pipeline/db.py::ensure_seeded()` copies it into place as
-   `data/betting.db` automatically the first time anything touches the database, on any fresh
-   checkout (including your own local machine, if you clone this repo without ever running
-   `scripts/ingest_real_data.py` yourself). It never overwrites an existing live database.
-2. **The deployed app's local filesystem is not guaranteed to persist.** A free-tier app that
-   sleeps from inactivity and wakes back up keeps its filesystem; a redeploy (you push new
-   code) or the platform recycling the container does not — it resets to a fresh clone of
-   the repo, which means back to the seed data, losing any predictions the running app had
-   logged. For a "glance at today's picks" use case this is a non-issue (the app just
-   retrains and re-flags on next visit). If you want the prediction log itself to be durable
-   for real CLV tracking over time, either (a) use the sidebar's **Download database
-   backup** button periodically and keep the file somewhere durable, or (b) swap SQLite for a
-   real hosted database later (the schema in `data_pipeline/db.py` is plain ANSI SQL — see
-   its module docstring). This repo does not attempt (b) — know this going in rather than
-   discovering it after a redeploy wipes a week of logged predictions.
+`src/lib/settleUp.ts` is the third module built on this pattern, and the
+most domain-agnostic yet — unlike `accountability.ts` and `stockInsights.ts`,
+it has no financial or fantasy vocabulary in it at all. It takes a flat
+`{ who, amount }[]` (positive = owed to them, negative = they owe) and
+returns the minimal set of payments that zeroes everyone out, using the
+standard greedy "largest creditor pays largest debtor" approach — the same
+practical algorithm Splitwise itself uses, not a full NP-hard optimal
+solver. `src/lib/fantasyLedger.ts` is the one piece that knows what a
+fantasy payout means: it turns a league's final standings into a balance
+sheet (top-3 payout structure: 60/30/10% of the pot) and hands the combined
+balances across every league to `settleUp()`. Because `settleUp()` merges
+repeated names before doing anything else, "You" being in both leagues
+collapses into one net number rather than two separate settle-ups — see
+`src/lib/settleUp.test.ts` for the merge behavior specifically.
 
-### Steps
+## Set-by-set lift logging and the derived stats
 
-1. Push this repo (or your fork of it) to GitHub — the branch you want deployed needs to be
-   there, including `data/seed_betting.db`, `requirements.txt`, and `runtime.txt`.
-2. Go to [share.streamlit.io](https://share.streamlit.io) and sign in with GitHub.
-3. Click **New app**, choose this repository and branch, and set **Main file path** to
-   `dashboard/app.py`.
-4. Before (or right after) the first deploy, open the app's **Settings -> Secrets** in the
-   Streamlit Cloud UI and add:
-   ```toml
-   ODDS_API_KEY = "sk-your-real-key-here"
-   ```
-   This is the Streamlit Cloud equivalent of the local `.env` file — `data_pipeline/config.py::odds_api_key()`
-   already checks `st.secrets["ODDS_API_KEY"]` automatically when a plain environment variable
-   isn't set, so no code change is needed for this to work. **Never put the key in the
-   repository itself** (not in `config/config.yaml`, not in a committed `.env` — that file is
-   gitignored specifically so this mistake is hard to make).
-5. Deploy. First boot installs `requirements.txt` (a few minutes) and seeds the database from
-   `data/seed_betting.db` on first use. Open the **Today's Bets** tab and click **Run today's
-   report** — the first click trains real production models on the seed data (can take a
-   minute or two on free-tier compute; the app tells you this while it's working) and pulls
-   live odds with your configured key.
-6. To refresh the underlying historical data later (a new NFL/NCAAF season, more seasons),
-   regenerate `data/seed_betting.db` locally (`python scripts/ingest_real_data.py --sport ALL`,
-   then copy `data/betting.db` over `data/seed_betting.db`), commit it, and push — Streamlit
-   Cloud redeploys automatically on a push to the watched branch.
+The prototype's `lifts` array stored `last`, `trend`, `up`, and `pr` as
+separately-authored strings alongside a 10-point `history` sparkline — and,
+like the concentration/volatility numbers in Stage 2, they don't actually
+agree with their own `history` array (see "the prototype's trend labels
+didn't hold up," below). `src/data/fitnessSeed.ts` keeps only the real
+primitives (a lift's name, muscle group, training slot, and its set-by-set
+`sessions`) and ports the prototype's 10-point history faithfully as the
+sequence of weekly top-set weights; everything else — last session, 3-week
+trend, all-time PR, the sparkline, weekly training volume, working-set PRs,
+and training-split streaks — is computed from that log by
+`src/lib/liftStats.ts`. Each lift also carries one session dated well before
+the 10-week window, holding the single all-time-max-effort set that backs
+the PR line — a real 1-rep-max is a different record category from a
+"heaviest top set at your normal working reps," so both are tracked and
+neither is hard-coded.
 
-## Validated backtest results (real data)
+## Fitness: did the accountability engine generalize a second time?
 
-Walk-forward results from `models/production.py` against the real NFL/NCAAF data described
-above (config's `sports.<SPORT>.rolling_window_games` as the minimum training window, retrain
-every `max(50, window/10)` games — see that file). A coin-flip model scores Brier=0.25,
-LogLoss=0.693; lower is better on both.
+Yes, cleanly, with zero changes to `evaluateTarget()` or its types.
+`src/lib/fitnessInsights.ts` is a fourth consumer built on the exact same
+shape as `buildAvenueAlerts()` (Stage 1) and the concentration check in
+`stockInsights.ts` (Stage 2) — build an `AccountabilityTarget`, call
+`evaluateTarget()`, attach copy:
 
-| Sport | OOS games (n) | GBM Brier | GBM LogLoss | Elo Brier | Elo LogLoss |
-|---|---|---|---|---|---|
-| NFL (2015-2023, 9 seasons) | 1,099 | 0.2404 | 0.7976 | **0.2319** | **0.6623** |
-| NCAAF (2012-2021, 10 seasons, FBS only) | 5,251 | 0.1926 | 0.5877 | **0.1871** | **0.5516** |
+- **Calories vs. goal** — `direction: "ceiling"`, same shape as a budget.
+- **Protein vs. goal** — `direction: "floor"`; this is the one the
+  prototype's own `buildAlerts()` already special-cased inline (see
+  index.html's global accountability function), which is a strong signal
+  the engine's ceiling/floor split was already the right generalization —
+  Stage 1 just hadn't had a second consumer to prove it yet.
+- **Workout completion vs. planned** (2 of 3 Push/Legs/Pull slots this
+  week) — `direction: "floor"` again, the same shape as protein, just a
+  count instead of a gram measurement. This is the one genuinely new
+  proof point: a target that's neither money nor macros still drops into
+  `{ actual, target, direction }` without friction.
 
-**Honest read: the plain Elo baseline currently beats the gradient-boosted model on both
-real sports, out of sample.** By this project's own stated design principle (see
-`models/elo.py`'s docstring: Elo exists as "the sanity-check benchmark... if the GBM can't
-beat a simple Elo rating out-of-sample, the extra complexity isn't earning its keep"), the
-honest conclusion is that the GBM's current feature set/hyperparameters are NOT yet earning
-their complexity on real data. Plausible reasons, untested: 300 trees is likely too many for
-fold sizes in the low thousands (overfitting on ~34 rolling-average features derived from
-noisy 8-game windows); no injury data; no PFF grades; no referee assignments. Regularizing
-the GBM harder (fewer trees, shallower depth, stronger L2) and/or blending it with Elo rather
-than replacing it are the natural next steps — neither has been tried yet. NCAAF's larger
-talent gaps between teams make it more predictable than NFL for both models, which matches
-common football intuition and is not itself surprising.
+The only new code is the domain module that builds those three targets and
+writes their copy — same division of labor as every consumer before it.
+Fitness alerts render on the Today sub-tab, not folded into Home's Overview
+card; each tab surfaces its own domain's alerts rather than one cross-tab
+rollup, keeping `accountability.ts` itself ignorant of which tab is calling
+it.
 
-**None of the above is an edge claim.** Beating a coin flip on win-probability calibration is
-a necessary condition for having a tradeable signal, not a sufficient one — the number that
-actually matters is model probability vs. the DE-VIGGED MARKET's probability (the `edge/`
-module), and that can only be assessed with real, dated CLV tracking over a real bet sample,
-which requires actually running `scripts/daily_report.py` against live odds for a while (see
-`edge_detection.min_sample_size_for_significance` = 200 bets before ANY edge/CLV number here
-should be treated as meaningful). This system has zero real logged bets as of this writing.
+## Planner: the fifth consumer, and the cleanest fit of all
 
-## Kelly sizing & risk
+`src/lib/plannerInsights.ts` wires schedule-completion in as a fifth
+consumer, same shape as every one before it — and this is the one case
+where I didn't have to design anything. The prototype's own Week view
+already computed this exact check inline (`rate = doneCt/all.length`,
+crit under 50%, warn under 80%), with a hint that reads *"Same escalation
+logic as budget/calorie tracking, applied to your schedule"* — a straight-up
+admission in the original code that it belonged in the shared engine and
+just never got moved there. `buildScheduleAlert()` is that move: a
+`direction: "floor"` target (`actual` = items done, `target` = items
+planned) through `evaluateTarget()`, with the prototype's own 0.5/0.8
+thresholds passed explicitly (they differ from the engine's floor
+defaults, the same way `stockInsights.ts` and `fitnessInsights.ts` both
+pass their own thresholds). Zero design decisions needed — the prototype
+had already specified the target shape, the thresholds, and the copy; it
+just hadn't been asked to route through one shared function yet.
 
-Bet sizing uses **fractional Kelly** (configurable, default quarter-Kelly) derived from the
-model's de-vigged edge and the offered price, hard-capped at a configurable percentage of
-bankroll (default 2%) regardless of what Kelly says. See `config/config.yaml`.
+## Stage 5's verdict: the engine as a shared primitive, not yet a unifying experience
 
-## Disclaimers module
+This was the honest assessment Stage 5 closed on. It's kept verbatim below
+because Stage 6 is a direct answer to it — read it first, then "Is Status
+what makes the accountability engine a unifying core?" for what changed.
 
-`guardrails/disclaimers.py` is imported by the dashboard and by every report-generating
-function; it is not decorative. It surfaces variance context (Monte Carlo bankroll paths)
-alongside every ROI or CLV claim.
+Both, honestly, and it matters which claim you're making.
+
+**As a shared decision primitive, it's real and it worked.** One function,
+`evaluateTarget({ actual, target, direction }, thresholds)`, has made every
+crit/warn/none call in this app since Stage 1, across five domains whose
+units share nothing — dollars, grams, percent-of-equity, a training-slot
+count, a to-do count — and it never needed a signature change, a new
+field, or a special case to fit any of them. That's not a small claim: I
+designed the ceiling/floor split in Stage 1 speculatively, before Stocks,
+Fitness, or Planner existed, and it held on the first try every time after
+that. The protein check is the strongest evidence — the *prototype's own
+author* had already hand-written that exact floor-check logic inline, and
+independently landed on a shape `evaluateTarget()` already covered. The
+Planner check is the second — its hint text literally says it belongs in
+the shared engine, written before I touched it. Two independent
+confirmations from the original design, not just my own after-the-fact
+narrative.
+
+**As a unifying product experience, it stops at "shared logic," and that's
+a real limit, not a rounding error.** Nothing about what a user sees ties
+these five together. Each domain module (`buildAvenueAlerts`,
+`stockInsights`, `fitnessInsights`, `plannerInsights`) owns 100% of its own
+copy, and that copy — the part a person actually reads — shares no
+vocabulary, no visual thread beyond the same alert-card styling, and never
+appears in the same place. There is no "everything you're behind on today"
+view that pulls from all four; each tab's alerts render only on that tab.
+That was a deliberate choice every stage (documented above each time), and
+I'd still defend it — a cross-tab rollup wasn't asked for, and bolting one
+on now would be scope creep in service of a nicer README sentence, not the
+product. But it means the honest description of what got built is "one
+well-designed, genuinely reusable risk-classification function, used by
+four independent alert generators" — not "an accountability system the
+user experiences as one thing." Those are different claims, and only the
+first one is true today.
+
+**And Fantasy is the tell.** It has zero consumers, by design, because
+points-based competition isn't an actual-vs-target-with-a-goal shape —
+there's no "goal" a score is failing to meet, just relative standing. That
+the engine correctly has *nothing to say* about an entire domain is a sign
+it wasn't stretched to fit everywhere it could reach; it's a sign it was
+applied where the shape genuinely existed and left alone where it didn't.
+A true "unifying core of the app" would have found a way to touch Fantasy
+too, even if forced. This one didn't try, and that restraint is exactly
+why it stayed narrow and correct instead of becoming five special cases
+wearing one function's clothing.
+
+## Is Status what makes the accountability engine a unifying core?
+
+Mostly yes — Status closes the exact gap Stage 5 named — but building it
+surfaced two real things worth being honest about before the verdict.
+
+### What it exposed, before I wrote a line of the view
+
+**`stockInsights.ts` computed a ratio and then threw it away.**
+`concentrationFlag()`/`volatilityFlag()` already call `evaluateTarget()` and
+get a real `{ tone, ratio }` back, but `StockInsight` (the type every other
+part of the Stocks tab consumes) never had anywhere to put it — only
+`{ ticker, tone, title, note }`. The other four consumers
+(`buildAvenueAlerts`, `fitnessInsights`'s three, `plannerInsights`) all
+return `AccountabilityAlert`, which does carry the engine's output. So
+Stocks wasn't a logic mismatch, it was a *plumbing* gap: the one consumer
+that didn't yet need to rank itself against anything else was the one
+consumer that had quietly stopped forwarding a number the engine already
+computed. Fixing it meant adding `severity` to `evaluateTarget()`'s return
+and threading it through all five consumers' existing code paths (a field
+added to an existing return object at each call site, not new logic) — see
+the diff in `accountability.ts`, `stockInsights.ts`, `fitnessInsights.ts`,
+and `plannerInsights.ts`. This is the "were the per-domain functions
+designed with cross-domain comparison in mind" answer: not quite, in one
+concrete, fixable place.
+
+**Planner and Fitness independently track "did the workout happen," and
+they don't agree.** Planner's Wednesday has a `"Gym — Pull"` to-do block
+with its own `done` boolean; Fitness's Wednesday Pull session is tracked
+through real set data in `liftStats.ts`. These are two separate models of
+the same real-world Wednesday, and nothing reconciles them — a person could
+tick the Planner checkbox without ever opening Fitness, or log a full
+Deadlift session without ever touching the Planner block, and the app
+would show two different, equally confident answers to "did leg day
+happen this week" depending which tab you asked. This isn't a bug in
+either domain's own logic (each is internally consistent and does exactly
+what its tab promises), and Status doesn't paper over it — it can't, since
+it only forwards what each domain already believes. I'm not fixing this
+now: unifying two independent data models is a real, separate project
+(which one is authoritative? does checking one auto-check the other?),
+not something a ranking view should quietly decide on the way to shipping.
+It's named here so it's a known seam, not a surprise someone finds later.
+
+### The severity rule, explicit
+
+Primary key: **tone** — every `crit` item sorts before every `warn` item,
+full stop, regardless of magnitude. This is each domain's own designed
+judgment (a domain's crit threshold is always the more extreme line it
+chose), so Status defers to it rather than second-guessing it with a
+"big warn might matter more than a small crit" override.
+
+Secondary key, within a tone: **severity**, `evaluateTarget()`'s new field
+— `ratio - 1` for a ceiling check, `1 - ratio` for a floor check. In plain
+terms: *how far past target, as a fraction of target, direction-normalized
+so bigger always means worse.* It's what lets a stock 46% over its
+concentration guideline, a schedule at 25% completion, and a budget 40%
+over rank on one scale without knowing dollars from percent from a task
+count — each is reduced to "how far off its own goal, proportionally."
+
+This is a heuristic, not a proof, and it has a real limit worth stating
+plainly: because different consumers configure different threshold widths
+for `evaluateTarget()` (a budget's warn band is ratio 0.9–1.1, workout
+completion's is 0.6–0.85 — call it 4× wider), a `warn` from a
+narrow-banded ceiling check and a `warn` from a wide-banded floor check
+aren't landing on a perfectly uniform severity scale, even though both
+numbers are legitimately "% off target." I chose not to over-engineer a
+threshold-relative normalization (it would mean threading each check's
+`critRatio`/`warnRatio` into `AccountabilityAlert` too, a bigger touch to
+a type every consumer shares, for a correction whose real-world impact I
+can't yet demonstrate matters). What I can demonstrate: I hand-verified
+this app's actual current alerts against the rule before writing a single
+line of `StatusView.tsx`, and `src/lib/statusOverview.test.ts` locks the
+result in — including a case that looked like a bug and wasn't: Home's
+Food avenue sits at 94.5% of budget (`warn`, "close to its limit"), which
+makes its `severity` slightly *negative* (`0.945 - 1`). That's correct,
+not broken — within the `ceiling` formula, severity is still monotonic in
+ratio across the whole warn band, so Food properly sorts as the *mildest*
+warn in the list (see the running app: it's last), even though the raw
+number reads oddly in isolation. I don't display the raw severity number
+anywhere for exactly this reason — it's an ordering key, not a stat.
+
+### Where it lives, and why
+
+A 6th top-level nav tab, not the root landing route. The alternative — make
+`/` show Status before a domain is picked — would've changed what every
+existing bookmark/muscle-memory from Stages 1–5 lands on (currently
+`/home/insights`), for a feature that's explicitly a *summary of* the five
+domains, not a replacement front door to them. A tab is also the
+architecturally cheaper fit: `TopNav`/`SubTabNav`/`TabIndexRedirect` are
+already built around "a tab is an entry in `TABS`," and Status needed only
+one real accommodation to that contract — a tab can have zero sub-tabs
+(`subs: []`), handled once, generically, not as a Status-specific hack.
+Named "Status," not "Overview," specifically to avoid colliding with
+Home's existing Overview sub-tab, and to read as "here's where things
+stand" rather than a notifications inbox.
+
+### The verdict
+
+Stage 5 said: real shared classification logic, no unifying product
+experience. Status is that missing experience — one ranked list, sourced
+from the same four functions, each item routing back to its actual
+domain, with a rule I can state in one sentence and defend with a test.
+What it does *not* do, and what would be dishonest to claim it does: make
+the five domains' *data* agree with each other. Status is only as
+trustworthy as its five inputs, and I found one case (Planner vs. Fitness
+on "did the workout happen") where those inputs quietly disagree. A
+unifying view can rank what each domain believes; it can't make the
+domains believe the same thing without becoming a much bigger project
+than "Stage 6." That's the honest boundary of what got built here.
+
+## Notable decisions not spelled out in the brief
+
+- **Routing**: sub-tabs get real URLs (`/home/transactions`, etc.) via
+  react-router instead of the prototype's in-memory `active`/`activeSub`
+  state, so a tab is bookmarkable/shareable and browser back/forward works.
+- **Design tokens live as CSS variables**, and Tailwind's theme just points
+  at them (`bg-bg`, `text-sub`, `border-neg`, …) rather than hard-coding hex
+  anywhere. This keeps a single source of truth and leaves room for a future
+  theme swap without touching components.
+- **Transaction search/filter is local component state**, not part of the
+  persisted store — it's view state, not data, so it resets on tab
+  navigation/refresh the way a normal search box would.
+- **Subscription next-charge dates** are seeded data (`nextChargeDate` on
+  each subscription in `homeSeed.ts`) that didn't exist in the prototype;
+  the countdown in `src/lib/dates.ts` is computed from that against the
+  current date, and turns amber/red inside a 3-day window.
+- **Merchant/subscription avatar colors** are deterministic (hashed from the
+  name) rather than random, so a given merchant always gets the same chip
+  color across a session and after refresh.
+- **Stock detail pages get real URLs** (`/stocks/portfolio/nvda`,
+  `/stocks/watchlist/coin`), extending Stage 1's routing decision rather than
+  reintroducing the prototype's in-memory `stockDetail` state — so a detail
+  page is linkable and back/forward works, and per-ticker chart state
+  (range, chart type) resets cleanly when you navigate to a different stock.
+- **Concentration/volatility numbers are genuinely computed**, not the
+  prototype's hand-written flavor text — e.g. the prototype's NVDA note says
+  "31% of your equity book," which doesn't match its own share/price data.
+  With real position values NVDA is ~46% of held equity, AAPL ~30%, VTI
+  ~24%; I picked a 35% single-position guideline (rather than the
+  prototype's fictional 25%) so the concentration rule flags the same single
+  holding (NVDA, warn) as the original, but from numbers that actually add
+  up.
+- **Sector allocation on the Portfolio tab is computed live** from current
+  share values instead of the prototype's static, disconnected
+  `sectorAlloc` array (which didn't match the holdings either) — same
+  reasoning as above.
+- **1D range shows the last 5 daily bars**, not a single point — there's no
+  real intraday data in this mock dataset, so a literal "1 day" slice would
+  render an unreadable single candle.
+- **The active league lives in the Fantasy store, not the URL** — unlike
+  Stocks' detail pages, switching leagues in the Lobby needs to be
+  remembered across Matchup/My Team/Ledger (it is in the prototype too, via
+  a shared `activeLeagueIdx`), so it's modeled as persisted selection state
+  rather than a route param. The draft board and stock/goal detail pages are
+  still URL-based, since those really are "drill into one item" navigation.
+- **Each league's "fair share" for settle-up is `potTotal / participant
+  count`, not the seeded `buyIn` field** — Office Pool's data has a $20
+  buy-in but a $180 pot for 5 people ($100 expected), an inconsistency in
+  the prototype's own numbers. `buyIn` is ported and stored, matching the
+  brief, but it was never actually rendered anywhere in the prototype
+  either; deriving the fair share from the pot keeps the ledger genuinely
+  zero-sum, which the settle-up math requires.
+- **Draft board is Sunday Guys only** — Office Pool has no roster data in
+  the prototype either (it explicitly shows an empty state there), so
+  inventing draft picks for it would mean fabricating a roster the rest of
+  the app doesn't have. It gets the same empty state instead.
+- **Vitest is pinned to 2.1.x**, not the current 3.x line, because 3.x
+  requires Vite 6/7/8 and this project is on Vite 5 (matching Stage 1's
+  choice). `npm audit` will flag vitest's dev-only tooling chain even at the
+  latest 2.1.9 patch; it's a dev-server-only issue (arbitrary file read via
+  the Vitest UI/mocker), not something that ships in the built app, and
+  fixing it for real means a Vite 6+ upgrade — out of scope for adding tests
+  to one module.
+- **A lift detail page gets a real URL** (`/fitness/lifts/bench-press`),
+  same reasoning as stock and league-draft detail pages: it's "one specific
+  thing I'm looking at right now." "Which day" and "which meal" never
+  needed a routing decision at all — Today is fixed to the current day (the
+  prototype has no historical diary to browse) and meals render inline with
+  no drill-down page, so neither one is "one specific thing" navigation in
+  what was actually built.
+- **The prototype's trend labels didn't hold up under real computation** —
+  a third instance of the pattern from Stages 2 (concentration %) and 3
+  (buy-in vs. pot). Comparing each lift's ported history 3 entries back
+  (its "3wk" framing, at one session/week) gives a uniform +5 lb for all
+  four lifts, including Deadlift — whose prototype label claims "flat."
+  Deadlift's real 10-week window genuinely does plateau (one working-set PR
+  in the whole window, at week 2 — see Progress's personal history), it's
+  just that the specific 3-week comparison window isn't where that
+  plateau shows up numerically. I kept the honest computed number rather
+  than re-engineering the data to force "flat" back out of it.
+- **"Planned training days" means 3 (Push/Legs/Pull), not the 5 non-rest
+  calendar days in `split`** — the split template calls for Push and Pull
+  twice each per week, but the lift log (like a real lifter's actual habits)
+  only reliably has one dated session per muscle group per week. Grading
+  against 5 when only 3 session-types exist in the data would make the
+  workout-completion check permanently and uninformatively "crit." 3 is
+  what the underlying set data can actually attest to.
+- **Workout "completion" is measured by session depth (2+ sets logged),
+  not by whether a session happened at all** — this keeps a lift's full
+  10-week weight-progression history intact (every week has a real
+  top-set weight, so the sparkline and PR detection never have gaps) while
+  still giving the accountability engine and the streak timeline a genuine,
+  set-data-derived signal: a single rushed set on deadlift day reads as an
+  incomplete Pull slot, exactly like the app's live demo state has it for
+  the current week.
+- **Only "plan tomorrow" gets a URL** (`/planner/week/plan-tomorrow`) — it's
+  the one piece of Planner that's "one specific thing being looked at right
+  now," same reasoning as a stock/lift detail page or the Fantasy draft
+  board. The list/grid view toggle is local component state, not store or
+  URL — same call as Stocks' line/candle toggle, since it's a rendering
+  mode for whatever's already on screen, not a drill-down or a
+  cross-sub-tab context. Planner has no equivalent of Fantasy's
+  `activeLeagueId`: Week and Goals don't share a selectable "which one am I
+  looking at," so nothing beyond the data itself lives in
+  `usePlannerStore`.
+- **Blocks gained `start`/`end` time fields that don't exist in the
+  prototype** — the time-grid view has no way to lay blocks out in a day
+  without some notion of when they happen. Each block got a specific,
+  reasonable time authored by hand (not derived from nothing), the same
+  way Stage 1 added `nextChargeDate` to subscriptions for the countdown
+  feature. The list view and the time-grid view render the same
+  `PlannerBlock` records — including inline editing, which lives in one
+  shared `PlannerBlockRow` component used by both — so "two renderings,
+  one dataset" is literally true of the code, not just the data.
+- **"Today" for Planner is derived, not hand-picked** — `plannerDates.ts`
+  computes the weekday from the same reference date (`2026-09-22`, a
+  Tuesday) the other three dated seeds already anchor to, rather than
+  hardcoding `"Tue"` as a magic string disconnected from the rest of the
+  app. It happens to land on a day with exactly one unfinished item, which
+  makes "plan tomorrow" demo something real instead of an empty state.
+- **Dropping a block in "plan tomorrow" really deletes it** — no dropped-
+  items archive. The brief's concern was items vanishing *silently*
+  (auto-rollover, or just falling off the list unnoticed); a person
+  explicitly clicking "Drop" after being shown the item is the opposite of
+  that, so an audit trail wasn't necessary to satisfy the actual
+  requirement, and I didn't add one un-asked.
+- **A Status item's link target is the most specific/actionable page for
+  it, not necessarily the literal tab it also renders on** — matching the
+  brief's own stock-detail-page example rather than a stricter "link to
+  where this exact text is shown" reading. Home's budget alerts render on
+  Overview but link to Budgets (the full per-avenue breakdown); Fitness's
+  calorie/protein alerts link to Today (where they render) but
+  workout-completion links to Lifts (where you'd actually go log a missed
+  session) instead. Each mapping is a couple of lines in
+  `statusOverview.ts`, not a new pattern — just picking the better
+  destination per alert id.
+- **Status's empty state is verified by unit test, not a screenshot** — the
+  app has no interactive controls anywhere that zero out spending,
+  concentration, volatility, or schedule completion all at once (Planner's
+  checkboxes are the only real "fix an alert" interaction that exists), so
+  there was no way to reach the empty state through the live UI to
+  screenshot it. `src/lib/statusOverview.test.ts` constructs the on-track
+  inputs directly and asserts `buildStatusItems()` returns `[]`; the JSX
+  branch that renders on an empty array is a two-line ternary, low enough
+  risk that I didn't chase a live repro for it.
