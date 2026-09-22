@@ -29,6 +29,12 @@ export interface AccountabilityAlert {
   title: string;
   body: string;
   ratio: number;
+  /** How far past the bad threshold, as a fraction of target — direction-
+   *  normalized so bigger is always worse regardless of ceiling/floor. See
+   *  evaluateTarget()'s doc comment for the full explanation; this is what
+   *  lets Status (src/lib/statusOverview.ts) rank a budget alert against a
+   *  workout alert without knowing either domain's units. */
+  severity: number;
 }
 
 export interface EvaluateThresholds {
@@ -46,26 +52,38 @@ export function defaultThresholds(direction: TargetDirection): EvaluateThreshold
 }
 
 /**
- * Evaluate a single actual-vs-target reading and return its tone + ratio,
- * or null if it isn't worth flagging. Callers layer their own copy
- * (title/body) on top — this function only decides *whether* and *how bad*.
+ * Evaluate a single actual-vs-target reading and return its tone, ratio,
+ * and severity, or null if it isn't worth flagging. Callers layer their
+ * own copy (title/body) on top — this function only decides *whether* and
+ * *how bad*.
+ *
+ * `severity` is `ratio - 1` for a ceiling (e.g. 18% over budget → 0.18) and
+ * `1 - ratio` for a floor (e.g. 2 of 3 workouts → 33% under → 0.333) — in
+ * both cases, "how far past target, as a fraction of target, in the bad
+ * direction." It's what makes alerts from different domains and different
+ * units (dollars, grams, a slot count) comparable at all: not by their raw
+ * numbers, which share nothing, but by how far proportionally each one
+ * missed its own goal. It isn't perfect — a target near zero would blow
+ * this up — but nothing in this app's domains is anywhere near that edge
+ * case today.
  */
 export function evaluateTarget(
   t: AccountabilityTarget,
   thresholds: EvaluateThresholds = defaultThresholds(t.direction),
-): { tone: AlertTone; ratio: number } | null {
+): { tone: AlertTone; ratio: number; severity: number } | null {
   if (t.target === 0) return null;
   const ratio = t.actual / t.target;
+  const severity = t.direction === "ceiling" ? ratio - 1 : 1 - ratio;
 
   if (t.direction === "ceiling") {
-    if (ratio > thresholds.critRatio) return { tone: "crit", ratio };
-    if (ratio > thresholds.warnRatio) return { tone: "warn", ratio };
+    if (ratio > thresholds.critRatio) return { tone: "crit", ratio, severity };
+    if (ratio > thresholds.warnRatio) return { tone: "warn", ratio, severity };
     return null;
   }
 
   // floor
-  if (ratio < thresholds.critRatio) return { tone: "crit", ratio };
-  if (ratio < thresholds.warnRatio) return { tone: "warn", ratio };
+  if (ratio < thresholds.critRatio) return { tone: "crit", ratio, severity };
+  if (ratio < thresholds.warnRatio) return { tone: "warn", ratio, severity };
   return null;
 }
 
@@ -99,6 +117,7 @@ export function buildAvenueAlerts(avenues: Avenue[]): AccountabilityAlert[] {
         sourceId: avenue.id,
         tone: "crit",
         ratio: result.ratio,
+        severity: result.severity,
         title: `${avenue.name} is ${Math.round((result.ratio - 1) * 100)}% over budget`,
         body: `You've spent ${fmtMoney(avenue.spent)} of a ${fmtMoney(avenue.budget)} budget. Recommendation: cut new ${avenue.name.toLowerCase()} spend for the rest of the week, or move ${fmtMoney(Math.round(overBy * 0.6))} out of a lower-priority avenue to cover it.`,
       });
@@ -108,6 +127,7 @@ export function buildAvenueAlerts(avenues: Avenue[]): AccountabilityAlert[] {
         sourceId: avenue.id,
         tone: "warn",
         ratio: result.ratio,
+        severity: result.severity,
         title: `${avenue.name} is close to its limit`,
         body: `${fmtMoney(avenue.budget - avenue.spent)} left with days remaining in the cycle. No action needed yet.`,
       });

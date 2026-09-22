@@ -24,6 +24,7 @@ function buildCalorieAlert(data: FitnessData): AccountabilityAlert | null {
     sourceId: "calories",
     tone: result.tone,
     ratio: result.ratio,
+    severity: result.severity,
     title:
       result.tone === "crit"
         ? `${Math.round(over)} kcal over goal today`
@@ -51,6 +52,7 @@ function buildProteinAlert(data: FitnessData): AccountabilityAlert | null {
     sourceId: "protein",
     tone: result.tone,
     ratio: result.ratio,
+    severity: result.severity,
     title: "Protein is trending under target",
     body: `${data.macros.protein.cur}g of a ${data.macros.protein.goal}g goal today. Consider adding a shake or a higher-protein dinner.`,
   };
@@ -75,6 +77,7 @@ function buildWorkoutCompletionAlert(data: FitnessData): AccountabilityAlert | n
     sourceId: "workout-completion",
     tone: result.tone,
     ratio: result.ratio,
+    severity: result.severity,
     title: `${week.completedSlots} of ${week.plannedSlots} planned training days this week`,
     body: `Push/Legs/Pull is the plan each week; ${week.plannedSlots - week.completedSlots} slot${week.plannedSlots - week.completedSlots === 1 ? "" : "s"} didn't get a full session. No penalty, just visibility.`,
   };

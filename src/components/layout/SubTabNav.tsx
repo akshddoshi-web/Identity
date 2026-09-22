@@ -11,6 +11,8 @@ interface Props {
 export function SubTabNav({ tabId, subs, activeSub }: Props) {
   const navigate = useNavigate();
 
+  if (subs.length === 0) return null;
+
   return (
     <nav className="mb-5 flex overflow-x-auto border border-t-0 border-border">
       {subs.map((sub) => {

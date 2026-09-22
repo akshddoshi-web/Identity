@@ -14,6 +14,10 @@ export interface StockInsight {
   tone: StockTone;
   title: string;
   note: string;
+  /** Same meaning as AccountabilityAlert.severity — undefined for the
+   *  default "ok, no flags" case, where there's no threshold breach to
+   *  measure a distance from. */
+  severity?: number;
 }
 
 export interface StockRuleConfig {
@@ -61,7 +65,7 @@ function concentrationFlag(
   stock: Stock,
   portfolioValue: number,
   rules: StockRuleConfig,
-): { tone: AlertTone; note: string } | null {
+): { tone: AlertTone; note: string; severity: number } | null {
   if (!stock.held || !stock.shares || portfolioValue === 0) return null;
 
   const positionPct = (stock.price * stock.shares) / portfolioValue;
@@ -76,6 +80,7 @@ function concentrationFlag(
 
   return {
     tone: result.tone,
+    severity: result.severity,
     note:
       result.tone === "crit"
         ? `${stock.ticker} is ${pctS}% of your held equity — well past the ${guidelineS}% single-position guideline. This is a concentrated bet; a pullback here would hit your whole portfolio.`
@@ -83,7 +88,7 @@ function concentrationFlag(
   };
 }
 
-function volatilityFlag(stock: Stock, rules: StockRuleConfig): { tone: AlertTone; note: string } | null {
+function volatilityFlag(stock: Stock, rules: StockRuleConfig): { tone: AlertTone; note: string; severity: number } | null {
   const dayRangePct = dayRangeVolatilityPct(stock);
   if (dayRangePct === null) return null;
 
@@ -97,6 +102,7 @@ function volatilityFlag(stock: Stock, rules: StockRuleConfig): { tone: AlertTone
 
   return {
     tone: result.tone,
+    severity: result.severity,
     note:
       result.tone === "crit"
         ? `${stock.ticker}'s day range is ${pctS}% of price — high volatility relative to a moderate risk tolerance. Flagged, not recommended.`
@@ -104,15 +110,22 @@ function volatilityFlag(stock: Stock, rules: StockRuleConfig): { tone: AlertTone
   };
 }
 
-function diversificationFlag(stock: Stock, heldSectors: Set<string>): { tone: "ok"; note: string } | null {
+function diversificationFlag(
+  stock: Stock,
+  heldSectors: Set<string>,
+): { tone: "ok"; note: string; severity: number } | null {
   if (stock.held || heldSectors.has(stock.sector)) return null;
   return {
     tone: "ok",
+    severity: 0,
     note: `Watchlist: fits a diversification gap in your portfolio — you have 0% ${stock.sector} exposure right now.`,
   };
 }
 
-const SEVERITY: Record<StockTone, number> = { crit: 2, warn: 1, ok: 0 };
+// Tie-break when a stock triggers more than one rule — ranks by tone
+// severity level (crit/warn/ok), not to be confused with the numeric
+// `severity` field on each candidate (how far past its own threshold).
+const TONE_RANK: Record<StockTone, number> = { crit: 2, warn: 1, ok: 0 };
 
 /**
  * Evaluates every rule for every stock and returns one insight per ticker —
@@ -129,12 +142,18 @@ export function buildStockInsights(stocks: Stock[], rules: StockRuleConfig = DEF
       concentrationFlag(stock, portfolioValue, rules),
       volatilityFlag(stock, rules),
       diversificationFlag(stock, heldSectors),
-    ].filter((c): c is { tone: StockTone; note: string } => c !== null);
+    ].filter((c): c is { tone: StockTone; note: string; severity: number } => c !== null);
 
-    const winner = candidates.sort((a, b) => SEVERITY[b.tone] - SEVERITY[a.tone])[0];
+    const winner = candidates.sort((a, b) => TONE_RANK[b.tone] - TONE_RANK[a.tone])[0];
 
     if (winner) {
-      return { ticker: stock.ticker, tone: winner.tone, title: `${stock.ticker} — ${stock.name}`, note: winner.note };
+      return {
+        ticker: stock.ticker,
+        tone: winner.tone,
+        severity: winner.severity,
+        title: `${stock.ticker} — ${stock.name}`,
+        note: winner.note,
+      };
     }
 
     return {

@@ -1,7 +1,8 @@
 # Identity
 
-A personal life-OS web app. Home, Stocks, Fantasy, Fitness, and Planner in one
-black/white, monochrome, mono-and-grotesk UI.
+A personal life-OS web app. Home, Stocks, Fantasy, Fitness, Planner, and a
+cross-domain Status view, in one black/white, monochrome, mono-and-grotesk
+UI.
 
 **Stage 1**: the app shell (5 tabs + sub-tab strip) and the fully-built
 **Home** tab — insights feed, spending overview, linked accounts,
@@ -20,12 +21,20 @@ Progress, set-by-set workout logging, a weekly-training-volume-by-muscle-
 group chart, and a personal PR/streak history — all wired into the same
 accountability engine Home's budgets use.
 
-**Stage 5** (this repo, right now — the final stage): the fully-built
-**Planner** tab — Week, Goals, a toggleable Google-Calendar-style time-grid
-view, Notion-style inline editing, and a Sunsama-style "plan tomorrow"
-end-of-day ritual. All five tabs are now real; nothing left is a
-placeholder. See "Is the accountability engine actually the unifying core?"
-below for the honest closing assessment.
+**Stage 5**: the fully-built **Planner** tab — Week, Goals, a toggleable
+Google-Calendar-style time-grid view, Notion-style inline editing, and a
+Sunsama-style "plan tomorrow" end-of-day ritual. All five domain tabs are
+real; nothing was left as a placeholder.
+
+**Stage 6** (this repo, right now): **Status**, a 6th top-level view that
+pulls every domain's already-computed accountability alerts — budget,
+stock concentration, calories, workouts, schedule — into one list, ranked
+by actual severity across domains that share no units, each item linking
+back to its source. This is the payoff Stage 5 closed on: the engine was a
+real shared classification function across four tabs, but nothing tied
+them together for the person using the app. See "Is Status what makes the
+accountability engine a unifying core?" below for how the ranking works and
+what it does and doesn't prove.
 
 ## Stack
 
@@ -47,9 +56,10 @@ npm run dev
 
 Then open **http://localhost:5173**.
 
-Run the unit tests (currently `src/lib/settleUp.ts`, the debt-simplification
-engine — Fitness's new logic is exercised through the app itself rather than
-a second test file; see "Did the accountability engine actually
+Run the unit tests (`src/lib/settleUp.ts`, the debt-simplification engine,
+and `src/lib/statusOverview.ts`, Status's cross-domain ranking — Fitness and
+Planner's own logic is exercised through the app itself rather than a
+dedicated test file; see "Did the accountability engine actually
 generalize?" below for why nothing there needed new tests):
 
 ```bash
@@ -85,6 +95,8 @@ src/
     fitnessInsights.ts Fitness's rule-based alerts, built on accountability's evaluateTarget()
     plannerInsights.ts Planner's rule-based schedule alert, built on accountability's evaluateTarget()
     plannerDates.ts    The shared "today" reference weekday, derived once from the app's reference date
+    statusOverview.ts  Pulls every domain's own alert function into one severity-ranked list (see below),
+                        with unit tests
     format.ts, dates.ts, clsx.ts
   store/
     useHomeStore.ts    Zustand store for all Home tab data, persisted to localStorage
@@ -92,6 +104,7 @@ src/
     useFantasyStore.ts Zustand store for Fantasy tab data (incl. active league), persisted to localStorage
     useFitnessStore.ts Zustand store for Fitness tab data, persisted to localStorage
     usePlannerStore.ts Zustand store for Planner tab data, persisted to localStorage
+    (Status has no store of its own — it only reads the other four)
   tabs/
     home/        Home tab + its six sub-tabs (Insights, Overview, Accounts, Transactions, Budgets, Goals)
     stocks/      Stocks tab + its three sub-tabs (Portfolio, Watchlist, Insights) + stock detail view
@@ -99,8 +112,8 @@ src/
     fitness/     Fitness tab + its four sub-tabs (Today, Nutrients, Lifts, Progress) + lift detail view
     planner/     Planner tab + its two sub-tabs (Week, Goals), the time-grid view, and the
                  plan-tomorrow view
-    placeholder/ Unused now that all 5 tabs are built; kept as the defensive fallback for an
-                 unrecognized tabId typed into the URL bar
+    status/      StatusView — the 6th top-level tab, no sub-tabs
+    placeholder/ Kept as the defensive fallback for an unrecognized tabId typed into the URL bar
   types/domain.ts, stocks.ts, fantasy.ts, fitness.ts, planner.ts    Shared data types
 ```
 
@@ -110,8 +123,10 @@ src/
 an `{ actual, target, direction }` reading — `direction: "ceiling"` for things
 that shouldn't be exceeded (a budget), `direction: "floor"` for things that
 shouldn't fall short (protein intake, task completion rate) — and returns a
-`crit` / `warn` / no-flag verdict. `buildAvenueAlerts()` is the one concrete
-consumer today: it feeds Home's avenue (budget) data through the engine and
+`crit` / `warn` / no-flag verdict, plus (since Stage 6) a `severity` number
+for ranking two flagged things against each other (see "Is Status what makes
+the accountability engine a unifying core?" below). `buildAvenueAlerts()` is
+the one concrete consumer today: it feeds Home's avenue (budget) data through the engine and
 attaches budget-specific copy. Later stages (Fitness, Planner) can reuse
 `evaluateTarget()` directly with their own targets and their own copy,
 without touching the engine itself.
@@ -220,7 +235,11 @@ pass their own thresholds). Zero design decisions needed — the prototype
 had already specified the target shape, the thresholds, and the copy; it
 just hadn't been asked to route through one shared function yet.
 
-## Is the accountability engine actually the unifying core, or five generators that share a signature?
+## Stage 5's verdict: the engine as a shared primitive, not yet a unifying experience
+
+This was the honest assessment Stage 5 closed on. It's kept verbatim below
+because Stage 6 is a direct answer to it — read it first, then "Is Status
+what makes the accountability engine a unifying core?" for what changed.
 
 Both, honestly, and it matters which claim you're making.
 
@@ -267,6 +286,115 @@ A true "unifying core of the app" would have found a way to touch Fantasy
 too, even if forced. This one didn't try, and that restraint is exactly
 why it stayed narrow and correct instead of becoming five special cases
 wearing one function's clothing.
+
+## Is Status what makes the accountability engine a unifying core?
+
+Mostly yes — Status closes the exact gap Stage 5 named — but building it
+surfaced two real things worth being honest about before the verdict.
+
+### What it exposed, before I wrote a line of the view
+
+**`stockInsights.ts` computed a ratio and then threw it away.**
+`concentrationFlag()`/`volatilityFlag()` already call `evaluateTarget()` and
+get a real `{ tone, ratio }` back, but `StockInsight` (the type every other
+part of the Stocks tab consumes) never had anywhere to put it — only
+`{ ticker, tone, title, note }`. The other four consumers
+(`buildAvenueAlerts`, `fitnessInsights`'s three, `plannerInsights`) all
+return `AccountabilityAlert`, which does carry the engine's output. So
+Stocks wasn't a logic mismatch, it was a *plumbing* gap: the one consumer
+that didn't yet need to rank itself against anything else was the one
+consumer that had quietly stopped forwarding a number the engine already
+computed. Fixing it meant adding `severity` to `evaluateTarget()`'s return
+and threading it through all five consumers' existing code paths (a field
+added to an existing return object at each call site, not new logic) — see
+the diff in `accountability.ts`, `stockInsights.ts`, `fitnessInsights.ts`,
+and `plannerInsights.ts`. This is the "were the per-domain functions
+designed with cross-domain comparison in mind" answer: not quite, in one
+concrete, fixable place.
+
+**Planner and Fitness independently track "did the workout happen," and
+they don't agree.** Planner's Wednesday has a `"Gym — Pull"` to-do block
+with its own `done` boolean; Fitness's Wednesday Pull session is tracked
+through real set data in `liftStats.ts`. These are two separate models of
+the same real-world Wednesday, and nothing reconciles them — a person could
+tick the Planner checkbox without ever opening Fitness, or log a full
+Deadlift session without ever touching the Planner block, and the app
+would show two different, equally confident answers to "did leg day
+happen this week" depending which tab you asked. This isn't a bug in
+either domain's own logic (each is internally consistent and does exactly
+what its tab promises), and Status doesn't paper over it — it can't, since
+it only forwards what each domain already believes. I'm not fixing this
+now: unifying two independent data models is a real, separate project
+(which one is authoritative? does checking one auto-check the other?),
+not something a ranking view should quietly decide on the way to shipping.
+It's named here so it's a known seam, not a surprise someone finds later.
+
+### The severity rule, explicit
+
+Primary key: **tone** — every `crit` item sorts before every `warn` item,
+full stop, regardless of magnitude. This is each domain's own designed
+judgment (a domain's crit threshold is always the more extreme line it
+chose), so Status defers to it rather than second-guessing it with a
+"big warn might matter more than a small crit" override.
+
+Secondary key, within a tone: **severity**, `evaluateTarget()`'s new field
+— `ratio - 1` for a ceiling check, `1 - ratio` for a floor check. In plain
+terms: *how far past target, as a fraction of target, direction-normalized
+so bigger always means worse.* It's what lets a stock 46% over its
+concentration guideline, a schedule at 25% completion, and a budget 40%
+over rank on one scale without knowing dollars from percent from a task
+count — each is reduced to "how far off its own goal, proportionally."
+
+This is a heuristic, not a proof, and it has a real limit worth stating
+plainly: because different consumers configure different threshold widths
+for `evaluateTarget()` (a budget's warn band is ratio 0.9–1.1, workout
+completion's is 0.6–0.85 — call it 4× wider), a `warn` from a
+narrow-banded ceiling check and a `warn` from a wide-banded floor check
+aren't landing on a perfectly uniform severity scale, even though both
+numbers are legitimately "% off target." I chose not to over-engineer a
+threshold-relative normalization (it would mean threading each check's
+`critRatio`/`warnRatio` into `AccountabilityAlert` too, a bigger touch to
+a type every consumer shares, for a correction whose real-world impact I
+can't yet demonstrate matters). What I can demonstrate: I hand-verified
+this app's actual current alerts against the rule before writing a single
+line of `StatusView.tsx`, and `src/lib/statusOverview.test.ts` locks the
+result in — including a case that looked like a bug and wasn't: Home's
+Food avenue sits at 94.5% of budget (`warn`, "close to its limit"), which
+makes its `severity` slightly *negative* (`0.945 - 1`). That's correct,
+not broken — within the `ceiling` formula, severity is still monotonic in
+ratio across the whole warn band, so Food properly sorts as the *mildest*
+warn in the list (see the running app: it's last), even though the raw
+number reads oddly in isolation. I don't display the raw severity number
+anywhere for exactly this reason — it's an ordering key, not a stat.
+
+### Where it lives, and why
+
+A 6th top-level nav tab, not the root landing route. The alternative — make
+`/` show Status before a domain is picked — would've changed what every
+existing bookmark/muscle-memory from Stages 1–5 lands on (currently
+`/home/insights`), for a feature that's explicitly a *summary of* the five
+domains, not a replacement front door to them. A tab is also the
+architecturally cheaper fit: `TopNav`/`SubTabNav`/`TabIndexRedirect` are
+already built around "a tab is an entry in `TABS`," and Status needed only
+one real accommodation to that contract — a tab can have zero sub-tabs
+(`subs: []`), handled once, generically, not as a Status-specific hack.
+Named "Status," not "Overview," specifically to avoid colliding with
+Home's existing Overview sub-tab, and to read as "here's where things
+stand" rather than a notifications inbox.
+
+### The verdict
+
+Stage 5 said: real shared classification logic, no unifying product
+experience. Status is that missing experience — one ranked list, sourced
+from the same four functions, each item routing back to its actual
+domain, with a rule I can state in one sentence and defend with a test.
+What it does *not* do, and what would be dishonest to claim it does: make
+the five domains' *data* agree with each other. Status is only as
+trustworthy as its five inputs, and I found one case (Planner vs. Fitness
+on "did the workout happen") where those inputs quietly disagree. A
+unifying view can rank what each domain believes; it can't make the
+domains believe the same thing without becoming a much bigger project
+than "Stage 6." That's the honest boundary of what got built here.
 
 ## Notable decisions not spelled out in the brief
 
@@ -394,3 +522,22 @@ wearing one function's clothing.
   explicitly clicking "Drop" after being shown the item is the opposite of
   that, so an audit trail wasn't necessary to satisfy the actual
   requirement, and I didn't add one un-asked.
+- **A Status item's link target is the most specific/actionable page for
+  it, not necessarily the literal tab it also renders on** — matching the
+  brief's own stock-detail-page example rather than a stricter "link to
+  where this exact text is shown" reading. Home's budget alerts render on
+  Overview but link to Budgets (the full per-avenue breakdown); Fitness's
+  calorie/protein alerts link to Today (where they render) but
+  workout-completion links to Lifts (where you'd actually go log a missed
+  session) instead. Each mapping is a couple of lines in
+  `statusOverview.ts`, not a new pattern — just picking the better
+  destination per alert id.
+- **Status's empty state is verified by unit test, not a screenshot** — the
+  app has no interactive controls anywhere that zero out spending,
+  concentration, volatility, or schedule completion all at once (Planner's
+  checkboxes are the only real "fix an alert" interaction that exists), so
+  there was no way to reach the empty state through the live UI to
+  screenshot it. `src/lib/statusOverview.test.ts` constructs the on-track
+  inputs directly and asserts `buildStatusItems()` returns `[]`; the JSX
+  branch that renders on an empty array is a two-line ternary, low enough
+  risk that I didn't chase a live repro for it.

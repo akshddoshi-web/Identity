@@ -6,7 +6,7 @@ import { SubTabNav } from "./SubTabNav";
 export function AppShell() {
   const { tabId = "home", subSlug, detailId } = useParams();
   const tab = findTab(tabId) ?? findTab("home")!;
-  const activeSub = subSlug ?? slugify(tab.subs[0]);
+  const activeSub = subSlug ?? (tab.subs[0] ? slugify(tab.subs[0]) : "");
 
   return (
     <div className="mx-auto max-w-app px-4 pb-24 pt-7">
@@ -29,7 +29,7 @@ export function AppShell() {
       <TopNav activeTab={tab.id} />
       <SubTabNav tabId={tab.id} subs={tab.subs} activeSub={activeSub} />
 
-      <div key={`${tab.id}/${activeSub}/${detailId ?? ""}`}>
+      <div key={`${tab.id}/${activeSub}/${detailId ?? ""}`} className={tab.subs.length === 0 ? "mt-5" : undefined}>
         <Outlet />
       </div>
 

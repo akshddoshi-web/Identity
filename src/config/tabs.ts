@@ -14,6 +14,11 @@ export const TABS: TabConfig[] = [
   { id: "fantasy", label: "FANTASY", subs: ["Lobby", "Matchup", "My Team", "Ledger"] },
   { id: "fitness", label: "FITNESS", subs: ["Today", "Nutrients", "Lifts", "Progress"] },
   { id: "planner", label: "PLANNER", subs: ["Week", "Goals"] },
+  // No sub-tabs on purpose: Status isn't organized into sections the way
+  // every other tab is, it's one ranked list. AppShell/SubTabNav/
+  // TabIndexRedirect all treat an empty subs[] as "this tab has no sub-tab
+  // strip," not a bug to route around.
+  { id: "status", label: "STATUS", subs: [] },
 ];
 
 export function slugify(label: string): string {

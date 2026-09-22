@@ -35,6 +35,7 @@ export function buildScheduleAlert(week: WeekPlan): AccountabilityAlert | null {
     sourceId: "schedule",
     tone: result.tone,
     ratio: result.ratio,
+    severity: result.severity,
     title: `Completion rate is ${pctS(rate)} this week`,
     body:
       result.tone === "crit"
