@@ -5,9 +5,11 @@ interface Props {
   label: string;
   size?: number;
   shape?: "circle" | "square";
+  /** Override the computed initials, e.g. "YOU" instead of a 2-letter clip. */
+  text?: string;
 }
 
-export function Avatar({ label, size = 36, shape = "circle" }: Props) {
+export function Avatar({ label, size = 36, shape = "circle", text }: Props) {
   const color = colorForLabel(label);
   return (
     <div
@@ -17,7 +19,7 @@ export function Avatar({ label, size = 36, shape = "circle" }: Props) {
       )}
       style={{ width: size, height: size, background: "var(--panel3)", color }}
     >
-      {initials(label)}
+      {text ?? initials(label)}
     </div>
   );
 }

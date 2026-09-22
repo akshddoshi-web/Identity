@@ -7,10 +7,14 @@ black/white, monochrome, mono-and-grotesk UI.
 **Home** tab — insights feed, spending overview, linked accounts,
 transactions, budgets, and savings goals.
 
-**Stage 2** (this repo, right now): the fully-built **Stocks** tab —
-Portfolio, Watchlist, Insights, and a stock detail page with a real
-line/candlestick chart toggle and working range pills. Fantasy, Fitness, and
-Planner are still placeholder tabs, to be built out in later stages.
+**Stage 2**: the fully-built **Stocks** tab — Portfolio, Watchlist, Insights,
+and a stock detail page with a real line/candlestick chart toggle and
+working range pills.
+
+**Stage 3** (this repo, right now): the fully-built **Fantasy** tab — Lobby,
+Matchup, My Team, Ledger, both leagues, league-switching, a snake-draft
+board, and a real multi-league debt-simplification settle-up. Fitness and
+Planner are still placeholder tabs — the last stage.
 
 ## Stack
 
@@ -32,6 +36,13 @@ npm run dev
 
 Then open **http://localhost:5173**.
 
+Run the unit tests (currently `src/lib/settleUp.ts`, the debt-simplification
+engine):
+
+```bash
+npm run test
+```
+
 ## Project layout
 
 ```
@@ -44,19 +55,25 @@ src/
     homeSeed.ts    Sample data for the Home tab, mirrors the original prototype 1:1
     stocksSeed.ts  Sample data for the Stocks tab; holding/watchlist fields mirror the
                    prototype 1:1, price history is expanded into a full OHLC series (see below)
+    fantasySeed.ts Sample data for the Fantasy tab, mirrors the prototype's two leagues 1:1;
+                   draft board is new (see below)
   lib/
     accountability.ts  Generic actual-vs-target alert engine (see below)
     stockInsights.ts   Stocks' rule-based "opinion" engine, built on accountability's evaluateTarget()
     ohlc.ts            Deterministic OHLC series generator + range-based slicing
+    settleUp.ts        Generic multi-party debt-simplification engine (see below), with unit tests
+    fantasyLedger.ts   Turns a league's standings into settle-up balances for settleUp.ts
     format.ts, dates.ts, clsx.ts
   store/
     useHomeStore.ts    Zustand store for all Home tab data, persisted to localStorage
     useStocksStore.ts  Zustand store for Stocks tab data, persisted to localStorage
+    useFantasyStore.ts Zustand store for Fantasy tab data (incl. active league), persisted to localStorage
   tabs/
     home/        Home tab + its six sub-tabs (Insights, Overview, Accounts, Transactions, Budgets, Goals)
     stocks/      Stocks tab + its three sub-tabs (Portfolio, Watchlist, Insights) + stock detail view
-    placeholder/ "Coming soon" placeholder used by Fantasy/Fitness/Planner
-  types/domain.ts, stocks.ts    Shared data types
+    fantasy/     Fantasy tab + its four sub-tabs (Lobby, Matchup, My Team, Ledger) + draft board view
+    placeholder/ "Coming soon" placeholder used by Fitness/Planner
+  types/domain.ts, stocks.ts, fantasy.ts    Shared data types
 ```
 
 ## The accountability engine
@@ -94,6 +111,23 @@ deterministically per ticker, so it's stable across reloads), with the
 prototype's original 10 values pinned as the most recent closes. Both the
 line chart and the new candlestick chart read from the same sliced series,
 and the range pills now genuinely change how much of it is shown.
+
+## The settle-up engine
+
+`src/lib/settleUp.ts` is the third module built on this pattern, and the
+most domain-agnostic yet — unlike `accountability.ts` and `stockInsights.ts`,
+it has no financial or fantasy vocabulary in it at all. It takes a flat
+`{ who, amount }[]` (positive = owed to them, negative = they owe) and
+returns the minimal set of payments that zeroes everyone out, using the
+standard greedy "largest creditor pays largest debtor" approach — the same
+practical algorithm Splitwise itself uses, not a full NP-hard optimal
+solver. `src/lib/fantasyLedger.ts` is the one piece that knows what a
+fantasy payout means: it turns a league's final standings into a balance
+sheet (top-3 payout structure: 60/30/10% of the pot) and hands the combined
+balances across every league to `settleUp()`. Because `settleUp()` merges
+repeated names before doing anything else, "You" being in both leagues
+collapses into one net number rather than two separate settle-ups — see
+`src/lib/settleUp.test.ts` for the merge behavior specifically.
 
 ## Notable decisions not spelled out in the brief
 
@@ -134,3 +168,27 @@ and the range pills now genuinely change how much of it is shown.
 - **1D range shows the last 5 daily bars**, not a single point — there's no
   real intraday data in this mock dataset, so a literal "1 day" slice would
   render an unreadable single candle.
+- **The active league lives in the Fantasy store, not the URL** — unlike
+  Stocks' detail pages, switching leagues in the Lobby needs to be
+  remembered across Matchup/My Team/Ledger (it is in the prototype too, via
+  a shared `activeLeagueIdx`), so it's modeled as persisted selection state
+  rather than a route param. The draft board and stock/goal detail pages are
+  still URL-based, since those really are "drill into one item" navigation.
+- **Each league's "fair share" for settle-up is `potTotal / participant
+  count`, not the seeded `buyIn` field** — Office Pool's data has a $20
+  buy-in but a $180 pot for 5 people ($100 expected), an inconsistency in
+  the prototype's own numbers. `buyIn` is ported and stored, matching the
+  brief, but it was never actually rendered anywhere in the prototype
+  either; deriving the fair share from the pot keeps the ledger genuinely
+  zero-sum, which the settle-up math requires.
+- **Draft board is Sunday Guys only** — Office Pool has no roster data in
+  the prototype either (it explicitly shows an empty state there), so
+  inventing draft picks for it would mean fabricating a roster the rest of
+  the app doesn't have. It gets the same empty state instead.
+- **Vitest is pinned to 2.1.x**, not the current 3.x line, because 3.x
+  requires Vite 6/7/8 and this project is on Vite 5 (matching Stage 1's
+  choice). `npm audit` will flag vitest's dev-only tooling chain even at the
+  latest 2.1.9 patch; it's a dev-server-only issue (arbitrary file read via
+  the Vitest UI/mocker), not something that ships in the built app, and
+  fixing it for real means a Vite 6+ upgrade — out of scope for adding tests
+  to one module.
