@@ -15,11 +15,17 @@ working range pills.
 Ledger, both leagues, league-switching, a snake-draft board, and a real
 multi-league debt-simplification settle-up.
 
-**Stage 4** (this repo, right now): the fully-built **Fitness** tab —
-Today, Nutrients, Lifts, Progress, set-by-set workout logging, a
-weekly-training-volume-by-muscle-group chart, and a personal PR/streak
-history — all wired into the same accountability engine Home's budgets use.
-Planner is the last placeholder tab, the final stage.
+**Stage 4**: the fully-built **Fitness** tab — Today, Nutrients, Lifts,
+Progress, set-by-set workout logging, a weekly-training-volume-by-muscle-
+group chart, and a personal PR/streak history — all wired into the same
+accountability engine Home's budgets use.
+
+**Stage 5** (this repo, right now — the final stage): the fully-built
+**Planner** tab — Week, Goals, a toggleable Google-Calendar-style time-grid
+view, Notion-style inline editing, and a Sunsama-style "plan tomorrow"
+end-of-day ritual. All five tabs are now real; nothing left is a
+placeholder. See "Is the accountability engine actually the unifying core?"
+below for the honest closing assessment.
 
 ## Stack
 
@@ -67,6 +73,8 @@ src/
     fitnessSeed.ts Sample data for the Fitness tab; macros/meals/micronutrients/split/bodyweight
                    mirror the prototype 1:1, lift history is expanded into a real set-by-set log
                    (see below)
+    plannerSeed.ts Sample data for the Planner tab; blocks/categories/goals mirror the prototype
+                   1:1, each block gets a new start/end time for the time-grid view (see below)
   lib/
     accountability.ts  Generic actual-vs-target alert engine (see below)
     stockInsights.ts   Stocks' rule-based "opinion" engine, built on accountability's evaluateTarget()
@@ -75,19 +83,25 @@ src/
     fantasyLedger.ts   Turns a league's standings into settle-up balances for settleUp.ts
     liftStats.ts       Derives every lift stat (last session, trend, PR, volume, streaks) from set data
     fitnessInsights.ts Fitness's rule-based alerts, built on accountability's evaluateTarget()
+    plannerInsights.ts Planner's rule-based schedule alert, built on accountability's evaluateTarget()
+    plannerDates.ts    The shared "today" reference weekday, derived once from the app's reference date
     format.ts, dates.ts, clsx.ts
   store/
     useHomeStore.ts    Zustand store for all Home tab data, persisted to localStorage
     useStocksStore.ts  Zustand store for Stocks tab data, persisted to localStorage
     useFantasyStore.ts Zustand store for Fantasy tab data (incl. active league), persisted to localStorage
     useFitnessStore.ts Zustand store for Fitness tab data, persisted to localStorage
+    usePlannerStore.ts Zustand store for Planner tab data, persisted to localStorage
   tabs/
     home/        Home tab + its six sub-tabs (Insights, Overview, Accounts, Transactions, Budgets, Goals)
     stocks/      Stocks tab + its three sub-tabs (Portfolio, Watchlist, Insights) + stock detail view
     fantasy/     Fantasy tab + its four sub-tabs (Lobby, Matchup, My Team, Ledger) + draft board view
     fitness/     Fitness tab + its four sub-tabs (Today, Nutrients, Lifts, Progress) + lift detail view
-    placeholder/ "Coming soon" placeholder used by Planner
-  types/domain.ts, stocks.ts, fantasy.ts, fitness.ts    Shared data types
+    planner/     Planner tab + its two sub-tabs (Week, Goals), the time-grid view, and the
+                 plan-tomorrow view
+    placeholder/ Unused now that all 5 tabs are built; kept as the defensive fallback for an
+                 unrecognized tabId typed into the URL bar
+  types/domain.ts, stocks.ts, fantasy.ts, fitness.ts, planner.ts    Shared data types
 ```
 
 ## The accountability engine
@@ -161,7 +175,7 @@ the PR line — a real 1-rep-max is a different record category from a
 "heaviest top set at your normal working reps," so both are tracked and
 neither is hard-coded.
 
-## Did the accountability engine actually generalize?
+## Fitness: did the accountability engine generalize a second time?
 
 Yes, cleanly, with zero changes to `evaluateTarget()` or its types.
 `src/lib/fitnessInsights.ts` is a fourth consumer built on the exact same
@@ -187,6 +201,72 @@ Fitness alerts render on the Today sub-tab, not folded into Home's Overview
 card; each tab surfaces its own domain's alerts rather than one cross-tab
 rollup, keeping `accountability.ts` itself ignorant of which tab is calling
 it.
+
+## Planner: the fifth consumer, and the cleanest fit of all
+
+`src/lib/plannerInsights.ts` wires schedule-completion in as a fifth
+consumer, same shape as every one before it — and this is the one case
+where I didn't have to design anything. The prototype's own Week view
+already computed this exact check inline (`rate = doneCt/all.length`,
+crit under 50%, warn under 80%), with a hint that reads *"Same escalation
+logic as budget/calorie tracking, applied to your schedule"* — a straight-up
+admission in the original code that it belonged in the shared engine and
+just never got moved there. `buildScheduleAlert()` is that move: a
+`direction: "floor"` target (`actual` = items done, `target` = items
+planned) through `evaluateTarget()`, with the prototype's own 0.5/0.8
+thresholds passed explicitly (they differ from the engine's floor
+defaults, the same way `stockInsights.ts` and `fitnessInsights.ts` both
+pass their own thresholds). Zero design decisions needed — the prototype
+had already specified the target shape, the thresholds, and the copy; it
+just hadn't been asked to route through one shared function yet.
+
+## Is the accountability engine actually the unifying core, or five generators that share a signature?
+
+Both, honestly, and it matters which claim you're making.
+
+**As a shared decision primitive, it's real and it worked.** One function,
+`evaluateTarget({ actual, target, direction }, thresholds)`, has made every
+crit/warn/none call in this app since Stage 1, across five domains whose
+units share nothing — dollars, grams, percent-of-equity, a training-slot
+count, a to-do count — and it never needed a signature change, a new
+field, or a special case to fit any of them. That's not a small claim: I
+designed the ceiling/floor split in Stage 1 speculatively, before Stocks,
+Fitness, or Planner existed, and it held on the first try every time after
+that. The protein check is the strongest evidence — the *prototype's own
+author* had already hand-written that exact floor-check logic inline, and
+independently landed on a shape `evaluateTarget()` already covered. The
+Planner check is the second — its hint text literally says it belongs in
+the shared engine, written before I touched it. Two independent
+confirmations from the original design, not just my own after-the-fact
+narrative.
+
+**As a unifying product experience, it stops at "shared logic," and that's
+a real limit, not a rounding error.** Nothing about what a user sees ties
+these five together. Each domain module (`buildAvenueAlerts`,
+`stockInsights`, `fitnessInsights`, `plannerInsights`) owns 100% of its own
+copy, and that copy — the part a person actually reads — shares no
+vocabulary, no visual thread beyond the same alert-card styling, and never
+appears in the same place. There is no "everything you're behind on today"
+view that pulls from all four; each tab's alerts render only on that tab.
+That was a deliberate choice every stage (documented above each time), and
+I'd still defend it — a cross-tab rollup wasn't asked for, and bolting one
+on now would be scope creep in service of a nicer README sentence, not the
+product. But it means the honest description of what got built is "one
+well-designed, genuinely reusable risk-classification function, used by
+four independent alert generators" — not "an accountability system the
+user experiences as one thing." Those are different claims, and only the
+first one is true today.
+
+**And Fantasy is the tell.** It has zero consumers, by design, because
+points-based competition isn't an actual-vs-target-with-a-goal shape —
+there's no "goal" a score is failing to meet, just relative standing. That
+the engine correctly has *nothing to say* about an entire domain is a sign
+it wasn't stretched to fit everywhere it could reach; it's a sign it was
+applied where the shape genuinely existed and left alone where it didn't.
+A true "unifying core of the app" would have found a way to touch Fantasy
+too, even if forced. This one didn't try, and that restraint is exactly
+why it stayed narrow and correct instead of becoming five special cases
+wearing one function's clothing.
 
 ## Notable decisions not spelled out in the brief
 
@@ -283,3 +363,34 @@ it.
   set-data-derived signal: a single rushed set on deadlift day reads as an
   incomplete Pull slot, exactly like the app's live demo state has it for
   the current week.
+- **Only "plan tomorrow" gets a URL** (`/planner/week/plan-tomorrow`) — it's
+  the one piece of Planner that's "one specific thing being looked at right
+  now," same reasoning as a stock/lift detail page or the Fantasy draft
+  board. The list/grid view toggle is local component state, not store or
+  URL — same call as Stocks' line/candle toggle, since it's a rendering
+  mode for whatever's already on screen, not a drill-down or a
+  cross-sub-tab context. Planner has no equivalent of Fantasy's
+  `activeLeagueId`: Week and Goals don't share a selectable "which one am I
+  looking at," so nothing beyond the data itself lives in
+  `usePlannerStore`.
+- **Blocks gained `start`/`end` time fields that don't exist in the
+  prototype** — the time-grid view has no way to lay blocks out in a day
+  without some notion of when they happen. Each block got a specific,
+  reasonable time authored by hand (not derived from nothing), the same
+  way Stage 1 added `nextChargeDate` to subscriptions for the countdown
+  feature. The list view and the time-grid view render the same
+  `PlannerBlock` records — including inline editing, which lives in one
+  shared `PlannerBlockRow` component used by both — so "two renderings,
+  one dataset" is literally true of the code, not just the data.
+- **"Today" for Planner is derived, not hand-picked** — `plannerDates.ts`
+  computes the weekday from the same reference date (`2026-09-22`, a
+  Tuesday) the other three dated seeds already anchor to, rather than
+  hardcoding `"Tue"` as a magic string disconnected from the rest of the
+  app. It happens to land on a day with exactly one unfinished item, which
+  makes "plan tomorrow" demo something real instead of an empty state.
+- **Dropping a block in "plan tomorrow" really deletes it** — no dropped-
+  items archive. The brief's concern was items vanishing *silently*
+  (auto-rollover, or just falling off the list unnoticed); a person
+  explicitly clicking "Drop" after being shown the item is the opposite of
+  that, so an audit trail wasn't necessary to satisfy the actual
+  requirement, and I didn't add one un-asked.
