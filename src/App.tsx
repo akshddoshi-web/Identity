@@ -10,6 +10,7 @@ export default function App() {
         <Route index element={<Navigate to="/home/insights" replace />} />
         <Route path=":tabId" element={<TabIndexRedirect />} />
         <Route path=":tabId/:subSlug" element={<TabContent />} />
+        <Route path=":tabId/:subSlug/:detailId" element={<TabContent />} />
       </Route>
       <Route path="*" element={<Navigate to="/home/insights" replace />} />
     </Routes>

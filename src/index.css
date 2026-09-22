@@ -54,3 +54,19 @@ body {
 .scrollbar-thin::-webkit-scrollbar-track {
   background: transparent;
 }
+
+/* Bloomberg-terminal-style ticker tape (Stocks tab) */
+@keyframes ticker-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+.animate-ticker {
+  animation: ticker-scroll 32s linear infinite;
+}
+.animate-ticker:hover {
+  animation-play-state: paused;
+}

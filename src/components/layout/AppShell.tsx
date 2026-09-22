@@ -4,7 +4,7 @@ import { TopNav } from "./TopNav";
 import { SubTabNav } from "./SubTabNav";
 
 export function AppShell() {
-  const { tabId = "home", subSlug } = useParams();
+  const { tabId = "home", subSlug, detailId } = useParams();
   const tab = findTab(tabId) ?? findTab("home")!;
   const activeSub = subSlug ?? slugify(tab.subs[0]);
 
@@ -29,7 +29,7 @@ export function AppShell() {
       <TopNav activeTab={tab.id} />
       <SubTabNav tabId={tab.id} subs={tab.subs} activeSub={activeSub} />
 
-      <div key={`${tab.id}/${activeSub}`}>
+      <div key={`${tab.id}/${activeSub}/${detailId ?? ""}`}>
         <Outlet />
       </div>
 
