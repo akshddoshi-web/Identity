@@ -1,3 +1,2 @@
-ingest_backtest
-nba
-# rerun: backfill NBA lines
+full
+nfl
