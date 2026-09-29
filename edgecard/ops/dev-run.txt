@@ -1,2 +1,2 @@
-ingest
-nfl
+close
+both
