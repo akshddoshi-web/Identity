@@ -5,7 +5,7 @@ name: edgecard-source-check
 on:
   push:
     paths:
-      - "edgecard/scripts/check_sources.py"
+      - "edgecard/scripts/check_sources*.py"
       - ".github/workflows/edgecard-sources.yml"
   workflow_dispatch:
   schedule:
@@ -28,6 +28,8 @@ jobs:
         run: pip install nba_api || echo "nba_api install failed"
       - name: Check sources
         run: python scripts/check_sources.py --samples
+      - name: Round-2 probes
+        run: python scripts/check_sources_round2.py
       - uses: actions/upload-artifact@v4
         with:
           name: source-check
