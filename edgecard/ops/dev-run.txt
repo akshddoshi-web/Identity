@@ -1,2 +1,3 @@
-close
+none
 nfl
+# push-trigger for development runs; edit line 1 (full|recheck|close|ingest|backtest|ingest_backtest)

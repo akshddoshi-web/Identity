@@ -43,7 +43,7 @@ NFLVERSE = "https://github.com/nflverse/nflverse-data/releases/download"
 def _get(url: str, headers: dict | None = None, timeout: float = 20.0, stream_bytes: int | None = None):
     t0 = time.time()
     try:
-        r = requests.get(url, headers=headers or UA, timeout=timeout, stream=stream_bytes is not None)
+        r = requests.get(url, headers=UA if headers is None else headers, timeout=timeout, stream=stream_bytes is not None)
         if stream_bytes is not None:
             body = r.raw.read(stream_bytes) if r.ok else b""
             size = int(r.headers.get("Content-Length") or len(body))
@@ -72,6 +72,8 @@ RESULTS: list[dict] = []
 
 def check(name: str, url: str, *, headers: dict | None = None, json_sample: bool = False,
           stream_bytes: int | None = None, show: bool = False, max_depth: int = 3):
+    if headers is None and "espn.com" in url:
+        headers = {}  # ESPN 403s browser-like User-Agents from cloud IPs; the default one works
     status, secs, size, resp = _get(url, headers=headers, stream_bytes=stream_bytes)
     ok = status is not None and 200 <= status < 300 and (size > 0)
     err = "" if status is not None else f"{type(resp).__name__}: {str(resp)[:160]}"

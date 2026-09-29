@@ -364,14 +364,18 @@ def fetch_action_network(league: str, events: list[Event], captured_at: str, tag
         return []
     data = {"games": games}
     books = _an_books()
-    by_key = {(e.home_team, e.away_team, e.commence_time[:10]): e for e in events}
     by_teams = {(e.home_team, e.away_team): e for e in events}
     rows = []
     for g in data.get("games", []):
         teams = {t["id"]: canonical_team(league, t.get("abbr", "")) for t in g.get("teams", [])}
         h, a = teams.get(g.get("home_team_id")), teams.get(g.get("away_team_id"))
-        ev = by_key.get((h, a, str(g.get("start_time", ""))[:10])) or by_teams.get((h, a))
-        if ev is None:
+        ev = by_teams.get((h, a))
+        # Action Network ignores the date parameter and keeps serving the
+        # finished week until it rolls over; only accept the same game
+        try:
+            if ev is None or abs(pd.Timestamp(g["start_time"]) - pd.Timestamp(ev.commence_time)) > pd.Timedelta(hours=24):
+                continue
+        except (KeyError, ValueError, TypeError):
             continue
         for o in g.get("odds", []):
             if o.get("type") != "game":

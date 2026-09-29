@@ -18,6 +18,8 @@ from zoneinfo import ZoneInfo
 
 
 def decide(now_utc: dt.datetime, store: Path, requested: str = "auto") -> str:
+    if requested == "none":
+        return "skip"
     if requested and requested != "auto":
         return requested
     et = now_utc.astimezone(ZoneInfo("America/New_York"))
