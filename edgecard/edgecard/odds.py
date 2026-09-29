@@ -352,9 +352,17 @@ def _an_books() -> dict[int, str]:
 
 def fetch_action_network(league: str, events: list[Event], captured_at: str, tag: str) -> list[dict]:
     lg = league.lower()
-    data = _get(f"{AN_BASE}/scoreboard/{lg}?period=game&bookIds={AN_BOOK_IDS}")
-    if not data:
+    # the default scoreboard is the *current* (often finished) week: ask per event date
+    days = sorted({pd.Timestamp(e.commence_time).tz_convert("America/New_York").strftime("%Y%m%d") for e in events})
+    games = []
+    for d in days:
+        data = _get(f"{AN_BASE}/scoreboard/{lg}?period=game&bookIds={AN_BOOK_IDS}&date={d}")
+        time.sleep(PAUSE)
+        if data:
+            games += data.get("games", [])
+    if not games:
         return []
+    data = {"games": games}
     books = _an_books()
     by_key = {(e.home_team, e.away_team, e.commence_time[:10]): e for e in events}
     by_teams = {(e.home_team, e.away_team): e for e in events}
