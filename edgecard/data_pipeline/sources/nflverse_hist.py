@@ -2,8 +2,8 @@
 prices, play-by-play aggregated to team-game level, weekly player stats,
 snap counts, injuries, depth charts.
 
-Everything lands in compact parquet files under a history directory
-(`EDGECARD_HISTORY_DIR`, default data/history). In production those files
+Everything lands in compact parquet files under history/ in the results
+store (edgecard/store.py). In production those files
 are built by the GitHub Actions ingest job and committed to the
 `edgecard-data` branch, so neither the Streamlit app nor a laptop needs to
 re-download ~30 MB of play-by-play per season.
@@ -25,7 +25,6 @@ import numpy as np
 import pandas as pd
 import requests
 
-from data_pipeline.config import REPO_ROOT
 
 RELEASE = "https://github.com/nflverse/nflverse-data/releases/download"
 GAMES_CSV = "https://raw.githubusercontent.com/nflverse/nfldata/master/data/games.csv"
@@ -34,7 +33,10 @@ UA = {"User-Agent": "edgecard/1.0 (+https://github.com/akshddoshi-web/Identity)"
 
 
 def history_dir() -> Path:
-    p = Path(os.environ.get("EDGECARD_HISTORY_DIR", REPO_ROOT / "data" / "history"))
+    """history/ inside the results store (see edgecard/store.py)."""
+    from edgecard.store import data_dir
+
+    p = data_dir() / "history"
     p.mkdir(parents=True, exist_ok=True)
     return p
 
