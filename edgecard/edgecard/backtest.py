@@ -156,6 +156,9 @@ def betting_sim(oos: pd.DataFrame, frame: pd.DataFrame, threshold: float = EDGE_
 def summarize(oos: pd.DataFrame, frame: pd.DataFrame) -> dict:
     res: dict = {"markets": {}, "by_season": {}}
     for m in MARKETS:
+        if f"y_{m}" not in oos or f"mkt_{m}" not in oos:
+            res["markets"][m] = {"n": 0, "note": "no market lines available for this market in the test seasons"}
+            continue
         d = oos.dropna(subset=[f"y_{m}", f"mkt_{m}"])
         row = {"n": int(len(d))}
         for k in ("mkt", "iso", "final", "model"):
@@ -179,7 +182,8 @@ def summarize(oos: pd.DataFrame, frame: pd.DataFrame) -> dict:
         res["markets"][m] = row
     for s, d in oos.groupby("season"):
         res["by_season"][int(s)] = {m: {"logloss_final": _ll(d[f"y_{m}"], d[f"final_{m}"]) if f"final_{m}" in d else None,
-                                        "logloss_mkt": _ll(d[f"y_{m}"], d[f"mkt_{m}"])} for m in MARKETS}
+                                        "logloss_mkt": _ll(d[f"y_{m}"], d[f"mkt_{m}"])}
+                                    for m in MARKETS if f"y_{m}" in d and f"mkt_{m}" in d}
     bets = betting_sim(oos, frame)
     if len(bets):
         b = {"n_bets": int(len(bets)), "roi": float(bets["profit"].sum() / len(bets)),
@@ -201,16 +205,16 @@ def summarize(oos: pd.DataFrame, frame: pd.DataFrame) -> dict:
 def _mean_final_ll(oos: pd.DataFrame) -> tuple[float, dict[int, float]]:
     per_season = {}
     for s, d in oos.groupby("season"):
-        vals = [_ll(d[f"y_{m}"], d[f"final_{m}"]) for m in MARKETS if f"final_{m}" in d]
+        vals = [_ll(d[f"y_{m}"], d[f"final_{m}"]) for m in MARKETS if f"final_{m}" in d and f"y_{m}" in d]
         per_season[int(s)] = float(np.nanmean(vals))
-    vals = [_ll(oos[f"y_{m}"], oos[f"final_{m}"]) for m in MARKETS if f"final_{m}" in oos]
+    vals = [_ll(oos[f"y_{m}"], oos[f"final_{m}"]) for m in MARKETS if f"final_{m}" in oos and f"y_{m}" in oos]
     return float(np.nanmean(vals)), per_season
 
 
 def _mean_model_ll(oos: pd.DataFrame) -> tuple[float, dict[int, float]]:
-    per_season = {int(s): float(np.nanmean([_ll(d[f"y_{m}"], d[f"iso_{m}"]) for m in MARKETS if f"iso_{m}" in d]))
-                  for s, d in oos.groupby("season")}
-    return float(np.nanmean([_ll(oos[f"y_{m}"], oos[f"iso_{m}"]) for m in MARKETS if f"iso_{m}" in oos])), per_season
+    ok = [m for m in MARKETS if f"iso_{m}" in oos and f"y_{m}" in oos]
+    per_season = {int(s): float(np.nanmean([_ll(d[f"y_{m}"], d[f"iso_{m}"]) for m in ok])) for s, d in oos.groupby("season")}
+    return float(np.nanmean([_ll(oos[f"y_{m}"], oos[f"iso_{m}"]) for m in ok])), per_season
 
 
 def ablation(frame: pd.DataFrame, first_test: int, last_test: int) -> dict:
@@ -296,6 +300,9 @@ def _verdicts(summ: dict) -> list[str]:
     out = []
     names = {"ml_home": "moneyline", "spread_home": "spread", "over": "total"}
     for m, r in summ["markets"].items():
+        if not r.get("n"):
+            out.append(f"{names[m]}: no historical market lines yet — cannot compare to the closing line (not bet).")
+            continue
         fm = r.get("final_minus_market_logloss")
         mm = r.get("model_minus_market_logloss")
         if fm is None or np.isnan(fm):

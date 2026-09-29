@@ -148,6 +148,12 @@ def build_history(seasons: list[int]) -> dict[str, int]:
         else:
             try:
                 g = espn_season_games(s)
+                if len(have_g) and "home_spread" in have_g:
+                    keep = have_g.set_index("game_id")[["home_spread", "total_line", "home_moneyline", "away_moneyline",
+                                                        "home_spread_odds", "away_spread_odds", "over_odds", "under_odds"]]
+                    g = g.set_index("game_id")
+                    g.update(keep, overwrite=False)
+                    g = g.reset_index()
                 games.append(g)
                 print(f"  NBA {s}-{s + 1}: {len(g)} games from ESPN ({g['home_spread'].notna().mean():.0%} with lines)")
             except Exception as exc:  # noqa: BLE001
@@ -172,4 +178,74 @@ def build_history(seasons: list[int]) -> dict[str, int]:
     if len(t):
         t.to_parquet(tp, index=False)
         out["nba_team_games"] = len(t)
+    if len(g):
+        # keep lines already backfilled for finished seasons, then fill more
+        out["nba_lines_backfilled"] = backfill_lines()
     return out
+
+
+CORE = "https://sports.core.api.espn.com/v2/sports/basketball/leagues/nba/events"
+PROVIDER_PRIORITY = ("draft", "espn bet", "caesars", "fanduel", "mgm", "bet365", "consensus")
+
+
+def _core_lines(event_id: str) -> dict | None:
+    """Pre-game lines for one past game from ESPN's per-event odds endpoint
+    (the scoreboard drops them after the game). Uses the 'close' block when
+    ESPN has one, else the provider's final pre-game numbers."""
+    try:
+        r = requests.get(f"{CORE}/{event_id}/competitions/{event_id}/odds?limit=50", timeout=20)
+        if not r.ok:
+            return None
+        items = [i for i in r.json().get("items", []) if "live" not in (i.get("provider", {}).get("name", "").lower())]
+    except (requests.RequestException, ValueError):
+        return None
+    if not items:
+        return None
+    items.sort(key=lambda i: next((k for k, p in enumerate(PROVIDER_PRIORITY) if p in i.get("provider", {}).get("name", "").lower()), 99))
+    it = items[0]
+    ho, ao = it.get("homeTeamOdds") or {}, it.get("awayTeamOdds") or {}
+    hc, ac = ho.get("close") or {}, ao.get("close") or {}
+    spread = _num(hc.get("pointSpread")) if hc.get("pointSpread") else _num(it.get("spread"))
+    if spread is not None and not hc.get("pointSpread"):
+        if ho.get("favorite") is True and spread > 0:
+            spread = -spread
+        if ao.get("favorite") is True and spread < 0:
+            spread = -spread
+    tc = it.get("close") or {}
+    total = _num((tc.get("total") or {}).get("alternateDisplayValue")) if isinstance(tc.get("total"), dict) else None
+    return {"home_spread": spread, "total_line": abs(total) if total else _num(it.get("overUnder")),
+            "home_moneyline": _american(hc.get("moneyLine")) or _american(ho.get("moneyLine")),
+            "away_moneyline": _american(ac.get("moneyLine")) or _american(ao.get("moneyLine")),
+            "home_spread_odds": _american(hc.get("spread")) or _american(ho.get("spreadOdds")) or -110.0,
+            "away_spread_odds": _american(ac.get("spread")) or _american(ao.get("spreadOdds")) or -110.0,
+            "over_odds": _american((tc.get("over") or {})) or _american(it.get("overOdds")) or -110.0,
+            "under_odds": _american((tc.get("under") or {})) or _american(it.get("underOdds")) or -110.0,
+            "odds_provider": it.get("provider", {}).get("name")}
+
+
+def backfill_lines(max_requests: int = 9000) -> int:
+    """Fills missing lines newest-first, capped per run (one request per
+    game), so the weekly job completes the history over a few runs."""
+    from edgecard.store import history_path
+
+    gp = history_path("nba_games")
+    if not gp.exists():
+        return 0
+    g = pd.read_parquet(gp)
+    for c in ("home_spread", "total_line", "home_moneyline", "away_moneyline", "home_spread_odds", "away_spread_odds",
+              "over_odds", "under_odds", "odds_provider"):
+        if c not in g:
+            g[c] = np.nan
+    g["odds_provider"] = g["odds_provider"].astype(object)
+    todo = g[g["home_spread"].isna() & g["total_line"].isna()].sort_values("kickoff", ascending=False).head(max_requests)
+    n = 0
+    for idx, r in todo.iterrows():
+        lines = _core_lines(str(r["game_id"]))
+        time.sleep(0.2)
+        if lines:
+            for k, v in lines.items():
+                g.at[idx, k] = v
+            n += 1
+    g.to_parquet(gp, index=False)
+    print(f"  NBA lines backfilled for {n}/{len(todo)} games; {int((g['home_spread'].isna()).sum())} still missing")
+    return n
