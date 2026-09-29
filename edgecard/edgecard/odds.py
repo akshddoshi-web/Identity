@@ -94,7 +94,11 @@ def fetch_events(league: str, days_ahead: int = 2, dates: list[str] | None = Non
     if dates:
         urls = [f"{ESPN_SITE}/{sport}/{lg}/scoreboard?dates={d}" for d in dates]
     elif league == "NFL":
-        urls = [f"{ESPN_SITE}/{sport}/{lg}/scoreboard"]
+        # the default NFL scoreboard keeps showing the finished week until
+        # Tuesday, so ask for an explicit date range covering the next slate
+        today = dt.datetime.now(dt.timezone.utc).astimezone(__import__("zoneinfo").ZoneInfo("America/New_York")).date()
+        end = today + dt.timedelta(days=7)
+        urls = [f"{ESPN_SITE}/{sport}/{lg}/scoreboard?dates={today.strftime('%Y%m%d')}-{end.strftime('%Y%m%d')}&limit=100"]
     else:
         today = dt.datetime.now(dt.timezone.utc).astimezone(__import__("zoneinfo").ZoneInfo("America/New_York")).date()
         urls = [f"{ESPN_SITE}/{sport}/{lg}/scoreboard?dates={(today + dt.timedelta(days=i)).strftime('%Y%m%d')}"
@@ -504,3 +508,22 @@ def latest_props(league: str, days: int = 2) -> pd.DataFrame:
     if hist.empty:
         return hist
     return hist.sort_values("captured_at").groupby(["game_key", "athlete_id", "market"]).tail(1).reset_index(drop=True)
+
+
+_TEAM_IDS: dict[str, dict[str, str]] = {}
+
+
+def espn_team_abbrs(league: str) -> dict[str, str]:
+    """ESPN team id -> canonical abbreviation (cached per run)."""
+    if league not in _TEAM_IDS:
+        sport, lg = SPORT_PATH[league]
+        data = _get(f"{ESPN_SITE}/{sport}/{lg}/teams") or {}
+        out = {}
+        for sp in data.get("sports", []):
+            for lgd in sp.get("leagues", []):
+                for t in lgd.get("teams", []):
+                    tm = t.get("team", {})
+                    if tm.get("id") and tm.get("abbreviation"):
+                        out[str(tm["id"])] = canonical_team(league, tm["abbreviation"])
+        _TEAM_IDS[league] = out
+    return _TEAM_IDS[league]

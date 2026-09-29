@@ -37,6 +37,8 @@ kelly:
   # Hard cap on any single bet as a fraction of current bankroll, regardless of
   # what the (fractional) Kelly formula outputs.
   max_bet_pct_of_bankroll: 0.02
+  # Hard cap on the SUM of a day's stakes, as a fraction of bankroll.
+  max_day_pct_of_bankroll: 0.05
   # Floor bankroll below which the system stops recommending stakes entirely.
   min_bankroll_stop: 0.0
 
@@ -48,8 +50,11 @@ monte_carlo:
   n_bets_per_simulation: 500
 
 guardrails:
-  disallow_parlays: true
-  disallow_same_game_parlays: true
+  # Edge Card's MODERATE / LONG SHOT tiers use multi-leg bets, so these are
+  # off; every parlay must still be +EV with a simulation-based (correlation-
+  # aware) joint probability, all legs at one book (edgecard/card.py).
+  disallow_parlays: false
+  disallow_same_game_parlays: false
   disallow_leverage: true
   require_pregame_timestamp_lock: true
 
@@ -65,3 +70,8 @@ odds_api:
     - fanduel
     - betmgm
     - caesars
+
+edgecard:
+  # PAPER mode by default: recommendations are logged and tracked, never
+  # presented as real wagers. Flip only after live CLV is positive over 200+ bets.
+  paper_mode: true

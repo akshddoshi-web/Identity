@@ -100,9 +100,12 @@ def fetch_injury_designations(league: str) -> list[Flag]:
         return flags
     from data_pipeline.venues import canonical_team
 
+    from edgecard.odds import espn_team_abbrs
+
+    ids = espn_team_abbrs(league)
     data = r.json()
     for team_block in data.get("injuries", []):
-        team_abbr = None
+        team_abbr = ids.get(str(team_block.get("id")))
         for inj in team_block.get("injuries", []):
             ath = inj.get("athlete", {}) or {}
             team_abbr = team_abbr or canonical_team(league, ((ath.get("team") or {}).get("abbreviation") or ""))

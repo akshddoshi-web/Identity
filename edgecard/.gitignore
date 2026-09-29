@@ -16,3 +16,9 @@ data/cache/
 .DS_Store
 .pytest_cache/
 *.egg-info/
+
+# Streamlit secrets never go in git
+.streamlit/secrets.toml
+app/.streamlit/secrets.toml
+data/store/
+source_check.json
