@@ -37,6 +37,9 @@ jobs:
         if: false
       - name: Round-4 probes
         run: python scripts/check_sources_round4.py
+        if: false
+      - name: Round-5 probes
+        run: pip install pandas pyarrow pyyaml python-dotenv scipy && python scripts/check_sources_round5.py
       - uses: actions/upload-artifact@v4
         with:
           name: source-check
