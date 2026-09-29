@@ -151,7 +151,7 @@ with tab_card:
                                     f"{f['text']} — {src}, {str(f['timestamp'])[:16]}")
                 with st.expander("Legs"):
                     st.dataframe(pd.DataFrame(v["legs"])[["label", "game", "kickoff", "book", "price", "p_final", "novig_implied", "p_model"]],
-                                 hide_index=True, use_container_width=True)
+                                 hide_index=True, width="stretch")
         st.divider()
 
 with tab_track:
@@ -173,7 +173,7 @@ with tab_track:
                     df = pd.DataFrame(rep[window][dim]).T
                     if not df.empty:
                         st.caption(dim.replace("_", " "))
-                        st.dataframe(df, use_container_width=True)
+                        st.dataframe(df, width="stretch")
     if rep.get("calibration"):
         cal = pd.DataFrame(rep["calibration"])
         st.markdown("##### Calibration (settled bets)")
@@ -183,7 +183,7 @@ with tab_track:
     if not recs.empty:
         st.markdown("##### Every recommendation (append-only log)")
         st.dataframe(recs.drop(columns=["legs_json"], errors="ignore").sort_values("created_at", ascending=False),
-                     hide_index=True, use_container_width=True)
+                     hide_index=True, width="stretch")
 
 with tab_bt:
     for lg in ("nfl", "nba"):
@@ -199,10 +199,10 @@ with tab_bt:
                     f"**Dropped (no out-of-sample lift):** {', '.join(abl.get('dropped', [])) or 'none'}")
         g = pd.DataFrame(abl.get("groups", {})).T
         if not g.empty:
-            st.dataframe(g[["delta_model", "delta_final", "delta_rmse", "seasons_improved", "seasons", "keep"]], use_container_width=True)
+            st.dataframe(g[["delta_model", "delta_final", "delta_rmse", "seasons_improved", "seasons", "keep"]], width="stretch")
         mk = bt["summary"]["markets"]
         tbl = pd.DataFrame({m: {k: v for k, v in r.items() if isinstance(v, (int, float))} for m, r in mk.items()}).T
-        st.dataframe(tbl, use_container_width=True)
+        st.dataframe(tbl, width="stretch")
         for m, r in mk.items():
             if r.get("calibration_model"):
                 cal = pd.DataFrame(r["calibration_model"])
@@ -212,7 +212,7 @@ with tab_bt:
     pb = get_json("reports/backtest_nfl_props.json")
     if pb:
         st.subheader("NFL props — calibration vs real outcomes (no historical prop prices exist for free)")
-        st.dataframe(pd.DataFrame(pb["markets"]).T, use_container_width=True)
+        st.dataframe(pd.DataFrame(pb["markets"]).T, width="stretch")
 
 with tab_props:
     for lg, c in card.get("leagues", {}).items():
@@ -220,11 +220,11 @@ with tab_props:
         st.subheader(lg)
         st.caption(sp.get("status", ""))
         if sp.get("rows"):
-            st.dataframe(pd.DataFrame(sp["rows"]), hide_index=True, use_container_width=True)
+            st.dataframe(pd.DataFrame(sp["rows"]), hide_index=True, width="stretch")
 
 with tab_fresh:
     fr = card.get("freshness") or get_json("freshness/latest.json") or {}
     if fr:
         df = pd.DataFrame(fr).T.reset_index().rename(columns={"index": "source"})
-        st.dataframe(df, hide_index=True, use_container_width=True)
+        st.dataframe(df, hide_index=True, width="stretch")
     st.caption(f"Data: {RAW if not LOCAL else LOCAL}")

@@ -1,3 +1,8 @@
+> **Edge Card** — the daily NBA + NFL decision engine built on top of this
+> pipeline — is documented in [EDGECARD.md](EDGECARD.md): what the card shows,
+> how probabilities are made, the current backtest verdict, free data sources,
+> the GitHub Actions schedule, and the Streamlit site.
+
 # Sports Betting Analytics & Decision-Support System
 
 A rigorous edge-detection and bankroll-management framework for **NFL, NCAAF, and NBA**,

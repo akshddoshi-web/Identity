@@ -281,6 +281,12 @@ def run_backtest(league: str, quick: bool = False) -> dict:
               "sigma_total": [gm.sigma_total.a, gm.sigma_total.b]}
     store.write_json(report, "reports", "backtest_nfl.json")
     oos.to_parquet(store.path("reports", "backtest_nfl_oos.parquet"), index=False)
+    try:  # props calibration vs real outcomes (last two seasons)
+        from edgecard.props_backtest import run_props_backtest
+
+        run_props_backtest(seasons=(latest - 1,) if quick else (latest - 2, latest - 1), n_sims=2000)
+    except Exception as exc:  # noqa: BLE001
+        print(f"props backtest failed: {exc}")
     print(json.dumps({"verdicts": verdicts, "kept": abl["kept"], "dropped": abl["dropped"],
                       "betting_at_close": summ["betting_at_close"]}, indent=1, default=str))
     return report
