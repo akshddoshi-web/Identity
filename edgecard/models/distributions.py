@@ -25,7 +25,7 @@ import numpy as np
 from scipy.stats import norm
 
 MARGIN_SUPPORT = np.arange(-80, 81)
-TOTAL_SUPPORT = np.arange(0, 181)
+TOTAL_SUPPORT = np.arange(0, 351)  # NBA totals reach ~280; NFL uses the low end
 
 
 @dataclass

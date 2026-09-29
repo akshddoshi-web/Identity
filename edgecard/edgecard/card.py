@@ -95,7 +95,7 @@ def load_params(league: str) -> LeagueParams:
     if league == "NFL":
         return LeagueParams(league, 13.3, 13.5, KeyWeights.flat(MARGIN_SUPPORT), KeyWeights.flat(TOTAL_SUPPORT), 0.0,
                             {"ml_home": 0.0, "spread_home": 0.0, "over": 0.0})
-    return LeagueParams(league, 12.5, 18.5, KeyWeights.flat(MARGIN_SUPPORT), KeyWeights.flat(np.arange(120, 321)), 0.0,
+    return LeagueParams(league, 12.5, 18.5, KeyWeights.flat(MARGIN_SUPPORT), KeyWeights.flat(TOTAL_SUPPORT), 0.0,
                         {"ml_home": 0.0, "spread_home": 0.0, "over": 0.0})
 
 
