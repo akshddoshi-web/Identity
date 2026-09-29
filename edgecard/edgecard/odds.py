@@ -86,6 +86,7 @@ class Event:
     away_score: float | None = None
     venue: str | None = None
     week: int | None = None
+    leaders: str = "[]"   # JSON [[player, team], ...] from ESPN's per-team stat leaders
 
 
 def fetch_events(league: str, days_ahead: int = 2, dates: list[str] | None = None) -> list[Event]:
@@ -95,10 +96,11 @@ def fetch_events(league: str, days_ahead: int = 2, dates: list[str] | None = Non
         urls = [f"{ESPN_SITE}/{sport}/{lg}/scoreboard?dates={d}" for d in dates]
     elif league == "NFL":
         # the default NFL scoreboard keeps showing the finished week until
-        # Tuesday, so ask for an explicit date range covering the next slate
+        # Tuesday, and ESPN rejects date ranges (HTTP 400), so ask day by day
+        # for the next 7 days (one request per day)
         today = dt.datetime.now(dt.timezone.utc).astimezone(__import__("zoneinfo").ZoneInfo("America/New_York")).date()
-        end = today + dt.timedelta(days=7)
-        urls = [f"{ESPN_SITE}/{sport}/{lg}/scoreboard?dates={today.strftime('%Y%m%d')}-{end.strftime('%Y%m%d')}&limit=100"]
+        urls = [f"{ESPN_SITE}/{sport}/{lg}/scoreboard?dates={(today + dt.timedelta(days=i)).strftime('%Y%m%d')}"
+                for i in range(8)]
     else:
         today = dt.datetime.now(dt.timezone.utc).astimezone(__import__("zoneinfo").ZoneInfo("America/New_York")).date()
         urls = [f"{ESPN_SITE}/{sport}/{lg}/scoreboard?dates={(today + dt.timedelta(days=i)).strftime('%Y%m%d')}"
@@ -124,6 +126,14 @@ def fetch_events(league: str, days_ahead: int = 2, dates: list[str] | None = Non
                 except (TypeError, ValueError):
                     return None
 
+            leaders = []
+            for side in ("home", "away"):
+                ab = canonical_team(league, teams[side]["team"]["abbreviation"])
+                for cat in teams[side].get("leaders", []) or []:
+                    for ld in (cat.get("leaders") or [])[:1]:
+                        nm = (ld.get("athlete") or {}).get("displayName")
+                        if nm and [nm, ab] not in leaders:
+                            leaders.append([nm, ab])
             events[e["id"]] = Event(
                 league=league, espn_id=e["id"], game_key=game_key(league, e["date"], a, h),
                 commence_time=e["date"], home_team=h, away_team=a,
@@ -131,7 +141,7 @@ def fetch_events(league: str, days_ahead: int = 2, dates: list[str] | None = Non
                 status=status, neutral=bool(comp.get("neutralSite")),
                 home_score=_score(teams["home"]), away_score=_score(teams["away"]),
                 venue=(comp.get("venue") or {}).get("fullName"),
-                week=(e.get("week") or {}).get("number"),
+                week=(e.get("week") or {}).get("number"), leaders=__import__("json").dumps(leaders),
             )
     return list(events.values())
 

@@ -1,2 +1,2 @@
-full
-both
+ingest_backtest
+nba

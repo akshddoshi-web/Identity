@@ -416,6 +416,11 @@ def build_league_card(league: str, bankroll: float, mode: str, cfg: dict) -> dic
     # verification: 48h news scan on the players who matter
     teams = sorted(set(events["home_team"]) | set(events["away_team"]))
     key_players = _key_players(league, teams)
+    # ESPN's per-team stat leaders are always key players (both leagues)
+    for js in events.get("leaders", pd.Series(dtype=str)).dropna():
+        for nm, tm in json.loads(js):
+            if (nm, tm) not in key_players:
+                key_players.append((nm, tm))
     flags += scan_news(league, key_players, teams if mode == "full" else [], hours=48)
     freshness.flush()
 

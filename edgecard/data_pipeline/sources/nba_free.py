@@ -30,11 +30,9 @@ PBP = "https://api.pbpstats.com"
 PBP_UA = {"User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36"}
 
 
-def _espn_month(season_start: int, month: int) -> list[dict]:
-    year = season_start if month >= 9 else season_start + 1
-    start = dt.date(year, month, 1)
-    end = (start + dt.timedelta(days=32)).replace(day=1) - dt.timedelta(days=1)
-    url = f"{ESPN}?dates={start:%Y%m%d}-{end:%Y%m%d}&limit=1000"
+def _espn_day(day: dt.date) -> list[dict]:
+    """ESPN rejects date ranges (HTTP 400), so history is fetched one day at a time."""
+    url = f"{ESPN}?dates={day:%Y%m%d}"
     for attempt in range(3):
         try:
             r = requests.get(url, timeout=30)
@@ -46,10 +44,15 @@ def _espn_month(season_start: int, month: int) -> list[dict]:
     return []
 
 
+def _season_days(season_start: int) -> list[dt.date]:
+    start, end = dt.date(season_start, 10, 1), min(dt.date(season_start + 1, 6, 30), dt.date.today() - dt.timedelta(days=1))
+    return [start + dt.timedelta(days=i) for i in range((end - start).days + 1)] if end >= start else []
+
+
 def espn_season_games(season_start: int) -> pd.DataFrame:
     rows = []
-    for month in (10, 11, 12, 1, 2, 3, 4, 5, 6):
-        for e in _espn_month(season_start, month):
+    for day in _season_days(season_start):
+        for e in _espn_day(day):
             comp = e["competitions"][0]
             stype = (e.get("season") or {}).get("type")
             if stype not in (2, 3):  # regular season, playoffs (skip preseason / all-star)
@@ -84,7 +87,7 @@ def espn_season_games(season_start: int) -> pd.DataFrame:
                 "odds_provider": (o.get("provider") or {}).get("name"),
                 "overtime": int(len((t["home"].get("linescores") or [])) > 4),
             })
-        time.sleep(0.4)
+        time.sleep(0.25)
     df = pd.DataFrame(rows).drop_duplicates("game_id")
     return df.sort_values("kickoff").reset_index(drop=True)
 
@@ -126,29 +129,47 @@ def pbpstats_team_games(season_start: int) -> pd.DataFrame:
 
 
 def build_history(seasons: list[int]) -> dict[str, int]:
+    """Incremental: a finished season that is already stored is reused, never
+    re-fetched; the current season is always refreshed."""
     from edgecard.store import history_path
 
+    gp, tp = history_path("nba_games"), history_path("nba_team_games")
+    old_g = pd.read_parquet(gp) if gp.exists() else pd.DataFrame(columns=["season"])
+    old_t = pd.read_parquet(tp) if tp.exists() else pd.DataFrame(columns=["season"])
+    today = dt.date.today()
+    current = today.year if today.month >= 10 else today.year - 1
     games, tgs = [], []
     for s in seasons:
-        try:
-            g = espn_season_games(s)
-            games.append(g)
-            print(f"  NBA {s}-{s + 1}: {len(g)} games from ESPN ({g['home_spread'].notna().mean():.0%} with lines)")
-        except Exception as exc:  # noqa: BLE001
-            print(f"  NBA {s} ESPN FAILED: {exc}")
-        try:
-            t = pbpstats_team_games(s)
-            tgs.append(t)
-            print(f"  NBA {s}-{s + 1}: {len(t)} team-games from pbpstats")
-        except Exception as exc:  # noqa: BLE001
-            print(f"  NBA {s} pbpstats FAILED: {exc}")
+        finished = s < current
+        have_g = old_g[old_g["season"] == s]
+        have_t = old_t[old_t["season"] == s]
+        if finished and len(have_g) > 1000:
+            games.append(have_g)
+        else:
+            try:
+                g = espn_season_games(s)
+                games.append(g)
+                print(f"  NBA {s}-{s + 1}: {len(g)} games from ESPN ({g['home_spread'].notna().mean():.0%} with lines)")
+            except Exception as exc:  # noqa: BLE001
+                print(f"  NBA {s} ESPN FAILED: {exc}")
+                games.append(have_g)
+        if finished and len(have_t) > 2000:
+            tgs.append(have_t)
+        else:
+            try:
+                t = pbpstats_team_games(s)
+                tgs.append(t if len(t) else have_t)
+                print(f"  NBA {s}-{s + 1}: {len(t)} team-games from pbpstats")
+            except Exception as exc:  # noqa: BLE001
+                print(f"  NBA {s} pbpstats FAILED: {exc}")
+                tgs.append(have_t)
     out = {}
-    if games:
-        g = pd.concat(games, ignore_index=True)
-        g.to_parquet(history_path("nba_games"), index=False)
+    g = pd.concat([x for x in games if len(x)], ignore_index=True) if any(len(x) for x in games) else pd.DataFrame()
+    if len(g):
+        g.to_parquet(gp, index=False)
         out["nba_games"] = len(g)
-    if tgs and any(len(t) for t in tgs):
-        t = pd.concat(tgs, ignore_index=True)
-        t.to_parquet(history_path("nba_team_games"), index=False)
+    t = pd.concat([x for x in tgs if len(x)], ignore_index=True) if any(len(x) for x in tgs) else pd.DataFrame()
+    if len(t):
+        t.to_parquet(tp, index=False)
         out["nba_team_games"] = len(t)
     return out
