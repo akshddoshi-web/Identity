@@ -1,0 +1,34 @@
+# Checks, from GitHub's own runners, that every free Edge Card data source is
+# reachable. Runs on pushes that touch edgecard/, on demand, and weekly.
+name: edgecard-source-check
+
+on:
+  push:
+    paths:
+      - "edgecard/scripts/check_sources.py"
+      - ".github/workflows/edgecard-sources.yml"
+  workflow_dispatch:
+  schedule:
+    - cron: "17 13 * * 1"   # Mondays ~9am ET
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    defaults:
+      run:
+        working-directory: edgecard
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: pip install requests
+      - name: Install nba_api (isolated check)
+        run: pip install nba_api || echo "nba_api install failed"
+      - name: Check sources
+        run: python scripts/check_sources.py --samples
+      - uses: actions/upload-artifact@v4
+        with:
+          name: source-check
+          path: edgecard/source_check.json
