@@ -1,0 +1,5 @@
+# Streamlit Community Cloud installs this file (it sits next to the app).
+# The viewer only reads published results, so it needs very little.
+streamlit>=1.46
+pandas>=2.1
+requests>=2.31

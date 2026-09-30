@@ -1,0 +1,32 @@
+# Weekly health check, from GitHub's own runners, that every free Edge Card
+# data source is still reachable (sources change without notice).
+name: edgecard-source-check
+
+on:
+  push:
+    paths:
+      - "edgecard/scripts/check_sources.py"
+      - ".github/workflows/edgecard-sources.yml"
+  workflow_dispatch:
+  schedule:
+    - cron: "17 13 * * 1"   # Mondays ~9am ET
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    defaults:
+      run:
+        working-directory: edgecard
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: pip install requests nba_api
+      - name: Check sources
+        run: python scripts/check_sources.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: source-check
+          path: edgecard/source_check.json
