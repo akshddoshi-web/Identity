@@ -89,3 +89,18 @@ def test_off_market_price_is_the_safe_pick(tmp_store):
     fair = novig_two_way(-250, 205)[0]
     assert abs(safe["legs"][0]["p_final"] - fair) < 0.02
     assert out["tiers"]["LONG SHOT"].get("id") is None
+
+
+def test_no_parlays_on_exchanges(tmp_store):
+    """Two correlated same-game legs at an exchange must never become a parlay."""
+    ev = _event("NFL_C", "NYG", "ARI", 30)
+    rows = []
+    for b in ("dk", "fd", "mgm"):
+        rows += _rows("NFL_C", ev, b, 110, -130, spread_home=1.5, sp_prices=(-110, -110), total=44.5)
+    rows += _rows("NFL_C", ev, "kalshi", 115, -120, spread_home=1.5, sp_prices=(-104, -100), total=44.5, tot_prices=(104, -108))
+    _write([ev], rows)
+    out = card_mod.build_league_card("NFL", 10000.0, "full", card_mod.load_config())
+    for tier in ("SAFE", "MODERATE", "LONG SHOT"):
+        v = out["tiers"][tier]
+        if v.get("id"):
+            assert not (len(v["legs"]) > 1 and v["book"] == "kalshi")
