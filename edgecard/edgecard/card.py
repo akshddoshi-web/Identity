@@ -281,8 +281,10 @@ class Bet:
 
 
 def _parlay(legs: list[Leg], sims: dict, tier: str) -> Bet | None:
-    if len({L.book for L in legs}) != 1:
-        return None
+    from edgecard.odds import EXCHANGES
+
+    if len({L.book for L in legs}) != 1 or legs[0].book in EXCHANGES:
+        return None  # parlays exist only at one sportsbook; exchanges don't sell them
     if len({(L.game_key, L.kind, L.player, L.market) for L in legs}) != len(legs):
         return None  # two sides / lines of the same market
     by_game: dict[str, list[Leg]] = {}

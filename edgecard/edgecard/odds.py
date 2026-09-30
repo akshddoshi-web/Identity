@@ -44,6 +44,8 @@ SPORT_PATH = {"NFL": ("football", "nfl"), "NBA": ("basketball", "nba")}
 KALSHI_SERIES = {"NFL": "KXNFLGAME", "NBA": "KXNBAGAME"}
 AN_BOOK_IDS = "15,30,68,69,71,75,79,123,247,280,972,1005,1006"
 PAUSE = 0.35
+# Prediction markets / exchanges: fees are charged separately and they sell no parlays.
+EXCHANGES = {"kalshi", "polymarket", "prophetx", "novig", "sporttrade", "betfairexchange"}
 
 _session = requests.Session()
 
@@ -382,6 +384,10 @@ def fetch_action_network(league: str, events: list[Event], captured_at: str, tag
                 continue
             bid = int(o.get("book_id", 0))
             book = books.get(bid, f"an{bid}")
+            if book in EXCHANGES:
+                # exchange prices on Action Network come without the exchange's
+                # fee; Kalshi is taken from its own API, fee-adjusted, instead
+                continue
             lt = "open" if book == "open" else "current"
             if book == "open":
                 book = "market_open"
@@ -522,6 +528,8 @@ def latest_lines(league: str, days: int = 7) -> pd.DataFrame:
     hist = store.read_parquet_glob(("odds", league.lower()), since=dt.date.today() - dt.timedelta(days=days))
     if hist.empty:
         return hist
+    # older snapshots may hold exchange prices relayed by Action Network (no fee)
+    hist = hist[~((hist["source"] == "actionnetwork") & hist["book"].isin(EXCHANGES))]
     return hist.sort_values("captured_at").groupby(KEY_COLS).tail(1).reset_index(drop=True)
 
 
