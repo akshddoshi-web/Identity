@@ -1,0 +1,26 @@
+player,team,market,line,p_over_sim,sim_median,game_key,book,price,created_at,league
+Robert Tonyan,PIT,anytime_td,,0.002,0.0,NFL_20261001_PIT_CLE,draftkings,not published (assumed -110),2026-09-30T20:45:04+00:00,NFL
+Travis Homer,PIT,anytime_td,,0.004,0.0,NFL_20261001_PIT_CLE,draftkings,not published (assumed -110),2026-09-30T20:45:04+00:00,NFL
+Jaleel McLaughlin,CLE,anytime_td,,0.004,0.0,NFL_20261001_PIT_CLE,draftkings,not published (assumed -110),2026-09-30T20:45:04+00:00,NFL
+Germie Bernard,PIT,anytime_td,,0.01,0.0,NFL_20261001_PIT_CLE,draftkings,not published (assumed -110),2026-09-30T20:45:04+00:00,NFL
+Isaiah Bond,CLE,anytime_td,,0.011,0.0,NFL_20261001_PIT_CLE,draftkings,not published (assumed -110),2026-09-30T20:45:04+00:00,NFL
+Malachi Corley,CLE,anytime_td,,0.015,0.0,NFL_20261001_PIT_CLE,draftkings,not published (assumed -110),2026-09-30T20:45:04+00:00,NFL
+Darnell Washington,PIT,anytime_td,,0.018,0.0,NFL_20261001_PIT_CLE,draftkings,not published (assumed -110),2026-09-30T20:45:04+00:00,NFL
+KC Concepcion,CLE,anytime_td,,0.041,0.0,NFL_20261001_PIT_CLE,draftkings,not published (assumed -110),2026-09-30T20:45:04+00:00,NFL
+Deshaun Watson,CLE,anytime_td,,0.046,0.0,NFL_20261001_PIT_CLE,draftkings,not published (assumed -110),2026-09-30T20:45:04+00:00,NFL
+Raheim Sanders,CLE,anytime_td,,0.049,0.0,NFL_20261001_PIT_CLE,draftkings,not published (assumed -110),2026-09-30T20:45:04+00:00,NFL
+Quinshon Judkins,CLE,rush_att,16.5,0.056,10.0,NFL_20261001_PIT_CLE,draftkings,not published (assumed -110),2026-09-30T20:45:04+00:00,NFL
+Aaron Rodgers,PIT,rush_yds,1.5,0.92,19.0,NFL_20261001_PIT_CLE,draftkings,not published (assumed -110),2026-09-30T20:45:04+00:00,NFL
+Aaron Rodgers,PIT,anytime_td,,0.108,0.0,NFL_20261001_PIT_CLE,draftkings,not published (assumed -110),2026-09-30T20:45:04+00:00,NFL
+Ben Skowronek,PIT,anytime_td,,0.108,0.0,NFL_20261001_PIT_CLE,draftkings,not published (assumed -110),2026-09-30T20:45:04+00:00,NFL
+Blake Whiteheart,CLE,anytime_td,,0.117,0.0,NFL_20261001_PIT_CLE,draftkings,not published (assumed -110),2026-09-30T20:45:04+00:00,NFL
+Quinshon Judkins,CLE,rush_yds,56.5,0.121,30.0,NFL_20261001_PIT_CLE,draftkings,not published (assumed -110),2026-09-30T20:45:04+00:00,NFL
+Quinshon Judkins,CLE,anytime_td,,0.122,0.0,NFL_20261001_PIT_CLE,draftkings,not published (assumed -110),2026-09-30T20:45:04+00:00,NFL
+Roman Wilson,PIT,anytime_td,,0.124,0.0,NFL_20261001_PIT_CLE,draftkings,not published (assumed -110),2026-09-30T20:45:04+00:00,NFL
+Pat Freiermuth,PIT,anytime_td,,0.133,0.0,NFL_20261001_PIT_CLE,draftkings,not published (assumed -110),2026-09-30T20:45:04+00:00,NFL
+Jerry Jeudy,CLE,anytime_td,,0.136,0.0,NFL_20261001_PIT_CLE,draftkings,not published (assumed -110),2026-09-30T20:45:04+00:00,NFL
+Quinshon Judkins,CLE,rush_rec_yds,72.5,0.164,46.0,NFL_20261001_PIT_CLE,draftkings,not published (assumed -110),2026-09-30T20:45:04+00:00,NFL
+DK Metcalf,PIT,anytime_td,,0.224,0.0,NFL_20261001_PIT_CLE,draftkings,not published (assumed -110),2026-09-30T20:45:04+00:00,NFL
+Denzel Boston,CLE,anytime_td,,0.23,0.0,NFL_20261001_PIT_CLE,draftkings,not published (assumed -110),2026-09-30T20:45:04+00:00,NFL
+Aaron Rodgers,PIT,pass_rush_yds,217.5,0.762,270.0,NFL_20261001_PIT_CLE,draftkings,not published (assumed -110),2026-09-30T20:45:04+00:00,NFL
+KC Concepcion,CLE,receptions,3.5,0.255,2.0,NFL_20261001_PIT_CLE,draftkings,not published (assumed -110),2026-09-30T20:45:04+00:00,NFL
