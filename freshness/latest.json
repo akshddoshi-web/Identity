@@ -3,70 +3,70 @@
   "ok": true,
   "rows": 17,
   "note": "upcoming events",
-  "checked_at": "2026-10-01T17:46:39+00:00",
+  "checked_at": "2026-10-01T19:44:23+00:00",
   "data_as_of": null
  },
  "nfl.espn.odds": {
   "ok": true,
   "rows": 204,
   "note": "",
-  "checked_at": "2026-10-01T17:46:46+00:00",
+  "checked_at": "2026-10-01T19:44:30+00:00",
   "data_as_of": null
  },
  "nfl.actionnetwork.odds": {
   "ok": true,
-  "rows": 2304,
+  "rows": 1728,
   "note": "",
-  "checked_at": "2026-10-01T17:46:48+00:00",
+  "checked_at": "2026-10-01T19:44:32+00:00",
   "data_as_of": null
  },
  "nfl.kalshi.moneyline": {
   "ok": true,
   "rows": 32,
   "note": "",
-  "checked_at": "2026-10-01T17:46:48+00:00",
+  "checked_at": "2026-10-01T19:44:32+00:00",
   "data_as_of": null
  },
  "nfl.espn.props": {
   "ok": true,
   "rows": 88,
   "note": "DraftKings lines; prices not published",
-  "checked_at": "2026-10-01T17:46:49+00:00",
+  "checked_at": "2026-10-01T19:44:33+00:00",
   "data_as_of": null
  },
  "nba.espn.schedule": {
   "ok": true,
   "rows": 1,
   "note": "upcoming events",
-  "checked_at": "2026-10-01T17:46:50+00:00",
+  "checked_at": "2026-10-01T19:44:35+00:00",
   "data_as_of": null
  },
  "nba.espn.odds": {
   "ok": false,
   "rows": 0,
   "note": "",
-  "checked_at": "2026-10-01T17:46:51+00:00",
+  "checked_at": "2026-10-01T19:44:35+00:00",
   "data_as_of": null
  },
  "nba.actionnetwork.odds": {
   "ok": true,
   "rows": 18,
   "note": "",
-  "checked_at": "2026-10-01T17:46:51+00:00",
+  "checked_at": "2026-10-01T19:44:36+00:00",
   "data_as_of": null
  },
  "nba.kalshi.moneyline": {
   "ok": true,
   "rows": 2,
   "note": "",
-  "checked_at": "2026-10-01T17:46:51+00:00",
+  "checked_at": "2026-10-01T19:44:36+00:00",
   "data_as_of": null
  },
  "nba.espn.props": {
   "ok": false,
   "rows": 0,
   "note": "DraftKings lines; prices not published",
-  "checked_at": "2026-10-01T17:46:51+00:00",
+  "checked_at": "2026-10-01T19:44:36+00:00",
   "data_as_of": null
  },
  "nfl.espn.injuries": {
