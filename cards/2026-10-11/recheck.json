@@ -1,0 +1,690 @@
+{
+ "generated_at": "2026-10-11T20:30:50+00:00",
+ "generated_at_et": "Sun Oct 11 04:30 PM ET",
+ "mode": "recheck",
+ "paper_mode": true,
+ "bankroll": 10000.0,
+ "leagues": {
+  "NFL": {
+   "league": "NFL",
+   "n_games": 14,
+   "tiers": {
+    "SAFE": {
+     "bet": null,
+     "message": "NO BET",
+     "reason": "best candidate in the 55%-100% band has edge -0.0% over its break-even \u2014 below the 2% threshold; nothing is forced",
+     "best_candidates_considered": 0
+    },
+    "MODERATE": {
+     "bet": null,
+     "message": "NO BET",
+     "reason": "best candidate in the 20%-45% band has edge +0.6% over its break-even \u2014 below the 2% threshold; nothing is forced",
+     "best_candidates_considered": 0
+    },
+    "LONG SHOT": {
+     "bet": null,
+     "message": "NO LONG SHOT TODAY",
+     "reason": "no single bet or same-book combination lands in the 3%-15% win-probability band with positive EV",
+     "best_candidates_considered": 0
+    }
+   },
+   "model": {
+    "weights": {
+     "ml_home": 0.0,
+     "spread_home": 0.0,
+     "over": 0.0
+    },
+    "feature_groups": [
+     "base",
+     "opp_adjusted",
+     "pressure_redzone",
+     "turnover_luck",
+     "cohesion",
+     "weather",
+     "h2h"
+    ],
+    "trained_through": "2026-10-05",
+    "note": "model weight is 0 in every market: bets below come only from price differences between books (line shopping), never from the model's opinion"
+   },
+   "shadow_props": {
+    "status": "SHADOW ONLY \u2014 tracked for calibration, not recommended (no free prop prices; model unproven vs prop markets)",
+    "rows": [
+     {
+      "player": "Josh Cuevas",
+      "team": "BAL",
+      "market": "anytime_td",
+      "line": NaN,
+      "p_over_sim": 0.001,
+      "sim_median": 0.0,
+      "game_key": "NFL_20261011_BAL_ATL",
+      "book": "draftkings",
+      "price": "not published (assumed -110)"
+     },
+     {
+      "player": "Keleki Latu",
+      "team": "BUF",
+      "market": "anytime_td",
+      "line": NaN,
+      "p_over_sim": 0.002,
+      "sim_median": 0.0,
+      "game_key": "NFL_20261012_BUF_LA",
+      "book": "draftkings",
+      "price": "not published (assumed -110)"
+     },
+     {
+      "player": "Chris Blair",
+      "team": "ATL",
+      "market": "anytime_td",
+      "line": NaN,
+      "p_over_sim": 0.003,
+      "sim_median": 0.0,
+      "game_key": "NFL_20261011_BAL_ATL",
+      "book": "draftkings",
+      "price": "not published (assumed -110)"
+     },
+     {
+      "player": "LaJohntay Wester",
+      "team": "BAL",
+      "market": "anytime_td",
+      "line": NaN,
+      "p_over_sim": 0.003,
+      "sim_median": 0.0,
+      "game_key": "NFL_20261011_BAL_ATL",
+      "book": "draftkings",
+      "price": "not published (assumed -110)"
+     },
+     {
+      "player": "Elijah Sarratt",
+      "team": "BAL",
+      "market": "anytime_td",
+      "line": NaN,
+      "p_over_sim": 0.003,
+      "sim_median": 0.0,
+      "game_key": "NFL_20261011_BAL_ATL",
+      "book": "draftkings",
+      "price": "not published (assumed -110)"
+     },
+     {
+      "player": "Jordan Whittington",
+      "team": "LA",
+      "market": "anytime_td",
+      "line": NaN,
+      "p_over_sim": 0.003,
+      "sim_median": 0.0,
+      "game_key": "NFL_20261012_BUF_LA",
+      "book": "draftkings",
+      "price": "not published (assumed -110)"
+     },
+     {
+      "player": "Jackson Hawes",
+      "team": "BUF",
+      "market": "anytime_td",
+      "line": NaN,
+      "p_over_sim": 0.004,
+      "sim_median": 0.0,
+      "game_key": "NFL_20261012_BUF_LA",
+      "book": "draftkings",
+      "price": "not published (assumed -110)"
+     },
+     {
+      "player": "Charlie Woerner",
+      "team": "ATL",
+      "market": "anytime_td",
+      "line": NaN,
+      "p_over_sim": 0.005,
+      "sim_median": 0.0,
+      "game_key": "NFL_20261011_BAL_ATL",
+      "book": "draftkings",
+      "price": "not published (assumed -110)"
+     },
+     {
+      "player": "Michael Penix Jr.",
+      "team": "ATL",
+      "market": "anytime_td",
+      "line": NaN,
+      "p_over_sim": 0.005,
+      "sim_median": 0.0,
+      "game_key": "NFL_20261011_BAL_ATL",
+      "book": "draftkings",
+      "price": "not published (assumed -110)"
+     },
+     {
+      "player": "Tutu Atwell",
+      "team": "LA",
+      "market": "anytime_td",
+      "line": NaN,
+      "p_over_sim": 0.006,
+      "sim_median": 0.0,
+      "game_key": "NFL_20261012_BUF_LA",
+      "book": "draftkings",
+      "price": "not published (assumed -110)"
+     },
+     {
+      "player": "Tyler Huntley",
+      "team": "BAL",
+      "market": "anytime_td",
+      "line": NaN,
+      "p_over_sim": 0.008,
+      "sim_median": 0.0,
+      "game_key": "NFL_20261011_BAL_ATL",
+      "book": "draftkings",
+      "price": "not published (assumed -110)"
+     },
+     {
+      "player": "Olamide Zaccheaus",
+      "team": "ATL",
+      "market": "anytime_td",
+      "line": NaN,
+      "p_over_sim": 0.011,
+      "sim_median": 0.0,
+      "game_key": "NFL_20261011_BAL_ATL",
+      "book": "draftkings",
+      "price": "not published (assumed -110)"
+     },
+     {
+      "player": "Zachariah Branch",
+      "team": "ATL",
+      "market": "anytime_td",
+      "line": NaN,
+      "p_over_sim": 0.011,
+      "sim_median": 0.0,
+      "game_key": "NFL_20261011_BAL_ATL",
+      "book": "draftkings",
+      "price": "not published (assumed -110)"
+     },
+     {
+      "player": "Davis Allen",
+      "team": "LA",
+      "market": "anytime_td",
+      "line": NaN,
+      "p_over_sim": 0.011,
+      "sim_median": 0.0,
+      "game_key": "NFL_20261012_BUF_LA",
+      "book": "draftkings",
+      "price": "not published (assumed -110)"
+     },
+     {
+      "player": "Justice Hill",
+      "team": "BAL",
+      "market": "anytime_td",
+      "line": NaN,
+      "p_over_sim": 0.015,
+      "sim_median": 0.0,
+      "game_key": "NFL_20261011_BAL_ATL",
+      "book": "draftkings",
+      "price": "not published (assumed -110)"
+     },
+     {
+      "player": "Matthew Stafford",
+      "team": "LA",
+      "market": "anytime_td",
+      "line": NaN,
+      "p_over_sim": 0.017,
+      "sim_median": 0.0,
+      "game_key": "NFL_20261012_BUF_LA",
+      "book": "draftkings",
+      "price": "not published (assumed -110)"
+     },
+     {
+      "player": "Khalil Shakir",
+      "team": "BUF",
+      "market": "anytime_td",
+      "line": NaN,
+      "p_over_sim": 0.036,
+      "sim_median": 0.0,
+      "game_key": "NFL_20261012_BUF_LA",
+      "book": "draftkings",
+      "price": "not published (assumed -110)"
+     },
+     {
+      "player": "Devontez Walker",
+      "team": "BAL",
+      "market": "anytime_td",
+      "line": NaN,
+      "p_over_sim": 0.073,
+      "sim_median": 0.0,
+      "game_key": "NFL_20261011_BAL_ATL",
+      "book": "draftkings",
+      "price": "not published (assumed -110)"
+     },
+     {
+      "player": "Chris Moore",
+      "team": "BAL",
+      "market": "anytime_td",
+      "line": NaN,
+      "p_over_sim": 0.076,
+      "sim_median": 0.0,
+      "game_key": "NFL_20261011_BAL_ATL",
+      "book": "draftkings",
+      "price": "not published (assumed -110)"
+     },
+     {
+      "player": "Rasheen Ali",
+      "team": "BAL",
+      "market": "anytime_td",
+      "line": NaN,
+      "p_over_sim": 0.077,
+      "sim_median": 0.0,
+      "game_key": "NFL_20261011_BAL_ATL",
+      "book": "draftkings",
+      "price": "not published (assumed -110)"
+     },
+     {
+      "player": "Matthew Hibner",
+      "team": "BAL",
+      "market": "anytime_td",
+      "line": NaN,
+      "p_over_sim": 0.078,
+      "sim_median": 0.0,
+      "game_key": "NFL_20261011_BAL_ATL",
+      "book": "draftkings",
+      "price": "not published (assumed -110)"
+     },
+     {
+      "player": "Matthew Stafford",
+      "team": "LA",
+      "market": "rush_yds",
+      "line": 1.5,
+      "p_over_sim": 0.921,
+      "sim_median": 19.0,
+      "game_key": "NFL_20261012_BUF_LA",
+      "book": "draftkings",
+      "price": "not published (assumed -110)"
+     },
+     {
+      "player": "Rashod Bateman",
+      "team": "BAL",
+      "market": "anytime_td",
+      "line": NaN,
+      "p_over_sim": 0.089,
+      "sim_median": 0.0,
+      "game_key": "NFL_20261011_BAL_ATL",
+      "book": "draftkings",
+      "price": "not published (assumed -110)"
+     },
+     {
+      "player": "Mark Andrews",
+      "team": "BAL",
+      "market": "anytime_td",
+      "line": NaN,
+      "p_over_sim": 0.098,
+      "sim_median": 0.0,
+      "game_key": "NFL_20261011_BAL_ATL",
+      "book": "draftkings",
+      "price": "not published (assumed -110)"
+     },
+     {
+      "player": "Ray Davis",
+      "team": "BUF",
+      "market": "anytime_td",
+      "line": NaN,
+      "p_over_sim": 0.098,
+      "sim_median": 0.0,
+      "game_key": "NFL_20261012_BUF_LA",
+      "book": "draftkings",
+      "price": "not published (assumed -110)"
+     }
+    ]
+   },
+   "flags_checked": 914
+  },
+  "NBA": {
+   "league": "NBA",
+   "n_games": 8,
+   "tiers": {
+    "SAFE": {
+     "bet": null,
+     "message": "NO BET",
+     "reason": "best candidate in the 55%-100% band has edge -0.7% over its break-even \u2014 below the 2% threshold; nothing is forced",
+     "best_candidates_considered": 0
+    },
+    "MODERATE": {
+     "id": "11f1645c681b3687",
+     "tier": "MODERATE",
+     "status": "OK",
+     "recheck_at": null,
+     "description": "DEN -7.5 + Over 232.5 (CHI @ DEN)",
+     "book": "betriversnj",
+     "price": 254,
+     "legs": [
+      {
+       "label": "DEN -7.5",
+       "game": "CHI @ DEN",
+       "kickoff": "2026-10-12T01:00Z",
+       "market": "spread",
+       "side": "home",
+       "point": -7.5,
+       "player": null,
+       "book": "betriversnj",
+       "price": -115.0,
+       "price_source": "posted",
+       "p_final": 0.5309,
+       "p_fair": 0.5309,
+       "p_model": 0.6646,
+       "p_push": 0.0,
+       "novig_implied": 0.5309,
+       "game_key": "NBA_20261011_CHI_DEN"
+      },
+      {
+       "label": "Over 232.5 (CHI @ DEN)",
+       "game": "CHI @ DEN",
+       "kickoff": "2026-10-12T01:00Z",
+       "market": "total",
+       "side": "over",
+       "point": 232.5,
+       "player": null,
+       "book": "betriversnj",
+       "price": -112.0,
+       "price_source": "posted",
+       "p_final": 0.5427,
+       "p_fair": 0.5427,
+       "p_model": 0.5063,
+       "p_push": 0.0,
+       "novig_implied": 0.5427,
+       "game_key": "NBA_20261011_CHI_DEN"
+      }
+     ],
+     "model_prob": 0.3239,
+     "novig_market_prob": 0.3239,
+     "price_implied_prob": 0.2826,
+     "edge": 0.0413,
+     "ev_per_100": 14.62,
+     "stake": 143.99,
+     "kelly_fraction_used": 0.0144,
+     "correlated_joint": true,
+     "min_acceptable_price": 215,
+     "reasons": [
+      "DEN -7.5: Best price -115 at betriversnj vs market-consensus fair -113 (fair win prob 53.1%; break-even at this price 53.5%).",
+      "Over 232.5 (CHI @ DEN): Best price -112 at betriversnj vs market-consensus fair -119 (fair win prob 54.3%; break-even at this price 52.8%)."
+     ],
+     "flags": [],
+     "notes": [
+      "Same-game joint probability comes from the correlated simulation; books adjust SGP prices for correlation and free sources don't publish them \u2014 bet only if the book's SGP price is +215 or better."
+     ]
+    },
+    "LONG SHOT": {
+     "id": "b71d01af003980d7",
+     "tier": "LONG SHOT",
+     "status": "OK",
+     "recheck_at": null,
+     "description": "MIL ML + DEN -7.5 + Over 232.5 (CHI @ DEN)",
+     "book": "betriversnj",
+     "price": 742,
+     "legs": [
+      {
+       "label": "MIL ML",
+       "game": "MIL @ CHA",
+       "kickoff": "2026-10-11T23:00Z",
+       "market": "moneyline",
+       "side": "away",
+       "point": null,
+       "player": null,
+       "book": "betriversnj",
+       "price": 138.0,
+       "price_source": "posted",
+       "p_final": 0.4135,
+       "p_fair": 0.4135,
+       "p_model": 0.174,
+       "p_push": 0.0085,
+       "novig_implied": 0.417,
+       "game_key": "NBA_20261011_MIL_CHA"
+      },
+      {
+       "label": "DEN -7.5",
+       "game": "CHI @ DEN",
+       "kickoff": "2026-10-12T01:00Z",
+       "market": "spread",
+       "side": "home",
+       "point": -7.5,
+       "player": null,
+       "book": "betriversnj",
+       "price": -115.0,
+       "price_source": "posted",
+       "p_final": 0.5309,
+       "p_fair": 0.5309,
+       "p_model": 0.6646,
+       "p_push": 0.0,
+       "novig_implied": 0.5309,
+       "game_key": "NBA_20261011_CHI_DEN"
+      },
+      {
+       "label": "Over 232.5 (CHI @ DEN)",
+       "game": "CHI @ DEN",
+       "kickoff": "2026-10-12T01:00Z",
+       "market": "total",
+       "side": "over",
+       "point": 232.5,
+       "player": null,
+       "book": "betriversnj",
+       "price": -112.0,
+       "price_source": "posted",
+       "p_final": 0.5427,
+       "p_fair": 0.5427,
+       "p_model": 0.5063,
+       "p_push": 0.0,
+       "novig_implied": 0.5427,
+       "game_key": "NBA_20261011_CHI_DEN"
+      }
+     ],
+     "model_prob": 0.1339,
+     "novig_market_prob": 0.1339,
+     "price_implied_prob": 0.1187,
+     "edge": 0.0152,
+     "ev_per_100": 12.8,
+     "stake": 43.1,
+     "kelly_fraction_used": 0.0043,
+     "correlated_joint": true,
+     "min_acceptable_price": 662,
+     "reasons": [
+      "MIL ML: Best price +138 at betriversnj vs market-consensus fair +140 (fair win prob 41.3%; break-even at this price 41.7%).",
+      "DEN -7.5: Best price -115 at betriversnj vs market-consensus fair -113 (fair win prob 53.1%; break-even at this price 53.5%).",
+      "Over 232.5 (CHI @ DEN): Best price -112 at betriversnj vs market-consensus fair -119 (fair win prob 54.3%; break-even at this price 52.8%)."
+     ],
+     "flags": [],
+     "notes": [
+      "Same-game joint probability comes from the correlated simulation; books adjust SGP prices for correlation and free sources don't publish them \u2014 bet only if the book's SGP price is +662 or better."
+     ]
+    }
+   },
+   "model": {
+    "weights": {
+     "ml_home": 0.0,
+     "spread_home": 0.0,
+     "over": 0.0
+    },
+    "feature_groups": [
+     "base",
+     "h2h"
+    ],
+    "trained_through": "2026-06-13",
+    "note": "model weight is 0 in every market: bets below come only from price differences between books (line shopping), never from the model's opinion"
+   },
+   "shadow_props": {
+    "status": "no prop lines available",
+    "rows": []
+   },
+   "flags_checked": 132
+  }
+ },
+ "disclaimer": "Probabilities, not guarantees. Paper mode: nothing here is a real wager.",
+ "backtest": {
+  "NFL": {
+   "verdicts": [
+    "moneyline: did NOT beat the no-vig closing line out of sample (final 0.6086 vs market 0.6086; model alone 0.6438). Edges in this market should be treated as noise.",
+    "moneyline: the model on its own is worse than the market by 0.0352 log loss.",
+    "spread: did NOT beat the no-vig closing line out of sample (final 0.6922 vs market 0.6922; model alone 0.7035). Edges in this market should be treated as noise.",
+    "spread: the model on its own is worse than the market by 0.0113 log loss.",
+    "total: did NOT beat the no-vig closing line out of sample (final 0.6929 vs market 0.6929; model alone 0.6997). Edges in this market should be treated as noise.",
+    "total: the model on its own is worse than the market by 0.0067 log loss.",
+    "No historical bets cleared the edge threshold: the model never disagreed with the close enough to act."
+   ],
+   "test_seasons": [
+    2020,
+    2026
+   ],
+   "kept_groups": [
+    "opp_adjusted",
+    "pressure_redzone",
+    "turnover_luck",
+    "cohesion",
+    "weather",
+    "h2h"
+   ],
+   "dropped_groups": [
+    "special_teams",
+    "fatigue",
+    "motivation",
+    "altitude"
+   ],
+   "generated_at": "2026-10-06T11:25:46"
+  },
+  "NBA": {
+   "verdicts": [
+    "moneyline: did NOT beat the no-vig closing line out of sample (final 0.5925 vs market 0.5925; model alone 0.6251). Edges in this market should be treated as noise.",
+    "moneyline: the model on its own is worse than the market by 0.0326 log loss.",
+    "spread: did NOT beat the no-vig closing line out of sample (final 0.6926 vs market 0.6926; model alone 0.6951). Edges in this market should be treated as noise.",
+    "spread: the model on its own is worse than the market by 0.0025 log loss.",
+    "total: did NOT beat the no-vig closing line out of sample (final 0.6929 vs market 0.6929; model alone 0.6972). Edges in this market should be treated as noise.",
+    "total: the model on its own is worse than the market by 0.0043 log loss.",
+    "No historical bets cleared the edge threshold: the model never disagreed with the close enough to act."
+   ],
+   "test_seasons": [
+    2022,
+    2025
+   ],
+   "kept_groups": [
+    "h2h"
+   ],
+   "dropped_groups": [
+    "efficiency",
+    "style",
+    "fatigue",
+    "altitude",
+    "motivation"
+   ],
+   "generated_at": "2026-10-06T11:29:49"
+  }
+ },
+ "freshness": {
+  "nfl.espn.schedule": {
+   "ok": true,
+   "rows": 15,
+   "note": "upcoming events",
+   "checked_at": "2026-10-11T20:30:25+00:00",
+   "data_as_of": null
+  },
+  "nfl.espn.odds": {
+   "ok": true,
+   "rows": 24,
+   "note": "",
+   "checked_at": "2026-10-11T20:30:30+00:00",
+   "data_as_of": null
+  },
+  "nfl.actionnetwork.odds": {
+   "ok": true,
+   "rows": 432,
+   "note": "",
+   "checked_at": "2026-10-11T20:30:33+00:00",
+   "data_as_of": null
+  },
+  "nfl.kalshi.moneyline": {
+   "ok": true,
+   "rows": 24,
+   "note": "",
+   "checked_at": "2026-10-11T20:30:33+00:00",
+   "data_as_of": null
+  },
+  "nfl.espn.props": {
+   "ok": true,
+   "rows": 166,
+   "note": "DraftKings lines; prices not published",
+   "checked_at": "2026-10-11T20:30:36+00:00",
+   "data_as_of": null
+  },
+  "nba.espn.schedule": {
+   "ok": true,
+   "rows": 13,
+   "note": "upcoming events",
+   "checked_at": "2026-10-11T20:30:37+00:00",
+   "data_as_of": null
+  },
+  "nba.espn.odds": {
+   "ok": true,
+   "rows": 36,
+   "note": "",
+   "checked_at": "2026-10-11T20:30:42+00:00",
+   "data_as_of": null
+  },
+  "nba.actionnetwork.odds": {
+   "ok": true,
+   "rows": 108,
+   "note": "",
+   "checked_at": "2026-10-11T20:30:43+00:00",
+   "data_as_of": null
+  },
+  "nba.kalshi.moneyline": {
+   "ok": true,
+   "rows": 24,
+   "note": "",
+   "checked_at": "2026-10-11T20:30:43+00:00",
+   "data_as_of": null
+  },
+  "nba.espn.props": {
+   "ok": false,
+   "rows": 0,
+   "note": "DraftKings lines; prices not published",
+   "checked_at": "2026-10-11T20:30:49+00:00",
+   "data_as_of": null
+  },
+  "nfl.espn.injuries": {
+   "ok": true,
+   "rows": 800,
+   "note": "",
+   "checked_at": "2026-10-11T20:31:19+00:00",
+   "data_as_of": null
+  },
+  "nfl.news.google_rss": {
+   "ok": true,
+   "rows": 40,
+   "note": "per-player/team queries, last 48h",
+   "checked_at": "2026-10-11T20:32:00+00:00",
+   "data_as_of": null
+  },
+  "nfl.news.league_feeds": {
+   "ok": true,
+   "rows": 116,
+   "note": "",
+   "checked_at": "2026-10-11T20:32:00+00:00",
+   "data_as_of": null
+  },
+  "nfl.open_meteo.forecast": {
+   "ok": true,
+   "rows": 8,
+   "note": "outdoor venues only",
+   "checked_at": "2026-10-11T20:31:19+00:00",
+   "data_as_of": null
+  },
+  "nba.espn.injuries": {
+   "ok": true,
+   "rows": 132,
+   "note": "",
+   "checked_at": "2026-10-11T20:32:05+00:00",
+   "data_as_of": null
+  },
+  "nba.news.google_rss": {
+   "ok": false,
+   "rows": 0,
+   "note": "per-player/team queries, last 48h",
+   "checked_at": "2026-10-11T20:32:05+00:00",
+   "data_as_of": null
+  },
+  "nba.news.league_feeds": {
+   "ok": true,
+   "rows": 86,
+   "note": "",
+   "checked_at": "2026-10-11T20:32:05+00:00",
+   "data_as_of": null
+  }
+ },
+ "warnings": []
+}
