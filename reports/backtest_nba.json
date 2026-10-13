@@ -1,6 +1,6 @@
 {
  "league": "NBA",
- "generated_at": "2026-10-06T11:29:49",
+ "generated_at": "2026-10-13T18:17:52",
  "test_seasons": [
   2022,
   2025
@@ -16,8 +16,8 @@
   },
   "groups": {
    "efficiency": {
-    "model_logloss": 0.6738866007558716,
-    "delta_model": 0.0007868358569598222,
+    "model_logloss": 0.6731745977915149,
+    "delta_model": 7.48328926031272e-05,
     "seasons_improved": 2,
     "seasons": 4,
     "keep": false,
@@ -31,9 +31,9 @@
     "delta_rmse": 0.0
    },
    "style": {
-    "model_logloss": 0.6731594771975522,
-    "delta_model": 5.971229864043526e-05,
-    "seasons_improved": 2,
+    "model_logloss": 0.6739102536511629,
+    "delta_model": 0.0008104887522510928,
+    "seasons_improved": 1,
     "seasons": 4,
     "keep": false,
     "features": [
