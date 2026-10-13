@@ -1,0 +1,767 @@
+{
+ "generated_at": "2026-10-13T21:28:49+00:00",
+ "generated_at_et": "Tue Oct 13 05:28 PM ET",
+ "mode": "recheck",
+ "paper_mode": true,
+ "bankroll": 10000.0,
+ "leagues": {
+  "NFL": {
+   "league": "NFL",
+   "n_games": 14,
+   "tiers": {
+    "SAFE": {
+     "bet": null,
+     "message": "NO BET",
+     "reason": "best candidate in the 55%-100% band has edge -1.6% over its break-even \u2014 below the 2% threshold; nothing is forced",
+     "best_candidates_considered": 0
+    },
+    "MODERATE": {
+     "id": "90093f52049c6e82",
+     "tier": "MODERATE",
+     "status": "OK",
+     "recheck_at": null,
+     "description": "LV ML + LV +5.5",
+     "book": "dknj",
+     "price": 516,
+     "legs": [
+      {
+       "label": "LV ML",
+       "game": "BUF @ LV",
+       "kickoff": "2026-10-18T20:25Z",
+       "market": "moneyline",
+       "side": "home",
+       "point": null,
+       "player": null,
+       "book": "dknj",
+       "price": 220.0,
+       "price_source": "posted",
+       "p_final": 0.3131,
+       "p_fair": 0.3131,
+       "p_model": 0.2155,
+       "p_push": 0.0047,
+       "novig_implied": 0.3146,
+       "game_key": "NFL_20261018_BUF_LV"
+      },
+      {
+       "label": "LV +5.5",
+       "game": "BUF @ LV",
+       "kickoff": "2026-10-18T20:25Z",
+       "market": "spread",
+       "side": "home",
+       "point": 5.5,
+       "player": null,
+       "book": "dknj",
+       "price": -108.0,
+       "price_source": "posted",
+       "p_final": 0.5108,
+       "p_fair": 0.5108,
+       "p_model": 0.3888,
+       "p_push": 0.0,
+       "novig_implied": 0.5108,
+       "game_key": "NFL_20261018_BUF_LV"
+      }
+     ],
+     "model_prob": 0.3143,
+     "novig_market_prob": 0.3143,
+     "price_implied_prob": 0.1623,
+     "edge": 0.152,
+     "ev_per_100": 93.7,
+     "stake": 200.0,
+     "kelly_fraction_used": 0.0454,
+     "correlated_joint": true,
+     "min_acceptable_price": 225,
+     "reasons": [
+      "LV ML: Best price +220 at dknj vs market-consensus fair +218 (fair win prob 31.3%; break-even at this price 31.1%).",
+      "LV +5.5: Best price -108 at dknj vs market-consensus fair -104 (fair win prob 51.1%; break-even at this price 51.9%)."
+     ],
+     "flags": [
+      {
+       "player": "Dalton Kincaid",
+       "team": "BUF",
+       "flag_type": "official_status",
+       "severity": 0,
+       "source": "ESPN injury report (official designations)",
+       "url": "https://www.espn.com/nfl/player/_/id/4385690/dalton-kincaid",
+       "timestamp": "2026-10-13T05:27Z",
+       "text": "active: Kincaid brought in one of two targets for seven yards and recorded a two-point conversion catch in the Bills' 37-34 overtime win over the Rams on Monday night.",
+       "status": "active"
+      },
+      {
+       "player": "Khalil Shakir",
+       "team": "BUF",
+       "flag_type": "official_status",
+       "severity": 0,
+       "source": "ESPN injury report (official designations)",
+       "url": "https://www.espn.com/nfl/player/_/id/4373678/khalil-shakir",
+       "timestamp": "2026-10-13T05:22Z",
+       "text": "active: Shakir brought in all three targets for 80 yards in the Bills' 37-34 overtime win over the Rams on Monday night.",
+       "status": "active"
+      },
+      {
+       "player": "Josh Allen",
+       "team": "BUF",
+       "flag_type": "official_status",
+       "severity": 0,
+       "source": "ESPN injury report (official designations)",
+       "url": "https://www.espn.com/nfl/player/_/id/3918298/josh-allen",
+       "timestamp": "2026-10-13T04:50Z",
+       "text": "active: Allen completed 12 of 19 passes for 210 yards with one touchdown and one interception while adding 10 carries for 121 yards and another score and a two-point conversion pass in the Bills' 37-34 overtime win against the Rams on Monday night.",
+       "status": "active"
+      },
+      {
+       "player": "James Cook III",
+       "team": "BUF",
+       "flag_type": "official_status",
+       "severity": 0,
+       "source": "ESPN injury report (official designations)",
+       "url": "https://www.espn.com/nfl/player/_/id/4379399/james-cook-iii",
+       "timestamp": "2026-10-13T04:15Z",
+       "text": "active: Cook rushed 10 times for 121 yards and a touchdown and brought in his only target for seven yards in the Bills' 37-34 overtime win over the Rams on Monday night. He also committed two fumbles, losing one.",
+       "status": "active"
+      },
+      {
+       "player": "Tre Tucker",
+       "team": "LV",
+       "flag_type": "official_status",
+       "severity": 0,
+       "source": "ESPN injury report (official designations)",
+       "url": "https://www.espn.com/nfl/player/_/id/4428718/tre-tucker",
+       "timestamp": "2026-10-12T04:21Z",
+       "text": "active: Tucker caught four of five targets for 41 yards during Sunday's 45-17 loss to the Patriots.",
+       "status": "active"
+      },
+      {
+       "player": "Kirk Cousins",
+       "team": "LV",
+       "flag_type": "official_status",
+       "severity": 0,
+       "source": "ESPN injury report (official designations)",
+       "url": "https://www.espn.com/nfl/player/_/id/14880/kirk-cousins",
+       "timestamp": "2026-10-12T01:00Z",
+       "text": "active: Cousins completed 19 of 28 passes for 243 yards and a touchdown in Sunday's 45-17 loss to the Patriots.",
+       "status": "active"
+      },
+      {
+       "player": "Ashton Jeanty",
+       "team": "LV",
+       "flag_type": "official_status",
+       "severity": 0,
+       "source": "ESPN injury report (official designations)",
+       "url": "https://www.espn.com/nfl/player/_/id/4890973/ashton-jeanty",
+       "timestamp": "2026-10-12T00:54Z",
+       "text": "active: Jeanty carried the ball 10 times for 27 yards and caught three of six targets for 50 yards in Sunday's 45-17 loss to New England.",
+       "status": "active"
+      },
+      {
+       "player": "Brock Bowers",
+       "team": "LV",
+       "flag_type": "official_status",
+       "severity": 0,
+       "source": "ESPN injury report (official designations)",
+       "url": "https://www.espn.com/nfl/player/_/id/4432665/brock-bowers",
+       "timestamp": "2026-10-12T00:47Z",
+       "text": "active: Bowers caught eight of 10 targets for 110 yards and a touchdown in Sunday's 45-17 loss to the Patriots.",
+       "status": "active"
+      },
+      {
+       "player": "Josh Allen",
+       "team": "BUF",
+       "flag_type": "coaching",
+       "severity": 1,
+       "source": "Google News / Democrat and Chronicle",
+       "url": "https://news.google.com/rss/articles/CBMi_wFBVV95cUxNek5nUU9nRHFZN0lSZFZfUGdUM21HTmFYdm5Od1Z2bkxucWdzS05kam9ENEFkYnUzT0tJRjgyRV9XOWEzeThMV2dJTFV6N0h4Z0E1ZXRWUElZZ3lMMWoxZ19LOTl4Nm9LUXBqUXM5ekxKZHlaRnd0Q0N5Z1pIUG1Qbzh2bFo1cWhBa2dKWkRsa0RfZGJIV1hNODFVRi1XMWtNaWZYNHJBUGg2VVlfemZwNGFJX1AtVjNCd0lWTnhqWFdmMzZzV2VRNE5jY1FNNllUVTUzaFdRcWN3TnhpbzhEZ0dNMERqQ1JyMWlUeVJSUzZHUVU4alkzcUk1cG82bTA?oc=5",
+       "timestamp": "2026-10-13T12:18:00+00:00",
+       "text": "Hailee Steinfeld gets fired up cheering on husband Josh Allen and Bills in rare TV moment - Democrat and Chronicle",
+       "status": null
+      },
+      {
+       "player": "Josh Allen",
+       "team": "BUF",
+       "flag_type": "coaching",
+       "severity": 1,
+       "source": "Google News / People.com",
+       "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxNVzR0cGlDOXNOZ080ZlNiM05jU2F3MFFpRVduWVFWRWRraTZ4OEhrYTdaZjl1RXlsTjF2M0FyQnNUekNsMEdGYWtzWkVXWFlON0pZTzNLUDNHYVNlNTFseFpra3BnUjlSekN6dmpENzNHS04tVTg0MWE5TFF1WU1TRWpDdzhZdWhxOXJPU0JMV3lzWXV1NmxnNWhUb25YTVdCNTM0RWZyamJBdw?oc=5",
+       "timestamp": "2026-10-13T14:36:29+00:00",
+       "text": "Hailee Steinfeld Makes Rare Public Appearance at Husband Josh Allen\u2019s Game with Fired-Up Cheer - People.com",
+       "status": null
+      },
+      {
+       "player": "Josh Allen",
+       "team": "BUF",
+       "flag_type": "coaching",
+       "severity": 1,
+       "source": "Google News / New York Post",
+       "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxOVTR1WEF3UVNlTklNVnRFU05xazhjcVNXS3loNVhJSGZ4Rk9IRHlocmVnXzdHaDBCMFRudEd2ZXhhTjA2RG5XU3JtVUNPY3RpQ1VGajZ4aEZBRkhYQ3NCc1FOVkNUVm1VaVBtRE5fNmV2X1BkOHpUVTJfNFpwVDN2ZS0zTGdKWnFKUmtpU2cxV3J2M09HXzByOC16UDV2ODFsUlJybzYtblZxTTRRaGNPTjhBZGNJM1RlWVV3SFNCN2FYNHhmQ1MtOXFHbw?oc=5",
+       "timestamp": "2026-10-13T12:28:00+00:00",
+       "text": "Hailee Steinfeld's fired-up Josh Allen celebration caught on 'MNF' before ducking from spotlight - New York Post",
+       "status": null
+      },
+      {
+       "player": "Josh Allen",
+       "team": "BUF",
+       "flag_type": "coaching",
+       "severity": 1,
+       "source": "Google News / Yahoo Sports",
+       "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxOc19CQThyYUFvb05zVTFuS0NyS1RXZG9RWlVJTDJ5elJlVU9MYi1wbkpSOG5fTDQ3ZW83WC1GN0ZBZXBRcS1mX2otdW55ZXJraE84Yy1NYzV3YVhVUkJEVUN3WjVpWlJ5R2FMUE5JNjlrVUczMnZBUDRyRDk5NTBmWlBxV3I4VEhhOUE?oc=5",
+       "timestamp": "2026-10-13T12:28:38+00:00",
+       "text": "Hailee Steinfeld\u2019s fired-up Josh Allen celebration caught on \u2018MNF\u2019 before ducking from spotlight - Yahoo Sports",
+       "status": null
+      }
+     ],
+     "notes": [
+      "Same-game joint probability comes from the correlated simulation; books adjust SGP prices for correlation and free sources don't publish them \u2014 bet only if the book's SGP price is +225 or better."
+     ]
+    },
+    "LONG SHOT": {
+     "bet": null,
+     "message": "NO LONG SHOT TODAY",
+     "reason": "best candidate in the 3%-15% band has edge +0.2% over its break-even \u2014 below the 1% threshold; nothing is forced",
+     "best_candidates_considered": 1
+    }
+   },
+   "model": {
+    "weights": {
+     "ml_home": 0.0,
+     "spread_home": 0.0,
+     "over": 0.0
+    },
+    "feature_groups": [
+     "base",
+     "opp_adjusted",
+     "pressure_redzone",
+     "turnover_luck",
+     "cohesion",
+     "weather",
+     "h2h"
+    ],
+    "trained_through": "2026-10-12",
+    "note": "model weight is 0 in every market: bets below come only from price differences between books (line shopping), never from the model's opinion"
+   },
+   "shadow_props": {
+    "status": "SHADOW ONLY \u2014 tracked for calibration, not recommended (no free prop prices; model unproven vs prop markets)",
+    "rows": []
+   },
+   "flags_checked": 1004
+  },
+  "NBA": {
+   "league": "NBA",
+   "n_games": 12,
+   "tiers": {
+    "SAFE": {
+     "id": "41db3b6a54ea01d9",
+     "tier": "SAFE",
+     "status": "OK",
+     "recheck_at": null,
+     "description": "POR ML + POR +0.5",
+     "book": "betriversny",
+     "price": 300,
+     "legs": [
+      {
+       "label": "POR ML",
+       "game": "POR @ SAC",
+       "kickoff": "2026-10-14T02:00Z",
+       "market": "moneyline",
+       "side": "away",
+       "point": null,
+       "player": null,
+       "book": "betriversny",
+       "price": 100.0,
+       "price_source": "posted",
+       "p_final": 0.5587,
+       "p_fair": 0.5587,
+       "p_model": 0.6044,
+       "p_push": 0.0086,
+       "novig_implied": 0.5635,
+       "game_key": "NBA_20261013_POR_SAC"
+      },
+      {
+       "label": "POR +0.5",
+       "game": "POR @ SAC",
+       "kickoff": "2026-10-14T02:00Z",
+       "market": "spread",
+       "side": "away",
+       "point": 0.5,
+       "player": null,
+       "book": "betriversny",
+       "price": 100.0,
+       "price_source": "posted",
+       "p_final": 0.5634,
+       "p_fair": 0.5634,
+       "p_model": 0.6127,
+       "p_push": 0.0,
+       "novig_implied": 0.5634,
+       "game_key": "NBA_20261013_POR_SAC"
+      }
+     ],
+     "model_prob": 0.5622,
+     "novig_market_prob": 0.5622,
+     "price_implied_prob": 0.25,
+     "edge": 0.3122,
+     "ev_per_100": 124.88,
+     "stake": 179.26,
+     "kelly_fraction_used": 0.1041,
+     "correlated_joint": true,
+     "min_acceptable_price": -123,
+     "reasons": [
+      "POR ML: Best price +100 at betriversny vs market-consensus fair -129 (fair win prob 55.9%; break-even at this price 49.6%).",
+      "POR +0.5: Best price +100 at betriversny vs market-consensus fair -129 (fair win prob 56.3%; break-even at this price 50.0%)."
+     ],
+     "flags": [
+      {
+       "player": null,
+       "team": null,
+       "flag_type": "line_move_against",
+       "severity": 1,
+       "source": "odds history (open vs now)",
+       "url": null,
+       "timestamp": "2026-10-13T21:29:46.887417+00:00",
+       "text": "POR ML: no-vig probability moved -4.1% since open (60.4% -> 56.3%)",
+       "status": null
+      },
+      {
+       "player": null,
+       "team": null,
+       "flag_type": "line_move_against",
+       "severity": 1,
+       "source": "odds history (open vs now)",
+       "url": null,
+       "timestamp": "2026-10-13T21:29:46.887554+00:00",
+       "text": "POR +0.5: no-vig probability moved -5.1% since open (61.4% -> 56.3%)",
+       "status": null
+      }
+     ],
+     "notes": [
+      "stake scaled x0.90 to respect the 5% daily cap",
+      "Same-game joint probability comes from the correlated simulation; books adjust SGP prices for correlation and free sources don't publish them \u2014 bet only if the book's SGP price is -123 or better."
+     ]
+    },
+    "MODERATE": {
+     "id": "919d4e2da2854b63",
+     "tier": "MODERATE",
+     "status": "OK",
+     "recheck_at": null,
+     "description": "OKC ML + OKC -9.5 + POR ML + POR +0.5",
+     "book": "betriversny",
+     "price": 1055,
+     "legs": [
+      {
+       "label": "OKC ML",
+       "game": "IND @ OKC",
+       "kickoff": "2026-10-14T00:00Z",
+       "market": "moneyline",
+       "side": "home",
+       "point": null,
+       "player": null,
+       "book": "betriversny",
+       "price": -286.0,
+       "price_source": "posted",
+       "p_final": 0.722,
+       "p_fair": 0.722,
+       "p_model": 0.8024,
+       "p_push": 0.0073,
+       "novig_implied": 0.7273,
+       "game_key": "NBA_20261013_IND_OKC"
+      },
+      {
+       "label": "OKC -9.5",
+       "game": "IND @ OKC",
+       "kickoff": "2026-10-14T00:00Z",
+       "market": "spread",
+       "side": "home",
+       "point": -9.5,
+       "player": null,
+       "book": "betriversny",
+       "price": 114.0,
+       "price_source": "posted",
+       "p_final": 0.4781,
+       "p_fair": 0.4781,
+       "p_model": 0.5511,
+       "p_push": 0.0,
+       "novig_implied": 0.4781,
+       "game_key": "NBA_20261013_IND_OKC"
+      },
+      {
+       "label": "POR ML",
+       "game": "POR @ SAC",
+       "kickoff": "2026-10-14T02:00Z",
+       "market": "moneyline",
+       "side": "away",
+       "point": null,
+       "player": null,
+       "book": "betriversny",
+       "price": 100.0,
+       "price_source": "posted",
+       "p_final": 0.5587,
+       "p_fair": 0.5587,
+       "p_model": 0.6044,
+       "p_push": 0.0086,
+       "novig_implied": 0.5635,
+       "game_key": "NBA_20261013_POR_SAC"
+      },
+      {
+       "label": "POR +0.5",
+       "game": "POR @ SAC",
+       "kickoff": "2026-10-14T02:00Z",
+       "market": "spread",
+       "side": "away",
+       "point": 0.5,
+       "player": null,
+       "book": "betriversny",
+       "price": 100.0,
+       "price_source": "posted",
+       "p_final": 0.5634,
+       "p_fair": 0.5634,
+       "p_model": 0.6127,
+       "p_push": 0.0,
+       "novig_implied": 0.5634,
+       "game_key": "NBA_20261013_POR_SAC"
+      }
+     ],
+     "model_prob": 0.2619,
+     "novig_market_prob": 0.2619,
+     "price_implied_prob": 0.0866,
+     "edge": 0.1753,
+     "ev_per_100": 202.54,
+     "stake": 179.26,
+     "kelly_fraction_used": 0.048,
+     "correlated_joint": true,
+     "min_acceptable_price": 290,
+     "reasons": [
+      "OKC ML: Best price -286 at betriversny vs market-consensus fair -267 (fair win prob 72.2%; break-even at this price 73.6%).",
+      "OKC -9.5: Best price +114 at betriversny vs market-consensus fair +109 (fair win prob 47.8%; break-even at this price 46.7%).",
+      "POR ML: Best price +100 at betriversny vs market-consensus fair -129 (fair win prob 55.9%; break-even at this price 49.6%)."
+     ],
+     "flags": [
+      {
+       "player": null,
+       "team": null,
+       "flag_type": "line_move_against",
+       "severity": 1,
+       "source": "odds history (open vs now)",
+       "url": null,
+       "timestamp": "2026-10-13T21:29:46.917269+00:00",
+       "text": "POR ML: no-vig probability moved -4.1% since open (60.4% -> 56.3%)",
+       "status": null
+      },
+      {
+       "player": null,
+       "team": null,
+       "flag_type": "line_move_against",
+       "severity": 1,
+       "source": "odds history (open vs now)",
+       "url": null,
+       "timestamp": "2026-10-13T21:29:46.917387+00:00",
+       "text": "POR +0.5: no-vig probability moved -5.1% since open (61.4% -> 56.3%)",
+       "status": null
+      }
+     ],
+     "notes": [
+      "stake scaled x0.90 to respect the 5% daily cap",
+      "Same-game joint probability comes from the correlated simulation; books adjust SGP prices for correlation and free sources don't publish them \u2014 bet only if the book's SGP price is +290 or better."
+     ]
+    },
+    "LONG SHOT": {
+     "id": "d6d577083eeadc74",
+     "tier": "LONG SHOT",
+     "status": "OK",
+     "recheck_at": null,
+     "description": "NYK ML + NYK +11.5 + SAC ML + SAC +2.5",
+     "book": "betriversnj",
+     "price": 3675,
+     "legs": [
+      {
+       "label": "NYK ML",
+       "game": "NYK @ TOR",
+       "kickoff": "2026-10-13T23:00Z",
+       "market": "moneyline",
+       "side": "away",
+       "point": null,
+       "player": null,
+       "book": "betriversnj",
+       "price": 340.0,
+       "price_source": "posted",
+       "p_final": 0.2262,
+       "p_fair": 0.2262,
+       "p_model": 0.5577,
+       "p_push": 0.0066,
+       "novig_implied": 0.2277,
+       "game_key": "NBA_20261013_NYK_TOR"
+      },
+      {
+       "label": "NYK +11.5",
+       "game": "NYK @ TOR",
+       "kickoff": "2026-10-13T23:00Z",
+       "market": "spread",
+       "side": "away",
+       "point": 11.5,
+       "player": null,
+       "book": "betriversnj",
+       "price": -107.0,
+       "price_source": "posted",
+       "p_final": 0.5185,
+       "p_fair": 0.5185,
+       "p_model": 0.8494,
+       "p_push": 0.0,
+       "novig_implied": 0.5185,
+       "game_key": "NBA_20261013_NYK_TOR"
+      },
+      {
+       "label": "SAC ML",
+       "game": "POR @ SAC",
+       "kickoff": "2026-10-14T02:00Z",
+       "market": "moneyline",
+       "side": "home",
+       "point": null,
+       "player": null,
+       "book": "betriversnj",
+       "price": 125.0,
+       "price_source": "posted",
+       "p_final": 0.4328,
+       "p_fair": 0.4328,
+       "p_model": 0.3873,
+       "p_push": 0.0086,
+       "novig_implied": 0.4365,
+       "game_key": "NBA_20261013_POR_SAC"
+      },
+      {
+       "label": "SAC +2.5",
+       "game": "POR @ SAC",
+       "kickoff": "2026-10-14T02:00Z",
+       "market": "spread",
+       "side": "home",
+       "point": 2.5,
+       "player": null,
+       "book": "betriversnj",
+       "price": -103.0,
+       "price_source": "posted",
+       "p_final": 0.5,
+       "p_fair": 0.5,
+       "p_model": 0.4498,
+       "p_push": 0.0,
+       "novig_implied": 0.5,
+       "game_key": "NBA_20261013_POR_SAC"
+      }
+     ],
+     "model_prob": 0.088,
+     "novig_market_prob": 0.088,
+     "price_implied_prob": 0.0265,
+     "edge": 0.0615,
+     "ev_per_100": 232.0,
+     "stake": 141.47,
+     "kelly_fraction_used": 0.0158,
+     "correlated_joint": true,
+     "min_acceptable_price": 1060,
+     "reasons": [
+      "NYK ML: Best price +340 at betriversnj vs market-consensus fair +339 (fair win prob 22.6%; break-even at this price 22.6%).",
+      "NYK +11.5: Best price -107 at betriversnj vs market-consensus fair -108 (fair win prob 51.9%; break-even at this price 51.7%).",
+      "SAC ML: Best price +125 at betriversnj vs market-consensus fair +129 (fair win prob 43.3%; break-even at this price 44.1%)."
+     ],
+     "flags": [],
+     "notes": [
+      "stake scaled x0.90 to respect the 5% daily cap",
+      "Same-game joint probability comes from the correlated simulation; books adjust SGP prices for correlation and free sources don't publish them \u2014 bet only if the book's SGP price is +1060 or better."
+     ]
+    }
+   },
+   "model": {
+    "weights": {
+     "ml_home": 0.0,
+     "spread_home": 0.0,
+     "over": 0.0
+    },
+    "feature_groups": [
+     "base",
+     "h2h"
+    ],
+    "trained_through": "2026-06-13",
+    "note": "model weight is 0 in every market: bets below come only from price differences between books (line shopping), never from the model's opinion"
+   },
+   "shadow_props": {
+    "status": "no prop lines available",
+    "rows": []
+   },
+   "flags_checked": 137
+  }
+ },
+ "disclaimer": "Probabilities, not guarantees. Paper mode: nothing here is a real wager.",
+ "backtest": {
+  "NFL": {
+   "verdicts": [
+    "moneyline: did NOT beat the no-vig closing line out of sample (final 0.6090 vs market 0.6090; model alone 0.6433). Edges in this market should be treated as noise.",
+    "moneyline: the model on its own is worse than the market by 0.0343 log loss.",
+    "spread: did NOT beat the no-vig closing line out of sample (final 0.6922 vs market 0.6922; model alone 0.7033). Edges in this market should be treated as noise.",
+    "spread: the model on its own is worse than the market by 0.0112 log loss.",
+    "total: did NOT beat the no-vig closing line out of sample (final 0.6930 vs market 0.6930; model alone 0.6997). Edges in this market should be treated as noise.",
+    "total: the model on its own is worse than the market by 0.0067 log loss.",
+    "No historical bets cleared the edge threshold: the model never disagreed with the close enough to act."
+   ],
+   "test_seasons": [
+    2020,
+    2026
+   ],
+   "kept_groups": [
+    "opp_adjusted",
+    "pressure_redzone",
+    "turnover_luck",
+    "cohesion",
+    "weather",
+    "h2h"
+   ],
+   "dropped_groups": [
+    "special_teams",
+    "fatigue",
+    "motivation",
+    "altitude"
+   ],
+   "generated_at": "2026-10-13T18:13:52"
+  },
+  "NBA": {
+   "verdicts": [
+    "moneyline: did NOT beat the no-vig closing line out of sample (final 0.5925 vs market 0.5925; model alone 0.6251). Edges in this market should be treated as noise.",
+    "moneyline: the model on its own is worse than the market by 0.0326 log loss.",
+    "spread: did NOT beat the no-vig closing line out of sample (final 0.6926 vs market 0.6926; model alone 0.6951). Edges in this market should be treated as noise.",
+    "spread: the model on its own is worse than the market by 0.0025 log loss.",
+    "total: did NOT beat the no-vig closing line out of sample (final 0.6929 vs market 0.6929; model alone 0.6972). Edges in this market should be treated as noise.",
+    "total: the model on its own is worse than the market by 0.0043 log loss.",
+    "No historical bets cleared the edge threshold: the model never disagreed with the close enough to act."
+   ],
+   "test_seasons": [
+    2022,
+    2025
+   ],
+   "kept_groups": [
+    "h2h"
+   ],
+   "dropped_groups": [
+    "efficiency",
+    "style",
+    "fatigue",
+    "altitude",
+    "motivation"
+   ],
+   "generated_at": "2026-10-13T18:17:52"
+  }
+ },
+ "freshness": {
+  "nfl.espn.schedule": {
+   "ok": true,
+   "rows": 14,
+   "note": "upcoming events",
+   "checked_at": "2026-10-13T21:28:24+00:00",
+   "data_as_of": null
+  },
+  "nfl.espn.odds": {
+   "ok": true,
+   "rows": 168,
+   "note": "",
+   "checked_at": "2026-10-13T21:28:29+00:00",
+   "data_as_of": null
+  },
+  "nfl.actionnetwork.odds": {
+   "ok": true,
+   "rows": 1512,
+   "note": "",
+   "checked_at": "2026-10-13T21:28:31+00:00",
+   "data_as_of": null
+  },
+  "nfl.kalshi.moneyline": {
+   "ok": true,
+   "rows": 24,
+   "note": "",
+   "checked_at": "2026-10-13T21:28:31+00:00",
+   "data_as_of": null
+  },
+  "nfl.espn.props": {
+   "ok": false,
+   "rows": 0,
+   "note": "DraftKings lines; prices not published",
+   "checked_at": "2026-10-13T21:28:31+00:00",
+   "data_as_of": null
+  },
+  "nba.espn.schedule": {
+   "ok": true,
+   "rows": 14,
+   "note": "upcoming events",
+   "checked_at": "2026-10-13T21:28:32+00:00",
+   "data_as_of": null
+  },
+  "nba.espn.odds": {
+   "ok": true,
+   "rows": 60,
+   "note": "",
+   "checked_at": "2026-10-13T21:28:38+00:00",
+   "data_as_of": null
+  },
+  "nba.actionnetwork.odds": {
+   "ok": true,
+   "rows": 264,
+   "note": "",
+   "checked_at": "2026-10-13T21:28:39+00:00",
+   "data_as_of": null
+  },
+  "nba.kalshi.moneyline": {
+   "ok": true,
+   "rows": 28,
+   "note": "",
+   "checked_at": "2026-10-13T21:28:39+00:00",
+   "data_as_of": null
+  },
+  "nba.espn.props": {
+   "ok": false,
+   "rows": 0,
+   "note": "DraftKings lines; prices not published",
+   "checked_at": "2026-10-13T21:28:48+00:00",
+   "data_as_of": null
+  },
+  "nfl.espn.injuries": {
+   "ok": true,
+   "rows": 800,
+   "note": "",
+   "checked_at": "2026-10-13T21:29:06+00:00",
+   "data_as_of": null
+  },
+  "nfl.news.google_rss": {
+   "ok": true,
+   "rows": 40,
+   "note": "per-player/team queries, last 48h",
+   "checked_at": "2026-10-13T21:29:43+00:00",
+   "data_as_of": null
+  },
+  "nfl.news.league_feeds": {
+   "ok": true,
+   "rows": 116,
+   "note": "",
+   "checked_at": "2026-10-13T21:29:44+00:00",
+   "data_as_of": null
+  },
+  "nfl.open_meteo.forecast": {
+   "ok": true,
+   "rows": 10,
+   "note": "outdoor venues only",
+   "checked_at": "2026-10-13T21:29:05+00:00",
+   "data_as_of": null
+  },
+  "nba.espn.injuries": {
+   "ok": true,
+   "rows": 137,
+   "note": "",
+   "checked_at": "2026-10-13T21:29:46+00:00",
+   "data_as_of": null
+  },
+  "nba.news.google_rss": {
+   "ok": false,
+   "rows": 0,
+   "note": "per-player/team queries, last 48h",
+   "checked_at": "2026-10-13T21:29:46+00:00",
+   "data_as_of": null
+  },
+  "nba.news.league_feeds": {
+   "ok": true,
+   "rows": 86,
+   "note": "",
+   "checked_at": "2026-10-13T21:29:46+00:00",
+   "data_as_of": null
+  }
+ },
+ "warnings": []
+}
