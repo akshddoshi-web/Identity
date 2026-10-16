@@ -3,70 +3,70 @@
   "ok": true,
   "rows": 14,
   "note": "upcoming events",
-  "checked_at": "2026-10-16T07:28:18+00:00",
+  "checked_at": "2026-10-16T17:42:43+00:00",
   "data_as_of": null
  },
  "nfl.espn.odds": {
   "ok": true,
   "rows": 168,
   "note": "",
-  "checked_at": "2026-10-16T07:28:23+00:00",
+  "checked_at": "2026-10-16T17:42:48+00:00",
   "data_as_of": null
  },
  "nfl.actionnetwork.odds": {
   "ok": true,
-  "rows": 2028,
+  "rows": 1872,
   "note": "",
-  "checked_at": "2026-10-16T07:28:24+00:00",
+  "checked_at": "2026-10-16T17:42:50+00:00",
   "data_as_of": null
  },
  "nfl.kalshi.moneyline": {
   "ok": true,
   "rows": 24,
   "note": "",
-  "checked_at": "2026-10-16T07:28:24+00:00",
+  "checked_at": "2026-10-16T17:42:51+00:00",
   "data_as_of": null
  },
  "nfl.espn.props": {
   "ok": false,
   "rows": 0,
   "note": "DraftKings lines; prices not published",
-  "checked_at": "2026-10-16T07:28:24+00:00",
+  "checked_at": "2026-10-16T17:42:51+00:00",
   "data_as_of": null
  },
  "nba.espn.schedule": {
   "ok": true,
   "rows": 12,
   "note": "upcoming events",
-  "checked_at": "2026-10-16T07:28:26+00:00",
+  "checked_at": "2026-10-16T17:42:52+00:00",
   "data_as_of": null
  },
  "nba.espn.odds": {
   "ok": true,
   "rows": 144,
   "note": "",
-  "checked_at": "2026-10-16T07:28:30+00:00",
+  "checked_at": "2026-10-16T17:42:57+00:00",
   "data_as_of": null
  },
  "nba.actionnetwork.odds": {
   "ok": true,
-  "rows": 360,
+  "rows": 432,
   "note": "",
-  "checked_at": "2026-10-16T07:28:30+00:00",
+  "checked_at": "2026-10-16T17:42:57+00:00",
   "data_as_of": null
  },
  "nba.kalshi.moneyline": {
   "ok": true,
   "rows": 24,
   "note": "",
-  "checked_at": "2026-10-16T07:28:30+00:00",
+  "checked_at": "2026-10-16T17:42:57+00:00",
   "data_as_of": null
  },
  "nba.espn.props": {
   "ok": false,
   "rows": 0,
   "note": "DraftKings lines; prices not published",
-  "checked_at": "2026-10-16T07:28:35+00:00",
+  "checked_at": "2026-10-16T17:43:12+00:00",
   "data_as_of": null
  },
  "nfl.espn.injuries": {
