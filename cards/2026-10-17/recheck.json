@@ -1,0 +1,1186 @@
+{
+ "generated_at": "2026-10-17T21:39:49+00:00",
+ "generated_at_et": "Sat Oct 17 05:39 PM ET",
+ "mode": "recheck",
+ "paper_mode": true,
+ "bankroll": 10000.0,
+ "leagues": {
+  "NFL": {
+   "league": "NFL",
+   "n_games": 14,
+   "tiers": {
+    "SAFE": {
+     "id": "cce07fb1cb3ba0c5",
+     "tier": "SAFE",
+     "status": "WAIT",
+     "recheck_at": "2026-10-18T15:30:00+00:00",
+     "description": "CAR ML + CAR +7.5",
+     "book": "matchbook",
+     "price": 156,
+     "legs": [
+      {
+       "label": "CAR ML",
+       "game": "CAR @ PHI",
+       "kickoff": "2026-10-18T17:00Z",
+       "market": "moneyline",
+       "side": "away",
+       "point": null,
+       "player": null,
+       "book": "matchbook",
+       "price": -103.0,
+       "price_source": "posted",
+       "p_final": 0.6007,
+       "p_fair": 0.6007,
+       "p_model": 0.5196,
+       "p_push": 0.0051,
+       "novig_implied": 0.6038,
+       "game_key": "NFL_20261018_CAR_PHI"
+      },
+      {
+       "label": "CAR +7.5",
+       "game": "CAR @ PHI",
+       "kickoff": "2026-10-18T17:00Z",
+       "market": "spread",
+       "side": "away",
+       "point": 7.5,
+       "player": null,
+       "book": "matchbook",
+       "price": -333.0,
+       "price_source": "posted",
+       "p_final": 0.8369,
+       "p_fair": 0.8369,
+       "p_model": 0.7764,
+       "p_push": 0.0,
+       "novig_implied": 0.8369,
+       "game_key": "NFL_20261018_CAR_PHI"
+      }
+     ],
+     "model_prob": 0.5992,
+     "novig_market_prob": 0.5992,
+     "price_implied_prob": 0.3902,
+     "edge": 0.209,
+     "ev_per_100": 53.56,
+     "stake": 166.67,
+     "kelly_fraction_used": 0.0857,
+     "correlated_joint": true,
+     "min_acceptable_price": -142,
+     "reasons": [
+      "CAR ML: Best price -103 at matchbook vs market-consensus fair -152 (fair win prob 60.1%; break-even at this price 50.5%).",
+      "CAR +7.5: Best price -333 at matchbook vs market-consensus fair -513 (fair win prob 83.7%; break-even at this price 76.9%)."
+     ],
+     "flags": [
+      {
+       "player": "Jalen Coker",
+       "team": "CAR",
+       "flag_type": "official_status",
+       "severity": 0,
+       "source": "ESPN injury report (official designations)",
+       "url": "https://www.espn.com/nfl/player/_/id/4695883/jalen-coker",
+       "timestamp": "2026-10-14T20:11Z",
+       "text": "active: Coker (quadriceps) was listed as a full participant on the Panthers' estimated injury report Wednesday, Darin Gantt of the Panthers' official site reports.",
+       "status": "active"
+      },
+      {
+       "player": "Bryce Young",
+       "team": "CAR",
+       "flag_type": "official_status",
+       "severity": 0,
+       "source": "ESPN injury report (official designations)",
+       "url": "https://www.espn.com/nfl/player/_/id/4685720/bryce-young",
+       "timestamp": "2026-10-05T04:20Z",
+       "text": "active: Young completed 29 of 41 passes for 329 yards and two touchdowns while rushing three times for three yards in Sunday's 32-26 win over the Lions.",
+       "status": "active"
+      },
+      {
+       "player": "Chuba Hubbard",
+       "team": "CAR",
+       "flag_type": "official_status",
+       "severity": 0,
+       "source": "ESPN injury report (official designations)",
+       "url": "https://www.espn.com/nfl/player/_/id/4241416/chuba-hubbard",
+       "timestamp": "2026-10-05T04:15Z",
+       "text": "active: Hubbard rushed 20 times for 122 yards and two touchdowns while catching one of two targets for seven yards in Sunday's 32-26 win over the Lions.",
+       "status": "active"
+      },
+      {
+       "player": "Tetairoa McMillan",
+       "team": "CAR",
+       "flag_type": "official_status",
+       "severity": 0,
+       "source": "ESPN injury report (official designations)",
+       "url": "https://www.espn.com/nfl/player/_/id/4685472/tetairoa-mcmillan",
+       "timestamp": "2026-10-05T04:04Z",
+       "text": "active: McMillan caught 14 of 16 targets for 192 yards and two touchdowns in Sunday's 32-26 win over the Lions.",
+       "status": "active"
+      },
+      {
+       "player": "Dameon Pierce",
+       "team": "PHI",
+       "flag_type": "official_status",
+       "severity": 0,
+       "source": "ESPN injury report (official designations)",
+       "url": "https://www.espn.com/nfl/player/_/id/4360238/dameon-pierce",
+       "timestamp": "2026-10-17T00:05Z",
+       "text": "active: Pierce will be the Eagles' starting running back against the Panthers on Sunday due to the absences of both Saquon Barkley (hamstring) and Will Shipley (foot, IR).",
+       "status": "active"
+      },
+      {
+       "player": "Dontayvion Wicks",
+       "team": "PHI",
+       "flag_type": "official_status",
+       "severity": 0,
+       "source": "ESPN injury report (official designations)",
+       "url": "https://www.espn.com/nfl/player/_/id/4428850/dontayvion-wicks",
+       "timestamp": "2026-10-16T20:34Z",
+       "text": "active: Wicks (hamstring) doesn't have a designation for Sunday's contest versus the Panthers.",
+       "status": "active"
+      },
+      {
+       "player": "Bryce Young",
+       "team": "CAR",
+       "flag_type": "conflict",
+       "severity": 1,
+       "source": "Google News / Carolina Panthers",
+       "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxQZkEtNERLQUlvMmRMM2V3R1FWSXgxeHBheHppc1d2VWp1WDc2aGMweFZybVJKSlp6eE1FaUlxWExreTlNbTJUWWkxSnRZSVR1ZlRRdUxlM2JUUVBYSkFJN0NsSEdXRENYLWN1TTFYWVI1dXpTcG9nekN5bk1QbDd4MVJsdWlsQWM2cVUwZFlrYjRhVWcyX0g3Mk14aw?oc=5",
+       "timestamp": "2026-10-17T10:18:11+00:00",
+       "text": "Bryce Young, Tetairoa McMillan and Taylor Moton | Locker Room Sound - Carolina Panthers",
+       "status": null
+      },
+      {
+       "player": "Bryce Young",
+       "team": "CAR",
+       "flag_type": "injury",
+       "severity": 2,
+       "source": "Google News / Sports Illustrated",
+       "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxORG5SdTV3NTNmZUJhaUo4NWg1VVJQV3VhM1BDNlY0RW94SGxxV0tGR05oS3pKX0x0a25LdTV2enBCaGI0QnVUcDR1Q3htZi0wbERpbGFuZENKTmdnLW1yYzJQbnBMcnh3UFZ2cTRrRzBNTGVBNUV1blVSZWxGb0NHeTlOaS1QTHNveGJoQUZWN2tEbnduS0xUdjVPUThJbVhHNTNOQzdTVzg2WVhQMkw0eg?oc=5",
+       "timestamp": "2026-10-16T18:00:01+00:00",
+       "text": "Final Panthers Injury Report: Latest Updates on Jaelan Phillips, Bryce Young & More - Sports Illustrated",
+       "status": null
+      },
+      {
+       "player": "Tetairoa McMillan",
+       "team": "CAR",
+       "flag_type": "conflict",
+       "severity": 1,
+       "source": "Google News / Carolina Panthers",
+       "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxQZkEtNERLQUlvMmRMM2V3R1FWSXgxeHBheHppc1d2VWp1WDc2aGMweFZybVJKSlp6eE1FaUlxWExreTlNbTJUWWkxSnRZSVR1ZlRRdUxlM2JUUVBYSkFJN0NsSEdXRENYLWN1TTFYWVI1dXpTcG9nekN5bk1QbDd4MVJsdWlsQWM2cVUwZFlrYjRhVWcyX0g3Mk14aw?oc=5",
+       "timestamp": "2026-10-17T10:18:11+00:00",
+       "text": "Bryce Young, Tetairoa McMillan and Taylor Moton | Locker Room Sound - Carolina Panthers",
+       "status": null
+      },
+      {
+       "player": "Jalen Coker",
+       "team": "CAR",
+       "flag_type": "injury",
+       "severity": 2,
+       "source": "Google News / 11Alive.com",
+       "url": "https://news.google.com/rss/articles/CBMiwAJBVV95cUxQZVp4MXA5eVZWZmxOWklRVzh2OS1KTDhGd0F3bVBqRFZleGY4dFdWNjhLT3d6VmtLckFydkppejFsMVJxOFlfd0p1ZmJZa2xUVzliM3IwbmJER3ZhZVdZaEtwVHpBMnJtTXc0U1hjZTB2MkZQbVZTeHZaaEt3bDdCdmpKSFVuaVpKOHJseHBhdHUyWkJoVGdyWHhfT0NUOHVPY0JCRjFwZGFTeUlNalhTaEk5ZkhRdzZVVWhtR1U4VTFUWXdnRlVHVXRXZFVNeE5LSVhWalR5V3hTU2tEUFJacW9xWGlKLV8xWnNMYTV5NHF6Sm1hdjFWSERxbUEwTl94S052YXU0VTBfY0pOeXlLempWWWl3S0JoWTVyVmt4cnVvam1CYlRjS3k1dmpBRHpmOEYtVWotRkJ5blp0aGhETw?oc=5",
+       "timestamp": "2026-10-16T21:12:00+00:00",
+       "text": "Carolina Panthers Final Week 6 Injury Report: Jalen Coker and Trevor Etienne to RETURN vs. Eagles - 11Alive.com",
+       "status": null
+      },
+      {
+       "player": "Jalen Coker",
+       "team": "CAR",
+       "flag_type": "injury",
+       "severity": 2,
+       "source": "Google News / WWLTV.com",
+       "url": "https://news.google.com/rss/articles/CBMivgJBVV95cUxNejhyOFhRRkE4ZnFLQ24xa0k4R1dxVkF6M3JyM1dRQ1ZIbDdKUjJveW5iYWNKT1IxREFuZGx2MS1ZdzdqS0FWMUhac2g5UmNMd3N1b3NFS01ndmI0Z1JCbVlzYW9aVDlzemZ2eGFqeTBfcU9vU0E4SERMbVZIWDZQckozRG42OUVGQWE2ZFNFalNkem82T3ZaSzRfS0lSMEJHMUdXX3MzbTlPUWNlWC1EUlEwaDhOUXQzUmJUQ3Bsem55Ym9YZnlWYnNaYmNEZUpUX2NELWU2REZaaUJvWUxRQWNsZFlFNDhqZzdNLVBlSlZScnV1S3V1WkNXcU1QSHJJdUgwUGROejhoSDlwUXNJdEJfbmQ1bnJQR2RQeWlsNXVnQ2paNjRJemQzNG4tcUVBdlpmNlVuUTdkalZ3S3c?oc=5",
+       "timestamp": "2026-10-16T21:12:00+00:00",
+       "text": "Carolina Panthers Final Week 6 Injury Report: Jalen Coker and Trevor Etienne to RETURN vs. Eagles - WWLTV.com",
+       "status": null
+      }
+     ],
+     "notes": [
+      "stake scaled x0.83 to respect the 5% daily cap",
+      "Same-game joint probability comes from the correlated simulation; books adjust SGP prices for correlation and free sources don't publish them \u2014 bet only if the book's SGP price is -142 or better."
+     ]
+    },
+    "MODERATE": {
+     "id": "fe61256ca13933a1",
+     "tier": "MODERATE",
+     "status": "WAIT",
+     "recheck_at": "2026-10-18T15:30:00+00:00",
+     "description": "ATL ML + ATL -1.5 + CAR ML + CAR +7.5",
+     "book": "matchbook",
+     "price": 1107,
+     "legs": [
+      {
+       "label": "ATL ML",
+       "game": "CHI @ ATL",
+       "kickoff": "2026-10-18T17:00Z",
+       "market": "moneyline",
+       "side": "home",
+       "point": null,
+       "player": null,
+       "book": "matchbook",
+       "price": 116.0,
+       "price_source": "posted",
+       "p_final": 0.4758,
+       "p_fair": 0.4758,
+       "p_model": 0.5026,
+       "p_push": 0.0052,
+       "novig_implied": 0.4783,
+       "game_key": "NFL_20261018_CHI_ATL"
+      },
+      {
+       "label": "ATL -1.5",
+       "game": "CHI @ ATL",
+       "kickoff": "2026-10-18T17:00Z",
+       "market": "spread",
+       "side": "home",
+       "point": -1.5,
+       "player": null,
+       "book": "matchbook",
+       "price": 118.0,
+       "price_source": "posted",
+       "p_final": 0.4546,
+       "p_fair": 0.4546,
+       "p_model": 0.4777,
+       "p_push": 0.0,
+       "novig_implied": 0.4546,
+       "game_key": "NFL_20261018_CHI_ATL"
+      },
+      {
+       "label": "CAR ML",
+       "game": "CAR @ PHI",
+       "kickoff": "2026-10-18T17:00Z",
+       "market": "moneyline",
+       "side": "away",
+       "point": null,
+       "player": null,
+       "book": "matchbook",
+       "price": -103.0,
+       "price_source": "posted",
+       "p_final": 0.6007,
+       "p_fair": 0.6007,
+       "p_model": 0.5196,
+       "p_push": 0.0051,
+       "novig_implied": 0.6038,
+       "game_key": "NFL_20261018_CAR_PHI"
+      },
+      {
+       "label": "CAR +7.5",
+       "game": "CAR @ PHI",
+       "kickoff": "2026-10-18T17:00Z",
+       "market": "spread",
+       "side": "away",
+       "point": 7.5,
+       "player": null,
+       "book": "matchbook",
+       "price": -333.0,
+       "price_source": "posted",
+       "p_final": 0.8369,
+       "p_fair": 0.8369,
+       "p_model": 0.7764,
+       "p_push": 0.0,
+       "novig_implied": 0.8369,
+       "game_key": "NFL_20261018_CAR_PHI"
+      }
+     ],
+     "model_prob": 0.2694,
+     "novig_market_prob": 0.2694,
+     "price_implied_prob": 0.0829,
+     "edge": 0.1865,
+     "ev_per_100": 225.1,
+     "stake": 166.67,
+     "kelly_fraction_used": 0.0508,
+     "correlated_joint": true,
+     "min_acceptable_price": 279,
+     "reasons": [
+      "ATL ML: Best price +116 at matchbook vs market-consensus fair +109 (fair win prob 47.6%; break-even at this price 46.1%).",
+      "ATL -1.5: Best price +118 at matchbook vs market-consensus fair +120 (fair win prob 45.5%; break-even at this price 45.9%).",
+      "CAR ML: Best price -103 at matchbook vs market-consensus fair -152 (fair win prob 60.1%; break-even at this price 50.5%)."
+     ],
+     "flags": [
+      {
+       "player": "Michael Penix Jr.",
+       "team": "ATL",
+       "flag_type": "official_status",
+       "severity": 0,
+       "source": "ESPN injury report (official designations)",
+       "url": "https://www.espn.com/nfl/player/_/id/4360423/michael-penix-jr",
+       "timestamp": "2026-10-16T17:40Z",
+       "text": "active: Penix (ribs) doesn't have a designation for Sunday's game against the Bears, Tori McElhaney of the Falcons' official site reports.",
+       "status": "active"
+      },
+      {
+       "player": "Drake London",
+       "team": "ATL",
+       "flag_type": "official_status",
+       "severity": 0,
+       "source": "ESPN injury report (official designations)",
+       "url": "https://www.espn.com/nfl/player/_/id/4426502/drake-london",
+       "timestamp": "2026-10-12T04:20Z",
+       "text": "active: London caught seven of 11 targets for 118 yards in Sunday's 30-23 overtime loss to the Ravens.",
+       "status": "active"
+      },
+      {
+       "player": "Bijan Robinson",
+       "team": "ATL",
+       "flag_type": "official_status",
+       "severity": 0,
+       "source": "ESPN injury report (official designations)",
+       "url": "https://www.espn.com/nfl/player/_/id/4430807/bijan-robinson",
+       "timestamp": "2026-10-12T04:12Z",
+       "text": "active: Robinson rushed 17 times for 86 yards while catching four of seven targets for 32 yards in Sunday's 30-23 overtime loss to the Ravens.",
+       "status": "active"
+      },
+      {
+       "player": "Jalen Coker",
+       "team": "CAR",
+       "flag_type": "official_status",
+       "severity": 0,
+       "source": "ESPN injury report (official designations)",
+       "url": "https://www.espn.com/nfl/player/_/id/4695883/jalen-coker",
+       "timestamp": "2026-10-14T20:11Z",
+       "text": "active: Coker (quadriceps) was listed as a full participant on the Panthers' estimated injury report Wednesday, Darin Gantt of the Panthers' official site reports.",
+       "status": "active"
+      },
+      {
+       "player": "Bryce Young",
+       "team": "CAR",
+       "flag_type": "official_status",
+       "severity": 0,
+       "source": "ESPN injury report (official designations)",
+       "url": "https://www.espn.com/nfl/player/_/id/4685720/bryce-young",
+       "timestamp": "2026-10-05T04:20Z",
+       "text": "active: Young completed 29 of 41 passes for 329 yards and two touchdowns while rushing three times for three yards in Sunday's 32-26 win over the Lions.",
+       "status": "active"
+      },
+      {
+       "player": "Chuba Hubbard",
+       "team": "CAR",
+       "flag_type": "official_status",
+       "severity": 0,
+       "source": "ESPN injury report (official designations)",
+       "url": "https://www.espn.com/nfl/player/_/id/4241416/chuba-hubbard",
+       "timestamp": "2026-10-05T04:15Z",
+       "text": "active: Hubbard rushed 20 times for 122 yards and two touchdowns while catching one of two targets for seven yards in Sunday's 32-26 win over the Lions.",
+       "status": "active"
+      },
+      {
+       "player": "Tetairoa McMillan",
+       "team": "CAR",
+       "flag_type": "official_status",
+       "severity": 0,
+       "source": "ESPN injury report (official designations)",
+       "url": "https://www.espn.com/nfl/player/_/id/4685472/tetairoa-mcmillan",
+       "timestamp": "2026-10-05T04:04Z",
+       "text": "active: McMillan caught 14 of 16 targets for 192 yards and two touchdowns in Sunday's 32-26 win over the Lions.",
+       "status": "active"
+      },
+      {
+       "player": "D'Andre Swift",
+       "team": "CHI",
+       "flag_type": "official_status",
+       "severity": 0,
+       "source": "ESPN injury report (official designations)",
+       "url": "https://www.espn.com/nfl/player/_/id/4259545/dandre-swift",
+       "timestamp": "2026-10-16T23:44Z",
+       "text": "active: Swift will once again absorb a heavier backfield workload after Kyle Monangai (thumb/toe) was ruled out for Sunday's game against the Falcons, Larry Mayer of the Bears' official site reports.",
+       "status": "active"
+      },
+      {
+       "player": "Tyson Bagent",
+       "team": "CHI",
+       "flag_type": "official_status",
+       "severity": 0,
+       "source": "ESPN injury report (official designations)",
+       "url": "https://www.espn.com/nfl/player/_/id/4434153/tyson-bagent",
+       "timestamp": "2026-10-16T23:33Z",
+       "text": "active: Whether Bagent starts or serves in a backup role against the Falcons on Sunday depends largely on whether Caleb Williams (hamstring) is cleared to return from a three-game absence, Larry Mayer of the Bears' official site reports.",
+       "status": "active"
+      },
+      {
+       "player": "Colston Loveland",
+       "team": "CHI",
+       "flag_type": "official_status",
+       "severity": 0,
+       "source": "ESPN injury report (official designations)",
+       "url": "https://www.espn.com/nfl/player/_/id/4723086/colston-loveland",
+       "timestamp": "2026-10-11T22:40Z",
+       "text": "active: Loveland brought in two of five targets for 19 yards in the Bears' 31-7 loss to the Packers on Sunday.",
+       "status": "active"
+      },
+      {
+       "player": "Rome Odunze",
+       "team": "CHI",
+       "flag_type": "official_status",
+       "severity": 0,
+       "source": "ESPN injury report (official designations)",
+       "url": "https://www.espn.com/nfl/player/_/id/4431299/rome-odunze",
+       "timestamp": "2026-10-11T22:34Z",
+       "text": "active: Odunze brought in three of nine targets for 40 yards in the Bears' 31-7 loss to the Packers on Sunday. He also lost a fumble.",
+       "status": "active"
+      },
+      {
+       "player": "Luther Burden III",
+       "team": "CHI",
+       "flag_type": "official_status",
+       "severity": 0,
+       "source": "ESPN injury report (official designations)",
+       "url": "https://www.espn.com/nfl/player/_/id/4685278/luther-burden-iii",
+       "timestamp": "2026-10-11T22:25Z",
+       "text": "active: Burden secured four of six targets for 47 yards and rushed four times for two yards in the Bears' 31-7 loss to the Packers on Sunday.",
+       "status": "active"
+      }
+     ],
+     "notes": [
+      "stake scaled x0.83 to respect the 5% daily cap",
+      "Same-game joint probability comes from the correlated simulation; books adjust SGP prices for correlation and free sources don't publish them \u2014 bet only if the book's SGP price is +279 or better."
+     ]
+    },
+    "LONG SHOT": {
+     "id": "bea056c9162d6fb4",
+     "tier": "LONG SHOT",
+     "status": "WAIT",
+     "recheck_at": "2026-10-18T15:30:00+00:00",
+     "description": "ATL ML + ATL -1.5 + CAR ML + Under 41.5 (CAR @ PHI)",
+     "book": "matchbook",
+     "price": 1756,
+     "legs": [
+      {
+       "label": "ATL ML",
+       "game": "CHI @ ATL",
+       "kickoff": "2026-10-18T17:00Z",
+       "market": "moneyline",
+       "side": "home",
+       "point": null,
+       "player": null,
+       "book": "matchbook",
+       "price": 116.0,
+       "price_source": "posted",
+       "p_final": 0.4758,
+       "p_fair": 0.4758,
+       "p_model": 0.5026,
+       "p_push": 0.0052,
+       "novig_implied": 0.4783,
+       "game_key": "NFL_20261018_CHI_ATL"
+      },
+      {
+       "label": "ATL -1.5",
+       "game": "CHI @ ATL",
+       "kickoff": "2026-10-18T17:00Z",
+       "market": "spread",
+       "side": "home",
+       "point": -1.5,
+       "player": null,
+       "book": "matchbook",
+       "price": 118.0,
+       "price_source": "posted",
+       "p_final": 0.4546,
+       "p_fair": 0.4546,
+       "p_model": 0.4777,
+       "p_push": 0.0,
+       "novig_implied": 0.4546,
+       "game_key": "NFL_20261018_CHI_ATL"
+      },
+      {
+       "label": "CAR ML",
+       "game": "CAR @ PHI",
+       "kickoff": "2026-10-18T17:00Z",
+       "market": "moneyline",
+       "side": "away",
+       "point": null,
+       "player": null,
+       "book": "matchbook",
+       "price": -103.0,
+       "price_source": "posted",
+       "p_final": 0.6007,
+       "p_fair": 0.6007,
+       "p_model": 0.5196,
+       "p_push": 0.0051,
+       "novig_implied": 0.6038,
+       "game_key": "NFL_20261018_CAR_PHI"
+      },
+      {
+       "label": "Under 41.5 (CAR @ PHI)",
+       "game": "CAR @ PHI",
+       "kickoff": "2026-10-18T17:00Z",
+       "market": "total",
+       "side": "under",
+       "point": 41.5,
+       "player": null,
+       "book": "matchbook",
+       "price": 100.0,
+       "price_source": "posted",
+       "p_final": 0.5926,
+       "p_fair": 0.5926,
+       "p_model": 0.4476,
+       "p_push": 0.0,
+       "novig_implied": 0.5926,
+       "game_key": "NFL_20261018_CAR_PHI"
+      }
+     ],
+     "model_prob": 0.1428,
+     "novig_market_prob": 0.1428,
+     "price_implied_prob": 0.0539,
+     "edge": 0.089,
+     "ev_per_100": 165.12,
+     "stake": 166.67,
+     "kelly_fraction_used": 0.0235,
+     "correlated_joint": true,
+     "min_acceptable_price": 614,
+     "reasons": [
+      "ATL ML: Best price +116 at matchbook vs market-consensus fair +109 (fair win prob 47.6%; break-even at this price 46.1%).",
+      "ATL -1.5: Best price +118 at matchbook vs market-consensus fair +120 (fair win prob 45.5%; break-even at this price 45.9%).",
+      "CAR ML: Best price -103 at matchbook vs market-consensus fair -152 (fair win prob 60.1%; break-even at this price 50.5%)."
+     ],
+     "flags": [
+      {
+       "player": "Michael Penix Jr.",
+       "team": "ATL",
+       "flag_type": "official_status",
+       "severity": 0,
+       "source": "ESPN injury report (official designations)",
+       "url": "https://www.espn.com/nfl/player/_/id/4360423/michael-penix-jr",
+       "timestamp": "2026-10-16T17:40Z",
+       "text": "active: Penix (ribs) doesn't have a designation for Sunday's game against the Bears, Tori McElhaney of the Falcons' official site reports.",
+       "status": "active"
+      },
+      {
+       "player": "Drake London",
+       "team": "ATL",
+       "flag_type": "official_status",
+       "severity": 0,
+       "source": "ESPN injury report (official designations)",
+       "url": "https://www.espn.com/nfl/player/_/id/4426502/drake-london",
+       "timestamp": "2026-10-12T04:20Z",
+       "text": "active: London caught seven of 11 targets for 118 yards in Sunday's 30-23 overtime loss to the Ravens.",
+       "status": "active"
+      },
+      {
+       "player": "Bijan Robinson",
+       "team": "ATL",
+       "flag_type": "official_status",
+       "severity": 0,
+       "source": "ESPN injury report (official designations)",
+       "url": "https://www.espn.com/nfl/player/_/id/4430807/bijan-robinson",
+       "timestamp": "2026-10-12T04:12Z",
+       "text": "active: Robinson rushed 17 times for 86 yards while catching four of seven targets for 32 yards in Sunday's 30-23 overtime loss to the Ravens.",
+       "status": "active"
+      },
+      {
+       "player": "Jalen Coker",
+       "team": "CAR",
+       "flag_type": "official_status",
+       "severity": 0,
+       "source": "ESPN injury report (official designations)",
+       "url": "https://www.espn.com/nfl/player/_/id/4695883/jalen-coker",
+       "timestamp": "2026-10-14T20:11Z",
+       "text": "active: Coker (quadriceps) was listed as a full participant on the Panthers' estimated injury report Wednesday, Darin Gantt of the Panthers' official site reports.",
+       "status": "active"
+      },
+      {
+       "player": "Bryce Young",
+       "team": "CAR",
+       "flag_type": "official_status",
+       "severity": 0,
+       "source": "ESPN injury report (official designations)",
+       "url": "https://www.espn.com/nfl/player/_/id/4685720/bryce-young",
+       "timestamp": "2026-10-05T04:20Z",
+       "text": "active: Young completed 29 of 41 passes for 329 yards and two touchdowns while rushing three times for three yards in Sunday's 32-26 win over the Lions.",
+       "status": "active"
+      },
+      {
+       "player": "Chuba Hubbard",
+       "team": "CAR",
+       "flag_type": "official_status",
+       "severity": 0,
+       "source": "ESPN injury report (official designations)",
+       "url": "https://www.espn.com/nfl/player/_/id/4241416/chuba-hubbard",
+       "timestamp": "2026-10-05T04:15Z",
+       "text": "active: Hubbard rushed 20 times for 122 yards and two touchdowns while catching one of two targets for seven yards in Sunday's 32-26 win over the Lions.",
+       "status": "active"
+      },
+      {
+       "player": "Tetairoa McMillan",
+       "team": "CAR",
+       "flag_type": "official_status",
+       "severity": 0,
+       "source": "ESPN injury report (official designations)",
+       "url": "https://www.espn.com/nfl/player/_/id/4685472/tetairoa-mcmillan",
+       "timestamp": "2026-10-05T04:04Z",
+       "text": "active: McMillan caught 14 of 16 targets for 192 yards and two touchdowns in Sunday's 32-26 win over the Lions.",
+       "status": "active"
+      },
+      {
+       "player": "D'Andre Swift",
+       "team": "CHI",
+       "flag_type": "official_status",
+       "severity": 0,
+       "source": "ESPN injury report (official designations)",
+       "url": "https://www.espn.com/nfl/player/_/id/4259545/dandre-swift",
+       "timestamp": "2026-10-16T23:44Z",
+       "text": "active: Swift will once again absorb a heavier backfield workload after Kyle Monangai (thumb/toe) was ruled out for Sunday's game against the Falcons, Larry Mayer of the Bears' official site reports.",
+       "status": "active"
+      },
+      {
+       "player": "Tyson Bagent",
+       "team": "CHI",
+       "flag_type": "official_status",
+       "severity": 0,
+       "source": "ESPN injury report (official designations)",
+       "url": "https://www.espn.com/nfl/player/_/id/4434153/tyson-bagent",
+       "timestamp": "2026-10-16T23:33Z",
+       "text": "active: Whether Bagent starts or serves in a backup role against the Falcons on Sunday depends largely on whether Caleb Williams (hamstring) is cleared to return from a three-game absence, Larry Mayer of the Bears' official site reports.",
+       "status": "active"
+      },
+      {
+       "player": "Colston Loveland",
+       "team": "CHI",
+       "flag_type": "official_status",
+       "severity": 0,
+       "source": "ESPN injury report (official designations)",
+       "url": "https://www.espn.com/nfl/player/_/id/4723086/colston-loveland",
+       "timestamp": "2026-10-11T22:40Z",
+       "text": "active: Loveland brought in two of five targets for 19 yards in the Bears' 31-7 loss to the Packers on Sunday.",
+       "status": "active"
+      },
+      {
+       "player": "Rome Odunze",
+       "team": "CHI",
+       "flag_type": "official_status",
+       "severity": 0,
+       "source": "ESPN injury report (official designations)",
+       "url": "https://www.espn.com/nfl/player/_/id/4431299/rome-odunze",
+       "timestamp": "2026-10-11T22:34Z",
+       "text": "active: Odunze brought in three of nine targets for 40 yards in the Bears' 31-7 loss to the Packers on Sunday. He also lost a fumble.",
+       "status": "active"
+      },
+      {
+       "player": "Luther Burden III",
+       "team": "CHI",
+       "flag_type": "official_status",
+       "severity": 0,
+       "source": "ESPN injury report (official designations)",
+       "url": "https://www.espn.com/nfl/player/_/id/4685278/luther-burden-iii",
+       "timestamp": "2026-10-11T22:25Z",
+       "text": "active: Burden secured four of six targets for 47 yards and rushed four times for two yards in the Bears' 31-7 loss to the Packers on Sunday.",
+       "status": "active"
+      }
+     ],
+     "notes": [
+      "stake scaled x0.83 to respect the 5% daily cap",
+      "Same-game joint probability comes from the correlated simulation; books adjust SGP prices for correlation and free sources don't publish them \u2014 bet only if the book's SGP price is +614 or better."
+     ]
+    }
+   },
+   "model": {
+    "weights": {
+     "ml_home": 0.0,
+     "spread_home": 0.0,
+     "over": 0.0
+    },
+    "feature_groups": [
+     "base",
+     "opp_adjusted",
+     "pressure_redzone",
+     "turnover_luck",
+     "cohesion",
+     "weather",
+     "h2h"
+    ],
+    "trained_through": "2026-10-12",
+    "note": "model weight is 0 in every market: bets below come only from price differences between books (line shopping), never from the model's opinion"
+   },
+   "shadow_props": {
+    "status": "SHADOW ONLY \u2014 tracked for calibration, not recommended (no free prop prices; model unproven vs prop markets)",
+    "rows": [
+     {
+      "player": "Julius Chestnut",
+      "team": "TEN",
+      "market": "anytime_td",
+      "line": NaN,
+      "p_over_sim": 0.0,
+      "sim_median": 0.0,
+      "game_key": "NFL_20261018_TEN_IND",
+      "book": "draftkings",
+      "price": "not published (assumed -110)"
+     },
+     {
+      "player": "Treyton Welch",
+      "team": "NO",
+      "market": "anytime_td",
+      "line": NaN,
+      "p_over_sim": 0.0,
+      "sim_median": 0.0,
+      "game_key": "NFL_20261018_NO_NYG",
+      "book": "draftkings",
+      "price": "not published (assumed -110)"
+     },
+     {
+      "player": "Brevin Jordan",
+      "team": "HOU",
+      "market": "anytime_td",
+      "line": NaN,
+      "p_over_sim": 0.001,
+      "sim_median": 0.0,
+      "game_key": "NFL_20261018_HOU_JAX",
+      "book": "draftkings",
+      "price": "not published (assumed -110)"
+     },
+     {
+      "player": "Nick Westbrook-Ikhine",
+      "team": "IND",
+      "market": "anytime_td",
+      "line": NaN,
+      "p_over_sim": 0.001,
+      "sim_median": 0.0,
+      "game_key": "NFL_20261018_TEN_IND",
+      "book": "draftkings",
+      "price": "not published (assumed -110)"
+     },
+     {
+      "player": "Chris Manhertz",
+      "team": "NYG",
+      "market": "anytime_td",
+      "line": NaN,
+      "p_over_sim": 0.001,
+      "sim_median": 0.0,
+      "game_key": "NFL_20261018_NO_NYG",
+      "book": "draftkings",
+      "price": "not published (assumed -110)"
+     },
+     {
+      "player": "Oscar Delp",
+      "team": "NO",
+      "market": "anytime_td",
+      "line": NaN,
+      "p_over_sim": 0.001,
+      "sim_median": 0.0,
+      "game_key": "NFL_20261018_NO_NYG",
+      "book": "draftkings",
+      "price": "not published (assumed -110)"
+     },
+     {
+      "player": "Robert Tonyan",
+      "team": "PIT",
+      "market": "anytime_td",
+      "line": NaN,
+      "p_over_sim": 0.001,
+      "sim_median": 0.0,
+      "game_key": "NFL_20261018_PIT_TB",
+      "book": "draftkings",
+      "price": "not published (assumed -110)"
+     },
+     {
+      "player": "Theo Wease Jr.",
+      "team": "LAC",
+      "market": "anytime_td",
+      "line": NaN,
+      "p_over_sim": 0.001,
+      "sim_median": 0.0,
+      "game_key": "NFL_20261018_LAC_KC",
+      "book": "draftkings",
+      "price": "not published (assumed -110)"
+     },
+     {
+      "player": "Elijah Sarratt",
+      "team": "BAL",
+      "market": "anytime_td",
+      "line": NaN,
+      "p_over_sim": 0.002,
+      "sim_median": 0.0,
+      "game_key": "NFL_20261018_BAL_CLE",
+      "book": "draftkings",
+      "price": "not published (assumed -110)"
+     },
+     {
+      "player": "Kylen Granson",
+      "team": "TEN",
+      "market": "anytime_td",
+      "line": NaN,
+      "p_over_sim": 0.002,
+      "sim_median": 0.0,
+      "game_key": "NFL_20261018_TEN_IND",
+      "book": "draftkings",
+      "price": "not published (assumed -110)"
+     },
+     {
+      "player": "Britain Covey",
+      "team": "PHI",
+      "market": "anytime_td",
+      "line": NaN,
+      "p_over_sim": 0.002,
+      "sim_median": 0.0,
+      "game_key": "NFL_20261018_CAR_PHI",
+      "book": "draftkings",
+      "price": "not published (assumed -110)"
+     },
+     {
+      "player": "David Moore",
+      "team": "CAR",
+      "market": "anytime_td",
+      "line": NaN,
+      "p_over_sim": 0.002,
+      "sim_median": 0.0,
+      "game_key": "NFL_20261018_CAR_PHI",
+      "book": "draftkings",
+      "price": "not published (assumed -110)"
+     },
+     {
+      "player": "Dareke Young",
+      "team": "LV",
+      "market": "anytime_td",
+      "line": NaN,
+      "p_over_sim": 0.002,
+      "sim_median": 0.0,
+      "game_key": "NFL_20261018_BUF_LV",
+      "book": "draftkings",
+      "price": "not published (assumed -110)"
+     },
+     {
+      "player": "Keleki Latu",
+      "team": "BUF",
+      "market": "anytime_td",
+      "line": NaN,
+      "p_over_sim": 0.002,
+      "sim_median": 0.0,
+      "game_key": "NFL_20261018_BUF_LV",
+      "book": "draftkings",
+      "price": "not published (assumed -110)"
+     },
+     {
+      "player": "Chris Blair",
+      "team": "ATL",
+      "market": "anytime_td",
+      "line": NaN,
+      "p_over_sim": 0.003,
+      "sim_median": 0.0,
+      "game_key": "NFL_20261018_CHI_ATL",
+      "book": "draftkings",
+      "price": "not published (assumed -110)"
+     },
+     {
+      "player": "LaJohntay Wester",
+      "team": "BAL",
+      "market": "anytime_td",
+      "line": NaN,
+      "p_over_sim": 0.003,
+      "sim_median": 0.0,
+      "game_key": "NFL_20261018_BAL_CLE",
+      "book": "draftkings",
+      "price": "not published (assumed -110)"
+     },
+     {
+      "player": "Barion Brown",
+      "team": "NO",
+      "market": "anytime_td",
+      "line": NaN,
+      "p_over_sim": 0.003,
+      "sim_median": 0.0,
+      "game_key": "NFL_20261018_NO_NYG",
+      "book": "draftkings",
+      "price": "not published (assumed -110)"
+     },
+     {
+      "player": "Payne Durham",
+      "team": "TB",
+      "market": "anytime_td",
+      "line": NaN,
+      "p_over_sim": 0.003,
+      "sim_median": 0.0,
+      "game_key": "NFL_20261018_PIT_TB",
+      "book": "draftkings",
+      "price": "not published (assumed -110)"
+     },
+     {
+      "player": "Jordan Whittington",
+      "team": "LA",
+      "market": "anytime_td",
+      "line": NaN,
+      "p_over_sim": 0.003,
+      "sim_median": 0.0,
+      "game_key": "NFL_20261018_ARI_LA",
+      "book": "draftkings",
+      "price": "not published (assumed -110)"
+     },
+     {
+      "player": "Mark Redman",
+      "team": "GB",
+      "market": "anytime_td",
+      "line": NaN,
+      "p_over_sim": 0.003,
+      "sim_median": 0.0,
+      "game_key": "NFL_20261018_DAL_GB",
+      "book": "draftkings",
+      "price": "not published (assumed -110)"
+     },
+     {
+      "player": "Zavion Thomas",
+      "team": "CHI",
+      "market": "anytime_td",
+      "line": NaN,
+      "p_over_sim": 0.004,
+      "sim_median": 0.0,
+      "game_key": "NFL_20261018_CHI_ATL",
+      "book": "draftkings",
+      "price": "not published (assumed -110)"
+     },
+     {
+      "player": "Rasheen Ali",
+      "team": "BAL",
+      "market": "anytime_td",
+      "line": NaN,
+      "p_over_sim": 0.004,
+      "sim_median": 0.0,
+      "game_key": "NFL_20261018_BAL_CLE",
+      "book": "draftkings",
+      "price": "not published (assumed -110)"
+     },
+     {
+      "player": "Josh Cuevas",
+      "team": "BAL",
+      "market": "anytime_td",
+      "line": NaN,
+      "p_over_sim": 0.004,
+      "sim_median": 0.0,
+      "game_key": "NFL_20261018_BAL_CLE",
+      "book": "draftkings",
+      "price": "not published (assumed -110)"
+     },
+     {
+      "player": "Patrick Ricard",
+      "team": "NYG",
+      "market": "anytime_td",
+      "line": NaN,
+      "p_over_sim": 0.004,
+      "sim_median": 0.0,
+      "game_key": "NFL_20261018_NO_NYG",
+      "book": "draftkings",
+      "price": "not published (assumed -110)"
+     },
+     {
+      "player": "Johnny Mundt",
+      "team": "PHI",
+      "market": "anytime_td",
+      "line": NaN,
+      "p_over_sim": 0.004,
+      "sim_median": 0.0,
+      "game_key": "NFL_20261018_CAR_PHI",
+      "book": "draftkings",
+      "price": "not published (assumed -110)"
+     }
+    ]
+   },
+   "flags_checked": 949
+  },
+  "NBA": {
+   "league": "NBA",
+   "n_games": 0,
+   "tiers": {
+    "SAFE": {
+     "bet": null,
+     "message": "NO BET",
+     "reason": "no NBA games in the card window"
+    },
+    "MODERATE": {
+     "bet": null,
+     "message": "NO BET",
+     "reason": "no NBA games in the card window"
+    },
+    "LONG SHOT": {
+     "bet": null,
+     "message": "NO LONG SHOT TODAY",
+     "reason": "no NBA games in the card window"
+    }
+   },
+   "model": {
+    "weights": {
+     "ml_home": 0.0,
+     "spread_home": 0.0,
+     "over": 0.0
+    },
+    "feature_groups": [
+     "base",
+     "h2h"
+    ],
+    "trained_through": "2026-06-13",
+    "note": "model weight is 0 in every market: bets below come only from price differences between books (line shopping), never from the model's opinion"
+   }
+  }
+ },
+ "disclaimer": "Probabilities, not guarantees. Paper mode: nothing here is a real wager.",
+ "backtest": {
+  "NFL": {
+   "verdicts": [
+    "moneyline: did NOT beat the no-vig closing line out of sample (final 0.6090 vs market 0.6090; model alone 0.6433). Edges in this market should be treated as noise.",
+    "moneyline: the model on its own is worse than the market by 0.0343 log loss.",
+    "spread: did NOT beat the no-vig closing line out of sample (final 0.6922 vs market 0.6922; model alone 0.7033). Edges in this market should be treated as noise.",
+    "spread: the model on its own is worse than the market by 0.0112 log loss.",
+    "total: did NOT beat the no-vig closing line out of sample (final 0.6930 vs market 0.6930; model alone 0.6997). Edges in this market should be treated as noise.",
+    "total: the model on its own is worse than the market by 0.0067 log loss.",
+    "No historical bets cleared the edge threshold: the model never disagreed with the close enough to act."
+   ],
+   "test_seasons": [
+    2020,
+    2026
+   ],
+   "kept_groups": [
+    "opp_adjusted",
+    "pressure_redzone",
+    "turnover_luck",
+    "cohesion",
+    "weather",
+    "h2h"
+   ],
+   "dropped_groups": [
+    "special_teams",
+    "fatigue",
+    "motivation",
+    "altitude"
+   ],
+   "generated_at": "2026-10-13T18:13:52"
+  },
+  "NBA": {
+   "verdicts": [
+    "moneyline: did NOT beat the no-vig closing line out of sample (final 0.5925 vs market 0.5925; model alone 0.6251). Edges in this market should be treated as noise.",
+    "moneyline: the model on its own is worse than the market by 0.0326 log loss.",
+    "spread: did NOT beat the no-vig closing line out of sample (final 0.6926 vs market 0.6926; model alone 0.6951). Edges in this market should be treated as noise.",
+    "spread: the model on its own is worse than the market by 0.0025 log loss.",
+    "total: did NOT beat the no-vig closing line out of sample (final 0.6929 vs market 0.6929; model alone 0.6972). Edges in this market should be treated as noise.",
+    "total: the model on its own is worse than the market by 0.0043 log loss.",
+    "No historical bets cleared the edge threshold: the model never disagreed with the close enough to act."
+   ],
+   "test_seasons": [
+    2022,
+    2025
+   ],
+   "kept_groups": [
+    "h2h"
+   ],
+   "dropped_groups": [
+    "efficiency",
+    "style",
+    "fatigue",
+    "altitude",
+    "motivation"
+   ],
+   "generated_at": "2026-10-13T18:17:52"
+  }
+ },
+ "freshness": {
+  "nfl.espn.schedule": {
+   "ok": true,
+   "rows": 14,
+   "note": "upcoming events",
+   "checked_at": "2026-10-17T21:39:24+00:00",
+   "data_as_of": null
+  },
+  "nfl.espn.odds": {
+   "ok": true,
+   "rows": 168,
+   "note": "",
+   "checked_at": "2026-10-17T21:39:30+00:00",
+   "data_as_of": null
+  },
+  "nfl.actionnetwork.odds": {
+   "ok": true,
+   "rows": 1872,
+   "note": "",
+   "checked_at": "2026-10-17T21:39:32+00:00",
+   "data_as_of": null
+  },
+  "nfl.kalshi.moneyline": {
+   "ok": true,
+   "rows": 24,
+   "note": "",
+   "checked_at": "2026-10-17T21:39:32+00:00",
+   "data_as_of": null
+  },
+  "nfl.espn.props": {
+   "ok": true,
+   "rows": 904,
+   "note": "DraftKings lines; prices not published",
+   "checked_at": "2026-10-17T21:39:47+00:00",
+   "data_as_of": null
+  },
+  "nba.espn.schedule": {
+   "ok": false,
+   "rows": 0,
+   "note": "upcoming events",
+   "checked_at": "2026-10-17T21:39:48+00:00",
+   "data_as_of": null
+  },
+  "nba.espn.odds": {
+   "ok": false,
+   "rows": 0,
+   "note": "",
+   "checked_at": "2026-10-17T21:39:48+00:00",
+   "data_as_of": null
+  },
+  "nba.actionnetwork.odds": {
+   "ok": false,
+   "rows": 0,
+   "note": "",
+   "checked_at": "2026-10-17T21:39:48+00:00",
+   "data_as_of": null
+  },
+  "nba.kalshi.moneyline": {
+   "ok": false,
+   "rows": 0,
+   "note": "",
+   "checked_at": "2026-10-17T21:39:48+00:00",
+   "data_as_of": null
+  },
+  "nba.espn.props": {
+   "ok": false,
+   "rows": 0,
+   "note": "DraftKings lines; prices not published",
+   "checked_at": "2026-10-17T21:39:48+00:00",
+   "data_as_of": null
+  },
+  "nfl.espn.injuries": {
+   "ok": true,
+   "rows": 800,
+   "note": "",
+   "checked_at": "2026-10-17T21:40:48+00:00",
+   "data_as_of": null
+  },
+  "nfl.news.google_rss": {
+   "ok": true,
+   "rows": 40,
+   "note": "per-player/team queries, last 48h",
+   "checked_at": "2026-10-17T21:41:25+00:00",
+   "data_as_of": null
+  },
+  "nfl.news.league_feeds": {
+   "ok": true,
+   "rows": 116,
+   "note": "",
+   "checked_at": "2026-10-17T21:41:26+00:00",
+   "data_as_of": null
+  },
+  "nfl.open_meteo.forecast": {
+   "ok": true,
+   "rows": 8,
+   "note": "outdoor venues only",
+   "checked_at": "2026-10-17T21:40:48+00:00",
+   "data_as_of": null
+  },
+  "nba.espn.injuries": {
+   "ok": true,
+   "rows": 127,
+   "note": "",
+   "checked_at": "2026-10-16T23:00:41+00:00",
+   "data_as_of": null
+  },
+  "nba.news.google_rss": {
+   "ok": false,
+   "rows": 0,
+   "note": "per-player/team queries, last 48h",
+   "checked_at": "2026-10-16T23:00:43+00:00",
+   "data_as_of": null
+  },
+  "nba.news.league_feeds": {
+   "ok": true,
+   "rows": 86,
+   "note": "",
+   "checked_at": "2026-10-16T23:00:43+00:00",
+   "data_as_of": null
+  }
+ },
+ "warnings": []
+}
