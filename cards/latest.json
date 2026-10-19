@@ -1,6 +1,6 @@
 {
- "generated_at": "2026-10-18T21:44:41+00:00",
- "generated_at_et": "Sun Oct 18 05:44 PM ET",
+ "generated_at": "2026-10-19T21:13:07+00:00",
+ "generated_at_et": "Mon Oct 19 05:13 PM ET",
  "mode": "recheck",
  "paper_mode": true,
  "bankroll": 10000.0,
@@ -10,612 +10,22 @@
    "n_games": 14,
    "tiers": {
     "SAFE": {
-     "id": "7e06728c63c3b069",
-     "tier": "SAFE",
-     "status": "WAIT",
-     "recheck_at": "2026-10-25T15:30:00+00:00",
-     "description": "CLE ML",
-     "book": "draftkings",
-     "price": -125,
-     "legs": [
-      {
-       "label": "CLE ML",
-       "game": "CLE @ TEN",
-       "kickoff": "2026-10-25T17:00Z",
-       "market": "moneyline",
-       "side": "away",
-       "point": null,
-       "player": null,
-       "book": "draftkings",
-       "price": -125.0,
-       "price_source": "posted",
-       "p_final": 0.5728,
-       "p_fair": 0.5728,
-       "p_model": 0.5611,
-       "p_push": 0.0051,
-       "novig_implied": 0.5758,
-       "game_key": "NFL_20261025_CLE_TEN"
-      }
-     ],
-     "model_prob": 0.5728,
-     "novig_market_prob": 0.5728,
-     "price_implied_prob": 0.5556,
-     "edge": 0.0201,
-     "ev_per_100": 3.62,
-     "stake": 97.16,
-     "kelly_fraction_used": 0.0097,
-     "correlated_joint": false,
-     "min_acceptable_price": -130,
-     "reasons": [
-      "Best price -125 at draftkings vs market-consensus fair -136 (fair win prob 57.3%; break-even at this price 55.3%).",
-      "Prices seen for this side: draftkings -125, kalshi -212.",
-      "Model: margin -1.7, total 41.1 -> 56.1% for this side; weight used 0.00 (not trusted: no out-of-sample edge vs closing line)."
-     ],
-     "flags": [
-      {
-       "player": "Jaleel McLaughlin",
-       "team": "CLE",
-       "flag_type": "official_status",
-       "severity": 0,
-       "source": "ESPN injury report (official designations)",
-       "url": "https://www.espn.com/nfl/player/_/id/4722893/jaleel-mclaughlin",
-       "timestamp": "2026-10-18T16:37Z",
-       "text": "active: McLaughlin was the first running back to take reps during pregame warmups and appears likely to draw the start Sunday against the Ravens, Daniel Oyefusi of ESPN.com reports.",
-       "status": "active"
-      },
-      {
-       "player": "Denzel Boston",
-       "team": "CLE",
-       "flag_type": "official_status",
-       "severity": 0,
-       "source": "ESPN injury report (official designations)",
-       "url": "https://www.espn.com/nfl/player/_/id/4832800/denzel-boston",
-       "timestamp": "2026-10-16T20:20Z",
-       "text": "active: ",
-       "status": "active"
-      },
-      {
-       "player": "KC Concepcion",
-       "team": "CLE",
-       "flag_type": "official_status",
-       "severity": 0,
-       "source": "ESPN injury report (official designations)",
-       "url": "https://www.espn.com/nfl/player/_/id/4870653/kc-concepcion",
-       "timestamp": "2026-10-16T18:27Z",
-       "text": "active: Concepcion has cleared concussion protocol and will play Sunday against the Ravens, Daniel Oyefusi of ESPN.com reports.",
-       "status": "active"
-      },
-      {
-       "player": "Tyjae Spears",
-       "team": "TEN",
-       "flag_type": "official_status",
-       "severity": 0,
-       "source": "ESPN injury report (official designations)",
-       "url": "https://www.espn.com/nfl/player/_/id/4428557/tyjae-spears",
-       "timestamp": "2026-10-18T16:13Z",
-       "text": "active: Spears (knee) is active for Sunday's game against the Colts.",
-       "status": "active"
-      },
-      {
-       "player": "Tony Pollard",
-       "team": "TEN",
-       "flag_type": "official_status",
-       "severity": 0,
-       "source": "ESPN injury report (official designations)",
-       "url": "https://www.espn.com/nfl/player/_/id/3916148/tony-pollard",
-       "timestamp": "2026-10-14T20:37Z",
-       "text": "active: Pollard was a non-participant in Wednesday's practice due to rest.",
-       "status": "active"
-      },
-      {
-       "player": "Carnell Tate",
-       "team": "TEN",
-       "flag_type": "official_status",
-       "severity": 0,
-       "source": "ESPN injury report (official designations)",
-       "url": "https://www.espn.com/nfl/player/_/id/4871023/carnell-tate",
-       "timestamp": "2026-10-11T23:28Z",
-       "text": "active: Tate caught one of five targets for six yards in Sunday's 26-3 loss to the Texans.",
-       "status": "active"
-      },
-      {
-       "player": "Cam Ward",
-       "team": "TEN",
-       "flag_type": "official_status",
-       "severity": 0,
-       "source": "ESPN injury report (official designations)",
-       "url": "https://www.espn.com/nfl/player/_/id/4688380/cam-ward",
-       "timestamp": "2026-10-11T23:20Z",
-       "text": "active: Ward completed 23 of 36 passes for 170 yards and an interception in Sunday's 26-3 loss to the Texans. He added two yards on his lone carry.",
-       "status": "active"
-      },
-      {
-       "player": "Deshaun Watson",
-       "team": "CLE",
-       "flag_type": "trade",
-       "severity": 1,
-       "source": "Google News / Audacy",
-       "url": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxPeF9keWYtQmVnT3dobTg4VnZXRjlobWN0bUd1TFQteVZMeW9pUVVXY3RHZXFjbThRUnZySkFFZDZyUDVub29LaTRTU285TzlPeHNsa0x3Zk16OWlab2E3VlMzUElkWENOZElFeVVyWnloaThxQlZ4cXlLSjVFNVVfdHJzNW0tdDFDQzFEZjZ4WDBZVGp2MmFkdG85enZqSWI3c0lTclJueU1GMG9SVFBpUDVudFNZTUVjX3pSWjNiLWphN2ZQUGJ0MS1MblZMbnVxWHhTb1F6VDlrWmxqQ1E?oc=5",
-       "timestamp": "2026-10-17T16:54:15+00:00",
-       "text": "Mary Kay Cabot details latest on Browns QBs Deshaun Watson, Shedeur Sanders, trade deadline interest - Audacy",
-       "status": null
-      },
-      {
-       "player": "Deshaun Watson",
-       "team": "CLE",
-       "flag_type": "trade",
-       "severity": 1,
-       "source": "Google News / Unisba Media",
-       "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxNSXFPeEFYOWpMa0ExcVJxMFN0ZEFUREtnOUQyZ1N3M2o5azE1MVpQSkJIY0J3S3lwRWxDUTFpU0VPZXlsVzM1aWFQVDNUNVpkME1mY0JSa1NjVnNrVF80eUhSeGdVV1NrV0pyVUJERThWb3BhX1JURDZtQ05CaVRyQUNn?oc=5",
-       "timestamp": "2026-10-17T19:27:26+00:00",
-       "text": "Eagles Free Agency News: Jalen Mills Gone, Brandon Graham Extension + Deshaun Watson Trade? Lecce Vs Juventus (Y74RAMF3BK) - Unisba Media",
-       "status": null
-      },
-      {
-       "player": "Jaleel McLaughlin",
-       "team": "CLE",
-       "flag_type": "injury",
-       "severity": 2,
-       "source": "Google News / Akron Beacon Journal",
-       "url": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxQVDVGWk5qY0ZDal9wcE9WdExzQTgzbTZkWThRLUhsdGp2MmpuSllvWms2YkwtUFZmY00tQW9jTENoUGZyS3d1Y3hoek8xbVlWS0lWelc2OFJka1Q5UzlUeHYzVDh4Zm80UlVSeTV1dnVNcU1QTW9ZNnZEQ0ROMl9oQ3JYWWJMSnd3R2ZzMXdvYWVpdHlzZ2M3THpJWXhUMU1Xd1Z2c0lPanpreFhTVzJoTktTTEZDQjQwN3lYSjFhMkV4bExGdW5VS3prWDJEWTQ5NW1PUlU2UDhJVTJLTUJn?oc=5",
-       "timestamp": "2026-10-18T17:29:00+00:00",
-       "text": "Browns turn to Jaleel McLaughlin at running back with Quinshon Judkins and others injured - Akron Beacon Journal",
-       "status": null
-      },
-      {
-       "player": "Jaleel McLaughlin",
-       "team": "CLE",
-       "flag_type": "trade",
-       "severity": 1,
-       "source": "Google News / FantasyPros",
-       "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxOR3pfVnhtbXJkbDRjWnN3blhkZ1l1dkZVczhNSkJZSmUwUm1LVVZvaVdKYk55dURCTUF3cXZ5OVBYUl9JbjlfS29wX0g4MWdYMkU0YnlPVFNzdGktMWJtNUNOcjJnUTlQbmdVYUlsUE5wVGwtTk5UeWF4UEFSLXhMX1MxaU1lM1ZYMXFBSw?oc=5",
-       "timestamp": "2026-10-17T07:41:27+00:00",
-       "text": "Should I Trade (Half PPR) Jaleel McLaughlin for Jonnu Smith (2026)? - FantasyPros",
-       "status": null
-      },
-      {
-       "player": "KC Concepcion",
-       "team": "CLE",
-       "flag_type": "injury",
-       "severity": 2,
-       "source": "Google News / Fantasy Footballers Podcast",
-       "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxPeFFLQjkxZkFqc3B2dzJOSzY4TzVfaVlrM1ltdmM5TDNGZkNvNkhMTEtoMGFabzlmMmxRazBUaHdVZ2o3TzNvMkJkQWtZSV9PS3d0bkwwOEhPR2x6MjRjWTFUdUVncUNfRUtjcTVmeG9teWZYS3pta1loVGNuVV9GWVJaUXdkb3dyNWJ0REZpalZ1ZWI3N3c?oc=5",
-       "timestamp": "2026-10-16T21:53:30+00:00",
-       "text": "KC Concepcion Jr. Out of concussion protocol - Fantasy Footballers Podcast",
-       "status": null
-      }
-     ],
-     "notes": []
+     "bet": null,
+     "message": "NO BET",
+     "reason": "best candidate in the 55%-100% band has edge -1.9% over its break-even \u2014 below the 2% threshold; nothing is forced",
+     "best_candidates_considered": 0
     },
     "MODERATE": {
-     "id": "6f159d502a1164b8",
-     "tier": "MODERATE",
-     "status": "WAIT",
-     "recheck_at": "2026-10-18T22:50:00+00:00",
-     "description": "GB ML + GB +1 + Under 52 (WAS @ SF)",
-     "book": "betmgm",
-     "price": 635,
-     "legs": [
-      {
-       "label": "GB ML",
-       "game": "DAL @ GB",
-       "kickoff": "2026-10-19T00:20Z",
-       "market": "moneyline",
-       "side": "home",
-       "point": null,
-       "player": null,
-       "book": "betmgm",
-       "price": -102.0,
-       "price_source": "posted",
-       "p_final": 0.5082,
-       "p_fair": 0.5082,
-       "p_model": 0.5614,
-       "p_push": 0.0052,
-       "novig_implied": 0.5108,
-       "game_key": "NFL_20261018_DAL_GB"
-      },
-      {
-       "label": "GB +1",
-       "game": "DAL @ GB",
-       "kickoff": "2026-10-19T00:20Z",
-       "market": "spread",
-       "side": "home",
-       "point": 1.0,
-       "player": null,
-       "book": "betmgm",
-       "price": -108.0,
-       "price_source": "posted",
-       "p_final": 0.5153,
-       "p_fair": 0.5153,
-       "p_model": 0.5666,
-       "p_push": 0.0261,
-       "novig_implied": 0.5291,
-       "game_key": "NFL_20261018_DAL_GB"
-      },
-      {
-       "label": "Under 52 (WAS @ SF)",
-       "game": "WAS @ SF",
-       "kickoff": "2026-10-20T00:15Z",
-       "market": "total",
-       "side": "under",
-       "point": 52.0,
-       "player": null,
-       "book": "betmgm",
-       "price": -108.0,
-       "price_source": "posted",
-       "p_final": 0.5032,
-       "p_fair": 0.5032,
-       "p_model": 0.6453,
-       "p_push": 0.0236,
-       "novig_implied": 0.5154,
-       "game_key": "NFL_20261019_WAS_SF"
-      }
-     ],
-     "model_prob": 0.2564,
-     "novig_market_prob": 0.2564,
-     "price_implied_prob": 0.1361,
-     "edge": 0.1203,
-     "ev_per_100": 88.37,
-     "stake": 200.0,
-     "kelly_fraction_used": 0.0348,
-     "correlated_joint": true,
-     "min_acceptable_price": 298,
-     "reasons": [
-      "GB ML: Best price -102 at betmgm vs market-consensus fair -104 (fair win prob 50.8%; break-even at this price 50.2%).",
-      "GB +1: Best price -108 at betmgm vs market-consensus fair -112 (fair win prob 51.5%; break-even at this price 50.6%).",
-      "Under 52 (WAS @ SF): Best price -108 at betmgm vs market-consensus fair -106 (fair win prob 50.3%; break-even at this price 50.7%)."
-     ],
-     "flags": [
-      {
-       "player": "George Pickens",
-       "team": "DAL",
-       "flag_type": "official_status",
-       "severity": 0,
-       "source": "ESPN injury report (official designations)",
-       "url": "https://www.espn.com/nfl/player/_/id/4426354/george-pickens",
-       "timestamp": "2026-10-16T23:46Z",
-       "text": "active: With CeeDee Lamb (quadriceps) healthy and cleared to play Sunday night against the Packers, Pickens will handle his normal role as Dallas' WR2.",
-       "status": "active"
-      },
-      {
-       "player": "CeeDee Lamb",
-       "team": "DAL",
-       "flag_type": "official_status",
-       "severity": 0,
-       "source": "ESPN injury report (official designations)",
-       "url": "https://www.espn.com/nfl/player/_/id/4241389/ceedee-lamb",
-       "timestamp": "2026-10-14T21:17Z",
-       "text": "active: Lamb (thigh) was a full practice participant Wednesday, Patrik Walker of the Cowboys' official site reports.",
-       "status": "active"
-      },
-      {
-       "player": "Dak Prescott",
-       "team": "DAL",
-       "flag_type": "official_status",
-       "severity": 0,
-       "source": "ESPN injury report (official designations)",
-       "url": "https://www.espn.com/nfl/player/_/id/2577417/dak-prescott",
-       "timestamp": "2026-10-09T03:56Z",
-       "text": "active: Prescott completed 24 of 42 passes for 316 yards with a touchdown and two interceptions in the Cowboys' 24-16 loss to the Buccaneers on Thursday night.",
-       "status": "active"
-      },
-      {
-       "player": "Javonte Williams",
-       "team": "DAL",
-       "flag_type": "official_status",
-       "severity": 0,
-       "source": "ESPN injury report (official designations)",
-       "url": "https://www.espn.com/nfl/player/_/id/4361579/javonte-williams",
-       "timestamp": "2026-10-09T03:49Z",
-       "text": "active: Williams rushed 12 times for 45 yards and a touchdown and brought in two of three targets for 17 yards in the Cowboys' 24-16 loss to the Buccaneers on Thursday night.",
-       "status": "active"
-      },
-      {
-       "player": "MarShawn Lloyd",
-       "team": "GB",
-       "flag_type": "official_status",
-       "severity": 0,
-       "source": "ESPN injury report (official designations)",
-       "url": "https://www.espn.com/nfl/player/_/id/4429023/marshawn-lloyd",
-       "timestamp": "2026-10-12T02:55Z",
-       "text": "active: Lloyd rushed 10 times for 31 yards and two touchdowns while catching one of two targets for six yards during Sunday's 31-7 win over the Bears.",
-       "status": "active"
-      },
-      {
-       "player": "Jordan Love",
-       "team": "GB",
-       "flag_type": "official_status",
-       "severity": 0,
-       "source": "ESPN injury report (official designations)",
-       "url": "https://www.espn.com/nfl/player/_/id/4036378/jordan-love",
-       "timestamp": "2026-10-11T21:02Z",
-       "text": "active: Love completed 25 of 31 passes for 367 yards with two touchdowns and no interceptions while adding one carry for six yards in the Packers' 31-7 win over the Bears on Sunday. He also fumbled once but recovered.",
-       "status": "active"
-      },
-      {
-       "player": "Matthew Golden",
-       "team": "GB",
-       "flag_type": "official_status",
-       "severity": 0,
-       "source": "ESPN injury report (official designations)",
-       "url": "https://www.espn.com/nfl/player/_/id/4701936/matthew-golden",
-       "timestamp": "2026-10-11T20:51Z",
-       "text": "active: Golden secured six of seven targets for 123 yards in the Packers' 31-7 win over the Bears on Sunday. He also returned two punts for 27 yards.",
-       "status": "active"
-      },
-      {
-       "player": "Christian Watson",
-       "team": "GB",
-       "flag_type": "official_status",
-       "severity": 0,
-       "source": "ESPN injury report (official designations)",
-       "url": "https://www.espn.com/nfl/player/_/id/4248528/christian-watson",
-       "timestamp": "2026-10-11T20:41Z",
-       "text": "active: Watson brought in six of eight targets for 143 yards and two touchdowns in the Packers' 31-7 win over the Bears on Sunday.",
-       "status": "active"
-      },
-      {
-       "player": "Mike Evans",
-       "team": "SF",
-       "flag_type": "official_status",
-       "severity": 2,
-       "source": "ESPN injury report (official designations)",
-       "url": "https://www.espn.com/nfl/player/_/id/16737/mike-evans",
-       "timestamp": "2026-10-17T20:58Z",
-       "text": "questionable: Evans (ribs) is listed as questionable for Monday's game against Washington, Vic Tafur of The Athletic reports.",
-       "status": "questionable"
-      },
-      {
-       "player": "George Kittle",
-       "team": "SF",
-       "flag_type": "official_status",
-       "severity": 0,
-       "source": "ESPN injury report (official designations)",
-       "url": "https://www.espn.com/nfl/player/_/id/3040151/george-kittle",
-       "timestamp": "2026-10-12T01:06Z",
-       "text": "active: Kittle (illness) caught five of six targets for 24 yards in Sunday's 32-29 win over the Seahawks.",
-       "status": "active"
-      },
-      {
-       "player": "Austin Ekeler",
-       "team": "WAS",
-       "flag_type": "official_status",
-       "severity": 0,
-       "source": "ESPN injury report (official designations)",
-       "url": "https://www.espn.com/nfl/player/_/id/3068267/austin-ekeler",
-       "timestamp": "2026-10-17T19:36Z",
-       "text": "active: Ekeler (chest) does not carry an injury designation into Monday's game against the 49ers.",
-       "status": "active"
-      },
-      {
-       "player": "Rachaad White",
-       "team": "WAS",
-       "flag_type": "official_status",
-       "severity": 0,
-       "source": "ESPN injury report (official designations)",
-       "url": "https://www.espn.com/nfl/player/_/id/4697815/rachaad-white",
-       "timestamp": "2026-10-17T19:29Z",
-       "text": "active: White (shoulder) doesn't have a designation for Monday's game at San Francisco.",
-       "status": "active"
-      }
-     ],
-     "notes": [
-      "Same-game joint probability comes from the correlated simulation; books adjust SGP prices for correlation and free sources don't publish them \u2014 bet only if the book's SGP price is +298 or better."
-     ]
+     "bet": null,
+     "message": "NO BET",
+     "reason": "best candidate in the 20%-45% band has edge +0.3% over its break-even \u2014 below the 2% threshold; nothing is forced",
+     "best_candidates_considered": 0
     },
     "LONG SHOT": {
-     "id": "c600e51f4161dd5d",
-     "tier": "LONG SHOT",
-     "status": "WAIT",
-     "recheck_at": "2026-10-25T15:30:00+00:00",
-     "description": "SF ML + CLE ML + LV ML",
-     "book": "draftkings",
-     "price": 835,
-     "legs": [
-      {
-       "label": "SF ML",
-       "game": "SF @ ATL",
-       "kickoff": "2026-10-25T17:00Z",
-       "market": "moneyline",
-       "side": "away",
-       "point": null,
-       "player": null,
-       "book": "draftkings",
-       "price": -198.0,
-       "price_source": "posted",
-       "p_final": 0.655,
-       "p_fair": 0.655,
-       "p_model": 0.7305,
-       "p_push": 0.0048,
-       "novig_implied": 0.6581,
-       "game_key": "NFL_20261025_SF_ATL"
-      },
-      {
-       "label": "CLE ML",
-       "game": "CLE @ TEN",
-       "kickoff": "2026-10-25T17:00Z",
-       "market": "moneyline",
-       "side": "away",
-       "point": null,
-       "player": null,
-       "book": "draftkings",
-       "price": -125.0,
-       "price_source": "posted",
-       "p_final": 0.5728,
-       "p_fair": 0.5728,
-       "p_model": 0.5611,
-       "p_push": 0.0051,
-       "novig_implied": 0.5758,
-       "game_key": "NFL_20261025_CLE_TEN"
-      },
-      {
-       "label": "LV ML",
-       "game": "LA @ LV",
-       "kickoff": "2026-10-25T20:25Z",
-       "market": "moneyline",
-       "side": "home",
-       "point": null,
-       "player": null,
-       "book": "draftkings",
-       "price": 245.0,
-       "price_source": "posted",
-       "p_final": 0.3209,
-       "p_fair": 0.3209,
-       "p_model": 0.2288,
-       "p_push": 0.0047,
-       "novig_implied": 0.3224,
-       "game_key": "NFL_20261025_LA_LV"
-      }
-     ],
-     "model_prob": 0.1204,
-     "novig_market_prob": 0.1204,
-     "price_implied_prob": 0.107,
-     "edge": 0.0134,
-     "ev_per_100": 12.51,
-     "stake": 37.47,
-     "kelly_fraction_used": 0.0037,
-     "correlated_joint": false,
-     "min_acceptable_price": 747,
-     "reasons": [
-      "SF ML: Best price -198 at draftkings vs market-consensus fair -193 (fair win prob 65.5%; break-even at this price 66.1%).",
-      "CLE ML: Best price -125 at draftkings vs market-consensus fair -136 (fair win prob 57.3%; break-even at this price 55.3%).",
-      "LV ML: Best price +245 at draftkings vs market-consensus fair +210 (fair win prob 32.1%; break-even at this price 28.8%)."
-     ],
-     "flags": [
-      {
-       "player": "Michael Penix Jr.",
-       "team": "ATL",
-       "flag_type": "official_status",
-       "severity": 0,
-       "source": "ESPN injury report (official designations)",
-       "url": "https://www.espn.com/nfl/player/_/id/4360423/michael-penix-jr",
-       "timestamp": "2026-10-18T17:36Z",
-       "text": "active: Penix (undisclosed) reentered Sunday's game versus the Bears, Will McFadden of the Falcons' official site reports.",
-       "status": "active"
-      },
-      {
-       "player": "Drake London",
-       "team": "ATL",
-       "flag_type": "official_status",
-       "severity": 0,
-       "source": "ESPN injury report (official designations)",
-       "url": "https://www.espn.com/nfl/player/_/id/4426502/drake-london",
-       "timestamp": "2026-10-12T04:20Z",
-       "text": "active: London caught seven of 11 targets for 118 yards in Sunday's 30-23 overtime loss to the Ravens.",
-       "status": "active"
-      },
-      {
-       "player": "Bijan Robinson",
-       "team": "ATL",
-       "flag_type": "official_status",
-       "severity": 0,
-       "source": "ESPN injury report (official designations)",
-       "url": "https://www.espn.com/nfl/player/_/id/4430807/bijan-robinson",
-       "timestamp": "2026-10-12T04:12Z",
-       "text": "active: Robinson rushed 17 times for 86 yards while catching four of seven targets for 32 yards in Sunday's 30-23 overtime loss to the Ravens.",
-       "status": "active"
-      },
-      {
-       "player": "Jaleel McLaughlin",
-       "team": "CLE",
-       "flag_type": "official_status",
-       "severity": 0,
-       "source": "ESPN injury report (official designations)",
-       "url": "https://www.espn.com/nfl/player/_/id/4722893/jaleel-mclaughlin",
-       "timestamp": "2026-10-18T16:37Z",
-       "text": "active: McLaughlin was the first running back to take reps during pregame warmups and appears likely to draw the start Sunday against the Ravens, Daniel Oyefusi of ESPN.com reports.",
-       "status": "active"
-      },
-      {
-       "player": "Denzel Boston",
-       "team": "CLE",
-       "flag_type": "official_status",
-       "severity": 0,
-       "source": "ESPN injury report (official designations)",
-       "url": "https://www.espn.com/nfl/player/_/id/4832800/denzel-boston",
-       "timestamp": "2026-10-16T20:20Z",
-       "text": "active: ",
-       "status": "active"
-      },
-      {
-       "player": "KC Concepcion",
-       "team": "CLE",
-       "flag_type": "official_status",
-       "severity": 0,
-       "source": "ESPN injury report (official designations)",
-       "url": "https://www.espn.com/nfl/player/_/id/4870653/kc-concepcion",
-       "timestamp": "2026-10-16T18:27Z",
-       "text": "active: Concepcion has cleared concussion protocol and will play Sunday against the Ravens, Daniel Oyefusi of ESPN.com reports.",
-       "status": "active"
-      },
-      {
-       "player": "Brock Bowers",
-       "team": "LV",
-       "flag_type": "official_status",
-       "severity": 0,
-       "source": "ESPN injury report (official designations)",
-       "url": "https://www.espn.com/nfl/player/_/id/4432665/brock-bowers",
-       "timestamp": "2026-10-16T00:25Z",
-       "text": "active: Bowers (knee) practiced fully Thursday. Ryan McFadden of ESPN.com reports.",
-       "status": "active"
-      },
-      {
-       "player": "Ashton Jeanty",
-       "team": "LV",
-       "flag_type": "official_status",
-       "severity": 0,
-       "source": "ESPN injury report (official designations)",
-       "url": "https://www.espn.com/nfl/player/_/id/4890973/ashton-jeanty",
-       "timestamp": "2026-10-14T23:54Z",
-       "text": "active: Jeanty (foot) was listed as a full participant on Wednesday's injury report, Sam Warren of The Athletic reports.",
-       "status": "active"
-      },
-      {
-       "player": "Tre Tucker",
-       "team": "LV",
-       "flag_type": "official_status",
-       "severity": 0,
-       "source": "ESPN injury report (official designations)",
-       "url": "https://www.espn.com/nfl/player/_/id/4428718/tre-tucker",
-       "timestamp": "2026-10-12T04:21Z",
-       "text": "active: Tucker caught four of five targets for 41 yards during Sunday's 45-17 loss to the Patriots.",
-       "status": "active"
-      },
-      {
-       "player": "Kirk Cousins",
-       "team": "LV",
-       "flag_type": "official_status",
-       "severity": 0,
-       "source": "ESPN injury report (official designations)",
-       "url": "https://www.espn.com/nfl/player/_/id/14880/kirk-cousins",
-       "timestamp": "2026-10-12T01:00Z",
-       "text": "active: Cousins completed 19 of 28 passes for 243 yards and a touchdown in Sunday's 45-17 loss to the Patriots.",
-       "status": "active"
-      },
-      {
-       "player": "Blake Corum",
-       "team": "LA",
-       "flag_type": "official_status",
-       "severity": 0,
-       "source": "ESPN injury report (official designations)",
-       "url": "https://www.espn.com/nfl/player/_/id/4429096/blake-corum",
-       "timestamp": "2026-10-13T05:13Z",
-       "text": "active: Corum rushed five times for 19 yards and a touchdown and brought in three of four targets for 53 yards in the Rams' 37-34 overtime loss to the Bills on Monday night.",
-       "status": "active"
-      },
-      {
-       "player": "Davante Adams",
-       "team": "LA",
-       "flag_type": "official_status",
-       "severity": 0,
-       "source": "ESPN injury report (official designations)",
-       "url": "https://www.espn.com/nfl/player/_/id/16800/davante-adams",
-       "timestamp": "2026-10-13T05:08Z",
-       "text": "active: Adams brought in five of seven targets for 51 yards and two touchdowns in the Rams' 37-34 overtime loss to the Bills on Monday night.",
-       "status": "active"
-      }
-     ],
-     "notes": []
+     "bet": null,
+     "message": "NO LONG SHOT TODAY",
+     "reason": "no single bet or same-book combination lands in the 3%-15% win-probability band with positive EV",
+     "best_candidates_considered": 0
     }
    },
    "model": {
@@ -651,22 +61,11 @@
       "price": "not published (assumed -110)"
      },
      {
-      "player": "Mark Redman",
-      "team": "GB",
-      "market": "anytime_td",
-      "line": NaN,
-      "p_over_sim": 0.003,
-      "sim_median": 0.0,
-      "game_key": "NFL_20261018_DAL_GB",
-      "book": "draftkings",
-      "price": "not published (assumed -110)"
-     },
-     {
       "player": "Luke Farrell",
       "team": "SF",
       "market": "anytime_td",
       "line": NaN,
-      "p_over_sim": 0.004,
+      "p_over_sim": 0.003,
       "sim_median": 0.0,
       "game_key": "NFL_20261019_WAS_SF",
       "book": "draftkings",
@@ -677,20 +76,9 @@
       "team": "WAS",
       "market": "anytime_td",
       "line": NaN,
-      "p_over_sim": 0.004,
-      "sim_median": 0.0,
-      "game_key": "NFL_20261019_WAS_SF",
-      "book": "draftkings",
-      "price": "not published (assumed -110)"
-     },
-     {
-      "player": "Luke Schoonmaker",
-      "team": "DAL",
-      "market": "anytime_td",
-      "line": NaN,
       "p_over_sim": 0.005,
       "sim_median": 0.0,
-      "game_key": "NFL_20261018_DAL_GB",
+      "game_key": "NFL_20261019_WAS_SF",
       "book": "draftkings",
       "price": "not published (assumed -110)"
      },
@@ -706,46 +94,13 @@
       "price": "not published (assumed -110)"
      },
      {
-      "player": "Jonnu Smith",
-      "team": "GB",
-      "market": "anytime_td",
-      "line": NaN,
-      "p_over_sim": 0.007,
-      "sim_median": 0.0,
-      "game_key": "NFL_20261018_DAL_GB",
-      "book": "draftkings",
-      "price": "not published (assumed -110)"
-     },
-     {
-      "player": "Jonathan Mingo",
-      "team": "DAL",
-      "market": "anytime_td",
-      "line": NaN,
-      "p_over_sim": 0.008,
-      "sim_median": 0.0,
-      "game_key": "NFL_20261018_DAL_GB",
-      "book": "draftkings",
-      "price": "not published (assumed -110)"
-     },
-     {
       "player": "Jacob Cowing",
       "team": "SF",
       "market": "anytime_td",
       "line": NaN,
-      "p_over_sim": 0.008,
+      "p_over_sim": 0.007,
       "sim_median": 0.0,
       "game_key": "NFL_20261019_WAS_SF",
-      "book": "draftkings",
-      "price": "not published (assumed -110)"
-     },
-     {
-      "player": "Brevyn Spann-Ford",
-      "team": "DAL",
-      "market": "anytime_td",
-      "line": NaN,
-      "p_over_sim": 0.009,
-      "sim_median": 0.0,
-      "game_key": "NFL_20261018_DAL_GB",
       "book": "draftkings",
       "price": "not published (assumed -110)"
      },
@@ -761,29 +116,7 @@
       "price": "not published (assumed -110)"
      },
      {
-      "player": "Hunter Luepke",
-      "team": "DAL",
-      "market": "anytime_td",
-      "line": NaN,
-      "p_over_sim": 0.012,
-      "sim_median": 0.0,
-      "game_key": "NFL_20261018_DAL_GB",
-      "book": "draftkings",
-      "price": "not published (assumed -110)"
-     },
-     {
-      "player": "Tyler Goodson",
-      "team": "DAL",
-      "market": "anytime_td",
-      "line": NaN,
-      "p_over_sim": 0.012,
-      "sim_median": 0.0,
-      "game_key": "NFL_20261018_DAL_GB",
-      "book": "draftkings",
-      "price": "not published (assumed -110)"
-     },
-     {
-      "player": "Austin Ekeler",
+      "player": "Dyami Brown",
       "team": "WAS",
       "market": "anytime_td",
       "line": NaN,
@@ -794,46 +127,13 @@
       "price": "not published (assumed -110)"
      },
      {
-      "player": "Dak Prescott",
-      "team": "DAL",
-      "market": "anytime_td",
-      "line": NaN,
-      "p_over_sim": 0.016,
-      "sim_median": 0.0,
-      "game_key": "NFL_20261018_DAL_GB",
-      "book": "draftkings",
-      "price": "not published (assumed -110)"
-     },
-     {
-      "player": "Dyami Brown",
+      "player": "Austin Ekeler",
       "team": "WAS",
       "market": "anytime_td",
       "line": NaN,
-      "p_over_sim": 0.016,
+      "p_over_sim": 0.018,
       "sim_median": 0.0,
       "game_key": "NFL_20261019_WAS_SF",
-      "book": "draftkings",
-      "price": "not published (assumed -110)"
-     },
-     {
-      "player": "Jordan Love",
-      "team": "GB",
-      "market": "anytime_td",
-      "line": NaN,
-      "p_over_sim": 0.018,
-      "sim_median": 0.0,
-      "game_key": "NFL_20261018_DAL_GB",
-      "book": "draftkings",
-      "price": "not published (assumed -110)"
-     },
-     {
-      "player": "Bo Melton",
-      "team": "GB",
-      "market": "anytime_td",
-      "line": NaN,
-      "p_over_sim": 0.018,
-      "sim_median": 0.0,
-      "game_key": "NFL_20261018_DAL_GB",
       "book": "draftkings",
       "price": "not published (assumed -110)"
      },
@@ -842,7 +142,7 @@
       "team": "WAS",
       "market": "anytime_td",
       "line": NaN,
-      "p_over_sim": 0.019,
+      "p_over_sim": 0.018,
       "sim_median": 0.0,
       "game_key": "NFL_20261019_WAS_SF",
       "book": "draftkings",
@@ -853,20 +153,20 @@
       "team": "SF",
       "market": "anytime_td",
       "line": NaN,
-      "p_over_sim": 0.036,
+      "p_over_sim": 0.035,
       "sim_median": 0.0,
       "game_key": "NFL_20261019_WAS_SF",
       "book": "draftkings",
       "price": "not published (assumed -110)"
      },
      {
-      "player": "Kaleb Johnson",
-      "team": "GB",
-      "market": "anytime_td",
-      "line": NaN,
-      "p_over_sim": 0.077,
-      "sim_median": 0.0,
-      "game_key": "NFL_20261018_DAL_GB",
+      "player": "Stefon Diggs",
+      "team": "WAS",
+      "market": "receptions",
+      "line": 4.5,
+      "p_over_sim": 0.054,
+      "sim_median": 2.0,
+      "game_key": "NFL_20261019_WAS_SF",
       "book": "draftkings",
       "price": "not published (assumed -110)"
      },
@@ -875,7 +175,7 @@
       "team": "SF",
       "market": "anytime_td",
       "line": NaN,
-      "p_over_sim": 0.096,
+      "p_over_sim": 0.094,
       "sim_median": 0.0,
       "game_key": "NFL_20261019_WAS_SF",
       "book": "draftkings",
@@ -886,7 +186,7 @@
       "team": "WAS",
       "market": "anytime_td",
       "line": NaN,
-      "p_over_sim": 0.105,
+      "p_over_sim": 0.102,
       "sim_median": 0.0,
       "game_key": "NFL_20261019_WAS_SF",
       "book": "draftkings",
@@ -897,45 +197,235 @@
       "team": "WAS",
       "market": "anytime_td",
       "line": NaN,
-      "p_over_sim": 0.116,
+      "p_over_sim": 0.123,
       "sim_median": 0.0,
       "game_key": "NFL_20261019_WAS_SF",
       "book": "draftkings",
       "price": "not published (assumed -110)"
      },
      {
-      "player": "Ryan Flournoy",
-      "team": "DAL",
+      "player": "Terry McLaurin",
+      "team": "WAS",
       "market": "anytime_td",
       "line": NaN,
-      "p_over_sim": 0.123,
+      "p_over_sim": 0.134,
       "sim_median": 0.0,
-      "game_key": "NFL_20261018_DAL_GB",
+      "game_key": "NFL_20261019_WAS_SF",
+      "book": "draftkings",
+      "price": "not published (assumed -110)"
+     },
+     {
+      "player": "Rachaad White",
+      "team": "WAS",
+      "market": "anytime_td",
+      "line": NaN,
+      "p_over_sim": 0.135,
+      "sim_median": 0.0,
+      "game_key": "NFL_20261019_WAS_SF",
+      "book": "draftkings",
+      "price": "not published (assumed -110)"
+     },
+     {
+      "player": "Austin Ekeler",
+      "team": "WAS",
+      "market": "receptions",
+      "line": 1.5,
+      "p_over_sim": 0.143,
+      "sim_median": 0.0,
+      "game_key": "NFL_20261019_WAS_SF",
+      "book": "draftkings",
+      "price": "not published (assumed -110)"
+     },
+     {
+      "player": "Stefon Diggs",
+      "team": "WAS",
+      "market": "rec_yds",
+      "line": 38.5,
+      "p_over_sim": 0.183,
+      "sim_median": 17.0,
+      "game_key": "NFL_20261019_WAS_SF",
+      "book": "draftkings",
+      "price": "not published (assumed -110)"
+     },
+     {
+      "player": "Jayden Daniels",
+      "team": "WAS",
+      "market": "anytime_td",
+      "line": NaN,
+      "p_over_sim": 0.191,
+      "sim_median": 0.0,
+      "game_key": "NFL_20261019_WAS_SF",
+      "book": "draftkings",
+      "price": "not published (assumed -110)"
+     },
+     {
+      "player": "Jayden Daniels",
+      "team": "WAS",
+      "market": "rush_att",
+      "line": 7.5,
+      "p_over_sim": 0.205,
+      "sim_median": 5.0,
+      "game_key": "NFL_20261019_WAS_SF",
+      "book": "draftkings",
+      "price": "not published (assumed -110)"
+     },
+     {
+      "player": "Treylon Burks",
+      "team": "WAS",
+      "market": "anytime_td",
+      "line": NaN,
+      "p_over_sim": 0.208,
+      "sim_median": 0.0,
+      "game_key": "NFL_20261019_WAS_SF",
+      "book": "draftkings",
+      "price": "not published (assumed -110)"
+     },
+     {
+      "player": "Rachaad White",
+      "team": "WAS",
+      "market": "receptions",
+      "line": 2.5,
+      "p_over_sim": 0.217,
+      "sim_median": 1.0,
+      "game_key": "NFL_20261019_WAS_SF",
+      "book": "draftkings",
+      "price": "not published (assumed -110)"
+     },
+     {
+      "player": "Chig Okonkwo",
+      "team": "WAS",
+      "market": "receptions",
+      "line": 2.5,
+      "p_over_sim": 0.227,
+      "sim_median": 1.0,
+      "game_key": "NFL_20261019_WAS_SF",
+      "book": "draftkings",
+      "price": "not published (assumed -110)"
+     },
+     {
+      "player": "Chig Okonkwo",
+      "team": "WAS",
+      "market": "rec_yds",
+      "line": 24.5,
+      "p_over_sim": 0.247,
+      "sim_median": 12.0,
+      "game_key": "NFL_20261019_WAS_SF",
+      "book": "draftkings",
+      "price": "not published (assumed -110)"
+     },
+     {
+      "player": "Brock Purdy",
+      "team": "SF",
+      "market": "pass_yds",
+      "line": 251.5,
+      "p_over_sim": 0.249,
+      "sim_median": 201.0,
+      "game_key": "NFL_20261019_WAS_SF",
       "book": "draftkings",
       "price": "not published (assumed -110)"
      }
     ]
    },
-   "flags_checked": 875
+   "flags_checked": 840
   },
   "NBA": {
    "league": "NBA",
-   "n_games": 0,
+   "n_games": 3,
    "tiers": {
     "SAFE": {
      "bet": null,
      "message": "NO BET",
-     "reason": "no NBA games in the card window"
+     "reason": "best candidate in the 55%-100% band has edge -2.2% over its break-even \u2014 below the 2% threshold; nothing is forced",
+     "best_candidates_considered": 0
     },
     "MODERATE": {
-     "bet": null,
-     "message": "NO BET",
-     "reason": "no NBA games in the card window"
+     "id": "288e9a490e5ed365",
+     "tier": "MODERATE",
+     "status": "OK",
+     "recheck_at": null,
+     "description": "BOS ML + BOS +1.5 + Under 232.5 (PHI @ NYK)",
+     "book": "betriversny",
+     "price": 598,
+     "legs": [
+      {
+       "label": "BOS ML",
+       "game": "BOS @ DET",
+       "kickoff": "2026-10-20T19:00Z",
+       "market": "moneyline",
+       "side": "away",
+       "point": null,
+       "player": null,
+       "book": "betriversny",
+       "price": -104.0,
+       "price_source": "posted",
+       "p_final": 0.5064,
+       "p_fair": 0.5064,
+       "p_model": 0.4714,
+       "p_push": 0.0087,
+       "novig_implied": 0.5108,
+       "game_key": "NBA_20261020_BOS_DET"
+      },
+      {
+       "label": "BOS +1.5",
+       "game": "BOS @ DET",
+       "kickoff": "2026-10-20T19:00Z",
+       "market": "spread",
+       "side": "away",
+       "point": 1.5,
+       "player": null,
+       "book": "betriversny",
+       "price": -118.0,
+       "price_source": "posted",
+       "p_final": 0.541,
+       "p_fair": 0.541,
+       "p_model": 0.5027,
+       "p_push": 0.0,
+       "novig_implied": 0.541,
+       "game_key": "NBA_20261020_BOS_DET"
+      },
+      {
+       "label": "Under 232.5 (PHI @ NYK)",
+       "game": "PHI @ NYK",
+       "kickoff": "2026-10-20T23:00Z",
+       "market": "total",
+       "side": "under",
+       "point": 232.5,
+       "player": null,
+       "book": "betriversny",
+       "price": -108.0,
+       "price_source": "posted",
+       "p_final": 0.5117,
+       "p_fair": 0.5117,
+       "p_model": 0.7357,
+       "p_push": 0.0,
+       "novig_implied": 0.5117,
+       "game_key": "NBA_20261020_PHI_NYK"
+      }
+     ],
+     "model_prob": 0.2577,
+     "novig_market_prob": 0.2577,
+     "price_implied_prob": 0.1433,
+     "edge": 0.1144,
+     "ev_per_100": 79.85,
+     "stake": 200.0,
+     "kelly_fraction_used": 0.0334,
+     "correlated_joint": true,
+     "min_acceptable_price": 296,
+     "reasons": [
+      "BOS ML: Best price -104 at betriversny vs market-consensus fair -104 (fair win prob 50.6%; break-even at this price 50.5%).",
+      "BOS +1.5: Best price -118 at betriversny vs market-consensus fair -118 (fair win prob 54.1%; break-even at this price 54.1%).",
+      "Under 232.5 (PHI @ NYK): Best price -108 at betriversny vs market-consensus fair -105 (fair win prob 51.2%; break-even at this price 51.9%)."
+     ],
+     "flags": [],
+     "notes": [
+      "Same-game joint probability comes from the correlated simulation; books adjust SGP prices for correlation and free sources don't publish them \u2014 bet only if the book's SGP price is +296 or better."
+     ]
     },
     "LONG SHOT": {
      "bet": null,
      "message": "NO LONG SHOT TODAY",
-     "reason": "no NBA games in the card window"
+     "reason": "no single bet or same-book combination lands in the 3%-15% win-probability band with positive EV",
+     "best_candidates_considered": 0
     }
    },
    "model": {
@@ -950,7 +440,12 @@
     ],
     "trained_through": "2026-06-13",
     "note": "model weight is 0 in every market: bets below come only from price differences between books (line shopping), never from the model's opinion"
-   }
+   },
+   "shadow_props": {
+    "status": "SHADOW ONLY \u2014 tracked for calibration, not recommended (no free prop prices; model unproven vs prop markets)",
+    "rows": []
+   },
+   "flags_checked": 93
   }
  },
  "disclaimer": "Probabilities, not guarantees. Paper mode: nothing here is a real wager.",
@@ -1017,119 +512,119 @@
    "ok": true,
    "rows": 15,
    "note": "upcoming events",
-   "checked_at": "2026-10-18T21:44:25+00:00",
+   "checked_at": "2026-10-19T21:12:46+00:00",
    "data_as_of": null
   },
   "nfl.espn.odds": {
    "ok": true,
-   "rows": 28,
+   "rows": 180,
    "note": "",
-   "checked_at": "2026-10-18T21:44:32+00:00",
+   "checked_at": "2026-10-19T21:12:52+00:00",
    "data_as_of": null
   },
   "nfl.actionnetwork.odds": {
    "ok": true,
-   "rows": 288,
+   "rows": 192,
    "note": "",
-   "checked_at": "2026-10-18T21:44:34+00:00",
+   "checked_at": "2026-10-19T21:12:53+00:00",
    "data_as_of": null
   },
   "nfl.kalshi.moneyline": {
    "ok": true,
    "rows": 30,
    "note": "",
-   "checked_at": "2026-10-18T21:44:34+00:00",
+   "checked_at": "2026-10-19T21:12:53+00:00",
    "data_as_of": null
   },
   "nfl.espn.props": {
    "ok": true,
-   "rows": 149,
+   "rows": 71,
    "note": "DraftKings lines; prices not published",
-   "checked_at": "2026-10-18T21:44:37+00:00",
+   "checked_at": "2026-10-19T21:12:55+00:00",
    "data_as_of": null
   },
   "nba.espn.schedule": {
    "ok": true,
-   "rows": 3,
+   "rows": 14,
    "note": "upcoming events",
-   "checked_at": "2026-10-18T21:44:38+00:00",
+   "checked_at": "2026-10-19T21:12:56+00:00",
    "data_as_of": null
   },
   "nba.espn.odds": {
    "ok": true,
-   "rows": 36,
+   "rows": 168,
    "note": "",
-   "checked_at": "2026-10-18T21:44:39+00:00",
+   "checked_at": "2026-10-19T21:13:02+00:00",
    "data_as_of": null
   },
   "nba.actionnetwork.odds": {
    "ok": true,
-   "rows": 108,
+   "rows": 504,
    "note": "",
-   "checked_at": "2026-10-18T21:44:40+00:00",
+   "checked_at": "2026-10-19T21:13:02+00:00",
    "data_as_of": null
   },
   "nba.kalshi.moneyline": {
    "ok": true,
-   "rows": 6,
+   "rows": 28,
    "note": "",
-   "checked_at": "2026-10-18T21:44:40+00:00",
+   "checked_at": "2026-10-19T21:13:02+00:00",
    "data_as_of": null
   },
   "nba.espn.props": {
-   "ok": false,
-   "rows": 0,
+   "ok": true,
+   "rows": 243,
    "note": "DraftKings lines; prices not published",
-   "checked_at": "2026-10-18T21:44:40+00:00",
+   "checked_at": "2026-10-19T21:13:06+00:00",
    "data_as_of": null
   },
   "nfl.espn.injuries": {
    "ok": true,
    "rows": 800,
    "note": "",
-   "checked_at": "2026-10-18T21:45:02+00:00",
+   "checked_at": "2026-10-19T21:13:24+00:00",
    "data_as_of": null
   },
   "nfl.news.google_rss": {
    "ok": true,
    "rows": 40,
    "note": "per-player/team queries, last 48h",
-   "checked_at": "2026-10-18T21:45:39+00:00",
+   "checked_at": "2026-10-19T21:14:02+00:00",
    "data_as_of": null
   },
   "nfl.news.league_feeds": {
    "ok": true,
    "rows": 116,
    "note": "",
-   "checked_at": "2026-10-18T21:45:40+00:00",
+   "checked_at": "2026-10-19T21:14:03+00:00",
    "data_as_of": null
   },
   "nfl.open_meteo.forecast": {
    "ok": true,
    "rows": 7,
    "note": "outdoor venues only",
-   "checked_at": "2026-10-18T21:45:01+00:00",
+   "checked_at": "2026-10-19T21:13:23+00:00",
    "data_as_of": null
   },
   "nba.espn.injuries": {
    "ok": true,
-   "rows": 127,
+   "rows": 93,
    "note": "",
-   "checked_at": "2026-10-16T23:00:41+00:00",
+   "checked_at": "2026-10-19T21:14:05+00:00",
    "data_as_of": null
   },
   "nba.news.google_rss": {
    "ok": false,
    "rows": 0,
    "note": "per-player/team queries, last 48h",
-   "checked_at": "2026-10-16T23:00:43+00:00",
+   "checked_at": "2026-10-19T21:14:05+00:00",
    "data_as_of": null
   },
   "nba.news.league_feeds": {
    "ok": true,
    "rows": 86,
    "note": "",
-   "checked_at": "2026-10-16T23:00:43+00:00",
+   "checked_at": "2026-10-19T21:14:05+00:00",
    "data_as_of": null
   }
  },
