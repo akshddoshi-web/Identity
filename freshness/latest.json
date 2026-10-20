@@ -3,70 +3,70 @@
   "ok": true,
   "rows": 14,
   "note": "upcoming events",
-  "checked_at": "2026-10-20T23:19:28+00:00",
+  "checked_at": "2026-10-20T23:28:26+00:00",
   "data_as_of": null
  },
  "nfl.espn.odds": {
   "ok": true,
   "rows": 168,
   "note": "",
-  "checked_at": "2026-10-20T23:19:34+00:00",
+  "checked_at": "2026-10-20T23:28:32+00:00",
   "data_as_of": null
  },
  "nfl.actionnetwork.odds": {
   "ok": true,
   "rows": 2268,
   "note": "",
-  "checked_at": "2026-10-20T23:19:36+00:00",
+  "checked_at": "2026-10-20T23:28:34+00:00",
   "data_as_of": null
  },
  "nfl.kalshi.moneyline": {
   "ok": true,
   "rows": 28,
   "note": "",
-  "checked_at": "2026-10-20T23:19:36+00:00",
+  "checked_at": "2026-10-20T23:28:34+00:00",
   "data_as_of": null
  },
  "nfl.espn.props": {
   "ok": false,
   "rows": 0,
   "note": "DraftKings lines; prices not published",
-  "checked_at": "2026-10-20T23:19:36+00:00",
+  "checked_at": "2026-10-20T23:28:34+00:00",
   "data_as_of": null
  },
  "nba.espn.schedule": {
   "ok": true,
   "rows": 14,
   "note": "upcoming events",
-  "checked_at": "2026-10-20T23:19:37+00:00",
+  "checked_at": "2026-10-20T23:28:35+00:00",
   "data_as_of": null
  },
  "nba.espn.odds": {
   "ok": true,
   "rows": 168,
   "note": "",
-  "checked_at": "2026-10-20T23:19:43+00:00",
+  "checked_at": "2026-10-20T23:28:40+00:00",
   "data_as_of": null
  },
  "nba.actionnetwork.odds": {
   "ok": true,
-  "rows": 738,
+  "rows": 6810,
   "note": "",
-  "checked_at": "2026-10-20T23:19:44+00:00",
+  "checked_at": "2026-10-20T23:28:42+00:00",
   "data_as_of": null
  },
  "nba.kalshi.moneyline": {
   "ok": true,
   "rows": 28,
   "note": "",
-  "checked_at": "2026-10-20T23:19:44+00:00",
+  "checked_at": "2026-10-20T23:28:42+00:00",
   "data_as_of": null
  },
  "nba.espn.props": {
   "ok": true,
-  "rows": 704,
+  "rows": 707,
   "note": "DraftKings lines; prices not published",
-  "checked_at": "2026-10-20T23:19:59+00:00",
+  "checked_at": "2026-10-20T23:28:57+00:00",
   "data_as_of": null
  },
  "nfl.espn.injuries": {
