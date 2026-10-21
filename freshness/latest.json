@@ -3,70 +3,70 @@
   "ok": true,
   "rows": 14,
   "note": "upcoming events",
-  "checked_at": "2026-10-21T07:56:43+00:00",
+  "checked_at": "2026-10-21T18:16:54+00:00",
   "data_as_of": null
  },
  "nfl.espn.odds": {
   "ok": true,
   "rows": 168,
   "note": "",
-  "checked_at": "2026-10-21T07:56:48+00:00",
+  "checked_at": "2026-10-21T18:16:59+00:00",
   "data_as_of": null
  },
  "nfl.actionnetwork.odds": {
   "ok": true,
   "rows": 1512,
   "note": "",
-  "checked_at": "2026-10-21T07:56:50+00:00",
+  "checked_at": "2026-10-21T18:17:01+00:00",
   "data_as_of": null
  },
  "nfl.kalshi.moneyline": {
   "ok": true,
   "rows": 28,
   "note": "",
-  "checked_at": "2026-10-21T07:56:50+00:00",
+  "checked_at": "2026-10-21T18:17:01+00:00",
   "data_as_of": null
  },
  "nfl.espn.props": {
-  "ok": false,
-  "rows": 0,
+  "ok": true,
+  "rows": 77,
   "note": "DraftKings lines; prices not published",
-  "checked_at": "2026-10-21T07:56:50+00:00",
+  "checked_at": "2026-10-21T18:17:02+00:00",
   "data_as_of": null
  },
  "nba.espn.schedule": {
   "ok": true,
   "rows": 25,
   "note": "upcoming events",
-  "checked_at": "2026-10-21T07:56:51+00:00",
+  "checked_at": "2026-10-21T18:17:03+00:00",
   "data_as_of": null
  },
  "nba.espn.odds": {
   "ok": true,
   "rows": 180,
   "note": "",
-  "checked_at": "2026-10-21T07:57:00+00:00",
+  "checked_at": "2026-10-21T18:17:13+00:00",
   "data_as_of": null
  },
  "nba.actionnetwork.odds": {
   "ok": true,
-  "rows": 512,
+  "rows": 542,
   "note": "",
-  "checked_at": "2026-10-21T07:57:01+00:00",
+  "checked_at": "2026-10-21T18:17:14+00:00",
   "data_as_of": null
  },
  "nba.kalshi.moneyline": {
   "ok": true,
   "rows": 50,
   "note": "",
-  "checked_at": "2026-10-21T07:57:01+00:00",
+  "checked_at": "2026-10-21T18:17:14+00:00",
   "data_as_of": null
  },
  "nba.espn.props": {
   "ok": true,
-  "rows": 898,
+  "rows": 987,
   "note": "DraftKings lines; prices not published",
-  "checked_at": "2026-10-21T07:57:14+00:00",
+  "checked_at": "2026-10-21T18:17:30+00:00",
   "data_as_of": null
  },
  "nfl.espn.injuries": {
