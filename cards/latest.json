@@ -1,6 +1,6 @@
 {
- "generated_at": "2026-10-26T21:10:17+00:00",
- "generated_at_et": "Mon Oct 26 05:10 PM ET",
+ "generated_at": "2026-10-27T20:53:22+00:00",
+ "generated_at_et": "Tue Oct 27 04:53 PM ET",
  "mode": "recheck",
  "paper_mode": true,
  "bankroll": 10000.0,
@@ -12,13 +12,13 @@
     "SAFE": {
      "bet": null,
      "message": "NO BET",
-     "reason": "best candidate in the 55%-100% band has edge -1.4% over its break-even \u2014 below the 2% threshold; nothing is forced",
+     "reason": "best candidate in the 55%-100% band has edge -1.1% over its break-even \u2014 below the 2% threshold; nothing is forced",
      "best_candidates_considered": 0
     },
     "MODERATE": {
      "bet": null,
      "message": "NO BET",
-     "reason": "best candidate in the 20%-45% band has edge -0.1% over its break-even \u2014 below the 2% threshold; nothing is forced",
+     "reason": "best candidate in the 20%-45% band has edge +1.3% over its break-even \u2014 below the 2% threshold; nothing is forced",
      "best_candidates_considered": 0
     },
     "LONG SHOT": {
@@ -43,909 +43,46 @@
      "weather",
      "h2h"
     ],
-    "trained_through": "2026-10-19",
-    "note": "model weight is 0 in every market: bets below come only from price differences between books (line shopping), never from the model's opinion"
-   },
-   "shadow_props": {
-    "status": "SHADOW ONLY \u2014 tracked for calibration, not recommended (no free prop prices; model unproven vs prop markets)",
-    "rows": [
-     {
-      "player": "Saquon Barkley",
-      "team": "PHI",
-      "market": "rush_att",
-      "line": 15.5,
-      "p_over_sim": 0.0,
-      "sim_median": 4.0,
-      "game_key": "NFL_20261026_DAL_PHI",
-      "book": "draftkings",
-      "price": "not published (assumed -110)"
-     },
-     {
-      "player": "Britain Covey",
-      "team": "PHI",
-      "market": "anytime_td",
-      "line": NaN,
-      "p_over_sim": 0.002,
-      "sim_median": 0.0,
-      "game_key": "NFL_20261026_DAL_PHI",
-      "book": "draftkings",
-      "price": "not published (assumed -110)"
-     },
-     {
-      "player": "Elijah Moore",
-      "team": "PHI",
-      "market": "anytime_td",
-      "line": NaN,
-      "p_over_sim": 0.002,
-      "sim_median": 0.0,
-      "game_key": "NFL_20261026_DAL_PHI",
-      "book": "draftkings",
-      "price": "not published (assumed -110)"
-     },
-     {
-      "player": "Luke Schoonmaker",
-      "team": "DAL",
-      "market": "anytime_td",
-      "line": NaN,
-      "p_over_sim": 0.003,
-      "sim_median": 0.0,
-      "game_key": "NFL_20261026_DAL_PHI",
-      "book": "draftkings",
-      "price": "not published (assumed -110)"
-     },
-     {
-      "player": "Saquon Barkley",
-      "team": "PHI",
-      "market": "rush_rec_yds",
-      "line": 81.5,
-      "p_over_sim": 0.004,
-      "sim_median": 22.0,
-      "game_key": "NFL_20261026_DAL_PHI",
-      "book": "draftkings",
-      "price": "not published (assumed -110)"
-     },
-     {
-      "player": "Johnny Mundt",
-      "team": "PHI",
-      "market": "anytime_td",
-      "line": NaN,
-      "p_over_sim": 0.004,
-      "sim_median": 0.0,
-      "game_key": "NFL_20261026_DAL_PHI",
-      "book": "draftkings",
-      "price": "not published (assumed -110)"
-     },
-     {
-      "player": "Tanner McKee",
-      "team": "PHI",
-      "market": "anytime_td",
-      "line": NaN,
-      "p_over_sim": 0.005,
-      "sim_median": 0.0,
-      "game_key": "NFL_20261026_DAL_PHI",
-      "book": "draftkings",
-      "price": "not published (assumed -110)"
-     },
-     {
-      "player": "Jonathan Mingo",
-      "team": "DAL",
-      "market": "anytime_td",
-      "line": NaN,
-      "p_over_sim": 0.006,
-      "sim_median": 0.0,
-      "game_key": "NFL_20261026_DAL_PHI",
-      "book": "draftkings",
-      "price": "not published (assumed -110)"
-     },
-     {
-      "player": "Brevyn Spann-Ford",
-      "team": "DAL",
-      "market": "anytime_td",
-      "line": NaN,
-      "p_over_sim": 0.011,
-      "sim_median": 0.0,
-      "game_key": "NFL_20261026_DAL_PHI",
-      "book": "draftkings",
-      "price": "not published (assumed -110)"
-     },
-     {
-      "player": "Hunter Luepke",
-      "team": "DAL",
-      "market": "anytime_td",
-      "line": NaN,
-      "p_over_sim": 0.011,
-      "sim_median": 0.0,
-      "game_key": "NFL_20261026_DAL_PHI",
-      "book": "draftkings",
-      "price": "not published (assumed -110)"
-     },
-     {
-      "player": "Saquon Barkley",
-      "team": "PHI",
-      "market": "rush_yds",
-      "line": 61.5,
-      "p_over_sim": 0.014,
-      "sim_median": 18.0,
-      "game_key": "NFL_20261026_DAL_PHI",
-      "book": "draftkings",
-      "price": "not published (assumed -110)"
-     },
-     {
-      "player": "Tyler Goodson",
-      "team": "DAL",
-      "market": "anytime_td",
-      "line": NaN,
-      "p_over_sim": 0.015,
-      "sim_median": 0.0,
-      "game_key": "NFL_20261026_DAL_PHI",
-      "book": "draftkings",
-      "price": "not published (assumed -110)"
-     },
-     {
-      "player": "Dak Prescott",
-      "team": "DAL",
-      "market": "anytime_td",
-      "line": NaN,
-      "p_over_sim": 0.021,
-      "sim_median": 0.0,
-      "game_key": "NFL_20261026_DAL_PHI",
-      "book": "draftkings",
-      "price": "not published (assumed -110)"
-     },
-     {
-      "player": "Saquon Barkley",
-      "team": "PHI",
-      "market": "receptions",
-      "line": 2.5,
-      "p_over_sim": 0.022,
-      "sim_median": 0.0,
-      "game_key": "NFL_20261026_DAL_PHI",
-      "book": "draftkings",
-      "price": "not published (assumed -110)"
-     },
-     {
-      "player": "Makai Lemon",
-      "team": "PHI",
-      "market": "anytime_td",
-      "line": NaN,
-      "p_over_sim": 0.031,
-      "sim_median": 0.0,
-      "game_key": "NFL_20261026_DAL_PHI",
-      "book": "draftkings",
-      "price": "not published (assumed -110)"
-     },
-     {
-      "player": "Saquon Barkley",
-      "team": "PHI",
-      "market": "anytime_td",
-      "line": NaN,
-      "p_over_sim": 0.048,
-      "sim_median": 0.0,
-      "game_key": "NFL_20261026_DAL_PHI",
-      "book": "draftkings",
-      "price": "not published (assumed -110)"
-     },
-     {
-      "player": "Dallas Goedert",
-      "team": "PHI",
-      "market": "receptions",
-      "line": 5.5,
-      "p_over_sim": 0.066,
-      "sim_median": 3.0,
-      "game_key": "NFL_20261026_DAL_PHI",
-      "book": "draftkings",
-      "price": "not published (assumed -110)"
-     },
-     {
-      "player": "Saquon Barkley",
-      "team": "PHI",
-      "market": "rec_yds",
-      "line": 14.5,
-      "p_over_sim": 0.079,
-      "sim_median": 0.0,
-      "game_key": "NFL_20261026_DAL_PHI",
-      "book": "draftkings",
-      "price": "not published (assumed -110)"
-     },
-     {
-      "player": "Tanner McKee",
-      "team": "PHI",
-      "market": "rush_yds",
-      "line": 5.5,
-      "p_over_sim": 0.911,
-      "sim_median": 24.0,
-      "game_key": "NFL_20261026_DAL_PHI",
-      "book": "draftkings",
-      "price": "not published (assumed -110)"
-     },
-     {
-      "player": "Ryan Flournoy",
-      "team": "DAL",
-      "market": "anytime_td",
-      "line": NaN,
-      "p_over_sim": 0.124,
-      "sim_median": 0.0,
-      "game_key": "NFL_20261026_DAL_PHI",
-      "book": "draftkings",
-      "price": "not published (assumed -110)"
-     },
-     {
-      "player": "George Pickens",
-      "team": "DAL",
-      "market": "anytime_td",
-      "line": NaN,
-      "p_over_sim": 0.14,
-      "sim_median": 0.0,
-      "game_key": "NFL_20261026_DAL_PHI",
-      "book": "draftkings",
-      "price": "not published (assumed -110)"
-     },
-     {
-      "player": "Dallas Goedert",
-      "team": "PHI",
-      "market": "rec_yds",
-      "line": 49.5,
-      "p_over_sim": 0.147,
-      "sim_median": 23.0,
-      "game_key": "NFL_20261026_DAL_PHI",
-      "book": "draftkings",
-      "price": "not published (assumed -110)"
-     },
-     {
-      "player": "Dameon Pierce",
-      "team": "PHI",
-      "market": "anytime_td",
-      "line": NaN,
-      "p_over_sim": 0.167,
-      "sim_median": 0.0,
-      "game_key": "NFL_20261026_DAL_PHI",
-      "book": "draftkings",
-      "price": "not published (assumed -110)"
-     },
-     {
-      "player": "Makai Lemon",
-      "team": "PHI",
-      "market": "receptions",
-      "line": 4.5,
-      "p_over_sim": 0.82,
-      "sim_median": 7.0,
-      "game_key": "NFL_20261026_DAL_PHI",
-      "book": "draftkings",
-      "price": "not published (assumed -110)"
-     },
-     {
-      "player": "Dak Prescott",
-      "team": "DAL",
-      "market": "rush_yds",
-      "line": 11.5,
-      "p_over_sim": 0.769,
-      "sim_median": 22.0,
-      "game_key": "NFL_20261026_DAL_PHI",
-      "book": "draftkings",
-      "price": "not published (assumed -110)"
-     }
-    ]
-   },
-   "flags_checked": 933
-  },
-  "NBA": {
-   "league": "NBA",
-   "n_games": 13,
-   "tiers": {
-    "SAFE": {
-     "id": "168056f9e80353eb",
-     "tier": "SAFE",
-     "status": "WAIT",
-     "recheck_at": "2026-10-27T00:00:00+00:00",
-     "description": "Over 16.5 (ATL @ HOU)",
-     "book": "betmgm",
-     "price": -115,
-     "legs": [
-      {
-       "label": "Over 16.5 (ATL @ HOU)",
-       "game": "ATL @ HOU",
-       "kickoff": "2026-10-27T00:30Z",
-       "market": "total",
-       "side": "over",
-       "point": 16.5,
-       "player": null,
-       "book": "betmgm",
-       "price": -115.0,
-       "price_source": "posted",
-       "p_final": 1.0,
-       "p_fair": 1.0,
-       "p_model": 1.0,
-       "p_push": 0.0,
-       "novig_implied": 1.0,
-       "game_key": "NBA_20261026_ATL_HOU"
-      }
-     ],
-     "model_prob": 1.0,
-     "novig_market_prob": 1.0,
-     "price_implied_prob": 0.5349,
-     "edge": 0.4651,
-     "ev_per_100": 86.96,
-     "stake": 168.79,
-     "kelly_fraction_used": 0.25,
-     "correlated_joint": false,
-     "min_acceptable_price": -5000,
-     "reasons": [
-      "Best price -115 at betmgm vs market-consensus fair -450359962737049600 (fair win prob 100.0%; break-even at this price 53.5%).",
-      "Prices seen for this side: caesars -110 (+229.5), draftkings -112 (+229.5), dknj -112 (+229.5), fanduel -112 (+229.5), betriversnj -108 (+229.5), intertops -110 (+229.5), betmgm -115 (+16.5).",
-      "Model: margin +5.2, total 223.1 -> 100.0% for this side; weight used 0.00 (not trusted: no out-of-sample edge vs closing line)."
-     ],
-     "flags": [
-      {
-       "player": "Amen Thompson",
-       "team": "HOU",
-       "flag_type": "trade",
-       "severity": 1,
-       "source": "Google News / Unisba Media",
-       "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxPbkk1dDhpQjJDdzJSQ1dza1A2TjJybFRiYWNrU3paM3FfSlVLY3B1eVZFcXNYZm1Nd0ZZRUtlZW1GbEoxQ3pyczBkaF9IYWN0MHZaT2F3N2R1TEVoMkRqV0ZsMElsM0hSMjdkdTc5d0RoS05Ib1pNbW9Ybl9JWXltT0xpRW9hNEk?oc=5",
-       "timestamp": "2026-10-25T15:44:42+00:00",
-       "text": "Rockets Amen Thompson Ranked TOP FOUR SG In NBA | Why Houston Should TRADE For Al Horford Lsg Vs Csk (HT5jwG2NxX) - Unisba Media",
-       "status": null
-      },
-      {
-       "player": "Fred VanVleet",
-       "team": "HOU",
-       "flag_type": "injury",
-       "severity": 2,
-       "source": "Google News / Yahoo Sports",
-       "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxQM1h4U1o0Tl9zTFJZSVBDSXNMVVBCbkVxSzFBTVBtTDFIdWo4YXV5MUs3UGdFUE13TEY4WlRCVDFIMnFHS2xHeXNjNHFIYlRYWm5hUnBMNlZkaWpwX1Zja2FYQXhNQ1lDX2JDVl81X0wzRmdEdnF1LThaVUlfR1B2cTJucVAxNWZXV0xYVUx3?oc=5",
-       "timestamp": "2026-10-24T23:21:55+00:00",
-       "text": "Fred VanVleet (knee injury management) and Steven \u2026 - Yahoo Sports",
-       "status": null
-      },
-      {
-       "player": "Fred VanVleet",
-       "team": "HOU",
-       "flag_type": "injury",
-       "severity": 2,
-       "source": "Google News / Athlon Sports",
-       "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxQQTNqWk93dFdNSU1OcTJwTDU3bjIxQzh0V1gtVzB5Q1dYaFR6dTNMSThMUUJXOC1ZdFZNTGMyb0cwdm1HNUZRUWtOQjluQkZaX25kMHNTQXBVMjh3WG5Rd0FnYm9pV0pKdnVLT1plUmpLLURpZkV5MjREeUdlMktzQkFwaDZlb1BMNmtyTERuS1ZfMV80c1FyWGhyRmFtcnJBV2Z3eFBQeFBITTZQWlU2VjJUX3RuUjNxRW1v?oc=5",
-       "timestamp": "2026-10-26T20:30:00+00:00",
-       "text": "Final Injury Report for Hawks-Rockets: Will Fred VanVleet, Marcus Smart Play? - Athlon Sports",
-       "status": null
-      },
-      {
-       "player": "Fred VanVleet",
-       "team": "HOU",
-       "flag_type": "injury",
-       "severity": 2,
-       "source": "Google News / CBS Sports",
-       "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxNRW1seDlIR3VfRWRONWhIcGRsUk9xck9GdDh2czdkTjBTdEVBT08yUnNlX2pUYkpqYnlORWRDQk52bHJPQkJ6WkQtSXhIdUNtcjh3dWJsV1ItcE1XemVsOEpEemJPSE9xaTVHZC1FckZFU1UyS2E0Ni1TdDg2YmlQaFRuVl8tNTlPWDl6X0N0Y1h5VmVxWnBrSlA3SVZ5eVJzQ20xQ2wxTDl0Y2s?oc=5",
-       "timestamp": "2026-10-25T21:32:13+00:00",
-       "text": "Rockets' Fred VanVleet: Not listed on injury report - CBS Sports",
-       "status": null
-      },
-      {
-       "player": "Fred VanVleet",
-       "team": "HOU",
-       "flag_type": "injury",
-       "severity": 2,
-       "source": "Google News / RotoWire",
-       "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxON01CUHZxOXJHTUxBc2pMZTBRRU5jendPdDQ1MmhQb0tzZDJYNTV5WHZUY09uSWI3Zl9LRWVCenE1dEQxRmdGN2h5X3lGUWdrd09NeDhYbXJUWEY3SnBkZGxMcDhqa1VIS1cwVUxIN2hLN2RzcGdHYllNU0FhQ0wySk9YQlA4NnR6c3kzOXV5UUJHdjVsYXplUElMUGsybUw2?oc=5",
-       "timestamp": "2026-10-25T21:32:13+00:00",
-       "text": "Fred VanVleet News: Not listed on injury report - RotoWire",
-       "status": null
-      },
-      {
-       "player": "Fred VanVleet",
-       "team": "HOU",
-       "flag_type": "injury",
-       "severity": 2,
-       "source": "Google News / Yardbarker",
-       "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxNQWwxLWhTenIwVVRpM3IwT3lpdkNEX2Mxc0VuaklpN3BKbzk2VUJrSkZmRDdSa1cwVl9lQXVDVmR0MzloT056emJQRXF5eW5RZWNXaDc5dVJZOXpWd2c2UFFCSHd3cktoaGhlTzU1eENyMXBuVU10TnUzV0pNdVRvVWVVMm16Z0plU1lsREFiWnRXMFBaZVc5U0pQMEVGWk1tQXIwZ2p5bFlsVzZOeWpwcWxscXNDTUg2Ums3TnNENTBIbUN0eGVXamN6eF9kZw?oc=5",
-       "timestamp": "2026-10-24T21:32:56+00:00",
-       "text": "Final Injury Report for Rockets-Hawks: Will Fred VanVleet, Reed Sheppard Play? - Yardbarker",
-       "status": null
-      }
-     ],
-     "notes": [
-      "stake scaled x0.84 to respect the 5% daily cap"
-     ]
-    },
-    "MODERATE": {
-     "id": "587c8a24d3872ae5",
-     "tier": "MODERATE",
-     "status": "WAIT",
-     "recheck_at": "2026-10-26T22:30:00+00:00",
-     "description": "CHA ML + CHA -2 + CLE ML + CLE -3.5",
-     "book": "caesars",
-     "price": 1055,
-     "legs": [
-      {
-       "label": "CHA ML",
-       "game": "WAS @ CHA",
-       "kickoff": "2026-10-26T23:00Z",
-       "market": "moneyline",
-       "side": "home",
-       "point": null,
-       "player": null,
-       "book": "caesars",
-       "price": -120.0,
-       "price_source": "posted",
-       "p_final": 0.5587,
-       "p_fair": 0.5587,
-       "p_model": 0.8539,
-       "p_push": 0.0086,
-       "novig_implied": 0.5635,
-       "game_key": "NBA_20261026_WAS_CHA"
-      },
-      {
-       "label": "CHA -2",
-       "game": "WAS @ CHA",
-       "kickoff": "2026-10-26T23:00Z",
-       "market": "spread",
-       "side": "home",
-       "point": -2.0,
-       "player": null,
-       "book": "caesars",
-       "price": -105.0,
-       "price_source": "posted",
-       "p_final": 0.5,
-       "p_fair": 0.5,
-       "p_model": 0.8193,
-       "p_push": 0.0309,
-       "novig_implied": 0.5159,
-       "game_key": "NBA_20261026_WAS_CHA"
-      },
-      {
-       "label": "CLE ML",
-       "game": "MIN @ CLE",
-       "kickoff": "2026-10-26T23:00Z",
-       "market": "moneyline",
-       "side": "home",
-       "point": null,
-       "player": null,
-       "book": "caesars",
-       "price": -145.0,
-       "price_source": "posted",
-       "p_final": 0.6053,
-       "p_fair": 0.6053,
-       "p_model": 0.5692,
-       "p_push": 0.0083,
-       "novig_implied": 0.6104,
-       "game_key": "NBA_20261026_MIN_CLE"
-      },
-      {
-       "label": "CLE -3.5",
-       "game": "MIN @ CLE",
-       "kickoff": "2026-10-26T23:00Z",
-       "market": "spread",
-       "side": "home",
-       "point": -3.5,
-       "player": null,
-       "book": "caesars",
-       "price": -110.0,
-       "price_source": "posted",
-       "p_final": 0.5384,
-       "p_fair": 0.5384,
-       "p_model": 0.4869,
-       "p_push": 0.0,
-       "novig_implied": 0.5384,
-       "game_key": "NBA_20261026_MIN_CLE"
-      }
-     ],
-     "model_prob": 0.2641,
-     "novig_market_prob": 0.2641,
-     "price_implied_prob": 0.0866,
-     "edge": 0.1775,
-     "ev_per_100": 204.9,
-     "stake": 168.79,
-     "kelly_fraction_used": 0.0486,
-     "correlated_joint": true,
-     "min_acceptable_price": 286,
-     "reasons": [
-      "CHA ML: Best price -120 at caesars vs market-consensus fair -129 (fair win prob 55.9%; break-even at this price 54.1%).",
-      "CHA -2: Best price -105 at caesars vs market-consensus fair -107 (fair win prob 50.0%; break-even at this price 49.6%).",
-      "CLE ML: Best price -145 at caesars vs market-consensus fair -157 (fair win prob 60.5%; break-even at this price 58.7%)."
-     ],
-     "flags": [
-      {
-       "player": "Naz Reid",
-       "team": "CHA",
-       "flag_type": "official_status",
-       "severity": 2,
-       "source": "ESPN injury report (official designations)",
-       "url": "https://www.espn.com/nba/player/_/id/4396971/naz-reid",
-       "timestamp": "2026-10-26T15:18Z",
-       "text": "day-to-day: Reid is listed as probable for Monday's game against Washington, according to the NBA's official injury report.",
-       "status": "day-to-day"
-      },
-      {
-       "player": "Anthony Edwards",
-       "team": "MIN",
-       "flag_type": "official_status",
-       "severity": 2,
-       "source": "ESPN injury report (official designations)",
-       "url": "https://www.espn.com/nba/player/_/id/4594268/anthony-edwards",
-       "timestamp": "2026-10-26T17:06Z",
-       "text": "day-to-day: Edwards (knee) is questionable for Monday's game against Cleveland.",
-       "status": "day-to-day"
-      },
-      {
-       "player": "Naz Reid",
-       "team": "CHA",
-       "flag_type": "illness",
-       "severity": 2,
-       "source": "Google News / Yahoo Sports",
-       "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxNR1BrRF93cW44Z0dySEZMNHdWemcwbnJvTWJCQXBFRC1ES1RKUGRYdDVvYzdGbkl6YzZnSFZHRDJKNUxKc1RqLWdJV0gzZXBEQkplTS1lV0tIR3ljbWxrZ2w1SzVlYjZNdFp6Z0oyd3A2NFprT0Fqekc3S1ByQ2Z3akJ4bkdoVXFfRWxRTVk4VQ?oc=5",
-       "timestamp": "2026-10-26T15:29:56+00:00",
-       "text": "The Charlotte Hornets downgraded Naz Reid (illness) to \u2026 - Yahoo Sports",
-       "status": null
-      },
-      {
-       "player": "Naz Reid",
-       "team": "CHA",
-       "flag_type": "illness",
-       "severity": 2,
-       "source": "Google News / NBC Sports",
-       "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxQd0IzYXZJWWRncVhYNFI4UmtiMGZReEVtSGNWX2tTVkVRUnQ5Zzc4U29VQm0zWTNIeTdzTEpHTU4tOGZreEFoLVV0RmFFRDZOdmdtZzdScUJQN3BUNXJmLUg2T3ZySGlqdlVfWkp0dWRPNXB2cl92dzNEcGZraFpGSnVQam1YSUZ2NzladkdnaVJ5b2pnbjRmalZEZkpaaEoxRDJzZEZDSXRJNVpnaXd1Tw?oc=5",
-       "timestamp": "2026-10-26T17:23:39+00:00",
-       "text": "Naz Reid (illness) probable Monday vs. Wizards - NBC Sports",
-       "status": null
-      },
-      {
-       "player": "Naz Reid",
-       "team": "CHA",
-       "flag_type": "injury",
-       "severity": 2,
-       "source": "Google News / RotoWire",
-       "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxQMHNTTnVIZ21LWHpNTXdhR0k1VjFETVZBQzZSMjFjSFAyTkpSdUhfYkdPelF6M1dJWlg4UUh1SVVMc0tSb2lwYjh2NmVrLS0zdDgwLWgtYktFSzhxV2ZXM3Via1Y1WXplSXdXME56YmJiTUtmTjc2THlTS2xIeWYzVlZNZFltUi1lb2oyUkFydkNYUQ?oc=5",
-       "timestamp": "2026-10-26T15:18:16+00:00",
-       "text": "Naz Reid Injury: Probable for Monday - RotoWire",
-       "status": null
-      },
-      {
-       "player": "Naz Reid",
-       "team": "CHA",
-       "flag_type": "illness",
-       "severity": 2,
-       "source": "Google News / FantasyPros",
-       "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxPWUY0V2tWOEFHR2IzXzlNYW9lWU1KeW9IQTdTRlFJTHlYeW43WDV6dFVYZExpMk9kdzZ4QWJudENXd21wOUVPYUNYeFNNV05uSjhseTFtWlR5ajNxczJhSzB0eEthRFlZdmIybENNZEZTX19sTlR3R3hkQjNRWC1LVHQ0Qi1pYmxWcFRwQtIBjAFBVV95cUxPWUY0V2tWOEFHR2IzXzlNYW9lWU1KeW9IQTdTRlFJTHlYeW43WDV6dFVYZExpMk9kdzZ4QWJudENXd21wOUVPYUNYeFNNV05uSjhseTFtWlR5ajNxczJhSzB0eEthRFlZdmIybENNZEZTX19sTlR3R3hkQjNRWC1LVHQ0Qi1pYmxWcFRwQg?oc=5",
-       "timestamp": "2026-10-26T18:06:00+00:00",
-       "text": "Naz Reid (illness) probable Monday - FantasyPros",
-       "status": null
-      },
-      {
-       "player": "Naz Reid",
-       "team": "CHA",
-       "flag_type": "injury",
-       "severity": 2,
-       "source": "Google News / Heavy.com",
-       "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxOWVljd0Noc3Zoby0tRHVoeEs4X1pURUhvbEhMZXBpbWhtUXZ6YUNGc3JKcG9paHJnZml3SDJzY0liYjgwR3JkLXR4bWZrcDhBSEFPTlIyZV9WRWZ4UVdlLWxwdTluODJna2V5ZGpvVXdxOWxXTDRzVVhrNUVTb2JaTUxrNVM?oc=5",
-       "timestamp": "2026-10-26T15:57:36+00:00",
-       "text": "Charlotte Hornets Announce Sudden Naz Reid Injury News Before Wizards Game - Heavy.com",
-       "status": null
-      },
-      {
-       "player": "Dennis Schroder",
-       "team": "CHA",
-       "flag_type": "trade",
-       "severity": 1,
-       "source": "Google News / Unisba Media",
-       "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxNZnFBMGI0bEt1S3lZNDdTZ0FvOXF6X1BZcnQ4U3ZUbUlYbm5MbE5FT0pDZEFabTFzeXBNdHZoS0dEdnAxWkpBam9JNnc1czJyQllwcWFTWjhkUVhoOXNIQ2dFNnd5cC1oY3JlZnFfdHZ0NVlhN3RnUnZsRHc0M01zUFJn?oc=5",
-       "timestamp": "2026-10-25T08:37:20+00:00",
-       "text": "\ud83d\udea8TRADE ALERT! Cleveland Cavs Make SMART MOVE Trading Dennis Schroder To The Hornets For Tre Mann Mouvement Desjardins (os48PfVBNh) - Unisba Media",
-       "status": null
-      },
-      {
-       "player": "Donovan Mitchell",
-       "team": "CLE",
-       "flag_type": "trade",
-       "severity": 1,
-       "source": "Google News / Unisba Media",
-       "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE9zeDV5ajRob0lVallMdDlXNUVjUmY3VnFRbHhMS3VPN2hzTDRyS3FvdnlqS3FxeWFkeVlKZkhWR2Y0OGhSeExJNGQ5Q0FKYVY3UGxnVU9DMTNrTDl1TWV4MTZxTEMxM2NrRmlJ?oc=5",
-       "timestamp": "2026-10-25T14:27:21+00:00",
-       "text": "Jaguars Trade Rumors: Brian Thomas Jr. Trade Buzz INCREASING Per ESPN NFL Insider Donovan Mitchell (6lojlHZu08) - Unisba Media",
-       "status": null
-      },
-      {
-       "player": "Anthony Edwards",
-       "team": "MIN",
-       "flag_type": "injury",
-       "severity": 2,
-       "source": "Google News / Bring Me the Sports",
-       "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxOOEVhd0lpa3c2cC15MWhDYkhDMXc5UWRsUXJ1eVRCSHpJR0kybGw0NWEzY1NXMGtieFZPcUtsTGJ4d3RlRFVOa1Fmc0Y2bGZUSzY3QnljdFpBR0dmb0RCaV9TQ0ViZm5rWHdTQTVvU05zV013T0lZTzJRUmhuS01pcV9tQVE3b0JsNk1UOE5ncWtmVEh1UGFZTEh5SzU5S3ZtcmpraW9B?oc=5",
-       "timestamp": "2026-10-26T17:54:23+00:00",
-       "text": "With knee giving him trouble, Anthony Edwards listed questionable on Monday - Bring Me the Sports",
-       "status": null
-      },
-      {
-       "player": "Anthony Edwards",
-       "team": "MIN",
-       "flag_type": "game_time_decision",
-       "severity": 2,
-       "source": "Google News / Bring Me the Sports",
-       "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxOOEVhd0lpa3c2cC15MWhDYkhDMXc5UWRsUXJ1eVRCSHpJR0kybGw0NWEzY1NXMGtieFZPcUtsTGJ4d3RlRFVOa1Fmc0Y2bGZUSzY3QnljdFpBR0dmb0RCaV9TQ0ViZm5rWHdTQTVvU05zV013T0lZTzJRUmhuS01pcV9tQVE3b0JsNk1UOE5ncWtmVEh1UGFZTEh5SzU5S3ZtcmpraW9B?oc=5",
-       "timestamp": "2026-10-26T17:54:23+00:00",
-       "text": "With knee giving him trouble, Anthony Edwards listed questionable on Monday - Bring Me the Sports",
-       "status": null
-      },
-      {
-       "player": "Anthony Edwards",
-       "team": "MIN",
-       "flag_type": "injury",
-       "severity": 2,
-       "source": "Google News / Yahoo Sports",
-       "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxPY0tJVDVlYW5tYTdCaDFmOTFaT1dSTFdmSVN5TjBYVWRtUENkWldUelNma0FYak9ZMUgwbThxSmNxR3haU29TcVVwLXFLWEpjNHNEM0RnamFvOTh3Skdiaml2b1huYnVWZl90QmRCME9ZYlowSGMtMlFrNWZlX2c4bmQ3NU5QX2ZNLWwyNnktd01BVHNnZEE?oc=5",
-       "timestamp": "2026-10-26T17:56:01+00:00",
-       "text": "Anthony Edwards\u2019 injury status for Timberwolves-Cavs game \u2018could go either way\u2019 - Yahoo Sports",
-       "status": null
-      }
-     ],
-     "notes": [
-      "stake scaled x0.84 to respect the 5% daily cap",
-      "Same-game joint probability comes from the correlated simulation; books adjust SGP prices for correlation and free sources don't publish them \u2014 bet only if the book's SGP price is +286 or better."
-     ]
-    },
-    "LONG SHOT": {
-     "id": "35a3c5fb2f44f32c",
-     "tier": "LONG SHOT",
-     "status": "WAIT",
-     "recheck_at": "2026-10-26T23:30:00+00:00",
-     "description": "PHX ML + PHX +9.5 + ATL ML + ATL +5.5",
-     "book": "caesars",
-     "price": 3935,
-     "legs": [
-      {
-       "label": "PHX ML",
-       "game": "PHX @ OKC",
-       "kickoff": "2026-10-27T00:00Z",
-       "market": "moneyline",
-       "side": "away",
-       "point": null,
-       "player": null,
-       "book": "caesars",
-       "price": 310.0,
-       "price_source": "posted",
-       "p_final": 0.2645,
-       "p_fair": 0.2645,
-       "p_model": 0.2833,
-       "p_push": 0.0072,
-       "novig_implied": 0.2665,
-       "game_key": "NBA_20261026_PHX_OKC"
-      },
-      {
-       "label": "PHX +9.5",
-       "game": "PHX @ OKC",
-       "kickoff": "2026-10-27T00:00Z",
-       "market": "spread",
-       "side": "away",
-       "point": 9.5,
-       "player": null,
-       "book": "caesars",
-       "price": -110.0,
-       "price_source": "posted",
-       "p_final": 0.5353,
-       "p_fair": 0.5353,
-       "p_model": 0.5654,
-       "p_push": 0.0,
-       "novig_implied": 0.5353,
-       "game_key": "NBA_20261026_PHX_OKC"
-      },
-      {
-       "label": "ATL ML",
-       "game": "ATL @ HOU",
-       "kickoff": "2026-10-27T00:30Z",
-       "market": "moneyline",
-       "side": "away",
-       "point": null,
-       "player": null,
-       "book": "caesars",
-       "price": 170.0,
-       "price_source": "posted",
-       "p_final": 0.3607,
-       "p_fair": 0.3607,
-       "p_model": 0.345,
-       "p_push": 0.0082,
-       "novig_implied": 0.3637,
-       "game_key": "NBA_20261026_ATL_HOU"
-      },
-      {
-       "label": "ATL +5.5",
-       "game": "ATL @ HOU",
-       "kickoff": "2026-10-27T00:30Z",
-       "market": "spread",
-       "side": "away",
-       "point": 5.5,
-       "player": null,
-       "book": "caesars",
-       "price": -110.0,
-       "price_source": "posted",
-       "p_final": 0.5235,
-       "p_fair": 0.5235,
-       "p_model": 0.4951,
-       "p_push": 0.0,
-       "novig_implied": 0.5235,
-       "game_key": "NBA_20261026_ATL_HOU"
-      }
-     ],
-     "model_prob": 0.0999,
-     "novig_market_prob": 0.0999,
-     "price_implied_prob": 0.0248,
-     "edge": 0.0751,
-     "ev_per_100": 302.91,
-     "stake": 162.42,
-     "kelly_fraction_used": 0.0192,
-     "correlated_joint": true,
-     "min_acceptable_price": 921,
-     "reasons": [
-      "PHX ML: Best price +310 at caesars vs market-consensus fair +275 (fair win prob 26.5%; break-even at this price 24.2%).",
-      "PHX +9.5: Best price -110 at caesars vs market-consensus fair -115 (fair win prob 53.5%; break-even at this price 52.4%).",
-      "ATL ML: Best price +170 at caesars vs market-consensus fair +175 (fair win prob 36.1%; break-even at this price 36.7%)."
-     ],
-     "flags": [
-      {
-       "player": "Shai Gilgeous-Alexander",
-       "team": "OKC",
-       "flag_type": "injury",
-       "severity": 2,
-       "source": "Google News / News 9",
-       "url": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxOY2lBN0o3RTlqaGJQODZqQVg4b05HVFVWdWtQWTY5eVpOLVJRM3NLWnpnVmxRYnFpcWk0VVdEQ1BCY09aMkJpMHJacE5pVmNhNkdDeEZWRFRzN0ZRN0ZNaW5MajZXX3hiQ1ZPam1Sc1pRdlQ2Q2c0SzQwNGd3SjBpVVN2NkY1SEdOX2JKckFablF4LWdlek90SG9DZ1ZpaUxQQnM5Si1GU3dUTzZERGJqOE9BbXMyR1FhSXRMLTZjVW03WWdFY044WHh0N0ZBMXBO?oc=5",
-       "timestamp": "2026-10-26T12:13:42+00:00",
-       "text": "\u2018He\u2019s a warrior\u2019: Shai Gilgeous-Alexander confident Jalen Williams will bounce back from injury - News 9",
-       "status": null
-      },
-      {
-       "player": "Shai Gilgeous-Alexander",
-       "team": "OKC",
-       "flag_type": "injury",
-       "severity": 2,
-       "source": "Google News / Yahoo Sports",
-       "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxOZ2lxbzg4X0pnU0pSNzk4bllla1dNS01FRU9uTjRGMHA1ZEl5d3pRcUlaS2U5aWM2UG9takViRXh1UjVhRHRzdXRmVkltUzZrY19wS2FBSktpWW5JWldTVmwxN2hEWnZHMEh0WkEzRjVHUk5JNV9iV2FibjFKQm1MTC10QjMxVGRtZFRpcg?oc=5",
-       "timestamp": "2026-10-26T16:44:08+00:00",
-       "text": "Shai Gilgeous-Alexander Tears Up After Jalen Williams Is Stretchered Off Court with Horrific Leg Injury - Yahoo Sports",
-       "status": null
-      },
-      {
-       "player": "Shai Gilgeous-Alexander",
-       "team": "OKC",
-       "flag_type": "injury",
-       "severity": 2,
-       "source": "Google News / The Big Lead",
-       "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxORkJveVp5MHQyTm1DRXJoLUNWeEpqYjJzSm9VRF9DMkpxXzJfNVJZbUxqT0xndkswb0VNaUJmcDc2dGF5RTR5VTRlNmNLcFNEVnhkYXFjYnRRcEVtWGl5S19tLVlXeEp5bnAyazRINGM3YlNaMUdjTjgxNjBNSFpKRV9CNA?oc=5",
-       "timestamp": "2026-10-26T14:09:35+00:00",
-       "text": "Shai Gilgeous-Alexander shares immediate emotion after gruesome Jalen Williams injury - The Big Lead",
-       "status": null
-      },
-      {
-       "player": "Shai Gilgeous-Alexander",
-       "team": "OKC",
-       "flag_type": "injury",
-       "severity": 2,
-       "source": "Google News / Revolt TV",
-       "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxPSjU2aEk0eVBUdTNXNGNteDlXMDRvUDZRRENPRjBtaC11c1JqY21hVkV5MUx6N3ZXWTV1aXJFbUtBcUtmSXFvaC1sc0U4WGs0VnlXdEphQm1DMFgtVnMwZGx2eUdpbHBkTmUtTWF6dDByaEpjRktpaWVsZnBaamZuZHFjcGlfcEhGRnlmX0c2amZrdw?oc=5",
-       "timestamp": "2026-10-26T14:16:52+00:00",
-       "text": "Jalen Williams stretchered off court after horrifying leg injury as emotional Shai Gilgeous-Alexander vows to \u201chold the fort down\u201d - Revolt TV",
-       "status": null
-      },
-      {
-       "player": "Shai Gilgeous-Alexander",
-       "team": "OKC",
-       "flag_type": "injury",
-       "severity": 2,
-       "source": "Google News / Hindustan Times",
-       "url": "https://news.google.com/rss/articles/CBMi7wFBVV95cUxOUHVIa0F6SmZUbjBBNFRxWlBwdTUtWmxPTlI3VTB2c3RQQUU3a0czWWx1RExYWnhTazdUMFRyMXlLSE5fVzdfX242MjFEQmVyQ0hzX1dPS0RZMnIwWVdzTGZxVzhhZWhVdG5YUzFGbEFLRmVJRUE2QVQzX0VwSm9KVGdjdGNieHRUQzVKX1hRTWpKMUlQQ2tPYkI1dmx5djBxOV9NbnJUaGtSRDlYbUFibmZtOENBcDdickVtUTZWUW1MclBiV3RYTjk1WDBMcFBoTXFiWmhFS2E4THNXd1Bib0JIdGoyWmMwejd1LTd6b9IB9AFBVV95cUxQVzFKUk5IeVhUVmR6Nl9CQVo1ZmRWdWJRcFEtcWF1aUo2WVdhVnlFNWRWV0NhTm5OQ1M3Q2JNX1lkczBHbzhTSE0tVkxWQnB6T3pIUE1yUWd5Y195TkM2V3BFX1B6dlE2aVM2eE1LX0x2UXh1LXBGRXFaU3hJTHRZdkI1YkVDZ3J4eVFnekNzeURBYWR5ZkZLT1JOS2hCVGhTNURkWWZMSTl2cEJNcjgzS1FEcEFUUXBpV1pMdjhwYlFEVXZHZmZGMVBDQXl3aEthcmxNUDVtNkdiX0xmdXJmQU5obXVYczNJR3NDYUZ4c3UwTF9t?oc=5",
-       "timestamp": "2026-10-26T15:53:48+00:00",
-       "text": "Jalen Williams suffers \u2018gruesome\u2019 leg injury, leaving Shai Gilgeous-Alexander in tears: Watch | Hindustan Times - Hindustan Times",
-       "status": null
-      },
-      {
-       "player": "Shai Gilgeous-Alexander",
-       "team": "OKC",
-       "flag_type": "injury",
-       "severity": 2,
-       "source": "Google News / Yahoo Sports",
-       "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxPekM5b3A5RFJEbXNjU1NKLU5CWlIzSXJhZlFVa2R5OElqNldZTHNabksyeUZOTjBNZFVLSmhzTS1oUUFmUXBBS1l0VTFzWkxoY3FlT1pyQ3FaQUU4Q21EaUhPNzVwcHlFbG02Y3JWUVJCSDI5NV8wZURUTk15cE41ekdZaEJsTHNIX2trVDFLam1udw?oc=5",
-       "timestamp": "2026-10-26T07:48:23+00:00",
-       "text": "Thunder\u2019s Shai Gilgeous-Alexander Visibly Emotional After Frightening Jalen Williams Injury - Yahoo Sports",
-       "status": null
-      },
-      {
-       "player": "Shai Gilgeous-Alexander",
-       "team": "OKC",
-       "flag_type": "injury",
-       "severity": 2,
-       "source": "Google News / The Guardian",
-       "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxNVWpOV2F1OWtZNGNjWVo2SmZvWHhwQWluTHB1MXk1cWF6eDVHYzRPYkZBTFNwY2tETkw2eTZKdEJRbklnX0ZfeXE0T3NDeFp4UlBkaVFITUJjcTc4TzJvbDNsS0xtMkNTVWpDMHZTWVdMT1RpcWJIVnFyOGpYcUtMOEJVX0lySG9OZ3FiNjhnZGZKZw?oc=5",
-       "timestamp": "2026-10-26T03:06:00+00:00",
-       "text": "\u2018We\u2019re not doing great\u2019: Gilgeous-Alexander in tears after Williams suffers gruesome leg injury - The Guardian",
-       "status": null
-      },
-      {
-       "player": "Shai Gilgeous-Alexander",
-       "team": "OKC",
-       "flag_type": "injury",
-       "severity": 2,
-       "source": "Google News / HoopsHype",
-       "url": "https://news.google.com/rss/articles/CBMigwJBVV95cUxNVjJYdHUyeHRYclNiOTVxUlBRMWZzcVNHZHczQ0tOa0tETVNkQkVUbmpRYWVSRlNqWXZ6MDdjcUowT19VeG9MeXc1U3M1b2pHN0RLQVc5RTFtWW5nZVR3X0kwQUhUQzRpQ2lfVEtHbU5XQWhsWHZrOV9jamtEWU0xV095SlRsd3JVdTNnZkZibzZkVUYtNVZIYlkyUkJVQnJMVDc3VWQ5RDdoZ1hlMFdSRzZTcjQtX0ltNmtLT0R2ZEFjNlNiUUx3Qm5vc2RPdVBjZ0VuVGpXczVVVXlDUEVUbGM0LUJHQng0WUhwUGItYmhxMTF5emk3QWxrcU54bTFSSlpF?oc=5",
-       "timestamp": "2026-10-26T09:08:00+00:00",
-       "text": "Shai Gilgeous-Alexander on Jalen Williams' injury: 'We just got to hold the fort down until he comes back' - HoopsHype",
-       "status": null
-      },
-      {
-       "player": "Shai Gilgeous-Alexander",
-       "team": "OKC",
-       "flag_type": "injury",
-       "severity": 2,
-       "source": "Google News / Yahoo Sports",
-       "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxOZmVIVDdjaHhSYzRwRXktYzQ4bVRVRkNYQ05ld21xa3FjVHhUY2ZJZ3h6SEhuNWU3ZXZSQmE1bF83X2s3UDJweV8yOFVCejRzWFRQNkpJcFA1SmlqTGFNVk9vRUZlNUFUV0luOTFaNm5QTGRWZC13cFNJa3ctSE1JNDZLSWcyZUtUR0tscQ?oc=5",
-       "timestamp": "2026-10-26T04:14:00+00:00",
-       "text": "Shai Gilgeous-Alexander keeps faith in Thunder despite Jalen Williams injury - Yahoo Sports",
-       "status": null
-      },
-      {
-       "player": "Shai Gilgeous-Alexander",
-       "team": "OKC",
-       "flag_type": "injury",
-       "severity": 2,
-       "source": "Google News / BasketNews.com",
-       "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPMDJGUG9SbUMwWTIxbFVtMW9ibkE2TGdNb0N4eWYwLWx5cnJIcThwRGphcTJQaWFWdEJaTlNGZ0o5SUtydWY0Nk1KR1pBdER4QVpKNGotbFJzWjNyOHg4N3NyLTZBb0t2bXB6U0J4Z0dHZ2FSUHo5REZjeEtLM2YzQk5fc1pYLVd4WG5tUGpzSnFtZXA0ekhCRmdRSmRmOFZyaHRUbG9uY0taN2dIdWo3R1Q2blI3dw?oc=5",
-       "timestamp": "2026-10-26T02:15:00+00:00",
-       "text": "Shai Gilgeous-Alexander, OKC share reaction after Jalen Williams ugly injury - BasketNews.com",
-       "status": null
-      },
-      {
-       "player": "Shai Gilgeous-Alexander",
-       "team": "OKC",
-       "flag_type": "injury",
-       "severity": 2,
-       "source": "Google News / Larry Brown Sports",
-       "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxPZElMeWR0VzN0dGEtdjVvelhYdVVhLWwzTXNsc29iWVkzeDFUaGNIQzB5bHZBMldPZk9jUE5xYUE1Y3V4UUp0S3dmaFpMYXRMN3hWbEVaNGU0R0EwY0s5aTJNN0psQ2ZhckZsb3dnc21EUnNka3lsb2gxN2d0enF0Z2ROWjVFNll0R3FtTGh0MExTNExJRlhSanBEYW45VjZyaTYwSkVpaUlGUQ?oc=5",
-       "timestamp": "2026-10-26T04:54:46+00:00",
-       "text": "Jalen Williams\u2019 devastating injury left Shai Gilgeous-Alexander in tears - Larry Brown Sports",
-       "status": null
-      },
-      {
-       "player": "Shai Gilgeous-Alexander",
-       "team": "OKC",
-       "flag_type": "injury",
-       "severity": 2,
-       "source": "Google News / HITC",
-       "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxPZkJabDNCeVVaaGExTFhLWGw0VDVCQlR3eHo4VzZkdW5lbTlOaTllQV9xbkxhZ3hva0E1aVVHaldtTHVLQmo2eXFfZ29jTUluX0pqenB3R1N0a0tUR0NERElPb052R2M2cGd3a2tYY1NiYk8tZG9SZlFrVjA5NzRjOFpVb1FJN3VjVmtiOEJoTG01SDdibFlQeDQtYXdlODRJOE1zOHFfUks4Zkx5eU9DXzh3N0FpalpMa0UxbWpR?oc=5",
-       "timestamp": "2026-10-26T04:22:32+00:00",
-       "text": "Shai Gilgeous-Alexander's devastating reaction to Thunder teammate leaving Clippers game with injury - HITC",
-       "status": null
-      }
-     ],
-     "notes": [
-      "stake scaled x0.84 to respect the 5% daily cap",
-      "Same-game joint probability comes from the correlated simulation; books adjust SGP prices for correlation and free sources don't publish them \u2014 bet only if the book's SGP price is +921 or better."
-     ]
-    }
-   },
-   "model": {
-    "weights": {
-     "ml_home": 0.0,
-     "spread_home": 0.0,
-     "over": 0.0
-    },
-    "feature_groups": [
-     "base",
-     "h2h"
-    ],
-    "trained_through": "2026-06-13",
+    "trained_through": "2026-10-26",
     "note": "model weight is 0 in every market: bets below come only from price differences between books (line shopping), never from the model's opinion"
    },
    "shadow_props": {
     "status": "SHADOW ONLY \u2014 tracked for calibration, not recommended (no free prop prices; model unproven vs prop markets)",
     "rows": []
    },
-   "flags_checked": 250
+   "flags_checked": 920
+  },
+  "NBA": {
+   "league": "NBA",
+   "error": "ZeroDivisionError: float division by zero",
+   "tiers": {
+    "SAFE": {
+     "bet": null,
+     "message": "NO BET",
+     "reason": "card build failed; see logs"
+    },
+    "MODERATE": {
+     "bet": null,
+     "message": "NO BET",
+     "reason": "card build failed; see logs"
+    },
+    "LONG SHOT": {
+     "bet": null,
+     "message": "NO BET",
+     "reason": "card build failed; see logs"
+    }
+   }
   }
  },
  "disclaimer": "Probabilities, not guarantees. Paper mode: nothing here is a real wager.",
  "backtest": {
   "NFL": {
    "verdicts": [
-    "moneyline: did NOT beat the no-vig closing line out of sample (final 0.6099 vs market 0.6099; model alone 0.6442). Edges in this market should be treated as noise.",
-    "moneyline: the model on its own is worse than the market by 0.0344 log loss.",
-    "spread: did NOT beat the no-vig closing line out of sample (final 0.6922 vs market 0.6922; model alone 0.7032). Edges in this market should be treated as noise.",
-    "spread: the model on its own is worse than the market by 0.0110 log loss.",
-    "total: did NOT beat the no-vig closing line out of sample (final 0.6931 vs market 0.6931; model alone 0.6996). Edges in this market should be treated as noise.",
+    "moneyline: did NOT beat the no-vig closing line out of sample (final 0.6103 vs market 0.6103; model alone 0.6451). Edges in this market should be treated as noise.",
+    "moneyline: the model on its own is worse than the market by 0.0348 log loss.",
+    "spread: did NOT beat the no-vig closing line out of sample (final 0.6924 vs market 0.6924; model alone 0.7032). Edges in this market should be treated as noise.",
+    "spread: the model on its own is worse than the market by 0.0108 log loss.",
+    "total: did NOT beat the no-vig closing line out of sample (final 0.6930 vs market 0.6930; model alone 0.6996). Edges in this market should be treated as noise.",
     "total: the model on its own is worse than the market by 0.0066 log loss.",
     "No historical bets cleared the edge threshold: the model never disagreed with the close enough to act."
    ],
@@ -967,139 +104,139 @@
     "motivation",
     "altitude"
    ],
-   "generated_at": "2026-10-20T15:47:50"
+   "generated_at": "2026-10-27T16:31:55"
   },
   "NBA": {
    "verdicts": [
-    "moneyline: did NOT beat the no-vig closing line out of sample (final 0.5925 vs market 0.5925; model alone 0.6251). Edges in this market should be treated as noise.",
-    "moneyline: the model on its own is worse than the market by 0.0326 log loss.",
-    "spread: did NOT beat the no-vig closing line out of sample (final 0.6926 vs market 0.6926; model alone 0.6951). Edges in this market should be treated as noise.",
-    "spread: the model on its own is worse than the market by 0.0025 log loss.",
-    "total: did NOT beat the no-vig closing line out of sample (final 0.6929 vs market 0.6929; model alone 0.6972). Edges in this market should be treated as noise.",
-    "total: the model on its own is worse than the market by 0.0043 log loss.",
+    "moneyline: did NOT beat the no-vig closing line out of sample (final 0.5811 vs market 0.5811; model alone 0.6144). Edges in this market should be treated as noise.",
+    "moneyline: the model on its own is worse than the market by 0.0332 log loss.",
+    "spread: did NOT beat the no-vig closing line out of sample (final 0.6924 vs market 0.6924; model alone 0.6946). Edges in this market should be treated as noise.",
+    "spread: the model on its own is worse than the market by 0.0022 log loss.",
+    "total: did NOT beat the no-vig closing line out of sample (final 0.6928 vs market 0.6928; model alone 0.6951). Edges in this market should be treated as noise.",
+    "total: the model on its own is worse than the market by 0.0023 log loss.",
     "No historical bets cleared the edge threshold: the model never disagreed with the close enough to act."
    ],
    "test_seasons": [
-    2022,
-    2025
+    2023,
+    2026
    ],
    "kept_groups": [
-    "h2h"
-   ],
-   "dropped_groups": [
-    "efficiency",
-    "style",
     "fatigue",
     "altitude",
     "motivation"
    ],
-   "generated_at": "2026-10-20T15:52:06"
+   "dropped_groups": [
+    "efficiency",
+    "style",
+    "h2h"
+   ],
+   "generated_at": "2026-10-27T16:35:46"
   }
  },
  "freshness": {
   "nfl.espn.schedule": {
    "ok": true,
-   "rows": 15,
+   "rows": 14,
    "note": "upcoming events",
-   "checked_at": "2026-10-26T21:09:41+00:00",
+   "checked_at": "2026-10-27T20:52:55+00:00",
    "data_as_of": null
   },
   "nfl.espn.odds": {
    "ok": true,
-   "rows": 180,
+   "rows": 168,
    "note": "",
-   "checked_at": "2026-10-26T21:09:47+00:00",
+   "checked_at": "2026-10-27T20:53:00+00:00",
    "data_as_of": null
   },
   "nfl.actionnetwork.odds": {
    "ok": true,
-   "rows": 216,
+   "rows": 1512,
    "note": "",
-   "checked_at": "2026-10-26T21:09:50+00:00",
+   "checked_at": "2026-10-27T20:53:02+00:00",
    "data_as_of": null
   },
   "nfl.kalshi.moneyline": {
    "ok": true,
-   "rows": 26,
+   "rows": 24,
    "note": "",
-   "checked_at": "2026-10-26T21:09:50+00:00",
+   "checked_at": "2026-10-27T20:53:02+00:00",
    "data_as_of": null
   },
   "nfl.espn.props": {
-   "ok": true,
-   "rows": 72,
+   "ok": false,
+   "rows": 0,
    "note": "DraftKings lines; prices not published",
-   "checked_at": "2026-10-26T21:09:51+00:00",
+   "checked_at": "2026-10-27T20:53:02+00:00",
    "data_as_of": null
   },
   "nba.espn.schedule": {
    "ok": true,
-   "rows": 25,
+   "rows": 19,
    "note": "upcoming events",
-   "checked_at": "2026-10-26T21:09:52+00:00",
+   "checked_at": "2026-10-27T20:53:03+00:00",
    "data_as_of": null
   },
   "nba.espn.odds": {
    "ok": true,
-   "rows": 120,
+   "rows": 60,
    "note": "",
-   "checked_at": "2026-10-26T21:10:01+00:00",
+   "checked_at": "2026-10-27T20:53:10+00:00",
    "data_as_of": null
   },
   "nba.actionnetwork.odds": {
    "ok": true,
-   "rows": 246,
+   "rows": 174,
    "note": "",
-   "checked_at": "2026-10-26T21:10:03+00:00",
+   "checked_at": "2026-10-27T20:53:12+00:00",
    "data_as_of": null
   },
   "nba.kalshi.moneyline": {
    "ok": true,
-   "rows": 50,
+   "rows": 38,
    "note": "",
-   "checked_at": "2026-10-26T21:10:03+00:00",
+   "checked_at": "2026-10-27T20:53:12+00:00",
    "data_as_of": null
   },
   "nba.espn.props": {
    "ok": true,
-   "rows": 608,
+   "rows": 277,
    "note": "DraftKings lines; prices not published",
-   "checked_at": "2026-10-26T21:10:15+00:00",
+   "checked_at": "2026-10-27T20:53:21+00:00",
    "data_as_of": null
   },
   "nfl.espn.injuries": {
    "ok": true,
    "rows": 800,
    "note": "",
-   "checked_at": "2026-10-26T21:10:40+00:00",
+   "checked_at": "2026-10-27T20:53:52+00:00",
    "data_as_of": null
   },
   "nfl.news.google_rss": {
    "ok": true,
    "rows": 40,
    "note": "per-player/team queries, last 48h",
-   "checked_at": "2026-10-26T21:11:23+00:00",
+   "checked_at": "2026-10-27T20:54:34+00:00",
    "data_as_of": null
   },
   "nfl.news.league_feeds": {
    "ok": true,
    "rows": 116,
    "note": "",
-   "checked_at": "2026-10-26T21:11:23+00:00",
+   "checked_at": "2026-10-27T20:54:35+00:00",
    "data_as_of": null
   },
   "nfl.open_meteo.forecast": {
    "ok": true,
    "rows": 11,
    "note": "outdoor venues only",
-   "checked_at": "2026-10-26T21:10:39+00:00",
+   "checked_at": "2026-10-27T20:53:51+00:00",
    "data_as_of": null
   },
   "nba.espn.injuries": {
    "ok": true,
    "rows": 89,
    "note": "",
-   "checked_at": "2026-10-26T21:11:26+00:00",
+   "checked_at": "2026-10-27T20:54:40+00:00",
    "data_as_of": null
   },
   "nba.news.google_rss": {
