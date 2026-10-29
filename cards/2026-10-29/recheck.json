@@ -1,0 +1,990 @@
+{
+ "generated_at": "2026-10-29T21:22:00+00:00",
+ "generated_at_et": "Thu Oct 29 05:22 PM ET",
+ "mode": "recheck",
+ "paper_mode": true,
+ "bankroll": 10000.0,
+ "leagues": {
+  "NFL": {
+   "league": "NFL",
+   "n_games": 14,
+   "tiers": {
+    "SAFE": {
+     "bet": null,
+     "message": "NO BET",
+     "reason": "best candidate in the 55%-100% band has edge -0.4% over its break-even \u2014 below the 2% threshold; nothing is forced",
+     "best_candidates_considered": 0
+    },
+    "MODERATE": {
+     "id": "6a7a1065631c53e9",
+     "tier": "MODERATE",
+     "status": "WAIT",
+     "recheck_at": "2026-11-01T16:30:00+00:00",
+     "description": "BAL ML + BAL +3.5 + WAS ML + WAS -5.5",
+     "book": "betriversny",
+     "price": 1193,
+     "legs": [
+      {
+       "label": "BAL ML",
+       "game": "BAL @ BUF",
+       "kickoff": "2026-11-01T18:00Z",
+       "market": "moneyline",
+       "side": "away",
+       "point": null,
+       "player": null,
+       "book": "betriversny",
+       "price": 150.0,
+       "price_source": "posted",
+       "p_final": 0.3918,
+       "p_fair": 0.3918,
+       "p_model": 0.3037,
+       "p_push": 0.0049,
+       "novig_implied": 0.3937,
+       "game_key": "NFL_20261101_BAL_BUF"
+      },
+      {
+       "label": "BAL +3.5",
+       "game": "BAL @ BUF",
+       "kickoff": "2026-11-01T18:00Z",
+       "market": "spread",
+       "side": "away",
+       "point": 3.5,
+       "player": null,
+       "book": "betriversny",
+       "price": -117.0,
+       "price_source": "posted",
+       "p_final": 0.5346,
+       "p_fair": 0.5346,
+       "p_model": 0.4342,
+       "p_push": 0.0,
+       "novig_implied": 0.5346,
+       "game_key": "NFL_20261101_BAL_BUF"
+      },
+      {
+       "label": "WAS ML",
+       "game": "PHI @ WAS",
+       "kickoff": "2026-11-02T01:20Z",
+       "market": "moneyline",
+       "side": "home",
+       "point": null,
+       "player": null,
+       "book": "betriversny",
+       "price": -220.0,
+       "price_source": "posted",
+       "p_final": 0.6807,
+       "p_fair": 0.6807,
+       "p_model": 0.5539,
+       "p_push": 0.0045,
+       "novig_implied": 0.6838,
+       "game_key": "NFL_20261101_PHI_WAS"
+      },
+      {
+       "label": "WAS -5.5",
+       "game": "PHI @ WAS",
+       "kickoff": "2026-11-02T01:20Z",
+       "market": "spread",
+       "side": "home",
+       "point": -5.5,
+       "player": null,
+       "book": "betriversny",
+       "price": -109.0,
+       "price_source": "posted",
+       "p_final": 0.5201,
+       "p_fair": 0.5201,
+       "p_model": 0.3718,
+       "p_push": 0.0,
+       "novig_implied": 0.5201,
+       "game_key": "NFL_20261101_PHI_WAS"
+      }
+     ],
+     "model_prob": 0.21,
+     "novig_market_prob": 0.21,
+     "price_implied_prob": 0.0773,
+     "edge": 0.1326,
+     "ev_per_100": 171.52,
+     "stake": 200.0,
+     "kelly_fraction_used": 0.0359,
+     "correlated_joint": true,
+     "min_acceptable_price": 386,
+     "reasons": [
+      "BAL ML: Best price +150 at betriversny vs market-consensus fair +154 (fair win prob 39.2%; break-even at this price 39.8%).",
+      "BAL +3.5: Best price -117 at betriversny vs market-consensus fair -115 (fair win prob 53.5%; break-even at this price 53.9%).",
+      "WAS ML: Best price -220 at betriversny vs market-consensus fair -216 (fair win prob 68.1%; break-even at this price 68.4%)."
+     ],
+     "flags": [
+      {
+       "player": "Lamar Jackson",
+       "team": "BAL",
+       "flag_type": "official_status",
+       "severity": 2,
+       "source": "ESPN injury report (official designations)",
+       "url": "https://www.espn.com/nfl/player/_/id/3916387/lamar-jackson",
+       "timestamp": "2026-10-29T20:55Z",
+       "text": "questionable: Jackson (ankle) was a full participant at Thursday's practice, Jeff Zrebiec of The Athletic reports.",
+       "status": "questionable"
+      },
+      {
+       "player": "Mark Andrews",
+       "team": "BAL",
+       "flag_type": "official_status",
+       "severity": 0,
+       "source": "ESPN injury report (official designations)",
+       "url": "https://www.espn.com/nfl/player/_/id/3116365/mark-andrews",
+       "timestamp": "2026-10-26T02:08Z",
+       "text": "active: Andrews caught three of four targets for 23 yards in Sunday's 35-13 loss to the Bengals.",
+       "status": "active"
+      },
+      {
+       "player": "Tyler Huntley",
+       "team": "BAL",
+       "flag_type": "official_status",
+       "severity": 0,
+       "source": "ESPN injury report (official designations)",
+       "url": "https://www.espn.com/nfl/player/_/id/4035671/tyler-huntley",
+       "timestamp": "2026-10-25T22:49Z",
+       "text": "active: Huntley completed 23 of 34 passes for 298 yards with a touchdown and an interception while adding three rushes for 12 yards in the Ravens' 35-13 loss to the Bengals on Sunday.",
+       "status": "active"
+      },
+      {
+       "player": "Derrick Henry",
+       "team": "BAL",
+       "flag_type": "official_status",
+       "severity": 0,
+       "source": "ESPN injury report (official designations)",
+       "url": "https://www.espn.com/nfl/player/_/id/3043078/derrick-henry",
+       "timestamp": "2026-10-25T21:49Z",
+       "text": "active: Henry rushed 17 times for 45 yards and brought in one of two target for four yards in the Ravens' 35-13 loss to the Bengals on Sunday.",
+       "status": "active"
+      },
+      {
+       "player": "Zay Flowers",
+       "team": "BAL",
+       "flag_type": "official_status",
+       "severity": 0,
+       "source": "ESPN injury report (official designations)",
+       "url": "https://www.espn.com/nfl/player/_/id/4429615/zay-flowers",
+       "timestamp": "2026-10-25T21:39Z",
+       "text": "active: Flowers brought in eight of 11 targets for 137 yards and a touchdown in the Ravens' 35-13 loss to the Bengals on Sunday.",
+       "status": "active"
+      },
+      {
+       "player": "Dalton Kincaid",
+       "team": "BUF",
+       "flag_type": "official_status",
+       "severity": 2,
+       "source": "ESPN injury report (official designations)",
+       "url": "https://www.espn.com/nfl/player/_/id/4385690/dalton-kincaid",
+       "timestamp": "2026-10-29T21:00Z",
+       "text": "questionable: Kincaid (chest) was a limited participant in Thursday's practice.",
+       "status": "questionable"
+      },
+      {
+       "player": "Khalil Shakir",
+       "team": "BUF",
+       "flag_type": "official_status",
+       "severity": 0,
+       "source": "ESPN injury report (official designations)",
+       "url": "https://www.espn.com/nfl/player/_/id/4373678/khalil-shakir",
+       "timestamp": "2026-10-19T09:56Z",
+       "text": "active: Shakir brought in four of six targets for 34 yards and a touchdown in the Bills' 33-30 win over the Raiders on Sunday.",
+       "status": "active"
+      },
+      {
+       "player": "Josh Allen",
+       "team": "BUF",
+       "flag_type": "official_status",
+       "severity": 0,
+       "source": "ESPN injury report (official designations)",
+       "url": "https://www.espn.com/nfl/player/_/id/3918298/josh-allen",
+       "timestamp": "2026-10-19T07:45Z",
+       "text": "active: Allen completed 23 of 33 passes for 255 yards with two touchdowns and no interceptions and rushed five times for one yard in the Bills' 33-30 win over the Raiders on Sunday.",
+       "status": "active"
+      },
+      {
+       "player": "DeVonta Smith",
+       "team": "PHI",
+       "flag_type": "official_status",
+       "severity": 2,
+       "source": "ESPN injury report (official designations)",
+       "url": "https://www.espn.com/nfl/player/_/id/4241478/devonta-smith",
+       "timestamp": "2026-10-29T18:22Z",
+       "text": "questionable: Smith (hamstring) wasn't spotted during the portion of Thursday's practice open to the media, Brooks Kubena of The Athletic reports.",
+       "status": "questionable"
+      },
+      {
+       "player": "Saquon Barkley",
+       "team": "PHI",
+       "flag_type": "official_status",
+       "severity": 2,
+       "source": "ESPN injury report (official designations)",
+       "url": "https://www.espn.com/nfl/player/_/id/3929630/saquon-barkley",
+       "timestamp": "2026-10-29T18:19Z",
+       "text": "questionable: Barkley (hamstring/back) wasn't spotted warming up at Thursday's practice, Brooks Kubena of The Athletic reports.",
+       "status": "questionable"
+      },
+      {
+       "player": "Makai Lemon",
+       "team": "PHI",
+       "flag_type": "official_status",
+       "severity": 0,
+       "source": "ESPN injury report (official designations)",
+       "url": "https://www.espn.com/nfl/player/_/id/4870795/makai-lemon",
+       "timestamp": "2026-10-27T04:11Z",
+       "text": "active: Lemon brought in seven of eight targets for 67 yards and a touchdown in the Eagles' 38-21 loss to the Cowboys on Monday night.",
+       "status": "active"
+      },
+      {
+       "player": "Tanner McKee",
+       "team": "PHI",
+       "flag_type": "official_status",
+       "severity": 0,
+       "source": "ESPN injury report (official designations)",
+       "url": "https://www.espn.com/nfl/player/_/id/4685201/tanner-mckee",
+       "timestamp": "2026-10-27T04:06Z",
+       "text": "active: McKee completed 23 of 35 passes for 211 yards with one touchdown and one interception and added one rush for one yard in the Eagles' 38-21 loss to the Cowboys on Monday night.",
+       "status": "active"
+      }
+     ],
+     "notes": [
+      "Same-game joint probability comes from the correlated simulation; books adjust SGP prices for correlation and free sources don't publish them \u2014 bet only if the book's SGP price is +386 or better."
+     ]
+    },
+    "LONG SHOT": {
+     "id": "8e0944feb909d6ac",
+     "tier": "LONG SHOT",
+     "status": "WAIT",
+     "recheck_at": "2026-11-01T16:30:00+00:00",
+     "description": "BAL ML + BAL +3.5 + Under 45.5 (ATL @ TB) + MIA ML",
+     "book": "betriversny",
+     "price": 3352,
+     "legs": [
+      {
+       "label": "BAL ML",
+       "game": "BAL @ BUF",
+       "kickoff": "2026-11-01T18:00Z",
+       "market": "moneyline",
+       "side": "away",
+       "point": null,
+       "player": null,
+       "book": "betriversny",
+       "price": 150.0,
+       "price_source": "posted",
+       "p_final": 0.3918,
+       "p_fair": 0.3918,
+       "p_model": 0.3037,
+       "p_push": 0.0049,
+       "novig_implied": 0.3937,
+       "game_key": "NFL_20261101_BAL_BUF"
+      },
+      {
+       "label": "BAL +3.5",
+       "game": "BAL @ BUF",
+       "kickoff": "2026-11-01T18:00Z",
+       "market": "spread",
+       "side": "away",
+       "point": 3.5,
+       "player": null,
+       "book": "betriversny",
+       "price": -117.0,
+       "price_source": "posted",
+       "p_final": 0.5346,
+       "p_fair": 0.5346,
+       "p_model": 0.4342,
+       "p_push": 0.0,
+       "novig_implied": 0.5346,
+       "game_key": "NFL_20261101_BAL_BUF"
+      },
+      {
+       "label": "Under 45.5 (ATL @ TB)",
+       "game": "ATL @ TB",
+       "kickoff": "2026-11-01T18:00Z",
+       "market": "total",
+       "side": "under",
+       "point": 45.5,
+       "player": null,
+       "book": "betriversny",
+       "price": -113.0,
+       "price_source": "posted",
+       "p_final": 0.5306,
+       "p_fair": 0.5306,
+       "p_model": 0.6933,
+       "p_push": 0.0,
+       "novig_implied": 0.5306,
+       "game_key": "NFL_20261101_ATL_TB"
+      },
+      {
+       "label": "MIA ML",
+       "game": "NE @ MIA",
+       "kickoff": "2026-11-01T21:25Z",
+       "market": "moneyline",
+       "side": "home",
+       "point": null,
+       "player": null,
+       "book": "betriversny",
+       "price": 295.0,
+       "price_source": "posted",
+       "p_final": 0.2633,
+       "p_fair": 0.2633,
+       "p_model": 0.303,
+       "p_push": 0.0042,
+       "novig_implied": 0.2644,
+       "game_key": "NFL_20261101_NE_MIA"
+      }
+     ],
+     "model_prob": 0.0562,
+     "novig_market_prob": 0.0562,
+     "price_implied_prob": 0.029,
+     "edge": 0.0272,
+     "ev_per_100": 93.9,
+     "stake": 70.03,
+     "kelly_fraction_used": 0.007,
+     "correlated_joint": true,
+     "min_acceptable_price": 1716,
+     "reasons": [
+      "BAL ML: Best price +150 at betriversny vs market-consensus fair +154 (fair win prob 39.2%; break-even at this price 39.8%).",
+      "BAL +3.5: Best price -117 at betriversny vs market-consensus fair -115 (fair win prob 53.5%; break-even at this price 53.9%).",
+      "Under 45.5 (ATL @ TB): Best price -113 at betriversny vs market-consensus fair -113 (fair win prob 53.1%; break-even at this price 53.1%)."
+     ],
+     "flags": [
+      {
+       "player": "Michael Penix Jr.",
+       "team": "ATL",
+       "flag_type": "official_status",
+       "severity": 0,
+       "source": "ESPN injury report (official designations)",
+       "url": "https://www.espn.com/nfl/player/_/id/4360423/michael-penix-jr",
+       "timestamp": "2026-10-25T23:03Z",
+       "text": "active: Penix completed 25 of 34 passes for 213 yards with three touchdowns and no interceptions and added five carries for minus-1 yard in the Falcons' 29-20 win over the 49ers on Sunday. He also recovered a fumble.",
+       "status": "active"
+      },
+      {
+       "player": "Lamar Jackson",
+       "team": "BAL",
+       "flag_type": "official_status",
+       "severity": 2,
+       "source": "ESPN injury report (official designations)",
+       "url": "https://www.espn.com/nfl/player/_/id/3916387/lamar-jackson",
+       "timestamp": "2026-10-29T20:55Z",
+       "text": "questionable: Jackson (ankle) was a full participant at Thursday's practice, Jeff Zrebiec of The Athletic reports.",
+       "status": "questionable"
+      },
+      {
+       "player": "Mark Andrews",
+       "team": "BAL",
+       "flag_type": "official_status",
+       "severity": 0,
+       "source": "ESPN injury report (official designations)",
+       "url": "https://www.espn.com/nfl/player/_/id/3116365/mark-andrews",
+       "timestamp": "2026-10-26T02:08Z",
+       "text": "active: Andrews caught three of four targets for 23 yards in Sunday's 35-13 loss to the Bengals.",
+       "status": "active"
+      },
+      {
+       "player": "Tyler Huntley",
+       "team": "BAL",
+       "flag_type": "official_status",
+       "severity": 0,
+       "source": "ESPN injury report (official designations)",
+       "url": "https://www.espn.com/nfl/player/_/id/4035671/tyler-huntley",
+       "timestamp": "2026-10-25T22:49Z",
+       "text": "active: Huntley completed 23 of 34 passes for 298 yards with a touchdown and an interception while adding three rushes for 12 yards in the Ravens' 35-13 loss to the Bengals on Sunday.",
+       "status": "active"
+      },
+      {
+       "player": "Derrick Henry",
+       "team": "BAL",
+       "flag_type": "official_status",
+       "severity": 0,
+       "source": "ESPN injury report (official designations)",
+       "url": "https://www.espn.com/nfl/player/_/id/3043078/derrick-henry",
+       "timestamp": "2026-10-25T21:49Z",
+       "text": "active: Henry rushed 17 times for 45 yards and brought in one of two target for four yards in the Ravens' 35-13 loss to the Bengals on Sunday.",
+       "status": "active"
+      },
+      {
+       "player": "Zay Flowers",
+       "team": "BAL",
+       "flag_type": "official_status",
+       "severity": 0,
+       "source": "ESPN injury report (official designations)",
+       "url": "https://www.espn.com/nfl/player/_/id/4429615/zay-flowers",
+       "timestamp": "2026-10-25T21:39Z",
+       "text": "active: Flowers brought in eight of 11 targets for 137 yards and a touchdown in the Ravens' 35-13 loss to the Bengals on Sunday.",
+       "status": "active"
+      },
+      {
+       "player": "Dalton Kincaid",
+       "team": "BUF",
+       "flag_type": "official_status",
+       "severity": 2,
+       "source": "ESPN injury report (official designations)",
+       "url": "https://www.espn.com/nfl/player/_/id/4385690/dalton-kincaid",
+       "timestamp": "2026-10-29T21:00Z",
+       "text": "questionable: Kincaid (chest) was a limited participant in Thursday's practice.",
+       "status": "questionable"
+      },
+      {
+       "player": "Khalil Shakir",
+       "team": "BUF",
+       "flag_type": "official_status",
+       "severity": 0,
+       "source": "ESPN injury report (official designations)",
+       "url": "https://www.espn.com/nfl/player/_/id/4373678/khalil-shakir",
+       "timestamp": "2026-10-19T09:56Z",
+       "text": "active: Shakir brought in four of six targets for 34 yards and a touchdown in the Bills' 33-30 win over the Raiders on Sunday.",
+       "status": "active"
+      },
+      {
+       "player": "Josh Allen",
+       "team": "BUF",
+       "flag_type": "official_status",
+       "severity": 0,
+       "source": "ESPN injury report (official designations)",
+       "url": "https://www.espn.com/nfl/player/_/id/3918298/josh-allen",
+       "timestamp": "2026-10-19T07:45Z",
+       "text": "active: Allen completed 23 of 33 passes for 255 yards with two touchdowns and no interceptions and rushed five times for one yard in the Bills' 33-30 win over the Raiders on Sunday.",
+       "status": "active"
+      },
+      {
+       "player": "Malik Washington",
+       "team": "MIA",
+       "flag_type": "official_status",
+       "severity": 2,
+       "source": "ESPN injury report (official designations)",
+       "url": "https://www.espn.com/nfl/player/_/id/4569603/malik-washington",
+       "timestamp": "2026-10-29T20:20Z",
+       "text": "questionable: Washington (knee) was a limited participant in Thursday's practice, David Furones of the South Florida Sun Sentinel reports.",
+       "status": "questionable"
+      },
+      {
+       "player": "Jaylen Wright",
+       "team": "MIA",
+       "flag_type": "official_status",
+       "severity": 0,
+       "source": "ESPN injury report (official designations)",
+       "url": "https://www.espn.com/nfl/player/_/id/4682745/jaylen-wright",
+       "timestamp": "2026-10-28T20:51Z",
+       "text": "active: Wright (quadriceps/foot) was a full participant in Wednesday's practice, Marcel Louis-Jacques of ESPN.com reports.",
+       "status": "active"
+      },
+      {
+       "player": "Malik Willis",
+       "team": "MIA",
+       "flag_type": "official_status",
+       "severity": 0,
+       "source": "ESPN injury report (official designations)",
+       "url": "https://www.espn.com/nfl/player/_/id/4242512/malik-willis",
+       "timestamp": "2026-10-25T20:59Z",
+       "text": "active: Willis completed 14 of 21 passes for 208 yards and two touchdowns while rushing six times for 39 yards and a touchdown in Sunday's 28-25 win over the Jets.",
+       "status": "active"
+      }
+     ],
+     "notes": [
+      "Same-game joint probability comes from the correlated simulation; books adjust SGP prices for correlation and free sources don't publish them \u2014 bet only if the book's SGP price is +1716 or better."
+     ]
+    }
+   },
+   "model": {
+    "weights": {
+     "ml_home": 0.0,
+     "spread_home": 0.0,
+     "over": 0.0
+    },
+    "feature_groups": [
+     "base",
+     "opp_adjusted",
+     "pressure_redzone",
+     "turnover_luck",
+     "cohesion",
+     "weather",
+     "h2h"
+    ],
+    "trained_through": "2026-10-26",
+    "note": "model weight is 0 in every market: bets below come only from price differences between books (line shopping), never from the model's opinion"
+   },
+   "shadow_props": {
+    "status": "SHADOW ONLY \u2014 tracked for calibration, not recommended (no free prop prices; model unproven vs prop markets)",
+    "rows": [
+     {
+      "player": "Josh Jacobs",
+      "team": "GB",
+      "market": "rush_att",
+      "line": 14.5,
+      "p_over_sim": 0.0,
+      "sim_median": 3.0,
+      "game_key": "NFL_20261029_CAR_GB",
+      "book": "draftkings",
+      "price": "not published (assumed -110)"
+     },
+     {
+      "player": "Josh Jacobs",
+      "team": "GB",
+      "market": "rush_yds",
+      "line": 59.5,
+      "p_over_sim": 0.003,
+      "sim_median": 11.0,
+      "game_key": "NFL_20261029_CAR_GB",
+      "book": "draftkings",
+      "price": "not published (assumed -110)"
+     },
+     {
+      "player": "Josh Jacobs",
+      "team": "GB",
+      "market": "rush_rec_yds",
+      "line": 82.5,
+      "p_over_sim": 0.003,
+      "sim_median": 19.0,
+      "game_key": "NFL_20261029_CAR_GB",
+      "book": "draftkings",
+      "price": "not published (assumed -110)"
+     },
+     {
+      "player": "Mark Redman",
+      "team": "GB",
+      "market": "anytime_td",
+      "line": NaN,
+      "p_over_sim": 0.003,
+      "sim_median": 0.0,
+      "game_key": "NFL_20261029_CAR_GB",
+      "book": "draftkings",
+      "price": "not published (assumed -110)"
+     },
+     {
+      "player": "David Moore",
+      "team": "CAR",
+      "market": "anytime_td",
+      "line": NaN,
+      "p_over_sim": 0.004,
+      "sim_median": 0.0,
+      "game_key": "NFL_20261029_CAR_GB",
+      "book": "draftkings",
+      "price": "not published (assumed -110)"
+     },
+     {
+      "player": "Jonnu Smith",
+      "team": "GB",
+      "market": "anytime_td",
+      "line": NaN,
+      "p_over_sim": 0.006,
+      "sim_median": 0.0,
+      "game_key": "NFL_20261029_CAR_GB",
+      "book": "draftkings",
+      "price": "not published (assumed -110)"
+     },
+     {
+      "player": "Brycen Tremayne",
+      "team": "CAR",
+      "market": "anytime_td",
+      "line": NaN,
+      "p_over_sim": 0.008,
+      "sim_median": 0.0,
+      "game_key": "NFL_20261029_CAR_GB",
+      "book": "draftkings",
+      "price": "not published (assumed -110)"
+     },
+     {
+      "player": "Mitchell Evans",
+      "team": "CAR",
+      "market": "anytime_td",
+      "line": NaN,
+      "p_over_sim": 0.011,
+      "sim_median": 0.0,
+      "game_key": "NFL_20261029_CAR_GB",
+      "book": "draftkings",
+      "price": "not published (assumed -110)"
+     },
+     {
+      "player": "Bo Melton",
+      "team": "GB",
+      "market": "anytime_td",
+      "line": NaN,
+      "p_over_sim": 0.013,
+      "sim_median": 0.0,
+      "game_key": "NFL_20261029_CAR_GB",
+      "book": "draftkings",
+      "price": "not published (assumed -110)"
+     },
+     {
+      "player": "AJ Dillon",
+      "team": "CAR",
+      "market": "anytime_td",
+      "line": NaN,
+      "p_over_sim": 0.014,
+      "sim_median": 0.0,
+      "game_key": "NFL_20261029_CAR_GB",
+      "book": "draftkings",
+      "price": "not published (assumed -110)"
+     },
+     {
+      "player": "Trevor Etienne",
+      "team": "CAR",
+      "market": "anytime_td",
+      "line": NaN,
+      "p_over_sim": 0.015,
+      "sim_median": 0.0,
+      "game_key": "NFL_20261029_CAR_GB",
+      "book": "draftkings",
+      "price": "not published (assumed -110)"
+     },
+     {
+      "player": "Savion Williams",
+      "team": "GB",
+      "market": "anytime_td",
+      "line": NaN,
+      "p_over_sim": 0.022,
+      "sim_median": 0.0,
+      "game_key": "NFL_20261029_CAR_GB",
+      "book": "draftkings",
+      "price": "not published (assumed -110)"
+     },
+     {
+      "player": "Kaleb Johnson",
+      "team": "GB",
+      "market": "anytime_td",
+      "line": NaN,
+      "p_over_sim": 0.048,
+      "sim_median": 0.0,
+      "game_key": "NFL_20261029_CAR_GB",
+      "book": "draftkings",
+      "price": "not published (assumed -110)"
+     },
+     {
+      "player": "Savion Williams",
+      "team": "GB",
+      "market": "receptions",
+      "line": 2.5,
+      "p_over_sim": 0.072,
+      "sim_median": 1.0,
+      "game_key": "NFL_20261029_CAR_GB",
+      "book": "draftkings",
+      "price": "not published (assumed -110)"
+     },
+     {
+      "player": "Anthony Tyus III",
+      "team": "CAR",
+      "market": "anytime_td",
+      "line": NaN,
+      "p_over_sim": 0.091,
+      "sim_median": 0.0,
+      "game_key": "NFL_20261029_CAR_GB",
+      "book": "draftkings",
+      "price": "not published (assumed -110)"
+     },
+     {
+      "player": "Josh Jacobs",
+      "team": "GB",
+      "market": "receptions",
+      "line": 2.5,
+      "p_over_sim": 0.093,
+      "sim_median": 1.0,
+      "game_key": "NFL_20261029_CAR_GB",
+      "book": "draftkings",
+      "price": "not published (assumed -110)"
+     },
+     {
+      "player": "John Metchie III",
+      "team": "CAR",
+      "market": "anytime_td",
+      "line": NaN,
+      "p_over_sim": 0.101,
+      "sim_median": 0.0,
+      "game_key": "NFL_20261029_CAR_GB",
+      "book": "draftkings",
+      "price": "not published (assumed -110)"
+     },
+     {
+      "player": "Jordan Love",
+      "team": "GB",
+      "market": "anytime_td",
+      "line": NaN,
+      "p_over_sim": 0.161,
+      "sim_median": 0.0,
+      "game_key": "NFL_20261029_CAR_GB",
+      "book": "draftkings",
+      "price": "not published (assumed -110)"
+     },
+     {
+      "player": "Josh Jacobs",
+      "team": "GB",
+      "market": "rec_yds",
+      "line": 18.5,
+      "p_over_sim": 0.167,
+      "sim_median": 4.0,
+      "game_key": "NFL_20261029_CAR_GB",
+      "book": "draftkings",
+      "price": "not published (assumed -110)"
+     },
+     {
+      "player": "Savion Williams",
+      "team": "GB",
+      "market": "rec_yds",
+      "line": 24.5,
+      "p_over_sim": 0.168,
+      "sim_median": 5.0,
+      "game_key": "NFL_20261029_CAR_GB",
+      "book": "draftkings",
+      "price": "not published (assumed -110)"
+     },
+     {
+      "player": "Josh Jacobs",
+      "team": "GB",
+      "market": "anytime_td",
+      "line": NaN,
+      "p_over_sim": 0.168,
+      "sim_median": 0.0,
+      "game_key": "NFL_20261029_CAR_GB",
+      "book": "draftkings",
+      "price": "not published (assumed -110)"
+     },
+     {
+      "player": "Bryce Young",
+      "team": "CAR",
+      "market": "anytime_td",
+      "line": NaN,
+      "p_over_sim": 0.178,
+      "sim_median": 0.0,
+      "game_key": "NFL_20261029_CAR_GB",
+      "book": "draftkings",
+      "price": "not published (assumed -110)"
+     },
+     {
+      "player": "Jordan Love",
+      "team": "GB",
+      "market": "rush_yds",
+      "line": 4.5,
+      "p_over_sim": 0.822,
+      "sim_median": 15.0,
+      "game_key": "NFL_20261029_CAR_GB",
+      "book": "draftkings",
+      "price": "not published (assumed -110)"
+     },
+     {
+      "player": "Tetairoa McMillan",
+      "team": "CAR",
+      "market": "anytime_td",
+      "line": NaN,
+      "p_over_sim": 0.198,
+      "sim_median": 0.0,
+      "game_key": "NFL_20261029_CAR_GB",
+      "book": "draftkings",
+      "price": "not published (assumed -110)"
+     },
+     {
+      "player": "Darren Waller",
+      "team": "CAR",
+      "market": "anytime_td",
+      "line": NaN,
+      "p_over_sim": 0.239,
+      "sim_median": 0.0,
+      "game_key": "NFL_20261029_CAR_GB",
+      "book": "draftkings",
+      "price": "not published (assumed -110)"
+     }
+    ]
+   },
+   "flags_checked": 1006
+  },
+  "NBA": {
+   "league": "NBA",
+   "error": "ZeroDivisionError: float division by zero",
+   "tiers": {
+    "SAFE": {
+     "bet": null,
+     "message": "NO BET",
+     "reason": "card build failed; see logs"
+    },
+    "MODERATE": {
+     "bet": null,
+     "message": "NO BET",
+     "reason": "card build failed; see logs"
+    },
+    "LONG SHOT": {
+     "bet": null,
+     "message": "NO BET",
+     "reason": "card build failed; see logs"
+    }
+   }
+  }
+ },
+ "disclaimer": "Probabilities, not guarantees. Paper mode: nothing here is a real wager.",
+ "backtest": {
+  "NFL": {
+   "verdicts": [
+    "moneyline: did NOT beat the no-vig closing line out of sample (final 0.6103 vs market 0.6103; model alone 0.6451). Edges in this market should be treated as noise.",
+    "moneyline: the model on its own is worse than the market by 0.0348 log loss.",
+    "spread: did NOT beat the no-vig closing line out of sample (final 0.6924 vs market 0.6924; model alone 0.7032). Edges in this market should be treated as noise.",
+    "spread: the model on its own is worse than the market by 0.0108 log loss.",
+    "total: did NOT beat the no-vig closing line out of sample (final 0.6930 vs market 0.6930; model alone 0.6996). Edges in this market should be treated as noise.",
+    "total: the model on its own is worse than the market by 0.0066 log loss.",
+    "No historical bets cleared the edge threshold: the model never disagreed with the close enough to act."
+   ],
+   "test_seasons": [
+    2020,
+    2026
+   ],
+   "kept_groups": [
+    "opp_adjusted",
+    "pressure_redzone",
+    "turnover_luck",
+    "cohesion",
+    "weather",
+    "h2h"
+   ],
+   "dropped_groups": [
+    "special_teams",
+    "fatigue",
+    "motivation",
+    "altitude"
+   ],
+   "generated_at": "2026-10-27T16:31:55"
+  },
+  "NBA": {
+   "verdicts": [
+    "moneyline: did NOT beat the no-vig closing line out of sample (final 0.5811 vs market 0.5811; model alone 0.6144). Edges in this market should be treated as noise.",
+    "moneyline: the model on its own is worse than the market by 0.0332 log loss.",
+    "spread: did NOT beat the no-vig closing line out of sample (final 0.6924 vs market 0.6924; model alone 0.6946). Edges in this market should be treated as noise.",
+    "spread: the model on its own is worse than the market by 0.0022 log loss.",
+    "total: did NOT beat the no-vig closing line out of sample (final 0.6928 vs market 0.6928; model alone 0.6951). Edges in this market should be treated as noise.",
+    "total: the model on its own is worse than the market by 0.0023 log loss.",
+    "No historical bets cleared the edge threshold: the model never disagreed with the close enough to act."
+   ],
+   "test_seasons": [
+    2023,
+    2026
+   ],
+   "kept_groups": [
+    "fatigue",
+    "altitude",
+    "motivation"
+   ],
+   "dropped_groups": [
+    "efficiency",
+    "style",
+    "h2h"
+   ],
+   "generated_at": "2026-10-27T16:35:46"
+  }
+ },
+ "freshness": {
+  "nfl.espn.schedule": {
+   "ok": true,
+   "rows": 15,
+   "note": "upcoming events",
+   "checked_at": "2026-10-29T21:21:30+00:00",
+   "data_as_of": null
+  },
+  "nfl.espn.odds": {
+   "ok": true,
+   "rows": 176,
+   "note": "",
+   "checked_at": "2026-10-29T21:21:36+00:00",
+   "data_as_of": null
+  },
+  "nfl.actionnetwork.odds": {
+   "ok": true,
+   "rows": 2184,
+   "note": "",
+   "checked_at": "2026-10-29T21:21:39+00:00",
+   "data_as_of": null
+  },
+  "nfl.kalshi.moneyline": {
+   "ok": true,
+   "rows": 24,
+   "note": "",
+   "checked_at": "2026-10-29T21:21:39+00:00",
+   "data_as_of": null
+  },
+  "nfl.espn.props": {
+   "ok": true,
+   "rows": 96,
+   "note": "DraftKings lines; prices not published",
+   "checked_at": "2026-10-29T21:21:40+00:00",
+   "data_as_of": null
+  },
+  "nba.espn.schedule": {
+   "ok": true,
+   "rows": 20,
+   "note": "upcoming events",
+   "checked_at": "2026-10-29T21:21:41+00:00",
+   "data_as_of": null
+  },
+  "nba.espn.odds": {
+   "ok": true,
+   "rows": 156,
+   "note": "",
+   "checked_at": "2026-10-29T21:21:49+00:00",
+   "data_as_of": null
+  },
+  "nba.actionnetwork.odds": {
+   "ok": true,
+   "rows": 432,
+   "note": "",
+   "checked_at": "2026-10-29T21:21:51+00:00",
+   "data_as_of": null
+  },
+  "nba.kalshi.moneyline": {
+   "ok": true,
+   "rows": 40,
+   "note": "",
+   "checked_at": "2026-10-29T21:21:51+00:00",
+   "data_as_of": null
+  },
+  "nba.espn.props": {
+   "ok": true,
+   "rows": 240,
+   "note": "DraftKings lines; prices not published",
+   "checked_at": "2026-10-29T21:21:59+00:00",
+   "data_as_of": null
+  },
+  "nfl.espn.injuries": {
+   "ok": true,
+   "rows": 800,
+   "note": "",
+   "checked_at": "2026-10-29T21:22:29+00:00",
+   "data_as_of": null
+  },
+  "nfl.news.google_rss": {
+   "ok": true,
+   "rows": 40,
+   "note": "per-player/team queries, last 48h",
+   "checked_at": "2026-10-29T21:23:14+00:00",
+   "data_as_of": null
+  },
+  "nfl.news.league_feeds": {
+   "ok": true,
+   "rows": 116,
+   "note": "",
+   "checked_at": "2026-10-29T21:23:15+00:00",
+   "data_as_of": null
+  },
+  "nfl.open_meteo.forecast": {
+   "ok": true,
+   "rows": 11,
+   "note": "outdoor venues only",
+   "checked_at": "2026-10-29T21:22:29+00:00",
+   "data_as_of": null
+  },
+  "nba.espn.injuries": {
+   "ok": true,
+   "rows": 93,
+   "note": "",
+   "checked_at": "2026-10-29T21:23:20+00:00",
+   "data_as_of": null
+  },
+  "nba.news.google_rss": {
+   "ok": true,
+   "rows": 40,
+   "note": "per-player/team queries, last 48h",
+   "checked_at": "2026-10-26T21:12:01+00:00",
+   "data_as_of": null
+  },
+  "nba.news.league_feeds": {
+   "ok": true,
+   "rows": 86,
+   "note": "",
+   "checked_at": "2026-10-26T21:12:01+00:00",
+   "data_as_of": null
+  }
+ },
+ "warnings": []
+}
