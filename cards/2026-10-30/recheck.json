@@ -1,0 +1,626 @@
+{
+ "generated_at": "2026-10-30T20:59:58+00:00",
+ "generated_at_et": "Fri Oct 30 04:59 PM ET",
+ "mode": "recheck",
+ "paper_mode": true,
+ "bankroll": 10000.0,
+ "leagues": {
+  "NFL": {
+   "league": "NFL",
+   "n_games": 14,
+   "tiers": {
+    "SAFE": {
+     "bet": null,
+     "message": "NO BET",
+     "reason": "best candidate in the 55%-100% band has edge +0.5% over its break-even \u2014 below the 2% threshold; nothing is forced",
+     "best_candidates_considered": 0
+    },
+    "MODERATE": {
+     "id": "54a6ce8fb22d3ecc",
+     "tier": "MODERATE",
+     "status": "WAIT",
+     "recheck_at": "2026-11-01T16:30:00+00:00",
+     "description": "CLE ML + CLE +3.5",
+     "book": "fanduel",
+     "price": 431,
+     "legs": [
+      {
+       "label": "CLE ML",
+       "game": "CLE @ PIT",
+       "kickoff": "2026-11-01T18:00Z",
+       "market": "moneyline",
+       "side": "away",
+       "point": null,
+       "player": null,
+       "book": "fanduel",
+       "price": 172.0,
+       "price_source": "posted",
+       "p_final": 0.3661,
+       "p_fair": 0.3661,
+       "p_model": 0.3403,
+       "p_push": 0.0048,
+       "novig_implied": 0.3678,
+       "game_key": "NFL_20261101_CLE_PIT"
+      },
+      {
+       "label": "CLE +3.5",
+       "game": "CLE @ PIT",
+       "kickoff": "2026-11-01T18:00Z",
+       "market": "spread",
+       "side": "away",
+       "point": 3.5,
+       "player": null,
+       "book": "fanduel",
+       "price": -105.0,
+       "price_source": "posted",
+       "p_final": 0.5022,
+       "p_fair": 0.5022,
+       "p_model": 0.475,
+       "p_push": 0.0,
+       "novig_implied": 0.5022,
+       "game_key": "NFL_20261101_CLE_PIT"
+      }
+     ],
+     "model_prob": 0.3709,
+     "novig_market_prob": 0.3709,
+     "price_implied_prob": 0.1883,
+     "edge": 0.1826,
+     "ev_per_100": 96.97,
+     "stake": 200.0,
+     "kelly_fraction_used": 0.0562,
+     "correlated_joint": true,
+     "min_acceptable_price": 175,
+     "reasons": [
+      "CLE ML: Best price +172 at fanduel vs market-consensus fair +172 (fair win prob 36.6%; break-even at this price 36.6%).",
+      "CLE +3.5: Best price -105 at fanduel vs market-consensus fair -101 (fair win prob 50.2%; break-even at this price 51.2%)."
+     ],
+     "flags": [
+      {
+       "player": "Denzel Boston",
+       "team": "CLE",
+       "flag_type": "official_status",
+       "severity": 0,
+       "source": "ESPN injury report (official designations)",
+       "url": "https://www.espn.com/nfl/player/_/id/4832800/denzel-boston",
+       "timestamp": "2026-10-26T02:23Z",
+       "text": "active: Boston caught three of eight targets for 27 yards in Sunday's 27-24 win over the Titans.",
+       "status": "active"
+      },
+      {
+       "player": "Deshaun Watson",
+       "team": "CLE",
+       "flag_type": "official_status",
+       "severity": 0,
+       "source": "ESPN injury report (official designations)",
+       "url": "https://www.espn.com/nfl/player/_/id/3122840/deshaun-watson",
+       "timestamp": "2026-10-25T22:46Z",
+       "text": "active: Watson completed 25 of 36 passes for 308 yards with an interception in Sunday's 27-24 win over the Titans. He added 19 yards and a touchdown on three carries.",
+       "status": "active"
+      },
+      {
+       "player": "KC Concepcion",
+       "team": "CLE",
+       "flag_type": "official_status",
+       "severity": 0,
+       "source": "ESPN injury report (official designations)",
+       "url": "https://www.espn.com/nfl/player/_/id/4870653/kc-concepcion",
+       "timestamp": "2026-10-25T22:36Z",
+       "text": "active: Concepcion caught eight of 10 targets for 129 yards and added 23 yards on three carries in Sunday's 27-24 win over Tennessee.",
+       "status": "active"
+      },
+      {
+       "player": "DK Metcalf",
+       "team": "PIT",
+       "flag_type": "official_status",
+       "severity": 0,
+       "source": "ESPN injury report (official designations)",
+       "url": "https://www.espn.com/nfl/player/_/id/4047650/dk-metcalf",
+       "timestamp": "2026-10-25T18:04Z",
+       "text": "active: Metcalf two of six targets for 56 yards in Sunday's 16-10 win over the Saints.",
+       "status": "active"
+      },
+      {
+       "player": "Rico Dowdle",
+       "team": "PIT",
+       "flag_type": "official_status",
+       "severity": 0,
+       "source": "ESPN injury report (official designations)",
+       "url": "https://www.espn.com/nfl/player/_/id/4038815/rico-dowdle",
+       "timestamp": "2026-10-25T17:57Z",
+       "text": "active: Dowdle carried the ball nine times for 41 yards and caught all six of his targets for 45 yards in Sunday's 16-10 win over New Orleans.",
+       "status": "active"
+      },
+      {
+       "player": "Aaron Rodgers",
+       "team": "PIT",
+       "flag_type": "official_status",
+       "severity": 0,
+       "source": "ESPN injury report (official designations)",
+       "url": "https://www.espn.com/nfl/player/_/id/8439/aaron-rodgers",
+       "timestamp": "2026-10-25T17:52Z",
+       "text": "active: Rodgers completed 19 of 30 passes for 212 passes and a touchdown in Sunday's 16-10 win over the Saints. He added six yards on three carries.",
+       "status": "active"
+      },
+      {
+       "player": "Jaylen Warren",
+       "team": "PIT",
+       "flag_type": "official_status",
+       "severity": 0,
+       "source": "ESPN injury report (official designations)",
+       "url": "https://www.espn.com/nfl/player/_/id/4569987/jaylen-warren",
+       "timestamp": "2026-10-25T17:45Z",
+       "text": "active: Warren carried the ball 18 times for 101 yards and caught three of four targets for 36 yards in Sunday's 16-10 win over the Saints.",
+       "status": "active"
+      },
+      {
+       "player": "Deshaun Watson",
+       "team": "CLE",
+       "flag_type": "conflict",
+       "severity": 1,
+       "source": "Google News / USA Today",
+       "url": "https://news.google.com/rss/articles/CBMi8AFBVV95cUxNZm9fZk5LNFViNkc3ajZHNzdOQVREZ0ROanhRYXFxRUQ4SWNEc3ZsdEVKdGlSTTA2VzExMkYtdGNFMmtYa0RGb180QVJOa0tKZmkyQlZBZUZoQmRNR1RaZTlZUDJQRm1QT3JOVUdXaW5nRk9OQVB6WkRSTmlyb0FYNFJBMnVtejloWnBaMFNZWkxkcHBtZmZtZ1g2TGpteFFDSHNGRDhZZ3RWMi1OYkh6UVRNMzdELWdpc195NmNqb3NRWkttRWxXcEJ2RFdxNFJYXzFmbFhBM2NGWGpHTk11SWU5cE5uNlQ1ZHRjTmJmRWo?oc=5",
+       "timestamp": "2026-10-29T14:20:00+00:00",
+       "text": "Deshaun Watson was supposed to be benched. Browns are in first place instead | Opinion - USA Today",
+       "status": null
+      },
+      {
+       "player": "Deshaun Watson",
+       "team": "CLE",
+       "flag_type": "injury",
+       "severity": 2,
+       "source": "League news / www.cbssports.com",
+       "url": "\n                                                https://www.cbssports.com/nfl/news/christian-watson-injury-update-packers-wr-hospital/\n                    ",
+       "timestamp": "2026-10-30T04:02:55+00:00",
+       "text": "Packers' Christian Watson returns against Panthers after chest injury, hospital visit",
+       "status": null
+      }
+     ],
+     "notes": [
+      "Same-game joint probability comes from the correlated simulation; books adjust SGP prices for correlation and free sources don't publish them \u2014 bet only if the book's SGP price is +175 or better."
+     ]
+    },
+    "LONG SHOT": {
+     "id": "7cb989e622033948",
+     "tier": "LONG SHOT",
+     "status": "WAIT",
+     "recheck_at": "2026-11-01T16:30:00+00:00",
+     "description": "TEN ML + CLE ML + CLE +3.5",
+     "book": "fanduel",
+     "price": 3458,
+     "legs": [
+      {
+       "label": "TEN ML",
+       "game": "TEN @ CIN",
+       "kickoff": "2026-11-01T18:00Z",
+       "market": "moneyline",
+       "side": "away",
+       "point": null,
+       "player": null,
+       "book": "fanduel",
+       "price": 570.0,
+       "price_source": "posted",
+       "p_final": 0.1624,
+       "p_fair": 0.1624,
+       "p_model": 0.1962,
+       "p_push": 0.0031,
+       "novig_implied": 0.1629,
+       "game_key": "NFL_20261101_TEN_CIN"
+      },
+      {
+       "label": "CLE ML",
+       "game": "CLE @ PIT",
+       "kickoff": "2026-11-01T18:00Z",
+       "market": "moneyline",
+       "side": "away",
+       "point": null,
+       "player": null,
+       "book": "fanduel",
+       "price": 172.0,
+       "price_source": "posted",
+       "p_final": 0.3661,
+       "p_fair": 0.3661,
+       "p_model": 0.3403,
+       "p_push": 0.0048,
+       "novig_implied": 0.3678,
+       "game_key": "NFL_20261101_CLE_PIT"
+      },
+      {
+       "label": "CLE +3.5",
+       "game": "CLE @ PIT",
+       "kickoff": "2026-11-01T18:00Z",
+       "market": "spread",
+       "side": "away",
+       "point": 3.5,
+       "player": null,
+       "book": "fanduel",
+       "price": -105.0,
+       "price_source": "posted",
+       "p_final": 0.5022,
+       "p_fair": 0.5022,
+       "p_model": 0.475,
+       "p_push": 0.0,
+       "novig_implied": 0.5022,
+       "game_key": "NFL_20261101_CLE_PIT"
+      }
+     ],
+     "model_prob": 0.0602,
+     "novig_market_prob": 0.0602,
+     "price_implied_prob": 0.0281,
+     "edge": 0.0321,
+     "ev_per_100": 114.31,
+     "stake": 82.64,
+     "kelly_fraction_used": 0.0083,
+     "correlated_joint": true,
+     "min_acceptable_price": 1593,
+     "reasons": [
+      "TEN ML: Best price +570 at fanduel vs market-consensus fair +514 (fair win prob 16.2%; break-even at this price 14.9%).",
+      "CLE ML: Best price +172 at fanduel vs market-consensus fair +172 (fair win prob 36.6%; break-even at this price 36.6%).",
+      "CLE +3.5: Best price -105 at fanduel vs market-consensus fair -101 (fair win prob 50.2%; break-even at this price 51.2%)."
+     ],
+     "flags": [
+      {
+       "player": "Ja'Marr Chase",
+       "team": "CIN",
+       "flag_type": "official_status",
+       "severity": 0,
+       "source": "ESPN injury report (official designations)",
+       "url": "https://www.espn.com/nfl/player/_/id/4362628/jamarr-chase",
+       "timestamp": "2026-10-29T20:51Z",
+       "text": "active: Chase (ankle) was a full participant in Thursday's practice, Mike Petraglia of CLNSCincy.com reports.",
+       "status": "active"
+      },
+      {
+       "player": "Samaje Perine",
+       "team": "CIN",
+       "flag_type": "official_status",
+       "severity": 0,
+       "source": "ESPN injury report (official designations)",
+       "url": "https://www.espn.com/nfl/player/_/id/3116389/samaje-perine",
+       "timestamp": "2026-10-26T01:29Z",
+       "text": "active: Perine rushed four times for 16 yards and a touchdown in Sunday's 35-13 win over the Ravens.",
+       "status": "active"
+      },
+      {
+       "player": "Chase Brown",
+       "team": "CIN",
+       "flag_type": "official_status",
+       "severity": 0,
+       "source": "ESPN injury report (official designations)",
+       "url": "https://www.espn.com/nfl/player/_/id/4362238/chase-brown",
+       "timestamp": "2026-10-25T23:48Z",
+       "text": "active: Brown rushed 11 times for 39 yards and brought in four of five targets for 19 yards in the Bengals' 35-13 win over the Ravens on Sunday.",
+       "status": "active"
+      },
+      {
+       "player": "Joe Burrow",
+       "team": "CIN",
+       "flag_type": "official_status",
+       "severity": 0,
+       "source": "ESPN injury report (official designations)",
+       "url": "https://www.espn.com/nfl/player/_/id/3915511/joe-burrow",
+       "timestamp": "2026-10-25T21:45Z",
+       "text": "active: Burrow completed 22 of 30 passes for 292 yards with four touchdowns and no interceptions while adding two rushes for 12 yards in the Bengals' 35-13 win over the Ravens on Sunday.",
+       "status": "active"
+      },
+      {
+       "player": "Tee Higgins",
+       "team": "CIN",
+       "flag_type": "official_status",
+       "severity": 0,
+       "source": "ESPN injury report (official designations)",
+       "url": "https://www.espn.com/nfl/player/_/id/4239993/tee-higgins",
+       "timestamp": "2026-10-25T21:30Z",
+       "text": "active: Higgins secured six of seven targets for 148 yards and a touchdown in the Bengals' 35-13 win over the Ravens on Sunday.",
+       "status": "active"
+      },
+      {
+       "player": "Denzel Boston",
+       "team": "CLE",
+       "flag_type": "official_status",
+       "severity": 0,
+       "source": "ESPN injury report (official designations)",
+       "url": "https://www.espn.com/nfl/player/_/id/4832800/denzel-boston",
+       "timestamp": "2026-10-26T02:23Z",
+       "text": "active: Boston caught three of eight targets for 27 yards in Sunday's 27-24 win over the Titans.",
+       "status": "active"
+      },
+      {
+       "player": "Deshaun Watson",
+       "team": "CLE",
+       "flag_type": "official_status",
+       "severity": 0,
+       "source": "ESPN injury report (official designations)",
+       "url": "https://www.espn.com/nfl/player/_/id/3122840/deshaun-watson",
+       "timestamp": "2026-10-25T22:46Z",
+       "text": "active: Watson completed 25 of 36 passes for 308 yards with an interception in Sunday's 27-24 win over the Titans. He added 19 yards and a touchdown on three carries.",
+       "status": "active"
+      },
+      {
+       "player": "KC Concepcion",
+       "team": "CLE",
+       "flag_type": "official_status",
+       "severity": 0,
+       "source": "ESPN injury report (official designations)",
+       "url": "https://www.espn.com/nfl/player/_/id/4870653/kc-concepcion",
+       "timestamp": "2026-10-25T22:36Z",
+       "text": "active: Concepcion caught eight of 10 targets for 129 yards and added 23 yards on three carries in Sunday's 27-24 win over Tennessee.",
+       "status": "active"
+      },
+      {
+       "player": "DK Metcalf",
+       "team": "PIT",
+       "flag_type": "official_status",
+       "severity": 0,
+       "source": "ESPN injury report (official designations)",
+       "url": "https://www.espn.com/nfl/player/_/id/4047650/dk-metcalf",
+       "timestamp": "2026-10-25T18:04Z",
+       "text": "active: Metcalf two of six targets for 56 yards in Sunday's 16-10 win over the Saints.",
+       "status": "active"
+      },
+      {
+       "player": "Rico Dowdle",
+       "team": "PIT",
+       "flag_type": "official_status",
+       "severity": 0,
+       "source": "ESPN injury report (official designations)",
+       "url": "https://www.espn.com/nfl/player/_/id/4038815/rico-dowdle",
+       "timestamp": "2026-10-25T17:57Z",
+       "text": "active: Dowdle carried the ball nine times for 41 yards and caught all six of his targets for 45 yards in Sunday's 16-10 win over New Orleans.",
+       "status": "active"
+      },
+      {
+       "player": "Aaron Rodgers",
+       "team": "PIT",
+       "flag_type": "official_status",
+       "severity": 0,
+       "source": "ESPN injury report (official designations)",
+       "url": "https://www.espn.com/nfl/player/_/id/8439/aaron-rodgers",
+       "timestamp": "2026-10-25T17:52Z",
+       "text": "active: Rodgers completed 19 of 30 passes for 212 passes and a touchdown in Sunday's 16-10 win over the Saints. He added six yards on three carries.",
+       "status": "active"
+      },
+      {
+       "player": "Jaylen Warren",
+       "team": "PIT",
+       "flag_type": "official_status",
+       "severity": 0,
+       "source": "ESPN injury report (official designations)",
+       "url": "https://www.espn.com/nfl/player/_/id/4569987/jaylen-warren",
+       "timestamp": "2026-10-25T17:45Z",
+       "text": "active: Warren carried the ball 18 times for 101 yards and caught three of four targets for 36 yards in Sunday's 16-10 win over the Saints.",
+       "status": "active"
+      }
+     ],
+     "notes": [
+      "Same-game joint probability comes from the correlated simulation; books adjust SGP prices for correlation and free sources don't publish them \u2014 bet only if the book's SGP price is +1593 or better."
+     ]
+    }
+   },
+   "model": {
+    "weights": {
+     "ml_home": 0.0,
+     "spread_home": 0.0,
+     "over": 0.0
+    },
+    "feature_groups": [
+     "base",
+     "opp_adjusted",
+     "pressure_redzone",
+     "turnover_luck",
+     "cohesion",
+     "weather",
+     "h2h"
+    ],
+    "trained_through": "2026-10-26",
+    "note": "model weight is 0 in every market: bets below come only from price differences between books (line shopping), never from the model's opinion"
+   },
+   "shadow_props": {
+    "status": "SHADOW ONLY \u2014 tracked for calibration, not recommended (no free prop prices; model unproven vs prop markets)",
+    "rows": []
+   },
+   "flags_checked": 1095
+  },
+  "NBA": {
+   "league": "NBA",
+   "error": "ZeroDivisionError: float division by zero",
+   "tiers": {
+    "SAFE": {
+     "bet": null,
+     "message": "NO BET",
+     "reason": "card build failed; see logs"
+    },
+    "MODERATE": {
+     "bet": null,
+     "message": "NO BET",
+     "reason": "card build failed; see logs"
+    },
+    "LONG SHOT": {
+     "bet": null,
+     "message": "NO BET",
+     "reason": "card build failed; see logs"
+    }
+   }
+  }
+ },
+ "disclaimer": "Probabilities, not guarantees. Paper mode: nothing here is a real wager.",
+ "backtest": {
+  "NFL": {
+   "verdicts": [
+    "moneyline: did NOT beat the no-vig closing line out of sample (final 0.6103 vs market 0.6103; model alone 0.6451). Edges in this market should be treated as noise.",
+    "moneyline: the model on its own is worse than the market by 0.0348 log loss.",
+    "spread: did NOT beat the no-vig closing line out of sample (final 0.6924 vs market 0.6924; model alone 0.7032). Edges in this market should be treated as noise.",
+    "spread: the model on its own is worse than the market by 0.0108 log loss.",
+    "total: did NOT beat the no-vig closing line out of sample (final 0.6930 vs market 0.6930; model alone 0.6996). Edges in this market should be treated as noise.",
+    "total: the model on its own is worse than the market by 0.0066 log loss.",
+    "No historical bets cleared the edge threshold: the model never disagreed with the close enough to act."
+   ],
+   "test_seasons": [
+    2020,
+    2026
+   ],
+   "kept_groups": [
+    "opp_adjusted",
+    "pressure_redzone",
+    "turnover_luck",
+    "cohesion",
+    "weather",
+    "h2h"
+   ],
+   "dropped_groups": [
+    "special_teams",
+    "fatigue",
+    "motivation",
+    "altitude"
+   ],
+   "generated_at": "2026-10-27T16:31:55"
+  },
+  "NBA": {
+   "verdicts": [
+    "moneyline: did NOT beat the no-vig closing line out of sample (final 0.5811 vs market 0.5811; model alone 0.6144). Edges in this market should be treated as noise.",
+    "moneyline: the model on its own is worse than the market by 0.0332 log loss.",
+    "spread: did NOT beat the no-vig closing line out of sample (final 0.6924 vs market 0.6924; model alone 0.6946). Edges in this market should be treated as noise.",
+    "spread: the model on its own is worse than the market by 0.0022 log loss.",
+    "total: did NOT beat the no-vig closing line out of sample (final 0.6928 vs market 0.6928; model alone 0.6951). Edges in this market should be treated as noise.",
+    "total: the model on its own is worse than the market by 0.0023 log loss.",
+    "No historical bets cleared the edge threshold: the model never disagreed with the close enough to act."
+   ],
+   "test_seasons": [
+    2023,
+    2026
+   ],
+   "kept_groups": [
+    "fatigue",
+    "altitude",
+    "motivation"
+   ],
+   "dropped_groups": [
+    "efficiency",
+    "style",
+    "h2h"
+   ],
+   "generated_at": "2026-10-27T16:35:46"
+  }
+ },
+ "freshness": {
+  "nfl.espn.schedule": {
+   "ok": true,
+   "rows": 14,
+   "note": "upcoming events",
+   "checked_at": "2026-10-30T20:59:26+00:00",
+   "data_as_of": null
+  },
+  "nfl.espn.odds": {
+   "ok": true,
+   "rows": 168,
+   "note": "",
+   "checked_at": "2026-10-30T20:59:31+00:00",
+   "data_as_of": null
+  },
+  "nfl.actionnetwork.odds": {
+   "ok": true,
+   "rows": 1170,
+   "note": "",
+   "checked_at": "2026-10-30T20:59:33+00:00",
+   "data_as_of": null
+  },
+  "nfl.kalshi.moneyline": {
+   "ok": true,
+   "rows": 22,
+   "note": "",
+   "checked_at": "2026-10-30T20:59:33+00:00",
+   "data_as_of": null
+  },
+  "nfl.espn.props": {
+   "ok": false,
+   "rows": 0,
+   "note": "DraftKings lines; prices not published",
+   "checked_at": "2026-10-30T20:59:33+00:00",
+   "data_as_of": null
+  },
+  "nba.espn.schedule": {
+   "ok": true,
+   "rows": 21,
+   "note": "upcoming events",
+   "checked_at": "2026-10-30T20:59:34+00:00",
+   "data_as_of": null
+  },
+  "nba.espn.odds": {
+   "ok": true,
+   "rows": 120,
+   "note": "",
+   "checked_at": "2026-10-30T20:59:41+00:00",
+   "data_as_of": null
+  },
+  "nba.actionnetwork.odds": {
+   "ok": true,
+   "rows": 480,
+   "note": "",
+   "checked_at": "2026-10-30T20:59:43+00:00",
+   "data_as_of": null
+  },
+  "nba.kalshi.moneyline": {
+   "ok": true,
+   "rows": 42,
+   "note": "",
+   "checked_at": "2026-10-30T20:59:43+00:00",
+   "data_as_of": null
+  },
+  "nba.espn.props": {
+   "ok": true,
+   "rows": 711,
+   "note": "DraftKings lines; prices not published",
+   "checked_at": "2026-10-30T20:59:57+00:00",
+   "data_as_of": null
+  },
+  "nfl.espn.injuries": {
+   "ok": true,
+   "rows": 800,
+   "note": "",
+   "checked_at": "2026-10-30T21:00:26+00:00",
+   "data_as_of": null
+  },
+  "nfl.news.google_rss": {
+   "ok": true,
+   "rows": 40,
+   "note": "per-player/team queries, last 48h",
+   "checked_at": "2026-10-30T21:01:10+00:00",
+   "data_as_of": null
+  },
+  "nfl.news.league_feeds": {
+   "ok": true,
+   "rows": 116,
+   "note": "",
+   "checked_at": "2026-10-30T21:01:10+00:00",
+   "data_as_of": null
+  },
+  "nfl.open_meteo.forecast": {
+   "ok": true,
+   "rows": 11,
+   "note": "outdoor venues only",
+   "checked_at": "2026-10-30T21:00:25+00:00",
+   "data_as_of": null
+  },
+  "nba.espn.injuries": {
+   "ok": true,
+   "rows": 98,
+   "note": "",
+   "checked_at": "2026-10-30T21:01:15+00:00",
+   "data_as_of": null
+  },
+  "nba.news.google_rss": {
+   "ok": true,
+   "rows": 40,
+   "note": "per-player/team queries, last 48h",
+   "checked_at": "2026-10-26T21:12:01+00:00",
+   "data_as_of": null
+  },
+  "nba.news.league_feeds": {
+   "ok": true,
+   "rows": 86,
+   "note": "",
+   "checked_at": "2026-10-26T21:12:01+00:00",
+   "data_as_of": null
+  }
+ },
+ "warnings": []
+}
