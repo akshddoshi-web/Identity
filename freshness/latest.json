@@ -3,70 +3,70 @@
   "ok": true,
   "rows": 14,
   "note": "upcoming events",
-  "checked_at": "2026-10-31T01:45:16+00:00",
+  "checked_at": "2026-10-31T08:44:57+00:00",
   "data_as_of": null
  },
  "nfl.espn.odds": {
   "ok": true,
   "rows": 168,
   "note": "",
-  "checked_at": "2026-10-31T01:45:22+00:00",
+  "checked_at": "2026-10-31T08:45:03+00:00",
   "data_as_of": null
  },
  "nfl.actionnetwork.odds": {
   "ok": true,
-  "rows": 1404,
+  "rows": 1872,
   "note": "",
-  "checked_at": "2026-10-31T01:45:23+00:00",
+  "checked_at": "2026-10-31T08:45:04+00:00",
   "data_as_of": null
  },
  "nfl.kalshi.moneyline": {
   "ok": true,
   "rows": 22,
   "note": "",
-  "checked_at": "2026-10-31T01:45:23+00:00",
+  "checked_at": "2026-10-31T08:45:04+00:00",
   "data_as_of": null
  },
  "nfl.espn.props": {
-  "ok": false,
-  "rows": 0,
+  "ok": true,
+  "rows": 585,
   "note": "DraftKings lines; prices not published",
-  "checked_at": "2026-10-31T01:45:23+00:00",
+  "checked_at": "2026-10-31T08:45:15+00:00",
   "data_as_of": null
  },
  "nba.espn.schedule": {
   "ok": true,
-  "rows": 13,
+  "rows": 26,
   "note": "upcoming events",
-  "checked_at": "2026-10-31T01:45:25+00:00",
+  "checked_at": "2026-10-31T08:45:16+00:00",
   "data_as_of": null
  },
  "nba.espn.odds": {
   "ok": true,
   "rows": 84,
   "note": "",
-  "checked_at": "2026-10-31T01:45:30+00:00",
+  "checked_at": "2026-10-31T08:45:27+00:00",
   "data_as_of": null
  },
  "nba.actionnetwork.odds": {
   "ok": true,
-  "rows": 276,
+  "rows": 336,
   "note": "",
-  "checked_at": "2026-10-31T01:45:31+00:00",
+  "checked_at": "2026-10-31T08:45:28+00:00",
   "data_as_of": null
  },
  "nba.kalshi.moneyline": {
   "ok": true,
-  "rows": 26,
+  "rows": 52,
   "note": "",
-  "checked_at": "2026-10-31T01:45:31+00:00",
+  "checked_at": "2026-10-31T08:45:28+00:00",
   "data_as_of": null
  },
  "nba.espn.props": {
   "ok": true,
-  "rows": 148,
+  "rows": 402,
   "note": "DraftKings lines; prices not published",
-  "checked_at": "2026-10-31T01:45:36+00:00",
+  "checked_at": "2026-10-31T08:45:37+00:00",
   "data_as_of": null
  },
  "nfl.espn.injuries": {
