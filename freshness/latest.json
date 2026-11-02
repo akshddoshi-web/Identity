@@ -1,72 +1,72 @@
 {
  "nfl.espn.schedule": {
   "ok": true,
-  "rows": 15,
+  "rows": 16,
   "note": "upcoming events",
-  "checked_at": "2026-11-02T01:43:45+00:00",
+  "checked_at": "2026-11-02T09:51:51+00:00",
   "data_as_of": null
  },
  "nfl.espn.odds": {
   "ok": true,
-  "rows": 156,
+  "rows": 192,
   "note": "",
-  "checked_at": "2026-11-02T01:43:51+00:00",
+  "checked_at": "2026-11-02T09:51:57+00:00",
   "data_as_of": null
  },
  "nfl.actionnetwork.odds": {
   "ok": true,
-  "rows": 72,
+  "rows": 144,
   "note": "",
-  "checked_at": "2026-11-02T01:43:53+00:00",
+  "checked_at": "2026-11-02T09:51:59+00:00",
   "data_as_of": null
  },
  "nfl.kalshi.moneyline": {
   "ok": true,
-  "rows": 28,
+  "rows": 30,
   "note": "",
-  "checked_at": "2026-11-02T01:43:53+00:00",
+  "checked_at": "2026-11-02T09:51:59+00:00",
   "data_as_of": null
  },
  "nfl.espn.props": {
   "ok": true,
-  "rows": 79,
+  "rows": 81,
   "note": "DraftKings lines; prices not published",
-  "checked_at": "2026-11-02T01:43:54+00:00",
+  "checked_at": "2026-11-02T09:52:00+00:00",
   "data_as_of": null
  },
  "nba.espn.schedule": {
   "ok": true,
-  "rows": 16,
+  "rows": 29,
   "note": "upcoming events",
-  "checked_at": "2026-11-02T01:43:56+00:00",
+  "checked_at": "2026-11-02T09:52:01+00:00",
   "data_as_of": null
  },
  "nba.espn.odds": {
   "ok": true,
-  "rows": 132,
+  "rows": 180,
   "note": "",
-  "checked_at": "2026-11-02T01:44:02+00:00",
+  "checked_at": "2026-11-02T09:52:12+00:00",
   "data_as_of": null
  },
  "nba.actionnetwork.odds": {
   "ok": true,
-  "rows": 552,
+  "rows": 810,
   "note": "",
-  "checked_at": "2026-11-02T01:44:03+00:00",
+  "checked_at": "2026-11-02T09:52:13+00:00",
   "data_as_of": null
  },
  "nba.kalshi.moneyline": {
   "ok": true,
-  "rows": 32,
+  "rows": 58,
   "note": "",
-  "checked_at": "2026-11-02T01:44:03+00:00",
+  "checked_at": "2026-11-02T09:52:13+00:00",
   "data_as_of": null
  },
  "nba.espn.props": {
   "ok": true,
-  "rows": 75,
+  "rows": 899,
   "note": "DraftKings lines; prices not published",
-  "checked_at": "2026-11-02T01:44:10+00:00",
+  "checked_at": "2026-11-02T09:52:30+00:00",
   "data_as_of": null
  },
  "nfl.espn.injuries": {
