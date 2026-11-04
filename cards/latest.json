@@ -1,6 +1,6 @@
 {
- "generated_at": "2026-11-03T21:55:45+00:00",
- "generated_at_et": "Tue Nov 03 04:55 PM ET",
+ "generated_at": "2026-11-04T22:06:17+00:00",
+ "generated_at_et": "Wed Nov 04 05:06 PM ET",
  "mode": "recheck",
  "paper_mode": true,
  "bankroll": 10000.0,
@@ -12,20 +12,20 @@
     "SAFE": {
      "bet": null,
      "message": "NO BET",
-     "reason": "best candidate in the 55%-100% band has edge -1.1% over its break-even \u2014 below the 2% threshold; nothing is forced",
-     "best_candidates_considered": 0
+     "reason": "best candidate in the 55%-100% band has edge +5.2% over its break-even \u2014 below the 2% threshold; nothing is forced",
+     "best_candidates_considered": 6
     },
     "MODERATE": {
      "bet": null,
      "message": "NO BET",
-     "reason": "best candidate in the 20%-45% band has edge +0.2% over its break-even \u2014 below the 2% threshold; nothing is forced",
-     "best_candidates_considered": 0
+     "reason": "best candidate in the 20%-45% band has edge +4.6% over its break-even \u2014 below the 2% threshold; nothing is forced",
+     "best_candidates_considered": 18
     },
     "LONG SHOT": {
      "bet": null,
      "message": "NO LONG SHOT TODAY",
      "reason": "no single bet or same-book combination lands in the 3%-15% win-probability band with positive EV",
-     "best_candidates_considered": 0
+     "best_candidates_considered": 45
     }
    },
    "model": {
@@ -48,492 +48,306 @@
    },
    "shadow_props": {
     "status": "SHADOW ONLY \u2014 tracked for calibration, not recommended (no free prop prices; model unproven vs prop markets)",
-    "rows": []
+    "rows": [
+     {
+      "player": "LaJohntay Wester",
+      "team": "BAL",
+      "market": "anytime_td",
+      "line": NaN,
+      "p_over_sim": 0.002,
+      "sim_median": 0.0,
+      "game_key": "NFL_20261105_JAX_BAL",
+      "book": "draftkings",
+      "price": "not published (assumed -110)"
+     },
+     {
+      "player": "Tanner Koziol",
+      "team": "JAX",
+      "market": "anytime_td",
+      "line": NaN,
+      "p_over_sim": 0.002,
+      "sim_median": 0.0,
+      "game_key": "NFL_20261105_JAX_BAL",
+      "book": "draftkings",
+      "price": "not published (assumed -110)"
+     },
+     {
+      "player": "Joe Fagnano",
+      "team": "BAL",
+      "market": "anytime_td",
+      "line": NaN,
+      "p_over_sim": 0.004,
+      "sim_median": 0.0,
+      "game_key": "NFL_20261105_JAX_BAL",
+      "book": "draftkings",
+      "price": "not published (assumed -110)"
+     },
+     {
+      "player": "Rasheen Ali",
+      "team": "BAL",
+      "market": "anytime_td",
+      "line": NaN,
+      "p_over_sim": 0.007,
+      "sim_median": 0.0,
+      "game_key": "NFL_20261105_JAX_BAL",
+      "book": "draftkings",
+      "price": "not published (assumed -110)"
+     },
+     {
+      "player": "LeQuint Allen Jr.",
+      "team": "JAX",
+      "market": "anytime_td",
+      "line": NaN,
+      "p_over_sim": 0.007,
+      "sim_median": 0.0,
+      "game_key": "NFL_20261105_JAX_BAL",
+      "book": "draftkings",
+      "price": "not published (assumed -110)"
+     },
+     {
+      "player": "Ja'Kobi Lane",
+      "team": "BAL",
+      "market": "anytime_td",
+      "line": NaN,
+      "p_over_sim": 0.01,
+      "sim_median": 0.0,
+      "game_key": "NFL_20261105_JAX_BAL",
+      "book": "draftkings",
+      "price": "not published (assumed -110)"
+     },
+     {
+      "player": "Ameer Abdullah",
+      "team": "JAX",
+      "market": "anytime_td",
+      "line": NaN,
+      "p_over_sim": 0.014,
+      "sim_median": 0.0,
+      "game_key": "NFL_20261105_JAX_BAL",
+      "book": "draftkings",
+      "price": "not published (assumed -110)"
+     },
+     {
+      "player": "Trevor Lawrence",
+      "team": "JAX",
+      "market": "anytime_td",
+      "line": NaN,
+      "p_over_sim": 0.016,
+      "sim_median": 0.0,
+      "game_key": "NFL_20261105_JAX_BAL",
+      "book": "draftkings",
+      "price": "not published (assumed -110)"
+     },
+     {
+      "player": "Justice Hill",
+      "team": "BAL",
+      "market": "anytime_td",
+      "line": NaN,
+      "p_over_sim": 0.031,
+      "sim_median": 0.0,
+      "game_key": "NFL_20261105_JAX_BAL",
+      "book": "draftkings",
+      "price": "not published (assumed -110)"
+     },
+     {
+      "player": "Devontez Walker",
+      "team": "BAL",
+      "market": "anytime_td",
+      "line": NaN,
+      "p_over_sim": 0.069,
+      "sim_median": 0.0,
+      "game_key": "NFL_20261105_JAX_BAL",
+      "book": "draftkings",
+      "price": "not published (assumed -110)"
+     },
+     {
+      "player": "Quintin Morris",
+      "team": "JAX",
+      "market": "anytime_td",
+      "line": NaN,
+      "p_over_sim": 0.08,
+      "sim_median": 0.0,
+      "game_key": "NFL_20261105_JAX_BAL",
+      "book": "draftkings",
+      "price": "not published (assumed -110)"
+     },
+     {
+      "player": "Josh Cuevas",
+      "team": "BAL",
+      "market": "anytime_td",
+      "line": NaN,
+      "p_over_sim": 0.08,
+      "sim_median": 0.0,
+      "game_key": "NFL_20261105_JAX_BAL",
+      "book": "draftkings",
+      "price": "not published (assumed -110)"
+     },
+     {
+      "player": "Rashod Bateman",
+      "team": "BAL",
+      "market": "anytime_td",
+      "line": NaN,
+      "p_over_sim": 0.088,
+      "sim_median": 0.0,
+      "game_key": "NFL_20261105_JAX_BAL",
+      "book": "draftkings",
+      "price": "not published (assumed -110)"
+     },
+     {
+      "player": "Mark Andrews",
+      "team": "BAL",
+      "market": "anytime_td",
+      "line": NaN,
+      "p_over_sim": 0.09,
+      "sim_median": 0.0,
+      "game_key": "NFL_20261105_JAX_BAL",
+      "book": "draftkings",
+      "price": "not published (assumed -110)"
+     },
+     {
+      "player": "Nate Boerkircher",
+      "team": "JAX",
+      "market": "anytime_td",
+      "line": NaN,
+      "p_over_sim": 0.169,
+      "sim_median": 0.0,
+      "game_key": "NFL_20261105_JAX_BAL",
+      "book": "draftkings",
+      "price": "not published (assumed -110)"
+     },
+     {
+      "player": "Brian Thomas Jr.",
+      "team": "JAX",
+      "market": "anytime_td",
+      "line": NaN,
+      "p_over_sim": 0.174,
+      "sim_median": 0.0,
+      "game_key": "NFL_20261105_JAX_BAL",
+      "book": "draftkings",
+      "price": "not published (assumed -110)"
+     },
+     {
+      "player": "Josh Cameron",
+      "team": "JAX",
+      "market": "anytime_td",
+      "line": NaN,
+      "p_over_sim": 0.176,
+      "sim_median": 0.0,
+      "game_key": "NFL_20261105_JAX_BAL",
+      "book": "draftkings",
+      "price": "not published (assumed -110)"
+     },
+     {
+      "player": "Brenton Strange",
+      "team": "JAX",
+      "market": "anytime_td",
+      "line": NaN,
+      "p_over_sim": 0.184,
+      "sim_median": 0.0,
+      "game_key": "NFL_20261105_JAX_BAL",
+      "book": "draftkings",
+      "price": "not published (assumed -110)"
+     },
+     {
+      "player": "Jakobi Meyers",
+      "team": "JAX",
+      "market": "anytime_td",
+      "line": NaN,
+      "p_over_sim": 0.185,
+      "sim_median": 0.0,
+      "game_key": "NFL_20261105_JAX_BAL",
+      "book": "draftkings",
+      "price": "not published (assumed -110)"
+     },
+     {
+      "player": "Zay Flowers",
+      "team": "BAL",
+      "market": "anytime_td",
+      "line": NaN,
+      "p_over_sim": 0.218,
+      "sim_median": 0.0,
+      "game_key": "NFL_20261105_JAX_BAL",
+      "book": "draftkings",
+      "price": "not published (assumed -110)"
+     },
+     {
+      "player": "Chris Rodriguez Jr.",
+      "team": "JAX",
+      "market": "anytime_td",
+      "line": NaN,
+      "p_over_sim": 0.257,
+      "sim_median": 0.0,
+      "game_key": "NFL_20261105_JAX_BAL",
+      "book": "draftkings",
+      "price": "not published (assumed -110)"
+     },
+     {
+      "player": "Joe Fagnano",
+      "team": "BAL",
+      "market": "pass_yds",
+      "line": 158.5,
+      "p_over_sim": 0.74,
+      "sim_median": 201.0,
+      "game_key": "NFL_20261105_JAX_BAL",
+      "book": "draftkings",
+      "price": "not published (assumed -110)"
+     },
+     {
+      "player": "Joe Fagnano",
+      "team": "BAL",
+      "market": "pass_cmp",
+      "line": 15.5,
+      "p_over_sim": 0.739,
+      "sim_median": 18.0,
+      "game_key": "NFL_20261105_JAX_BAL",
+      "book": "draftkings",
+      "price": "not published (assumed -110)"
+     },
+     {
+      "player": "Trevor Lawrence",
+      "team": "JAX",
+      "market": "rush_yds",
+      "line": 11.5,
+      "p_over_sim": 0.736,
+      "sim_median": 20.0,
+      "game_key": "NFL_20261105_JAX_BAL",
+      "book": "draftkings",
+      "price": "not published (assumed -110)"
+     },
+     {
+      "player": "Parker Washington",
+      "team": "JAX",
+      "market": "receptions",
+      "line": 4.5,
+      "p_over_sim": 0.273,
+      "sim_median": 3.0,
+      "game_key": "NFL_20261105_JAX_BAL",
+      "book": "draftkings",
+      "price": "not published (assumed -110)"
+     }
+    ]
    },
-   "flags_checked": 1043
+   "flags_checked": 1148
   },
   "NBA": {
    "league": "NBA",
-   "n_games": 14,
+   "error": "ZeroDivisionError: float division by zero",
    "tiers": {
     "SAFE": {
-     "id": "1c95f477f28c51f6",
-     "tier": "SAFE",
-     "status": "OK",
-     "recheck_at": null,
-     "description": "Over 115.5 (MIA @ LAC)",
-     "book": "betmgm",
-     "price": -110,
-     "legs": [
-      {
-       "label": "Over 115.5 (MIA @ LAC)",
-       "game": "MIA @ LAC",
-       "kickoff": "2026-11-05T03:30Z",
-       "market": "total",
-       "side": "over",
-       "point": 115.5,
-       "player": null,
-       "book": "betmgm",
-       "price": -110.0,
-       "price_source": "posted",
-       "p_final": 1.0,
-       "p_fair": 1.0,
-       "p_model": 1.0,
-       "p_push": 0.0,
-       "novig_implied": 1.0,
-       "game_key": "NBA_20261104_MIA_LAC"
-      }
-     ],
-     "model_prob": 1.0,
-     "novig_market_prob": 1.0,
-     "price_implied_prob": 0.5238,
-     "edge": 0.4762,
-     "ev_per_100": 90.91,
-     "stake": 200.0,
-     "kelly_fraction_used": 0.25,
-     "correlated_joint": false,
-     "min_acceptable_price": -5000,
-     "reasons": [
-      "Best price -110 at betmgm vs market-consensus fair -207982529917 (fair win prob 100.0%; break-even at this price 52.4%).",
-      "Prices seen for this side: betus -110 (+235.5), fanaticsmi -110 (+235.5), betmgm -110 (+115.5).",
-      "Model: margin +3.1, total 235.7 -> 100.0% for this side; weight used 0.00 (not trusted: no out-of-sample edge vs closing line)."
-     ],
-     "flags": [],
-     "notes": []
+     "bet": null,
+     "message": "NO BET",
+     "reason": "card build failed; see logs"
     },
     "MODERATE": {
-     "id": "0261d76f41f3ac41",
-     "tier": "MODERATE",
-     "status": "WAIT",
-     "recheck_at": "2026-11-05T00:00:00+00:00",
-     "description": "CHA +2 + OKC +1 + HOU +1",
-     "book": "luckysports",
-     "price": 516,
-     "legs": [
-      {
-       "label": "CHA +2",
-       "game": "CHA @ BKN",
-       "kickoff": "2026-11-05T00:30Z",
-       "market": "spread",
-       "side": "away",
-       "point": 2.0,
-       "player": null,
-       "book": "luckysports",
-       "price": -120.0,
-       "price_source": "posted",
-       "p_final": 0.5825,
-       "p_fair": 0.5825,
-       "p_model": 0.7199,
-       "p_push": 0.0298,
-       "novig_implied": 0.6004,
-       "game_key": "NBA_20261104_CHA_BKN"
-      },
-      {
-       "label": "OKC +1",
-       "game": "CLE @ OKC",
-       "kickoff": "2026-11-05T01:00Z",
-       "market": "spread",
-       "side": "home",
-       "point": 1.0,
-       "player": null,
-       "book": "luckysports",
-       "price": -120.0,
-       "price_source": "posted",
-       "p_final": 0.5571,
-       "p_fair": 0.5571,
-       "p_model": 0.6157,
-       "p_push": 0.0242,
-       "novig_implied": 0.5709,
-       "game_key": "NBA_20261104_CLE_OKC"
-      },
-      {
-       "label": "HOU +1",
-       "game": "MIN @ HOU",
-       "kickoff": "2026-11-05T01:30Z",
-       "market": "spread",
-       "side": "home",
-       "point": 1.0,
-       "player": null,
-       "book": "luckysports",
-       "price": -120.0,
-       "price_source": "posted",
-       "p_final": 0.7436,
-       "p_fair": 0.7436,
-       "p_model": 0.6325,
-       "p_push": 0.0192,
-       "novig_implied": 0.7582,
-       "game_key": "NBA_20261104_MIN_HOU"
-      }
-     ],
-     "model_prob": 0.2413,
-     "novig_market_prob": 0.2413,
-     "price_implied_prob": 0.1623,
-     "edge": 0.079,
-     "ev_per_100": 48.7,
-     "stake": 200.0,
-     "kelly_fraction_used": 0.0236,
-     "correlated_joint": false,
-     "min_acceptable_price": 323,
-     "reasons": [
-      "CHA +2: Best price -120 at luckysports vs market-consensus fair -150 (fair win prob 58.3%; break-even at this price 52.9%).",
-      "OKC +1: Best price -120 at luckysports vs market-consensus fair -133 (fair win prob 55.7%; break-even at this price 53.2%).",
-      "HOU +1: Best price -120 at luckysports vs market-consensus fair -314 (fair win prob 74.4%; break-even at this price 53.5%)."
-     ],
-     "flags": [
-      {
-       "player": "Julius Randle",
-       "team": "BKN",
-       "flag_type": "trade",
-       "severity": 1,
-       "source": "Google News / Sactown Sports 1140 AM",
-       "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxPRUVEdGcxMEp6V1Zfc1owVHNwVjZwelNIc21Td0ZOandieWhfOFVGaDFlVWlKdWZGVTViN3VMeTZyem9RakEwcnVuN3dhOWVwbi1XdDdwTURkazI4ZWZySmtnd0pieGxIemN1YjM1MzdaVERfOHV5dVY1LVdNQVFHRjJJdzQwaWN3U3BoY1M5UEI4RllVV0ptNlJUWUk4dDExQjAxUjN3b2l4WnVPOTREcUhHc25mRk5zeWxDV05nX1NmUVZnZDVqbmRhYk0?oc=5",
-       "timestamp": "2026-11-02T22:58:38+00:00",
-       "text": "Would A Domantas Sabonis For Julius Randle Trade Help The Kings - Sactown Sports 1140 AM",
-       "status": null
-      },
-      {
-       "player": "Julius Randle",
-       "team": "BKN",
-       "flag_type": "trade",
-       "severity": 1,
-       "source": "Google News / Sactown Sports 1140 AM",
-       "url": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxNQllUeU9YZ2JhNXlSRVZ4ZzRGUGEtSjJsdjBPbUNmMkNrTldTMkEzZXBTZzlrZk90R3RMNFRfem1nV3FUaFBnQmhHRDdKOHJVOHVBY0hTSlU3bGVLNFZKVE9XRUgwRjJuUGo5OGRZemJObDN3cDJ5Rnd4alV4YmxZZFFoUXgxREp4OHNjTWQ5N2xpZHR6bF9GMjVsQkFfZnFSbU15V2l1M0lkaW13NjRETDYzdExjSTlObjY2cEYtQWxHQjhQaWt0dHljc21QNlBfWExWSzlpS05VSmdZNVE?oc=5",
-       "timestamp": "2026-11-02T23:38:41+00:00",
-       "text": "Domantas Sabonis for Julius Randle? Would that trade benefit the Kings? - Sactown Sports 1140 AM",
-       "status": null
-      },
-      {
-       "player": "Shai Gilgeous-Alexander",
-       "team": "OKC",
-       "flag_type": "injury",
-       "severity": 2,
-       "source": "Google News / The New York Times",
-       "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNNFFQY3ZzeGVRb2J1Ri1rSUtkenpmM09DMWliVlBfMTdGbDd4cEtIU3VMa3VwQ29uUnUxV2NjeFBaWFpfZFRXYWNWTGNhSUR4M0tWdTh2OUJhRUduak1rQmZWZnM0d1Y0MkNXTW1RT090ZGQxMjI1cVlkSERVV2o2SVFUUGhnN1p2eTRFb0J4V19YQ3JMalUxREtBNnN0UC1xbV9ib2ZQUQ?oc=5",
-       "timestamp": "2026-11-03T15:15:53+00:00",
-       "text": "The Bounce: Shai Gilgeous-Alexander isn\u2019t letting the injured Thunder sink - The New York Times",
-       "status": null
-      },
-      {
-       "player": "Shai Gilgeous-Alexander",
-       "team": "OKC",
-       "flag_type": "injury",
-       "severity": 2,
-       "source": "Google News / OKC Thunder Wire",
-       "url": "https://news.google.com/rss/articles/CBMi_gFBVV95cUxNZkVvbWZRU0F4VkxIWWlaQVJqNnVTTTZCV1cyd1VUOEtNTUxSLU9vLVVDNnp5SGUtU282ay1MNXhMU0dFb21MVFZRWlp2UFRwa3ViWmd1ZmR2amFNWjhiaGVDbmZFNWhncGlUU3JqZl9NSEdtcW5ncjJ3RS1GSW0zSFpha3Y5ZEowQ3dDUGtLZWFlMFlIcW5aWnBXQTJvTmlObW9QdVdWbThaNHRxV2FacnRSUTZ1Vndwbmc5RGNMNXduM1NEdFBrRV8wVDE1TC02QTBfYVk5YnJycDlnUGNxTVNsa21aUmFHRnA2Y0pzQl8yWGJGMXR1blljV2paQQ?oc=5",
-       "timestamp": "2026-11-03T19:02:00+00:00",
-       "text": "2 injured All-NBA teammates invoke Shai Gilgeous-Alexander to go full '05/06' Kobe mode - OKC Thunder Wire",
-       "status": null
-      },
-      {
-       "player": "Shai Gilgeous-Alexander",
-       "team": "OKC",
-       "flag_type": "injury",
-       "severity": 2,
-       "source": "Google News / Basketball Network",
-       "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxNeHFVZ1FvM0RFYkZydmhJZTNuZ3FzZVRDNzFjaXo2blpCZjItMEN1QnlpSk5KNDdqOWRacE12VzlnS2NCcTNZd2RBNkVnRGpLaGFBOHVSdzA3SWZZMDl6WTdjX3ZncFFGVUNpeHcxYnNJdUl2ZkRPbk8zcEtxdGs2RU1yQk9RTjVmcXNnZWVSMEVtVGt2eDJyZ2tyQ1VfRFQ3UklhVUlkRlBoQ1pwQkg1ZVd1TDZxQ0FpVlFzZW5NSzZmQQ?oc=5",
-       "timestamp": "2026-11-03T03:26:00+00:00",
-       "text": "\u201cPlay the cards you're dealt\u201d - Shai Gilgeous-Alexander answers Thunder's injury crisis with 43-point explosion - Basketball Network",
-       "status": null
-      },
-      {
-       "player": "Shai Gilgeous-Alexander",
-       "team": "OKC",
-       "flag_type": "trade",
-       "severity": 1,
-       "source": "Google News / Basketball Network",
-       "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxNeHFVZ1FvM0RFYkZydmhJZTNuZ3FzZVRDNzFjaXo2blpCZjItMEN1QnlpSk5KNDdqOWRacE12VzlnS2NCcTNZd2RBNkVnRGpLaGFBOHVSdzA3SWZZMDl6WTdjX3ZncFFGVUNpeHcxYnNJdUl2ZkRPbk8zcEtxdGs2RU1yQk9RTjVmcXNnZWVSMEVtVGt2eDJyZ2tyQ1VfRFQ3UklhVUlkRlBoQ1pwQkg1ZVd1TDZxQ0FpVlFzZW5NSzZmQQ?oc=5",
-       "timestamp": "2026-11-03T03:26:00+00:00",
-       "text": "\u201cPlay the cards you're dealt\u201d - Shai Gilgeous-Alexander answers Thunder's injury crisis with 43-point explosion - Basketball Network",
-       "status": null
-      },
-      {
-       "player": "Shai Gilgeous-Alexander",
-       "team": "OKC",
-       "flag_type": "injury",
-       "severity": 2,
-       "source": "Google News / BasketNews.com",
-       "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxOQnBBUTVPNjY4MkFBLU9aS0w1aUotUS1oQWg3ZzhMT3FsUWIxSWRvdXNscGw0RFRfWGxITktDX094M3FXVUJVQW1jWnRNTjRFNTZzTmtGZ0NxUDFxdWxHZ1dNVlBtNkcxQ0dIeUhldFNULTN5UjBnVS11blM1YVc2Y21TenR0ZkIwVUlfb3FQRTZFUHh6U2NwUjdTaEg3cGw2RVJsUFhaMlBqN0Y4YzhobVdvQXlPSS1FaHkxUXhB?oc=5",
-       "timestamp": "2026-11-02T00:29:00+00:00",
-       "text": "Shai Gilgeous-Alexander gives crushing statement amid OKC Thunder injury problems - BasketNews.com",
-       "status": null
-      },
-      {
-       "player": "Shai Gilgeous-Alexander",
-       "team": "OKC",
-       "flag_type": "injury",
-       "severity": 2,
-       "source": "Google News / AOL.com",
-       "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxPbmczS0lzYURIZEstMFhfVVBjTzVZZ2gtbkswWUlDWUxhZHZ6TjhEYm1KcktVTmFhdzRubFlpYUNTOXlJYkgwdTVjd1NIT0VJVzRHY2JhR09VVmZHMk83WUpla3ZzS2ZkUXZBeG5NcVVYUWFyNWJiZ0gtS0JSMGpyRG15NnRIYnZv?oc=5",
-       "timestamp": "2026-11-02T15:07:28+00:00",
-       "text": "\u2018Terrible Mentality,\u2019 \u2018Looks So Defeated\u2019 \u2014 NBA Fans Rip Shai Gilgeous-Alexander\u2019s Demeanor As Thunder\u2019s Injury Crisis Worsens - AOL.com",
-       "status": null
-      },
-      {
-       "player": "Donovan Mitchell",
-       "team": "CLE",
-       "flag_type": "trade",
-       "severity": 1,
-       "source": "Google News / Sporting News",
-       "url": "https://news.google.com/rss/articles/CBMi_AFBVV95cUxOTjhDSXc1Wnl5ZFRXZFZCbVVEMW1JM1ZJTU1BMWJ1eWJzTHQ2VDB1M05xSzRiZERZRy1rbUxQUFVsMkozNUhoNUtKa1dQSXFkV3htN3BsN2lFMTZEQVhRdDVmUmJyaHVZV3o3alBSY2t6b0pibW40TTk0RmIwTFdRV3ZEQU5yc2NBLXIwWUlGaGs4Tmk5b3JVeW9jREVWTml3VVhzMEtDS3FFUkxVUEd0d21UT1NreFhnMWl2OHVGVVVLc21SU2J3REtHMjZqSG9KMmZmSkY2UzVYQ05hQmxGbGpfZXQ2OTRVNFd6UXp0UnpWc2V6UGpRZ2tvSko?oc=5",
-       "timestamp": "2026-11-02T10:43:50+00:00",
-       "text": "Cavaliers predicted to trade for ex-Celtics $9M high-motor wing to pair with James Harden, Mitchell - Sporting News",
-       "status": null
-      },
-      {
-       "player": "James Harden",
-       "team": "CLE",
-       "flag_type": "trade",
-       "severity": 1,
-       "source": "Google News / Sporting News",
-       "url": "https://news.google.com/rss/articles/CBMi_AFBVV95cUxOTjhDSXc1Wnl5ZFRXZFZCbVVEMW1JM1ZJTU1BMWJ1eWJzTHQ2VDB1M05xSzRiZERZRy1rbUxQUFVsMkozNUhoNUtKa1dQSXFkV3htN3BsN2lFMTZEQVhRdDVmUmJyaHVZV3o3alBSY2t6b0pibW40TTk0RmIwTFdRV3ZEQU5yc2NBLXIwWUlGaGs4Tmk5b3JVeW9jREVWTml3VVhzMEtDS3FFUkxVUEd0d21UT1NreFhnMWl2OHVGVVVLc21SU2J3REtHMjZqSG9KMmZmSkY2UzVYQ05hQmxGbGpfZXQ2OTRVNFd6UXp0UnpWc2V6UGpRZ2tvSko?oc=5",
-       "timestamp": "2026-11-02T10:43:50+00:00",
-       "text": "Cavaliers predicted to trade for ex-Celtics $9M high-motor wing to pair with James Harden, Mitchell - Sporting News",
-       "status": null
-      },
-      {
-       "player": "LaMelo Ball",
-       "team": "MIN",
-       "flag_type": "injury",
-       "severity": 2,
-       "source": "Google News / roundtable.io",
-       "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPZlVvRTVxUTE3NUpJSElPYkFpREY2WlkzQjFuakVLUUg0OUxPM05sTXJwWU12VFhnY0xiamRDX0RtTWRucGw5dnRmX1ZJTm9CcHhZd3VKQWJnRWdoN2Nvd29Vdm1FQ0pIMG5Cb29kZTlGQTRBVmg4M2xxcFVZNUtHcHMxc2ZtMzNScGk4OG9sUDZvWGttR24tVk1RNWZaRGIxbnB1cWE1NGZlWnB6REVId2NMbUY?oc=5",
-       "timestamp": "2026-11-03T21:54:24+00:00",
-       "text": "LaMelo Ball Gives Injury Update After Timberwolves Win vs. Bucks - roundtable.io",
-       "status": null
-      },
-      {
-       "player": "LaMelo Ball",
-       "team": "MIN",
-       "flag_type": "injury",
-       "severity": 2,
-       "source": "Google News / Yahoo Sports",
-       "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxOOHNMMUhqRzVZSzFPcEdMLUc4am1XRXpRYld1d3MxNmdRREtjZlFrOWo2aTVsTnFyVXJ0Wm5SdVpKTHIyVkhDU1hFMWU5akUtMUZ2Y016VmhlMFVrVnBCZXlYZGczQzhUQUpHbklXRFc0aEx1NXNrNV94bTVyTkhhUlVMMA?oc=5",
-       "timestamp": "2026-11-02T19:39:21+00:00",
-       "text": "LaMelo Ball, TJ Shannon added to Wolves' injury report before Bucks game - Yahoo Sports",
-       "status": null
-      }
-     ],
-     "notes": []
+     "bet": null,
+     "message": "NO BET",
+     "reason": "card build failed; see logs"
     },
     "LONG SHOT": {
-     "id": "a1104748d233d4ad",
-     "tier": "LONG SHOT",
-     "status": "WAIT",
-     "recheck_at": "2026-11-05T01:00:00+00:00",
-     "description": "MIN ML + Under 223.5 (MIN @ HOU)",
-     "book": "betkingnga",
-     "price": 686,
-     "legs": [
-      {
-       "label": "MIN ML",
-       "game": "MIN @ HOU",
-       "kickoff": "2026-11-05T01:30Z",
-       "market": "moneyline",
-       "side": "away",
-       "point": null,
-       "player": null,
-       "book": "betkingnga",
-       "price": 310.0,
-       "price_source": "posted",
-       "p_final": 0.2567,
-       "p_fair": 0.2567,
-       "p_model": 0.3675,
-       "p_push": 0.0069,
-       "novig_implied": 0.2585,
-       "game_key": "NBA_20261104_MIN_HOU"
-      },
-      {
-       "label": "Under 223.5 (MIN @ HOU)",
-       "game": "MIN @ HOU",
-       "kickoff": "2026-11-05T01:30Z",
-       "market": "total",
-       "side": "under",
-       "point": 223.5,
-       "player": null,
-       "book": "betkingnga",
-       "price": -109.0,
-       "price_source": "posted",
-       "p_final": 0.557,
-       "p_fair": 0.557,
-       "p_model": 0.4628,
-       "p_push": 0.0,
-       "novig_implied": 0.557,
-       "game_key": "NBA_20261104_MIN_HOU"
-      }
-     ],
-     "model_prob": 0.1488,
-     "novig_market_prob": 0.1488,
-     "price_implied_prob": 0.1272,
-     "edge": 0.0216,
-     "ev_per_100": 16.98,
-     "stake": 61.86,
-     "kelly_fraction_used": 0.0062,
-     "correlated_joint": true,
-     "min_acceptable_price": 585,
-     "reasons": [
-      "MIN ML: Best price +310 at betkingnga vs market-consensus fair +287 (fair win prob 25.7%; break-even at this price 24.2%).",
-      "Under 223.5 (MIN @ HOU): Best price -109 at betkingnga vs market-consensus fair -126 (fair win prob 55.7%; break-even at this price 52.2%)."
-     ],
-     "flags": [
-      {
-       "player": "LaMelo Ball",
-       "team": "MIN",
-       "flag_type": "injury",
-       "severity": 2,
-       "source": "Google News / roundtable.io",
-       "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPZlVvRTVxUTE3NUpJSElPYkFpREY2WlkzQjFuakVLUUg0OUxPM05sTXJwWU12VFhnY0xiamRDX0RtTWRucGw5dnRmX1ZJTm9CcHhZd3VKQWJnRWdoN2Nvd29Vdm1FQ0pIMG5Cb29kZTlGQTRBVmg4M2xxcFVZNUtHcHMxc2ZtMzNScGk4OG9sUDZvWGttR24tVk1RNWZaRGIxbnB1cWE1NGZlWnB6REVId2NMbUY?oc=5",
-       "timestamp": "2026-11-03T21:54:24+00:00",
-       "text": "LaMelo Ball Gives Injury Update After Timberwolves Win vs. Bucks - roundtable.io",
-       "status": null
-      },
-      {
-       "player": "LaMelo Ball",
-       "team": "MIN",
-       "flag_type": "injury",
-       "severity": 2,
-       "source": "Google News / Yahoo Sports",
-       "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxOOHNMMUhqRzVZSzFPcEdMLUc4am1XRXpRYld1d3MxNmdRREtjZlFrOWo2aTVsTnFyVXJ0Wm5SdVpKTHIyVkhDU1hFMWU5akUtMUZ2Y016VmhlMFVrVnBCZXlYZGczQzhUQUpHbklXRFc0aEx1NXNrNV94bTVyTkhhUlVMMA?oc=5",
-       "timestamp": "2026-11-02T19:39:21+00:00",
-       "text": "LaMelo Ball, TJ Shannon added to Wolves' injury report before Bucks game - Yahoo Sports",
-       "status": null
-      },
-      {
-       "player": "LaMelo Ball",
-       "team": "MIN",
-       "flag_type": "injury",
-       "severity": 2,
-       "source": "Google News / Yahoo Sports",
-       "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNbXhlQmFqT2VOS1dlVEpld2h3X2l4aE45cmNtVjhzWUlnN09ueXNKTk1QWjZvMHhWYThDckprUm1sMWtMTEtkaV9YQy1JX2ZCaWZfSzg4Si1oMVI1QmQxMWJhc2hWZTJ5bkN0Q01aLW11d1djRFVkaEVYRndzTjRBS2FqVkRLdW9pNS1Belhnak5oZXlKYm5n?oc=5",
-       "timestamp": "2026-11-03T01:22:00+00:00",
-       "text": "Minnesota Timberwolves Announce LaMelo Ball Injury Before Bucks Game - Yahoo Sports",
-       "status": null
-      },
-      {
-       "player": "LaMelo Ball",
-       "team": "MIN",
-       "flag_type": "injury",
-       "severity": 2,
-       "source": "Google News / Bring Me the Sports",
-       "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNc2RQSlF3QkM2VHFheTE4dzgwSkpfNHJHSW1ZMzhCRllyelNYaExOMTVleVo0RlFERS1IbGpxVlA5b1l2cjhHS2tVczUxT21ZSW5WMmVFRHdNTXllZDduRll5cmFGcTRnUkhqeFBabjA2SGxuMXFGaWtJV3kzeVlCTjRkZGtmZ2k3V09vOUVtMWhHUURaVVp2R25HZXRMelpm?oc=5",
-       "timestamp": "2026-11-02T19:39:21+00:00",
-       "text": "LaMelo Ball, TJ Shannon added to Wolves\u2019 injury report before Bucks game - Bring Me the Sports",
-       "status": null
-      },
-      {
-       "player": "LaMelo Ball",
-       "team": "MIN",
-       "flag_type": "game_time_decision",
-       "severity": 2,
-       "source": "Google News / NBC Sports",
-       "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxPOUh3dzVYaDhFX2t5bllycDFNVEE0TmJyMTRpZ0hsYzRJS3BpLVRXcDlhVVZ5SEFqeDc3MUNuRXU4UmswOVlwckE2dUMzdnVpaThYY0NmYWtmMTNwX28zV1F6WHppNEQ5WXhob1l1aUVmeXpRT0IyTnF6N1cwY292UG5YOTAtSXJqa2pZcTYtb0txSFJsSDFkWkFha251NDN4OENSdVluNzhJWlMwN2tFTGdHSkc2MlE?oc=5",
-       "timestamp": "2026-11-03T02:19:36+00:00",
-       "text": "LaMelo Ball, Terrence Shannon questionable Monday - NBC Sports",
-       "status": null
-      },
-      {
-       "player": "LaMelo Ball",
-       "team": "MIN",
-       "flag_type": "injury",
-       "severity": 2,
-       "source": "Google News / Yahoo Sports",
-       "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxQMFZ3c0RpM01DU2Vpc1JYekI1VkxFRElTNVBoMG5uazhlYlFRNHprOU1kUUVIS1A2S1RpRGdQQ0N3TmpscXpTWlhpU3V6M1RnQmVvanhWQkFqSmxlS1BrSDNzR2d4cGJ5Um04Yl90aFlLWnJmVm1hRHFCUVI1czBRMGhZdU96LTc1WEpxXzd5WQ?oc=5",
-       "timestamp": "2026-11-02T22:08:14+00:00",
-       "text": "Timberwolves\u2019 LaMelo Ball lands on injury report vs. Bucks - Yahoo Sports",
-       "status": null
-      },
-      {
-       "player": "LaMelo Ball",
-       "team": "MIN",
-       "flag_type": "trade",
-       "severity": 1,
-       "source": "Google News / Swarm and Sting",
-       "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxOcjdQRVBrNktWTjVjTEZnNkZiOGlmSmU2ODFQdnA1S1V4ODMxTVRNbXpobmZNd3o5R2ZSX09ydkpDaTN3R2dtT1ZBUUxjTGVjRTN6Z2VIS3cxQThXVTJvZ0lfakYxT0VIbDZhRDluSURZeXZkVTVKbmVrSjZITjFxbjdhUlR4U0l2Yll1RFZLZUtva2VhZFY4?oc=5",
-       "timestamp": "2026-11-02T17:27:00+00:00",
-       "text": "LaMelo Ball is already starting to show why Hornets were right to trade him - Swarm and Sting",
-       "status": null
-      },
-      {
-       "player": "LaMelo Ball",
-       "team": "MIN",
-       "flag_type": "injury",
-       "severity": 2,
-       "source": "Google News / roundtable.io",
-       "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxOSnZTY3hSaHI5NXI1STRUZ3lLamkwX3BSc0ZxQzJDaF9rOERxVWl0azgwQkl6blAyNkdlUy1BOHQ4RFRic2RsZi1zeDlzRW1CSmJiTkhRVFBQMklVZFQxb0ZnZXV4SVRBZ2tHc19lZXQ0NVhvQUxHbkxmNGxFSWZXd1hpQXBvRG9Ta1dBQTlBMVJiNW16cURvcllfbUVQTThTSG5CZnFVaDJISTVLancyVnZ0bVMxdU5LLVV4VVNGWEM?oc=5",
-       "timestamp": "2026-11-02T19:25:30+00:00",
-       "text": "LaMelo Ball Unexpectedly Added to Timberwolves-Bucks Injury Report - roundtable.io",
-       "status": null
-      },
-      {
-       "player": "LaMelo Ball",
-       "team": "MIN",
-       "flag_type": "game_time_decision",
-       "severity": 2,
-       "source": "Google News / FantasyPros",
-       "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxQcndJSEgweE5ncE1NNGZIZjl3MlpqQW1ZR0N5QnZyQnQwTVA4OTl1dnBtY0Q1c1VRUVVQQTlITVh2T2JvUUVUbDhTMnR1UnI0ZFRid0J1Snc1a1BXQ2FfbWw5WWtrWEswQWlPTURTMmo3azBmQTZYSXdmMGdkM2NOdFVOVmVBU2xTUUljYTA4eFpfRlNtaW9z0gGcAUFVX3lxTFBiQXRyU3J2LXZycmxQUHVBTHVaaEZCRWFlN0htVHcySW1fTTRwczFNa2h1QVN6MEJfcUhiVDZGTWw1d2NtbkFaeGpoSWEwamdGaDdDVm10QS1DWlc0Y3NoNWNxMjQyS3U2cDlFWHptcm5oNWlNSEs4bG85R2pSR19WUjFRNXZ5SlAzVnNPXzdYOXBrVlV1N0hlY3dKUw?oc=5",
-       "timestamp": "2026-11-02T19:35:07+00:00",
-       "text": "LaMelo Ball (wrist) listed questionable Monday - FantasyPros",
-       "status": null
-      },
-      {
-       "player": "LaMelo Ball",
-       "team": "MIN",
-       "flag_type": "injury",
-       "severity": 2,
-       "source": "Google News / RotoWire",
-       "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPdzZ4c3Z2cHZBX0pnZzRkMXRTOFdaQThWVVpkeG9fbjhYSkVPYmIzMGtuOVUtY3Z6OXJVcjFwekVLT013bGpUekk0RGozWWMwYnJIOFBVT3B4dzRqd044MlBENjNQTFB3MHlpcHVPQmFoQy10cDRtSEYtd2VYZXhXM2NGb2o5WUNUMFE1WUdZcWc3aVBzQ05meA?oc=5",
-       "timestamp": "2026-11-02T19:10:24+00:00",
-       "text": "LaMelo Ball Injury: Iffy with wrist issue - RotoWire",
-       "status": null
-      },
-      {
-       "player": "LaMelo Ball",
-       "team": "MIN",
-       "flag_type": "injury",
-       "severity": 2,
-       "source": "Google News / AOL.com",
-       "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxPY19icWRUM1lPUVJIcFFXd2thbzA3LXdVQkhyNklqY1EzOGhROW44OWNnTVh6ZnhpR3JEUnBRenRFczlYZWVrRXF2eGhPNXI1Wk1JNl9jQjljMzhjemY5WVNlQmRYYTFQLV96V0FueFM5dnVMejBhaXFFbk9tY21EQU83TTRvMmsweVE?oc=5",
-       "timestamp": "2026-11-02T21:33:48+00:00",
-       "text": "Final Injury Report for Bucks-Timberwolves: Will LaMelo Ball, Terrence Shannon Jr. Play? - AOL.com",
-       "status": null
-      },
-      {
-       "player": "LaMelo Ball",
-       "team": "MIN",
-       "flag_type": "injury",
-       "severity": 2,
-       "source": "Google News / \u0634\u0628\u0643\u0629 \u062a\u0648\u0627\u0635\u0644 \u0627\u0644\u0625\u062e\u0628\u0627\u0631\u064a\u0629",
-       "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE5JNUxUMEloaFlmbTMzUDNjMmNkMmRtbm9DM05DZVRJSE5iTXVwdFFLcEFJbkhncmRpQXJ1U292Yll0RTdfeUkxVU45WFZhN3hEOFBR?oc=5",
-       "timestamp": "2026-11-03T00:16:26+00:00",
-       "text": "LaMelo Ball, Terrence Shannon Jr. added to Timberwolves injury report before Bucks game \u2014 Bucks Vs Timberwolves - \u0634\u0628\u0643\u0629 \u062a\u0648\u0627\u0635\u0644 \u0627\u0644\u0625\u062e\u0628\u0627\u0631\u064a\u0629",
-       "status": null
-      }
-     ],
-     "notes": [
-      "Same-game joint probability comes from the correlated simulation; books adjust SGP prices for correlation and free sources don't publish them \u2014 bet only if the book's SGP price is +585 or better."
-     ]
+     "bet": null,
+     "message": "NO BET",
+     "reason": "card build failed; see logs"
     }
-   },
-   "model": {
-    "weights": {
-     "ml_home": 0.0,
-     "spread_home": 0.0,
-     "over": 0.0
-    },
-    "feature_groups": [
-     "base",
-     "style",
-     "fatigue",
-     "motivation",
-     "h2h"
-    ],
-    "trained_through": "2026-11-02",
-    "note": "model weight is 0 in every market: bets below come only from price differences between books (line shopping), never from the model's opinion"
-   },
-   "shadow_props": {
-    "status": "SHADOW ONLY \u2014 tracked for calibration, not recommended (no free prop prices; model unproven vs prop markets)",
-    "rows": []
-   },
-   "flags_checked": 217
+   }
   }
  },
  "disclaimer": "Probabilities, not guarantees. Paper mode: nothing here is a real wager.",
@@ -600,105 +414,105 @@
    "ok": true,
    "rows": 15,
    "note": "upcoming events",
-   "checked_at": "2026-11-03T21:55:23+00:00",
+   "checked_at": "2026-11-04T22:05:37+00:00",
    "data_as_of": null
   },
   "nfl.espn.odds": {
    "ok": true,
    "rows": 180,
    "note": "",
-   "checked_at": "2026-11-03T21:55:29+00:00",
+   "checked_at": "2026-11-04T22:05:43+00:00",
    "data_as_of": null
   },
   "nfl.actionnetwork.odds": {
    "ok": true,
-   "rows": 2250,
+   "rows": 1620,
    "note": "",
-   "checked_at": "2026-11-03T21:55:30+00:00",
+   "checked_at": "2026-11-04T22:05:45+00:00",
    "data_as_of": null
   },
   "nfl.kalshi.moneyline": {
    "ok": true,
    "rows": 28,
    "note": "",
-   "checked_at": "2026-11-03T21:55:30+00:00",
+   "checked_at": "2026-11-04T22:05:45+00:00",
    "data_as_of": null
   },
   "nfl.espn.props": {
-   "ok": false,
-   "rows": 0,
+   "ok": true,
+   "rows": 75,
    "note": "DraftKings lines; prices not published",
-   "checked_at": "2026-11-03T21:55:30+00:00",
+   "checked_at": "2026-11-04T22:05:46+00:00",
    "data_as_of": null
   },
   "nba.espn.schedule": {
    "ok": true,
-   "rows": 16,
+   "rows": 25,
    "note": "upcoming events",
-   "checked_at": "2026-11-03T21:55:32+00:00",
+   "checked_at": "2026-11-04T22:05:47+00:00",
    "data_as_of": null
   },
   "nba.espn.odds": {
    "ok": true,
-   "rows": 132,
+   "rows": 168,
    "note": "",
-   "checked_at": "2026-11-03T21:55:38+00:00",
+   "checked_at": "2026-11-04T22:05:57+00:00",
    "data_as_of": null
   },
   "nba.actionnetwork.odds": {
    "ok": true,
-   "rows": 384,
+   "rows": 540,
    "note": "",
-   "checked_at": "2026-11-03T21:55:38+00:00",
+   "checked_at": "2026-11-04T22:05:58+00:00",
    "data_as_of": null
   },
   "nba.kalshi.moneyline": {
    "ok": true,
-   "rows": 32,
+   "rows": 50,
    "note": "",
-   "checked_at": "2026-11-03T21:55:39+00:00",
+   "checked_at": "2026-11-04T22:05:58+00:00",
    "data_as_of": null
   },
   "nba.espn.props": {
-   "ok": false,
-   "rows": 0,
+   "ok": true,
+   "rows": 1009,
    "note": "DraftKings lines; prices not published",
-   "checked_at": "2026-11-03T21:55:44+00:00",
+   "checked_at": "2026-11-04T22:06:16+00:00",
    "data_as_of": null
   },
   "nfl.espn.injuries": {
    "ok": true,
    "rows": 800,
    "note": "",
-   "checked_at": "2026-11-03T21:56:13+00:00",
+   "checked_at": "2026-11-04T22:06:36+00:00",
    "data_as_of": null
   },
   "nfl.news.google_rss": {
    "ok": true,
    "rows": 40,
    "note": "per-player/team queries, last 48h",
-   "checked_at": "2026-11-03T21:56:57+00:00",
+   "checked_at": "2026-11-04T22:07:15+00:00",
    "data_as_of": null
   },
   "nfl.news.league_feeds": {
    "ok": true,
    "rows": 116,
    "note": "",
-   "checked_at": "2026-11-03T21:56:58+00:00",
+   "checked_at": "2026-11-04T22:07:15+00:00",
    "data_as_of": null
   },
   "nfl.open_meteo.forecast": {
    "ok": true,
    "rows": 10,
    "note": "outdoor venues only",
-   "checked_at": "2026-11-03T21:56:13+00:00",
+   "checked_at": "2026-11-04T22:06:35+00:00",
    "data_as_of": null
   },
   "nba.espn.injuries": {
    "ok": true,
    "rows": 95,
    "note": "",
-   "checked_at": "2026-11-03T21:57:02+00:00",
+   "checked_at": "2026-11-04T22:07:18+00:00",
    "data_as_of": null
   },
   "nba.news.google_rss": {
