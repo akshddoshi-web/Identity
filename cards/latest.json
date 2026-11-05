@@ -1,6 +1,6 @@
 {
- "generated_at": "2026-11-04T22:06:17+00:00",
- "generated_at_et": "Wed Nov 04 05:06 PM ET",
+ "generated_at": "2026-11-05T22:12:57+00:00",
+ "generated_at_et": "Thu Nov 05 05:12 PM ET",
  "mode": "recheck",
  "paper_mode": true,
  "bankroll": 10000.0,
@@ -12,20 +12,20 @@
     "SAFE": {
      "bet": null,
      "message": "NO BET",
-     "reason": "best candidate in the 55%-100% band has edge +5.2% over its break-even \u2014 below the 2% threshold; nothing is forced",
-     "best_candidates_considered": 6
+     "reason": "best candidate in the 55%-100% band has edge -1.1% over its break-even \u2014 below the 2% threshold; nothing is forced",
+     "best_candidates_considered": 0
     },
     "MODERATE": {
      "bet": null,
      "message": "NO BET",
-     "reason": "best candidate in the 20%-45% band has edge +4.6% over its break-even \u2014 below the 2% threshold; nothing is forced",
-     "best_candidates_considered": 18
+     "reason": "best candidate in the 20%-45% band has edge +0.2% over its break-even \u2014 below the 2% threshold; nothing is forced",
+     "best_candidates_considered": 0
     },
     "LONG SHOT": {
      "bet": null,
      "message": "NO LONG SHOT TODAY",
      "reason": "no single bet or same-book combination lands in the 3%-15% win-probability band with positive EV",
-     "best_candidates_considered": 45
+     "best_candidates_considered": 0
     }
    },
    "model": {
@@ -50,17 +50,6 @@
     "status": "SHADOW ONLY \u2014 tracked for calibration, not recommended (no free prop prices; model unproven vs prop markets)",
     "rows": [
      {
-      "player": "LaJohntay Wester",
-      "team": "BAL",
-      "market": "anytime_td",
-      "line": NaN,
-      "p_over_sim": 0.002,
-      "sim_median": 0.0,
-      "game_key": "NFL_20261105_JAX_BAL",
-      "book": "draftkings",
-      "price": "not published (assumed -110)"
-     },
-     {
       "player": "Tanner Koziol",
       "team": "JAX",
       "market": "anytime_td",
@@ -72,11 +61,22 @@
       "price": "not published (assumed -110)"
      },
      {
+      "player": "LaJohntay Wester",
+      "team": "BAL",
+      "market": "anytime_td",
+      "line": NaN,
+      "p_over_sim": 0.003,
+      "sim_median": 0.0,
+      "game_key": "NFL_20261105_JAX_BAL",
+      "book": "draftkings",
+      "price": "not published (assumed -110)"
+     },
+     {
       "player": "Joe Fagnano",
       "team": "BAL",
       "market": "anytime_td",
       "line": NaN,
-      "p_over_sim": 0.004,
+      "p_over_sim": 0.006,
       "sim_median": 0.0,
       "game_key": "NFL_20261105_JAX_BAL",
       "book": "draftkings",
@@ -87,7 +87,7 @@
       "team": "BAL",
       "market": "anytime_td",
       "line": NaN,
-      "p_over_sim": 0.007,
+      "p_over_sim": 0.006,
       "sim_median": 0.0,
       "game_key": "NFL_20261105_JAX_BAL",
       "book": "draftkings",
@@ -109,7 +109,7 @@
       "team": "BAL",
       "market": "anytime_td",
       "line": NaN,
-      "p_over_sim": 0.01,
+      "p_over_sim": 0.009,
       "sim_median": 0.0,
       "game_key": "NFL_20261105_JAX_BAL",
       "book": "draftkings",
@@ -153,18 +153,7 @@
       "team": "BAL",
       "market": "anytime_td",
       "line": NaN,
-      "p_over_sim": 0.069,
-      "sim_median": 0.0,
-      "game_key": "NFL_20261105_JAX_BAL",
-      "book": "draftkings",
-      "price": "not published (assumed -110)"
-     },
-     {
-      "player": "Quintin Morris",
-      "team": "JAX",
-      "market": "anytime_td",
-      "line": NaN,
-      "p_over_sim": 0.08,
+      "p_over_sim": 0.071,
       "sim_median": 0.0,
       "game_key": "NFL_20261105_JAX_BAL",
       "book": "draftkings",
@@ -175,7 +164,7 @@
       "team": "BAL",
       "market": "anytime_td",
       "line": NaN,
-      "p_over_sim": 0.08,
+      "p_over_sim": 0.073,
       "sim_median": 0.0,
       "game_key": "NFL_20261105_JAX_BAL",
       "book": "draftkings",
@@ -186,8 +175,30 @@
       "team": "BAL",
       "market": "anytime_td",
       "line": NaN,
-      "p_over_sim": 0.088,
+      "p_over_sim": 0.082,
       "sim_median": 0.0,
+      "game_key": "NFL_20261105_JAX_BAL",
+      "book": "draftkings",
+      "price": "not published (assumed -110)"
+     },
+     {
+      "player": "Quintin Morris",
+      "team": "JAX",
+      "market": "anytime_td",
+      "line": NaN,
+      "p_over_sim": 0.083,
+      "sim_median": 0.0,
+      "game_key": "NFL_20261105_JAX_BAL",
+      "book": "draftkings",
+      "price": "not published (assumed -110)"
+     },
+     {
+      "player": "Joe Fagnano",
+      "team": "BAL",
+      "market": "rush_yds",
+      "line": 7.5,
+      "p_over_sim": 0.916,
+      "sim_median": 29.0,
       "game_key": "NFL_20261105_JAX_BAL",
       "book": "draftkings",
       "price": "not published (assumed -110)"
@@ -197,7 +208,18 @@
       "team": "BAL",
       "market": "anytime_td",
       "line": NaN,
-      "p_over_sim": 0.09,
+      "p_over_sim": 0.094,
+      "sim_median": 0.0,
+      "game_key": "NFL_20261105_JAX_BAL",
+      "book": "draftkings",
+      "price": "not published (assumed -110)"
+     },
+     {
+      "player": "Josh Cameron",
+      "team": "JAX",
+      "market": "anytime_td",
+      "line": NaN,
+      "p_over_sim": 0.165,
       "sim_median": 0.0,
       "game_key": "NFL_20261105_JAX_BAL",
       "book": "draftkings",
@@ -208,7 +230,7 @@
       "team": "JAX",
       "market": "anytime_td",
       "line": NaN,
-      "p_over_sim": 0.169,
+      "p_over_sim": 0.166,
       "sim_median": 0.0,
       "game_key": "NFL_20261105_JAX_BAL",
       "book": "draftkings",
@@ -226,11 +248,11 @@
       "price": "not published (assumed -110)"
      },
      {
-      "player": "Josh Cameron",
+      "player": "Jakobi Meyers",
       "team": "JAX",
       "market": "anytime_td",
       "line": NaN,
-      "p_over_sim": 0.176,
+      "p_over_sim": 0.184,
       "sim_median": 0.0,
       "game_key": "NFL_20261105_JAX_BAL",
       "book": "draftkings",
@@ -248,12 +270,12 @@
       "price": "not published (assumed -110)"
      },
      {
-      "player": "Jakobi Meyers",
-      "team": "JAX",
-      "market": "anytime_td",
-      "line": NaN,
-      "p_over_sim": 0.185,
-      "sim_median": 0.0,
+      "player": "Joe Fagnano",
+      "team": "BAL",
+      "market": "pass_rush_yds",
+      "line": 174.5,
+      "p_over_sim": 0.808,
+      "sim_median": 231.0,
       "game_key": "NFL_20261105_JAX_BAL",
       "book": "draftkings",
       "price": "not published (assumed -110)"
@@ -263,7 +285,7 @@
       "team": "BAL",
       "market": "anytime_td",
       "line": NaN,
-      "p_over_sim": 0.218,
+      "p_over_sim": 0.215,
       "sim_median": 0.0,
       "game_key": "NFL_20261105_JAX_BAL",
       "book": "draftkings",
@@ -274,30 +296,8 @@
       "team": "JAX",
       "market": "anytime_td",
       "line": NaN,
-      "p_over_sim": 0.257,
+      "p_over_sim": 0.256,
       "sim_median": 0.0,
-      "game_key": "NFL_20261105_JAX_BAL",
-      "book": "draftkings",
-      "price": "not published (assumed -110)"
-     },
-     {
-      "player": "Joe Fagnano",
-      "team": "BAL",
-      "market": "pass_yds",
-      "line": 158.5,
-      "p_over_sim": 0.74,
-      "sim_median": 201.0,
-      "game_key": "NFL_20261105_JAX_BAL",
-      "book": "draftkings",
-      "price": "not published (assumed -110)"
-     },
-     {
-      "player": "Joe Fagnano",
-      "team": "BAL",
-      "market": "pass_cmp",
-      "line": 15.5,
-      "p_over_sim": 0.739,
-      "sim_median": 18.0,
       "game_key": "NFL_20261105_JAX_BAL",
       "book": "draftkings",
       "price": "not published (assumed -110)"
@@ -307,8 +307,8 @@
       "team": "JAX",
       "market": "rush_yds",
       "line": 11.5,
-      "p_over_sim": 0.736,
-      "sim_median": 20.0,
+      "p_over_sim": 0.733,
+      "sim_median": 21.0,
       "game_key": "NFL_20261105_JAX_BAL",
       "book": "draftkings",
       "price": "not published (assumed -110)"
@@ -318,7 +318,7 @@
       "team": "JAX",
       "market": "receptions",
       "line": 4.5,
-      "p_over_sim": 0.273,
+      "p_over_sim": 0.272,
       "sim_median": 3.0,
       "game_key": "NFL_20261105_JAX_BAL",
       "book": "draftkings",
@@ -326,7 +326,7 @@
      }
     ]
    },
-   "flags_checked": 1148
+   "flags_checked": 1124
   },
   "NBA": {
    "league": "NBA",
@@ -412,107 +412,107 @@
  "freshness": {
   "nfl.espn.schedule": {
    "ok": true,
-   "rows": 15,
+   "rows": 16,
    "note": "upcoming events",
-   "checked_at": "2026-11-04T22:05:37+00:00",
+   "checked_at": "2026-11-05T22:12:32+00:00",
    "data_as_of": null
   },
   "nfl.espn.odds": {
    "ok": true,
-   "rows": 180,
+   "rows": 192,
    "note": "",
-   "checked_at": "2026-11-04T22:05:43+00:00",
+   "checked_at": "2026-11-05T22:12:38+00:00",
    "data_as_of": null
   },
   "nfl.actionnetwork.odds": {
    "ok": true,
-   "rows": 1620,
+   "rows": 2340,
    "note": "",
-   "checked_at": "2026-11-04T22:05:45+00:00",
+   "checked_at": "2026-11-05T22:12:40+00:00",
    "data_as_of": null
   },
   "nfl.kalshi.moneyline": {
    "ok": true,
-   "rows": 28,
+   "rows": 30,
    "note": "",
-   "checked_at": "2026-11-04T22:05:45+00:00",
+   "checked_at": "2026-11-05T22:12:40+00:00",
    "data_as_of": null
   },
   "nfl.espn.props": {
    "ok": true,
-   "rows": 75,
+   "rows": 94,
    "note": "DraftKings lines; prices not published",
-   "checked_at": "2026-11-04T22:05:46+00:00",
+   "checked_at": "2026-11-05T22:12:41+00:00",
    "data_as_of": null
   },
   "nba.espn.schedule": {
    "ok": true,
-   "rows": 25,
+   "rows": 18,
    "note": "upcoming events",
-   "checked_at": "2026-11-04T22:05:47+00:00",
+   "checked_at": "2026-11-05T22:12:42+00:00",
    "data_as_of": null
   },
   "nba.espn.odds": {
    "ok": true,
-   "rows": 168,
+   "rows": 60,
    "note": "",
-   "checked_at": "2026-11-04T22:05:57+00:00",
+   "checked_at": "2026-11-05T22:12:48+00:00",
    "data_as_of": null
   },
   "nba.actionnetwork.odds": {
    "ok": true,
-   "rows": 540,
+   "rows": 204,
    "note": "",
-   "checked_at": "2026-11-04T22:05:58+00:00",
+   "checked_at": "2026-11-05T22:12:50+00:00",
    "data_as_of": null
   },
   "nba.kalshi.moneyline": {
    "ok": true,
-   "rows": 50,
+   "rows": 36,
    "note": "",
-   "checked_at": "2026-11-04T22:05:58+00:00",
+   "checked_at": "2026-11-05T22:12:50+00:00",
    "data_as_of": null
   },
   "nba.espn.props": {
    "ok": true,
-   "rows": 1009,
+   "rows": 159,
    "note": "DraftKings lines; prices not published",
-   "checked_at": "2026-11-04T22:06:16+00:00",
+   "checked_at": "2026-11-05T22:12:55+00:00",
    "data_as_of": null
   },
   "nfl.espn.injuries": {
    "ok": true,
    "rows": 800,
    "note": "",
-   "checked_at": "2026-11-04T22:06:36+00:00",
+   "checked_at": "2026-11-05T22:13:23+00:00",
    "data_as_of": null
   },
   "nfl.news.google_rss": {
    "ok": true,
    "rows": 40,
    "note": "per-player/team queries, last 48h",
-   "checked_at": "2026-11-04T22:07:15+00:00",
+   "checked_at": "2026-11-05T22:14:05+00:00",
    "data_as_of": null
   },
   "nfl.news.league_feeds": {
    "ok": true,
    "rows": 116,
    "note": "",
-   "checked_at": "2026-11-04T22:07:15+00:00",
+   "checked_at": "2026-11-05T22:14:05+00:00",
    "data_as_of": null
   },
   "nfl.open_meteo.forecast": {
    "ok": true,
    "rows": 10,
    "note": "outdoor venues only",
-   "checked_at": "2026-11-04T22:06:35+00:00",
+   "checked_at": "2026-11-05T22:13:23+00:00",
    "data_as_of": null
   },
   "nba.espn.injuries": {
    "ok": true,
-   "rows": 95,
+   "rows": 92,
    "note": "",
-   "checked_at": "2026-11-04T22:07:18+00:00",
+   "checked_at": "2026-11-05T22:14:10+00:00",
    "data_as_of": null
   },
   "nba.news.google_rss": {
