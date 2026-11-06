@@ -1,0 +1,258 @@
+{
+ "generated_at": "2026-11-06T21:44:09+00:00",
+ "generated_at_et": "Fri Nov 06 04:44 PM ET",
+ "mode": "recheck",
+ "paper_mode": true,
+ "bankroll": 10000.0,
+ "leagues": {
+  "NFL": {
+   "league": "NFL",
+   "n_games": 15,
+   "tiers": {
+    "SAFE": {
+     "bet": null,
+     "message": "NO BET",
+     "reason": "best candidate in the 55%-100% band has edge -0.4% over its break-even \u2014 below the 2% threshold; nothing is forced",
+     "best_candidates_considered": 0
+    },
+    "MODERATE": {
+     "bet": null,
+     "message": "NO BET",
+     "reason": "best candidate in the 20%-45% band has edge +0.8% over its break-even \u2014 below the 2% threshold; nothing is forced",
+     "best_candidates_considered": 0
+    },
+    "LONG SHOT": {
+     "bet": null,
+     "message": "NO LONG SHOT TODAY",
+     "reason": "no single bet or same-book combination lands in the 3%-15% win-probability band with positive EV",
+     "best_candidates_considered": 0
+    }
+   },
+   "model": {
+    "weights": {
+     "ml_home": 0.0,
+     "spread_home": 0.0,
+     "over": 0.0
+    },
+    "feature_groups": [
+     "base",
+     "opp_adjusted",
+     "pressure_redzone",
+     "turnover_luck",
+     "cohesion",
+     "weather",
+     "h2h"
+    ],
+    "trained_through": "2026-11-02",
+    "note": "model weight is 0 in every market: bets below come only from price differences between books (line shopping), never from the model's opinion"
+   },
+   "shadow_props": {
+    "status": "SHADOW ONLY \u2014 tracked for calibration, not recommended (no free prop prices; model unproven vs prop markets)",
+    "rows": []
+   },
+   "flags_checked": 1092
+  },
+  "NBA": {
+   "league": "NBA",
+   "error": "ZeroDivisionError: float division by zero",
+   "tiers": {
+    "SAFE": {
+     "bet": null,
+     "message": "NO BET",
+     "reason": "card build failed; see logs"
+    },
+    "MODERATE": {
+     "bet": null,
+     "message": "NO BET",
+     "reason": "card build failed; see logs"
+    },
+    "LONG SHOT": {
+     "bet": null,
+     "message": "NO BET",
+     "reason": "card build failed; see logs"
+    }
+   }
+  }
+ },
+ "disclaimer": "Probabilities, not guarantees. Paper mode: nothing here is a real wager.",
+ "backtest": {
+  "NFL": {
+   "verdicts": [
+    "moneyline: did NOT beat the no-vig closing line out of sample (final 0.6098 vs market 0.6098; model alone 0.6440). Edges in this market should be treated as noise.",
+    "moneyline: the model on its own is worse than the market by 0.0342 log loss.",
+    "spread: did NOT beat the no-vig closing line out of sample (final 0.6924 vs market 0.6924; model alone 0.7032). Edges in this market should be treated as noise.",
+    "spread: the model on its own is worse than the market by 0.0108 log loss.",
+    "total: did NOT beat the no-vig closing line out of sample (final 0.6930 vs market 0.6930; model alone 0.6995). Edges in this market should be treated as noise.",
+    "total: the model on its own is worse than the market by 0.0065 log loss.",
+    "No historical bets cleared the edge threshold: the model never disagreed with the close enough to act."
+   ],
+   "test_seasons": [
+    2020,
+    2026
+   ],
+   "kept_groups": [
+    "opp_adjusted",
+    "pressure_redzone",
+    "turnover_luck",
+    "cohesion",
+    "weather",
+    "h2h"
+   ],
+   "dropped_groups": [
+    "special_teams",
+    "fatigue",
+    "motivation",
+    "altitude"
+   ],
+   "generated_at": "2026-11-03T18:25:39"
+  },
+  "NBA": {
+   "verdicts": [
+    "moneyline: did NOT beat the no-vig closing line out of sample (final 0.5807 vs market 0.5807; model alone 0.6138). Edges in this market should be treated as noise.",
+    "moneyline: the model on its own is worse than the market by 0.0331 log loss.",
+    "spread: did NOT beat the no-vig closing line out of sample (final 0.6924 vs market 0.6924; model alone 0.6952). Edges in this market should be treated as noise.",
+    "spread: the model on its own is worse than the market by 0.0028 log loss.",
+    "total: did NOT beat the no-vig closing line out of sample (final 0.6928 vs market 0.6928; model alone 0.6955). Edges in this market should be treated as noise.",
+    "total: the model on its own is worse than the market by 0.0027 log loss.",
+    "No historical bets cleared the edge threshold: the model never disagreed with the close enough to act."
+   ],
+   "test_seasons": [
+    2023,
+    2026
+   ],
+   "kept_groups": [
+    "style",
+    "fatigue",
+    "motivation",
+    "h2h"
+   ],
+   "dropped_groups": [
+    "efficiency",
+    "altitude"
+   ],
+   "generated_at": "2026-11-03T18:27:40"
+  }
+ },
+ "freshness": {
+  "nfl.espn.schedule": {
+   "ok": true,
+   "rows": 15,
+   "note": "upcoming events",
+   "checked_at": "2026-11-06T21:43:34+00:00",
+   "data_as_of": null
+  },
+  "nfl.espn.odds": {
+   "ok": true,
+   "rows": 180,
+   "note": "",
+   "checked_at": "2026-11-06T21:43:40+00:00",
+   "data_as_of": null
+  },
+  "nfl.actionnetwork.odds": {
+   "ok": true,
+   "rows": 2268,
+   "note": "",
+   "checked_at": "2026-11-06T21:43:42+00:00",
+   "data_as_of": null
+  },
+  "nfl.kalshi.moneyline": {
+   "ok": true,
+   "rows": 30,
+   "note": "",
+   "checked_at": "2026-11-06T21:43:42+00:00",
+   "data_as_of": null
+  },
+  "nfl.espn.props": {
+   "ok": false,
+   "rows": 0,
+   "note": "DraftKings lines; prices not published",
+   "checked_at": "2026-11-06T21:43:42+00:00",
+   "data_as_of": null
+  },
+  "nba.espn.schedule": {
+   "ok": true,
+   "rows": 23,
+   "note": "upcoming events",
+   "checked_at": "2026-11-06T21:43:43+00:00",
+   "data_as_of": null
+  },
+  "nba.espn.odds": {
+   "ok": true,
+   "rows": 108,
+   "note": "",
+   "checked_at": "2026-11-06T21:43:52+00:00",
+   "data_as_of": null
+  },
+  "nba.actionnetwork.odds": {
+   "ok": true,
+   "rows": 108,
+   "note": "",
+   "checked_at": "2026-11-06T21:43:53+00:00",
+   "data_as_of": null
+  },
+  "nba.kalshi.moneyline": {
+   "ok": true,
+   "rows": 46,
+   "note": "",
+   "checked_at": "2026-11-06T21:43:53+00:00",
+   "data_as_of": null
+  },
+  "nba.espn.props": {
+   "ok": true,
+   "rows": 655,
+   "note": "DraftKings lines; prices not published",
+   "checked_at": "2026-11-06T21:44:08+00:00",
+   "data_as_of": null
+  },
+  "nfl.espn.injuries": {
+   "ok": true,
+   "rows": 800,
+   "note": "",
+   "checked_at": "2026-11-06T21:44:29+00:00",
+   "data_as_of": null
+  },
+  "nfl.news.google_rss": {
+   "ok": true,
+   "rows": 40,
+   "note": "per-player/team queries, last 48h",
+   "checked_at": "2026-11-06T21:45:05+00:00",
+   "data_as_of": null
+  },
+  "nfl.news.league_feeds": {
+   "ok": true,
+   "rows": 116,
+   "note": "",
+   "checked_at": "2026-11-06T21:45:06+00:00",
+   "data_as_of": null
+  },
+  "nfl.open_meteo.forecast": {
+   "ok": true,
+   "rows": 10,
+   "note": "outdoor venues only",
+   "checked_at": "2026-11-06T21:44:28+00:00",
+   "data_as_of": null
+  },
+  "nba.espn.injuries": {
+   "ok": true,
+   "rows": 95,
+   "note": "",
+   "checked_at": "2026-11-06T21:45:08+00:00",
+   "data_as_of": null
+  },
+  "nba.news.google_rss": {
+   "ok": true,
+   "rows": 40,
+   "note": "per-player/team queries, last 48h",
+   "checked_at": "2026-11-03T21:57:41+00:00",
+   "data_as_of": null
+  },
+  "nba.news.league_feeds": {
+   "ok": true,
+   "rows": 86,
+   "note": "",
+   "checked_at": "2026-11-03T21:57:42+00:00",
+   "data_as_of": null
+  }
+ },
+ "warnings": []
+}
