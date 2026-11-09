@@ -1,0 +1,725 @@
+{
+ "generated_at": "2026-11-09T23:11:30+00:00",
+ "generated_at_et": "Mon Nov 09 06:11 PM ET",
+ "mode": "recheck",
+ "paper_mode": true,
+ "bankroll": 10000.0,
+ "leagues": {
+  "NFL": {
+   "league": "NFL",
+   "n_games": 14,
+   "tiers": {
+    "SAFE": {
+     "bet": null,
+     "message": "NO BET",
+     "reason": "best candidate in the 55%-100% band has edge -1.4% over its break-even \u2014 below the 2% threshold; nothing is forced",
+     "best_candidates_considered": 0
+    },
+    "MODERATE": {
+     "id": "c1d89a0d1f594c2d",
+     "tier": "MODERATE",
+     "status": "WAIT",
+     "recheck_at": "2026-11-09T23:45:00+00:00",
+     "description": "MIN ML + MIN +3.5",
+     "book": "betmgm",
+     "price": 402,
+     "legs": [
+      {
+       "label": "MIN ML",
+       "game": "BUF @ MIN",
+       "kickoff": "2026-11-10T01:15Z",
+       "market": "moneyline",
+       "side": "home",
+       "point": null,
+       "player": null,
+       "book": "betmgm",
+       "price": 165.0,
+       "price_source": "posted",
+       "p_final": 0.3826,
+       "p_fair": 0.3826,
+       "p_model": 0.4386,
+       "p_push": 0.0049,
+       "novig_implied": 0.3845,
+       "game_key": "NFL_20261109_BUF_MIN"
+      },
+      {
+       "label": "MIN +3.5",
+       "game": "BUF @ MIN",
+       "kickoff": "2026-11-10T01:15Z",
+       "market": "spread",
+       "side": "home",
+       "point": 3.5,
+       "player": null,
+       "book": "betmgm",
+       "price": -112.0,
+       "price_source": "posted",
+       "p_final": 0.5283,
+       "p_fair": 0.5283,
+       "p_model": 0.5775,
+       "p_push": 0.0,
+       "novig_implied": 0.5283,
+       "game_key": "NFL_20261109_BUF_MIN"
+      }
+     ],
+     "model_prob": 0.3925,
+     "novig_market_prob": 0.3925,
+     "price_implied_prob": 0.1994,
+     "edge": 0.1931,
+     "ev_per_100": 96.88,
+     "stake": 200.0,
+     "kelly_fraction_used": 0.0603,
+     "correlated_joint": true,
+     "min_acceptable_price": 160,
+     "reasons": [
+      "MIN ML: Best price +165 at betmgm vs market-consensus fair +160 (fair win prob 38.3%; break-even at this price 37.6%).",
+      "MIN +3.5: Best price -112 at betmgm vs market-consensus fair -112 (fair win prob 52.8%; break-even at this price 52.8%)."
+     ],
+     "flags": [
+      {
+       "player": "Dalton Kincaid",
+       "team": "BUF",
+       "flag_type": "official_status",
+       "severity": 0,
+       "source": "ESPN injury report (official designations)",
+       "url": "https://www.espn.com/nfl/player/_/id/4385690/dalton-kincaid",
+       "timestamp": "2026-11-06T21:59Z",
+       "text": "active: Kincaid (chest) was a full participant in Friday's practice.",
+       "status": "active"
+      },
+      {
+       "player": "Khalil Shakir",
+       "team": "BUF",
+       "flag_type": "official_status",
+       "severity": 0,
+       "source": "ESPN injury report (official designations)",
+       "url": "https://www.espn.com/nfl/player/_/id/4373678/khalil-shakir",
+       "timestamp": "2026-11-02T03:06Z",
+       "text": "active: Shakir caught five of six targets for 64 yards in Sunday's 36-10 win over the Ravens.",
+       "status": "active"
+      },
+      {
+       "player": "James Cook III",
+       "team": "BUF",
+       "flag_type": "official_status",
+       "severity": 0,
+       "source": "ESPN injury report (official designations)",
+       "url": "https://www.espn.com/nfl/player/_/id/4379399/james-cook-iii",
+       "timestamp": "2026-11-01T22:30Z",
+       "text": "active: Cook rushed 21 times for 80 yards and a touchdown while catching two of three targets for 21 yards in Sunday's 36-10 win over the Ravens.",
+       "status": "active"
+      },
+      {
+       "player": "Josh Allen",
+       "team": "BUF",
+       "flag_type": "official_status",
+       "severity": 0,
+       "source": "ESPN injury report (official designations)",
+       "url": "https://www.espn.com/nfl/player/_/id/3918298/josh-allen",
+       "timestamp": "2026-11-01T22:28Z",
+       "text": "active: Allen completed 21 of 34 passes for 289 yards, two touchdowns and one interception in Sunday's 36-10 win over the Ravens. He added 30 rushing yards and a rushing touchdown on seven rushing attempts.",
+       "status": "active"
+      },
+      {
+       "player": "Justin Jefferson",
+       "team": "CLE",
+       "flag_type": "official_status",
+       "severity": 0,
+       "source": "ESPN injury report (official designations)",
+       "url": "https://www.espn.com/nfl/player/_/id/5150249/justin-jefferson",
+       "timestamp": "2026-11-09T20:59Z",
+       "text": "active: ",
+       "status": "active"
+      },
+      {
+       "player": "Carson Wentz",
+       "team": "MIN",
+       "flag_type": "official_status",
+       "severity": 0,
+       "source": "ESPN injury report (official designations)",
+       "url": "https://www.espn.com/nfl/player/_/id/2573079/carson-wentz",
+       "timestamp": "2026-11-05T18:30Z",
+       "text": "active: Wentz is stated to start Monday night's game against the Bills, Ian Rapoport of NFL Network reports.",
+       "status": "active"
+      },
+      {
+       "player": "Aaron Jones Sr.",
+       "team": "MIN",
+       "flag_type": "official_status",
+       "severity": 0,
+       "source": "ESPN injury report (official designations)",
+       "url": "https://www.espn.com/nfl/player/_/id/3042519/aaron-jones-sr",
+       "timestamp": "2026-11-02T01:12Z",
+       "text": "active: Jones rushed five times for 22 yards and brought in both targets for 18 yards in the Vikings' 19-15 loss to the Lions on Sunday.",
+       "status": "active"
+      },
+      {
+       "player": "Jordan Mason",
+       "team": "MIN",
+       "flag_type": "official_status",
+       "severity": 0,
+       "source": "ESPN injury report (official designations)",
+       "url": "https://www.espn.com/nfl/player/_/id/4360569/jordan-mason",
+       "timestamp": "2026-11-02T01:06Z",
+       "text": "active: Mason rushed eight times for 20 yards in the Vikings' 19-15 loss to the Lions on Sunday.",
+       "status": "active"
+      },
+      {
+       "player": "James Cook",
+       "team": "BUF",
+       "flag_type": "trade",
+       "severity": 1,
+       "source": "Google News / FantasyPros",
+       "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE1EWXVBUU9oRUdzNkd2bDhFeDhfcDlWN1pQQjZmdlpJWGVJei1IN0dyVHdhdVFDZWs4bmpNczFJamdfNzlDc18xaUZUVVF4OWZKeURkam9Zc0pLWEFUajJROVJzOWtENzhpemVNd1IwRHY?oc=5",
+       "timestamp": "2026-11-09T01:19:58+00:00",
+       "text": "Should I Trade Cash Jones for James Cook III (2026)? - FantasyPros",
+       "status": null
+      },
+      {
+       "player": "Josh Allen",
+       "team": "BUF",
+       "flag_type": "injury",
+       "severity": 2,
+       "source": "League news / www.cbssports.com",
+       "url": "\n                                                https://www.cbssports.com/nfl/news/vikings-vs-bills-prediction-odds-line-josh-allen-monday-night-football/\n                    ",
+       "timestamp": "2026-11-09T20:13:34+00:00",
+       "text": "Vikings vs. Bills prediction: Josh Allen faces NFL's top defense on Monday night",
+       "status": null
+      },
+      {
+       "player": "Aaron Jones",
+       "team": "MIN",
+       "flag_type": "trade",
+       "severity": 1,
+       "source": "League news / www.cbssports.com",
+       "url": "\n                                                https://www.cbssports.com/nfl/news/daniel-jones-trade-rumors-colts-nfl-deadline/\n                    ",
+       "timestamp": "2026-11-09T01:22:46+00:00",
+       "text": "Daniel Jones trade rumors: Colts tell QB he will not be dealt before NFL deadline, per report",
+       "status": null
+      },
+      {
+       "player": "Carson Wentz",
+       "team": "MIN",
+       "flag_type": "injury",
+       "severity": 2,
+       "source": "League news / www.cbssports.com",
+       "url": "\n                                                https://www.cbssports.com/nfl/news/vikings-vs-bills-prediction-odds-line-josh-allen-monday-night-football/\n                    ",
+       "timestamp": "2026-11-09T20:13:34+00:00",
+       "text": "Vikings vs. Bills prediction: Josh Allen faces NFL's top defense on Monday night",
+       "status": null
+      }
+     ],
+     "notes": [
+      "Same-game joint probability comes from the correlated simulation; books adjust SGP prices for correlation and free sources don't publish them \u2014 bet only if the book's SGP price is +160 or better."
+     ]
+    },
+    "LONG SHOT": {
+     "bet": null,
+     "message": "NO LONG SHOT TODAY",
+     "reason": "no single bet or same-book combination lands in the 3%-15% win-probability band with positive EV",
+     "best_candidates_considered": 0
+    }
+   },
+   "model": {
+    "weights": {
+     "ml_home": 0.0,
+     "spread_home": 0.0,
+     "over": 0.0
+    },
+    "feature_groups": [
+     "base",
+     "opp_adjusted",
+     "pressure_redzone",
+     "turnover_luck",
+     "cohesion",
+     "weather",
+     "h2h"
+    ],
+    "trained_through": "2026-11-02",
+    "note": "model weight is 0 in every market: bets below come only from price differences between books (line shopping), never from the model's opinion"
+   },
+   "shadow_props": {
+    "status": "SHADOW ONLY \u2014 tracked for calibration, not recommended (no free prop prices; model unproven vs prop markets)",
+    "rows": [
+     {
+      "player": "Keleki Latu",
+      "team": "BUF",
+      "market": "anytime_td",
+      "line": NaN,
+      "p_over_sim": 0.002,
+      "sim_median": 0.0,
+      "game_key": "NFL_20261109_BUF_MIN",
+      "book": "draftkings",
+      "price": "not published (assumed -110)"
+     },
+     {
+      "player": "Max Bredeson",
+      "team": "MIN",
+      "market": "anytime_td",
+      "line": NaN,
+      "p_over_sim": 0.002,
+      "sim_median": 0.0,
+      "game_key": "NFL_20261109_BUF_MIN",
+      "book": "draftkings",
+      "price": "not published (assumed -110)"
+     },
+     {
+      "player": "Jackson Hawes",
+      "team": "BUF",
+      "market": "anytime_td",
+      "line": NaN,
+      "p_over_sim": 0.003,
+      "sim_median": 0.0,
+      "game_key": "NFL_20261109_BUF_MIN",
+      "book": "draftkings",
+      "price": "not published (assumed -110)"
+     },
+     {
+      "player": "Skyler Bell",
+      "team": "BUF",
+      "market": "anytime_td",
+      "line": NaN,
+      "p_over_sim": 0.003,
+      "sim_median": 0.0,
+      "game_key": "NFL_20261109_BUF_MIN",
+      "book": "draftkings",
+      "price": "not published (assumed -110)"
+     },
+     {
+      "player": "Ben Yurosek",
+      "team": "MIN",
+      "market": "anytime_td",
+      "line": NaN,
+      "p_over_sim": 0.006,
+      "sim_median": 0.0,
+      "game_key": "NFL_20261109_BUF_MIN",
+      "book": "draftkings",
+      "price": "not published (assumed -110)"
+     },
+     {
+      "player": "Myles Price",
+      "team": "MIN",
+      "market": "anytime_td",
+      "line": NaN,
+      "p_over_sim": 0.009,
+      "sim_median": 0.0,
+      "game_key": "NFL_20261109_BUF_MIN",
+      "book": "draftkings",
+      "price": "not published (assumed -110)"
+     },
+     {
+      "player": "Tai Felton",
+      "team": "MIN",
+      "market": "anytime_td",
+      "line": NaN,
+      "p_over_sim": 0.01,
+      "sim_median": 0.0,
+      "game_key": "NFL_20261109_BUF_MIN",
+      "book": "draftkings",
+      "price": "not published (assumed -110)"
+     },
+     {
+      "player": "Gavin Bartholomew",
+      "team": "MIN",
+      "market": "anytime_td",
+      "line": NaN,
+      "p_over_sim": 0.011,
+      "sim_median": 0.0,
+      "game_key": "NFL_20261109_BUF_MIN",
+      "book": "draftkings",
+      "price": "not published (assumed -110)"
+     },
+     {
+      "player": "DeeJay Dallas",
+      "team": "MIN",
+      "market": "anytime_td",
+      "line": NaN,
+      "p_over_sim": 0.012,
+      "sim_median": 0.0,
+      "game_key": "NFL_20261109_BUF_MIN",
+      "book": "draftkings",
+      "price": "not published (assumed -110)"
+     },
+     {
+      "player": "Ray Davis",
+      "team": "BUF",
+      "market": "anytime_td",
+      "line": NaN,
+      "p_over_sim": 0.085,
+      "sim_median": 0.0,
+      "game_key": "NFL_20261109_BUF_MIN",
+      "book": "draftkings",
+      "price": "not published (assumed -110)"
+     },
+     {
+      "player": "Khalil Shakir",
+      "team": "BUF",
+      "market": "anytime_td",
+      "line": NaN,
+      "p_over_sim": 0.102,
+      "sim_median": 0.0,
+      "game_key": "NFL_20261109_BUF_MIN",
+      "book": "draftkings",
+      "price": "not published (assumed -110)"
+     },
+     {
+      "player": "DJ Moore",
+      "team": "BUF",
+      "market": "receptions",
+      "line": 3.5,
+      "p_over_sim": 0.137,
+      "sim_median": 2.0,
+      "game_key": "NFL_20261109_BUF_MIN",
+      "book": "draftkings",
+      "price": "not published (assumed -110)"
+     },
+     {
+      "player": "Jordan Mason",
+      "team": "MIN",
+      "market": "rush_att",
+      "line": 11.5,
+      "p_over_sim": 0.145,
+      "sim_median": 8.0,
+      "game_key": "NFL_20261109_BUF_MIN",
+      "book": "draftkings",
+      "price": "not published (assumed -110)"
+     },
+     {
+      "player": "Dawson Knox",
+      "team": "BUF",
+      "market": "anytime_td",
+      "line": NaN,
+      "p_over_sim": 0.149,
+      "sim_median": 0.0,
+      "game_key": "NFL_20261109_BUF_MIN",
+      "book": "draftkings",
+      "price": "not published (assumed -110)"
+     },
+     {
+      "player": "Ty Johnson",
+      "team": "BUF",
+      "market": "anytime_td",
+      "line": NaN,
+      "p_over_sim": 0.152,
+      "sim_median": 0.0,
+      "game_key": "NFL_20261109_BUF_MIN",
+      "book": "draftkings",
+      "price": "not published (assumed -110)"
+     },
+     {
+      "player": "DJ Moore",
+      "team": "BUF",
+      "market": "anytime_td",
+      "line": NaN,
+      "p_over_sim": 0.153,
+      "sim_median": 0.0,
+      "game_key": "NFL_20261109_BUF_MIN",
+      "book": "draftkings",
+      "price": "not published (assumed -110)"
+     },
+     {
+      "player": "Dalton Kincaid",
+      "team": "BUF",
+      "market": "anytime_td",
+      "line": NaN,
+      "p_over_sim": 0.164,
+      "sim_median": 0.0,
+      "game_key": "NFL_20261109_BUF_MIN",
+      "book": "draftkings",
+      "price": "not published (assumed -110)"
+     },
+     {
+      "player": "Jordan Addison",
+      "team": "MIN",
+      "market": "anytime_td",
+      "line": NaN,
+      "p_over_sim": 0.181,
+      "sim_median": 0.0,
+      "game_key": "NFL_20261109_BUF_MIN",
+      "book": "draftkings",
+      "price": "not published (assumed -110)"
+     },
+     {
+      "player": "Jordan Mason",
+      "team": "MIN",
+      "market": "anytime_td",
+      "line": NaN,
+      "p_over_sim": 0.189,
+      "sim_median": 0.0,
+      "game_key": "NFL_20261109_BUF_MIN",
+      "book": "draftkings",
+      "price": "not published (assumed -110)"
+     },
+     {
+      "player": "DJ Moore",
+      "team": "BUF",
+      "market": "rec_yds",
+      "line": 47.5,
+      "p_over_sim": 0.208,
+      "sim_median": 23.0,
+      "game_key": "NFL_20261109_BUF_MIN",
+      "book": "draftkings",
+      "price": "not published (assumed -110)"
+     },
+     {
+      "player": "Keon Coleman",
+      "team": "BUF",
+      "market": "anytime_td",
+      "line": NaN,
+      "p_over_sim": 0.212,
+      "sim_median": 0.0,
+      "game_key": "NFL_20261109_BUF_MIN",
+      "book": "draftkings",
+      "price": "not published (assumed -110)"
+     },
+     {
+      "player": "Jordan Mason",
+      "team": "MIN",
+      "market": "rec_yds",
+      "line": 0.5,
+      "p_over_sim": 0.217,
+      "sim_median": 0.0,
+      "game_key": "NFL_20261109_BUF_MIN",
+      "book": "draftkings",
+      "price": "not published (assumed -110)"
+     },
+     {
+      "player": "Ben Yurosek",
+      "team": "MIN",
+      "market": "rec_yds",
+      "line": 5.5,
+      "p_over_sim": 0.235,
+      "sim_median": 0.0,
+      "game_key": "NFL_20261109_BUF_MIN",
+      "book": "draftkings",
+      "price": "not published (assumed -110)"
+     },
+     {
+      "player": "Skyler Bell",
+      "team": "BUF",
+      "market": "rec_yds",
+      "line": 5.5,
+      "p_over_sim": 0.237,
+      "sim_median": 0.0,
+      "game_key": "NFL_20261109_BUF_MIN",
+      "book": "draftkings",
+      "price": "not published (assumed -110)"
+     },
+     {
+      "player": "Jordan Mason",
+      "team": "MIN",
+      "market": "rush_rec_yds",
+      "line": 53.5,
+      "p_over_sim": 0.242,
+      "sim_median": 37.0,
+      "game_key": "NFL_20261109_BUF_MIN",
+      "book": "draftkings",
+      "price": "not published (assumed -110)"
+     }
+    ]
+   },
+   "flags_checked": 1019
+  },
+  "NBA": {
+   "league": "NBA",
+   "error": "ZeroDivisionError: float division by zero",
+   "tiers": {
+    "SAFE": {
+     "bet": null,
+     "message": "NO BET",
+     "reason": "card build failed; see logs"
+    },
+    "MODERATE": {
+     "bet": null,
+     "message": "NO BET",
+     "reason": "card build failed; see logs"
+    },
+    "LONG SHOT": {
+     "bet": null,
+     "message": "NO BET",
+     "reason": "card build failed; see logs"
+    }
+   }
+  }
+ },
+ "disclaimer": "Probabilities, not guarantees. Paper mode: nothing here is a real wager.",
+ "backtest": {
+  "NFL": {
+   "verdicts": [
+    "moneyline: did NOT beat the no-vig closing line out of sample (final 0.6098 vs market 0.6098; model alone 0.6440). Edges in this market should be treated as noise.",
+    "moneyline: the model on its own is worse than the market by 0.0342 log loss.",
+    "spread: did NOT beat the no-vig closing line out of sample (final 0.6924 vs market 0.6924; model alone 0.7032). Edges in this market should be treated as noise.",
+    "spread: the model on its own is worse than the market by 0.0108 log loss.",
+    "total: did NOT beat the no-vig closing line out of sample (final 0.6930 vs market 0.6930; model alone 0.6995). Edges in this market should be treated as noise.",
+    "total: the model on its own is worse than the market by 0.0065 log loss.",
+    "No historical bets cleared the edge threshold: the model never disagreed with the close enough to act."
+   ],
+   "test_seasons": [
+    2020,
+    2026
+   ],
+   "kept_groups": [
+    "opp_adjusted",
+    "pressure_redzone",
+    "turnover_luck",
+    "cohesion",
+    "weather",
+    "h2h"
+   ],
+   "dropped_groups": [
+    "special_teams",
+    "fatigue",
+    "motivation",
+    "altitude"
+   ],
+   "generated_at": "2026-11-03T18:25:39"
+  },
+  "NBA": {
+   "verdicts": [
+    "moneyline: did NOT beat the no-vig closing line out of sample (final 0.5807 vs market 0.5807; model alone 0.6138). Edges in this market should be treated as noise.",
+    "moneyline: the model on its own is worse than the market by 0.0331 log loss.",
+    "spread: did NOT beat the no-vig closing line out of sample (final 0.6924 vs market 0.6924; model alone 0.6952). Edges in this market should be treated as noise.",
+    "spread: the model on its own is worse than the market by 0.0028 log loss.",
+    "total: did NOT beat the no-vig closing line out of sample (final 0.6928 vs market 0.6928; model alone 0.6955). Edges in this market should be treated as noise.",
+    "total: the model on its own is worse than the market by 0.0027 log loss.",
+    "No historical bets cleared the edge threshold: the model never disagreed with the close enough to act."
+   ],
+   "test_seasons": [
+    2023,
+    2026
+   ],
+   "kept_groups": [
+    "style",
+    "fatigue",
+    "motivation",
+    "h2h"
+   ],
+   "dropped_groups": [
+    "efficiency",
+    "altitude"
+   ],
+   "generated_at": "2026-11-03T18:27:40"
+  }
+ },
+ "freshness": {
+  "nfl.espn.schedule": {
+   "ok": true,
+   "rows": 15,
+   "note": "upcoming events",
+   "checked_at": "2026-11-09T23:10:55+00:00",
+   "data_as_of": null
+  },
+  "nfl.espn.odds": {
+   "ok": true,
+   "rows": 180,
+   "note": "",
+   "checked_at": "2026-11-09T23:11:01+00:00",
+   "data_as_of": null
+  },
+  "nfl.actionnetwork.odds": {
+   "ok": true,
+   "rows": 144,
+   "note": "",
+   "checked_at": "2026-11-09T23:11:03+00:00",
+   "data_as_of": null
+  },
+  "nfl.kalshi.moneyline": {
+   "ok": true,
+   "rows": 28,
+   "note": "",
+   "checked_at": "2026-11-09T23:11:03+00:00",
+   "data_as_of": null
+  },
+  "nfl.espn.props": {
+   "ok": true,
+   "rows": 92,
+   "note": "DraftKings lines; prices not published",
+   "checked_at": "2026-11-09T23:11:05+00:00",
+   "data_as_of": null
+  },
+  "nba.espn.schedule": {
+   "ok": true,
+   "rows": 24,
+   "note": "upcoming events",
+   "checked_at": "2026-11-09T23:11:06+00:00",
+   "data_as_of": null
+  },
+  "nba.espn.odds": {
+   "ok": true,
+   "rows": 118,
+   "note": "",
+   "checked_at": "2026-11-09T23:11:15+00:00",
+   "data_as_of": null
+  },
+  "nba.actionnetwork.odds": {
+   "ok": true,
+   "rows": 408,
+   "note": "",
+   "checked_at": "2026-11-09T23:11:17+00:00",
+   "data_as_of": null
+  },
+  "nba.kalshi.moneyline": {
+   "ok": true,
+   "rows": 48,
+   "note": "",
+   "checked_at": "2026-11-09T23:11:17+00:00",
+   "data_as_of": null
+  },
+  "nba.espn.props": {
+   "ok": true,
+   "rows": 536,
+   "note": "DraftKings lines; prices not published",
+   "checked_at": "2026-11-09T23:11:30+00:00",
+   "data_as_of": null
+  },
+  "nfl.espn.injuries": {
+   "ok": true,
+   "rows": 800,
+   "note": "",
+   "checked_at": "2026-11-09T23:11:44+00:00",
+   "data_as_of": null
+  },
+  "nfl.news.google_rss": {
+   "ok": true,
+   "rows": 40,
+   "note": "per-player/team queries, last 48h",
+   "checked_at": "2026-11-09T23:12:19+00:00",
+   "data_as_of": null
+  },
+  "nfl.news.league_feeds": {
+   "ok": true,
+   "rows": 116,
+   "note": "",
+   "checked_at": "2026-11-09T23:12:20+00:00",
+   "data_as_of": null
+  },
+  "nfl.open_meteo.forecast": {
+   "ok": true,
+   "rows": 6,
+   "note": "outdoor venues only",
+   "checked_at": "2026-11-09T23:11:44+00:00",
+   "data_as_of": null
+  },
+  "nba.espn.injuries": {
+   "ok": true,
+   "rows": 102,
+   "note": "",
+   "checked_at": "2026-11-09T23:12:22+00:00",
+   "data_as_of": null
+  },
+  "nba.news.google_rss": {
+   "ok": true,
+   "rows": 40,
+   "note": "per-player/team queries, last 48h",
+   "checked_at": "2026-11-07T23:53:02+00:00",
+   "data_as_of": null
+  },
+  "nba.news.league_feeds": {
+   "ok": true,
+   "rows": 86,
+   "note": "",
+   "checked_at": "2026-11-07T23:53:02+00:00",
+   "data_as_of": null
+  }
+ },
+ "warnings": []
+}
