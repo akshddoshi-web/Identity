@@ -1,6 +1,6 @@
 {
- "generated_at": "2026-11-09T23:11:30+00:00",
- "generated_at_et": "Mon Nov 09 06:11 PM ET",
+ "generated_at": "2026-11-10T21:55:15+00:00",
+ "generated_at_et": "Tue Nov 10 04:55 PM ET",
  "mode": "recheck",
  "paper_mode": true,
  "bankroll": 10000.0,
@@ -12,205 +12,14 @@
     "SAFE": {
      "bet": null,
      "message": "NO BET",
-     "reason": "best candidate in the 55%-100% band has edge -1.4% over its break-even \u2014 below the 2% threshold; nothing is forced",
+     "reason": "best candidate in the 55%-100% band has edge -1.6% over its break-even \u2014 below the 2% threshold; nothing is forced",
      "best_candidates_considered": 0
     },
     "MODERATE": {
-     "id": "c1d89a0d1f594c2d",
-     "tier": "MODERATE",
-     "status": "WAIT",
-     "recheck_at": "2026-11-09T23:45:00+00:00",
-     "description": "MIN ML + MIN +3.5",
-     "book": "betmgm",
-     "price": 402,
-     "legs": [
-      {
-       "label": "MIN ML",
-       "game": "BUF @ MIN",
-       "kickoff": "2026-11-10T01:15Z",
-       "market": "moneyline",
-       "side": "home",
-       "point": null,
-       "player": null,
-       "book": "betmgm",
-       "price": 165.0,
-       "price_source": "posted",
-       "p_final": 0.3826,
-       "p_fair": 0.3826,
-       "p_model": 0.4386,
-       "p_push": 0.0049,
-       "novig_implied": 0.3845,
-       "game_key": "NFL_20261109_BUF_MIN"
-      },
-      {
-       "label": "MIN +3.5",
-       "game": "BUF @ MIN",
-       "kickoff": "2026-11-10T01:15Z",
-       "market": "spread",
-       "side": "home",
-       "point": 3.5,
-       "player": null,
-       "book": "betmgm",
-       "price": -112.0,
-       "price_source": "posted",
-       "p_final": 0.5283,
-       "p_fair": 0.5283,
-       "p_model": 0.5775,
-       "p_push": 0.0,
-       "novig_implied": 0.5283,
-       "game_key": "NFL_20261109_BUF_MIN"
-      }
-     ],
-     "model_prob": 0.3925,
-     "novig_market_prob": 0.3925,
-     "price_implied_prob": 0.1994,
-     "edge": 0.1931,
-     "ev_per_100": 96.88,
-     "stake": 200.0,
-     "kelly_fraction_used": 0.0603,
-     "correlated_joint": true,
-     "min_acceptable_price": 160,
-     "reasons": [
-      "MIN ML: Best price +165 at betmgm vs market-consensus fair +160 (fair win prob 38.3%; break-even at this price 37.6%).",
-      "MIN +3.5: Best price -112 at betmgm vs market-consensus fair -112 (fair win prob 52.8%; break-even at this price 52.8%)."
-     ],
-     "flags": [
-      {
-       "player": "Dalton Kincaid",
-       "team": "BUF",
-       "flag_type": "official_status",
-       "severity": 0,
-       "source": "ESPN injury report (official designations)",
-       "url": "https://www.espn.com/nfl/player/_/id/4385690/dalton-kincaid",
-       "timestamp": "2026-11-06T21:59Z",
-       "text": "active: Kincaid (chest) was a full participant in Friday's practice.",
-       "status": "active"
-      },
-      {
-       "player": "Khalil Shakir",
-       "team": "BUF",
-       "flag_type": "official_status",
-       "severity": 0,
-       "source": "ESPN injury report (official designations)",
-       "url": "https://www.espn.com/nfl/player/_/id/4373678/khalil-shakir",
-       "timestamp": "2026-11-02T03:06Z",
-       "text": "active: Shakir caught five of six targets for 64 yards in Sunday's 36-10 win over the Ravens.",
-       "status": "active"
-      },
-      {
-       "player": "James Cook III",
-       "team": "BUF",
-       "flag_type": "official_status",
-       "severity": 0,
-       "source": "ESPN injury report (official designations)",
-       "url": "https://www.espn.com/nfl/player/_/id/4379399/james-cook-iii",
-       "timestamp": "2026-11-01T22:30Z",
-       "text": "active: Cook rushed 21 times for 80 yards and a touchdown while catching two of three targets for 21 yards in Sunday's 36-10 win over the Ravens.",
-       "status": "active"
-      },
-      {
-       "player": "Josh Allen",
-       "team": "BUF",
-       "flag_type": "official_status",
-       "severity": 0,
-       "source": "ESPN injury report (official designations)",
-       "url": "https://www.espn.com/nfl/player/_/id/3918298/josh-allen",
-       "timestamp": "2026-11-01T22:28Z",
-       "text": "active: Allen completed 21 of 34 passes for 289 yards, two touchdowns and one interception in Sunday's 36-10 win over the Ravens. He added 30 rushing yards and a rushing touchdown on seven rushing attempts.",
-       "status": "active"
-      },
-      {
-       "player": "Justin Jefferson",
-       "team": "CLE",
-       "flag_type": "official_status",
-       "severity": 0,
-       "source": "ESPN injury report (official designations)",
-       "url": "https://www.espn.com/nfl/player/_/id/5150249/justin-jefferson",
-       "timestamp": "2026-11-09T20:59Z",
-       "text": "active: ",
-       "status": "active"
-      },
-      {
-       "player": "Carson Wentz",
-       "team": "MIN",
-       "flag_type": "official_status",
-       "severity": 0,
-       "source": "ESPN injury report (official designations)",
-       "url": "https://www.espn.com/nfl/player/_/id/2573079/carson-wentz",
-       "timestamp": "2026-11-05T18:30Z",
-       "text": "active: Wentz is stated to start Monday night's game against the Bills, Ian Rapoport of NFL Network reports.",
-       "status": "active"
-      },
-      {
-       "player": "Aaron Jones Sr.",
-       "team": "MIN",
-       "flag_type": "official_status",
-       "severity": 0,
-       "source": "ESPN injury report (official designations)",
-       "url": "https://www.espn.com/nfl/player/_/id/3042519/aaron-jones-sr",
-       "timestamp": "2026-11-02T01:12Z",
-       "text": "active: Jones rushed five times for 22 yards and brought in both targets for 18 yards in the Vikings' 19-15 loss to the Lions on Sunday.",
-       "status": "active"
-      },
-      {
-       "player": "Jordan Mason",
-       "team": "MIN",
-       "flag_type": "official_status",
-       "severity": 0,
-       "source": "ESPN injury report (official designations)",
-       "url": "https://www.espn.com/nfl/player/_/id/4360569/jordan-mason",
-       "timestamp": "2026-11-02T01:06Z",
-       "text": "active: Mason rushed eight times for 20 yards in the Vikings' 19-15 loss to the Lions on Sunday.",
-       "status": "active"
-      },
-      {
-       "player": "James Cook",
-       "team": "BUF",
-       "flag_type": "trade",
-       "severity": 1,
-       "source": "Google News / FantasyPros",
-       "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE1EWXVBUU9oRUdzNkd2bDhFeDhfcDlWN1pQQjZmdlpJWGVJei1IN0dyVHdhdVFDZWs4bmpNczFJamdfNzlDc18xaUZUVVF4OWZKeURkam9Zc0pLWEFUajJROVJzOWtENzhpemVNd1IwRHY?oc=5",
-       "timestamp": "2026-11-09T01:19:58+00:00",
-       "text": "Should I Trade Cash Jones for James Cook III (2026)? - FantasyPros",
-       "status": null
-      },
-      {
-       "player": "Josh Allen",
-       "team": "BUF",
-       "flag_type": "injury",
-       "severity": 2,
-       "source": "League news / www.cbssports.com",
-       "url": "\n                                                https://www.cbssports.com/nfl/news/vikings-vs-bills-prediction-odds-line-josh-allen-monday-night-football/\n                    ",
-       "timestamp": "2026-11-09T20:13:34+00:00",
-       "text": "Vikings vs. Bills prediction: Josh Allen faces NFL's top defense on Monday night",
-       "status": null
-      },
-      {
-       "player": "Aaron Jones",
-       "team": "MIN",
-       "flag_type": "trade",
-       "severity": 1,
-       "source": "League news / www.cbssports.com",
-       "url": "\n                                                https://www.cbssports.com/nfl/news/daniel-jones-trade-rumors-colts-nfl-deadline/\n                    ",
-       "timestamp": "2026-11-09T01:22:46+00:00",
-       "text": "Daniel Jones trade rumors: Colts tell QB he will not be dealt before NFL deadline, per report",
-       "status": null
-      },
-      {
-       "player": "Carson Wentz",
-       "team": "MIN",
-       "flag_type": "injury",
-       "severity": 2,
-       "source": "League news / www.cbssports.com",
-       "url": "\n                                                https://www.cbssports.com/nfl/news/vikings-vs-bills-prediction-odds-line-josh-allen-monday-night-football/\n                    ",
-       "timestamp": "2026-11-09T20:13:34+00:00",
-       "text": "Vikings vs. Bills prediction: Josh Allen faces NFL's top defense on Monday night",
-       "status": null
-      }
-     ],
-     "notes": [
-      "Same-game joint probability comes from the correlated simulation; books adjust SGP prices for correlation and free sources don't publish them \u2014 bet only if the book's SGP price is +160 or better."
-     ]
+     "bet": null,
+     "message": "NO BET",
+     "reason": "best candidate in the 20%-45% band has edge -0.4% over its break-even \u2014 below the 2% threshold; nothing is forced",
+     "best_candidates_considered": 0
     },
     "LONG SHOT": {
      "bet": null,
@@ -234,323 +43,687 @@
      "weather",
      "h2h"
     ],
-    "trained_through": "2026-11-02",
+    "trained_through": "2026-11-09",
     "note": "model weight is 0 in every market: bets below come only from price differences between books (line shopping), never from the model's opinion"
    },
    "shadow_props": {
     "status": "SHADOW ONLY \u2014 tracked for calibration, not recommended (no free prop prices; model unproven vs prop markets)",
-    "rows": [
-     {
-      "player": "Keleki Latu",
-      "team": "BUF",
-      "market": "anytime_td",
-      "line": NaN,
-      "p_over_sim": 0.002,
-      "sim_median": 0.0,
-      "game_key": "NFL_20261109_BUF_MIN",
-      "book": "draftkings",
-      "price": "not published (assumed -110)"
-     },
-     {
-      "player": "Max Bredeson",
-      "team": "MIN",
-      "market": "anytime_td",
-      "line": NaN,
-      "p_over_sim": 0.002,
-      "sim_median": 0.0,
-      "game_key": "NFL_20261109_BUF_MIN",
-      "book": "draftkings",
-      "price": "not published (assumed -110)"
-     },
-     {
-      "player": "Jackson Hawes",
-      "team": "BUF",
-      "market": "anytime_td",
-      "line": NaN,
-      "p_over_sim": 0.003,
-      "sim_median": 0.0,
-      "game_key": "NFL_20261109_BUF_MIN",
-      "book": "draftkings",
-      "price": "not published (assumed -110)"
-     },
-     {
-      "player": "Skyler Bell",
-      "team": "BUF",
-      "market": "anytime_td",
-      "line": NaN,
-      "p_over_sim": 0.003,
-      "sim_median": 0.0,
-      "game_key": "NFL_20261109_BUF_MIN",
-      "book": "draftkings",
-      "price": "not published (assumed -110)"
-     },
-     {
-      "player": "Ben Yurosek",
-      "team": "MIN",
-      "market": "anytime_td",
-      "line": NaN,
-      "p_over_sim": 0.006,
-      "sim_median": 0.0,
-      "game_key": "NFL_20261109_BUF_MIN",
-      "book": "draftkings",
-      "price": "not published (assumed -110)"
-     },
-     {
-      "player": "Myles Price",
-      "team": "MIN",
-      "market": "anytime_td",
-      "line": NaN,
-      "p_over_sim": 0.009,
-      "sim_median": 0.0,
-      "game_key": "NFL_20261109_BUF_MIN",
-      "book": "draftkings",
-      "price": "not published (assumed -110)"
-     },
-     {
-      "player": "Tai Felton",
-      "team": "MIN",
-      "market": "anytime_td",
-      "line": NaN,
-      "p_over_sim": 0.01,
-      "sim_median": 0.0,
-      "game_key": "NFL_20261109_BUF_MIN",
-      "book": "draftkings",
-      "price": "not published (assumed -110)"
-     },
-     {
-      "player": "Gavin Bartholomew",
-      "team": "MIN",
-      "market": "anytime_td",
-      "line": NaN,
-      "p_over_sim": 0.011,
-      "sim_median": 0.0,
-      "game_key": "NFL_20261109_BUF_MIN",
-      "book": "draftkings",
-      "price": "not published (assumed -110)"
-     },
-     {
-      "player": "DeeJay Dallas",
-      "team": "MIN",
-      "market": "anytime_td",
-      "line": NaN,
-      "p_over_sim": 0.012,
-      "sim_median": 0.0,
-      "game_key": "NFL_20261109_BUF_MIN",
-      "book": "draftkings",
-      "price": "not published (assumed -110)"
-     },
-     {
-      "player": "Ray Davis",
-      "team": "BUF",
-      "market": "anytime_td",
-      "line": NaN,
-      "p_over_sim": 0.085,
-      "sim_median": 0.0,
-      "game_key": "NFL_20261109_BUF_MIN",
-      "book": "draftkings",
-      "price": "not published (assumed -110)"
-     },
-     {
-      "player": "Khalil Shakir",
-      "team": "BUF",
-      "market": "anytime_td",
-      "line": NaN,
-      "p_over_sim": 0.102,
-      "sim_median": 0.0,
-      "game_key": "NFL_20261109_BUF_MIN",
-      "book": "draftkings",
-      "price": "not published (assumed -110)"
-     },
-     {
-      "player": "DJ Moore",
-      "team": "BUF",
-      "market": "receptions",
-      "line": 3.5,
-      "p_over_sim": 0.137,
-      "sim_median": 2.0,
-      "game_key": "NFL_20261109_BUF_MIN",
-      "book": "draftkings",
-      "price": "not published (assumed -110)"
-     },
-     {
-      "player": "Jordan Mason",
-      "team": "MIN",
-      "market": "rush_att",
-      "line": 11.5,
-      "p_over_sim": 0.145,
-      "sim_median": 8.0,
-      "game_key": "NFL_20261109_BUF_MIN",
-      "book": "draftkings",
-      "price": "not published (assumed -110)"
-     },
-     {
-      "player": "Dawson Knox",
-      "team": "BUF",
-      "market": "anytime_td",
-      "line": NaN,
-      "p_over_sim": 0.149,
-      "sim_median": 0.0,
-      "game_key": "NFL_20261109_BUF_MIN",
-      "book": "draftkings",
-      "price": "not published (assumed -110)"
-     },
-     {
-      "player": "Ty Johnson",
-      "team": "BUF",
-      "market": "anytime_td",
-      "line": NaN,
-      "p_over_sim": 0.152,
-      "sim_median": 0.0,
-      "game_key": "NFL_20261109_BUF_MIN",
-      "book": "draftkings",
-      "price": "not published (assumed -110)"
-     },
-     {
-      "player": "DJ Moore",
-      "team": "BUF",
-      "market": "anytime_td",
-      "line": NaN,
-      "p_over_sim": 0.153,
-      "sim_median": 0.0,
-      "game_key": "NFL_20261109_BUF_MIN",
-      "book": "draftkings",
-      "price": "not published (assumed -110)"
-     },
-     {
-      "player": "Dalton Kincaid",
-      "team": "BUF",
-      "market": "anytime_td",
-      "line": NaN,
-      "p_over_sim": 0.164,
-      "sim_median": 0.0,
-      "game_key": "NFL_20261109_BUF_MIN",
-      "book": "draftkings",
-      "price": "not published (assumed -110)"
-     },
-     {
-      "player": "Jordan Addison",
-      "team": "MIN",
-      "market": "anytime_td",
-      "line": NaN,
-      "p_over_sim": 0.181,
-      "sim_median": 0.0,
-      "game_key": "NFL_20261109_BUF_MIN",
-      "book": "draftkings",
-      "price": "not published (assumed -110)"
-     },
-     {
-      "player": "Jordan Mason",
-      "team": "MIN",
-      "market": "anytime_td",
-      "line": NaN,
-      "p_over_sim": 0.189,
-      "sim_median": 0.0,
-      "game_key": "NFL_20261109_BUF_MIN",
-      "book": "draftkings",
-      "price": "not published (assumed -110)"
-     },
-     {
-      "player": "DJ Moore",
-      "team": "BUF",
-      "market": "rec_yds",
-      "line": 47.5,
-      "p_over_sim": 0.208,
-      "sim_median": 23.0,
-      "game_key": "NFL_20261109_BUF_MIN",
-      "book": "draftkings",
-      "price": "not published (assumed -110)"
-     },
-     {
-      "player": "Keon Coleman",
-      "team": "BUF",
-      "market": "anytime_td",
-      "line": NaN,
-      "p_over_sim": 0.212,
-      "sim_median": 0.0,
-      "game_key": "NFL_20261109_BUF_MIN",
-      "book": "draftkings",
-      "price": "not published (assumed -110)"
-     },
-     {
-      "player": "Jordan Mason",
-      "team": "MIN",
-      "market": "rec_yds",
-      "line": 0.5,
-      "p_over_sim": 0.217,
-      "sim_median": 0.0,
-      "game_key": "NFL_20261109_BUF_MIN",
-      "book": "draftkings",
-      "price": "not published (assumed -110)"
-     },
-     {
-      "player": "Ben Yurosek",
-      "team": "MIN",
-      "market": "rec_yds",
-      "line": 5.5,
-      "p_over_sim": 0.235,
-      "sim_median": 0.0,
-      "game_key": "NFL_20261109_BUF_MIN",
-      "book": "draftkings",
-      "price": "not published (assumed -110)"
-     },
-     {
-      "player": "Skyler Bell",
-      "team": "BUF",
-      "market": "rec_yds",
-      "line": 5.5,
-      "p_over_sim": 0.237,
-      "sim_median": 0.0,
-      "game_key": "NFL_20261109_BUF_MIN",
-      "book": "draftkings",
-      "price": "not published (assumed -110)"
-     },
-     {
-      "player": "Jordan Mason",
-      "team": "MIN",
-      "market": "rush_rec_yds",
-      "line": 53.5,
-      "p_over_sim": 0.242,
-      "sim_median": 37.0,
-      "game_key": "NFL_20261109_BUF_MIN",
-      "book": "draftkings",
-      "price": "not published (assumed -110)"
-     }
-    ]
+    "rows": []
    },
-   "flags_checked": 1019
+   "flags_checked": 947
   },
   "NBA": {
    "league": "NBA",
-   "error": "ZeroDivisionError: float division by zero",
+   "n_games": 16,
    "tiers": {
     "SAFE": {
-     "bet": null,
-     "message": "NO BET",
-     "reason": "card build failed; see logs"
+     "id": "019e42e4691cc5f9",
+     "tier": "SAFE",
+     "status": "WAIT",
+     "recheck_at": "2026-11-11T00:00:00+00:00",
+     "description": "Under 222.5 (MIL @ NYK)",
+     "book": "draftkings",
+     "price": -115,
+     "legs": [
+      {
+       "label": "Under 222.5 (MIL @ NYK)",
+       "game": "MIL @ NYK",
+       "kickoff": "2026-11-11T00:30Z",
+       "market": "total",
+       "side": "under",
+       "point": 222.5,
+       "player": null,
+       "book": "draftkings",
+       "price": -115.0,
+       "price_source": "posted",
+       "p_final": 0.5599,
+       "p_fair": 0.5599,
+       "p_model": 0.4485,
+       "p_push": 0.0,
+       "novig_implied": 0.5599,
+       "game_key": "NBA_20261110_MIL_NYK"
+      }
+     ],
+     "model_prob": 0.5599,
+     "novig_market_prob": 0.5599,
+     "price_implied_prob": 0.5349,
+     "edge": 0.025,
+     "ev_per_100": 4.68,
+     "stake": 127.36,
+     "kelly_fraction_used": 0.0135,
+     "correlated_joint": false,
+     "min_acceptable_price": -122,
+     "reasons": [
+      "Best price -115 at draftkings vs market-consensus fair -127 (fair win prob 56.0%; break-even at this price 53.5%).",
+      "Prices seen for this side: caesars -110 (+219.5), dknj -108 (+219.5), fanduel -106 (+219.5), betriversnj -110 (+219.5), betmgm -105 (+219.5), draftkings -115 (+222.5).",
+      "Model: margin +12.5, total 224.6 -> 44.8% for this side; weight used 0.00 (not trusted: no out-of-sample edge vs closing line)."
+     ],
+     "flags": [
+      {
+       "player": "Kel'el Ware",
+       "team": "MIL",
+       "flag_type": "official_status",
+       "severity": 2,
+       "source": "ESPN injury report (official designations)",
+       "url": "https://www.espn.com/nba/player/_/id/5105623/kelel-ware",
+       "timestamp": "2026-11-10T17:18Z",
+       "text": "day-to-day: Ware is questionable for Tuesday's game against the Knicks due to a left ankle sprain.",
+       "status": "day-to-day"
+      },
+      {
+       "player": "Tyler Herro",
+       "team": "MIL",
+       "flag_type": "official_status",
+       "severity": 2,
+       "source": "ESPN injury report (official designations)",
+       "url": "https://www.espn.com/nba/player/_/id/4395725/tyler-herro",
+       "timestamp": "2026-11-09T22:21Z",
+       "text": "day-to-day: Herro (contusion) is listed as questionable for Tuesday's game against the Knicks.",
+       "status": "day-to-day"
+      },
+      {
+       "player": "Jalen Brunson",
+       "team": "NYK",
+       "flag_type": "trade",
+       "severity": 1,
+       "source": "Google News / FantasyPros",
+       "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE1faDEyTVZaZEkxRHI0VG5McmM3UFFwMk12aFFScnRsaks3YVJtd3ZKaG9RLVBBSXFPdTBWRWNXa2JwYmhlRzF4WWRoRUd5NzdFbGo0cV90TGRlSmlaYlFDeXp1WEhtOXpoX1kwT1ZhaHlPd19kbXc?oc=5",
+       "timestamp": "2026-11-09T04:54:53+00:00",
+       "text": "Should I Trade Baba Miller for Jalen Brunson? | Fantasy Basketball - FantasyPros",
+       "status": null
+      },
+      {
+       "player": "Jalen Brunson",
+       "team": "NYK",
+       "flag_type": "trade",
+       "severity": 1,
+       "source": "Google News / FantasyPros",
+       "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTE1BMlNMWjF3aGphWXE5cnJBbW5kaWpXUHpOQmJGVzZ5VnA1VlYwZjV6bGtvZnZnQjFpa0VLa2owcXBZcTZKNGJKNGZWWVZqeUFWREpiZk9FczFJM1lXZEoxV0VEdTNpcDFWRDhIM2g3UG5OTEZwZHRsTDBn?oc=5",
+       "timestamp": "2026-11-09T04:38:44+00:00",
+       "text": "Should I Trade Jalen Brunson for Rocco Zikarsky? | Fantasy Basketball - FantasyPros",
+       "status": null
+      },
+      {
+       "player": "Karl-Anthony Towns",
+       "team": "NYK",
+       "flag_type": "trade",
+       "severity": 1,
+       "source": "Google News / FantasyPros",
+       "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTFB3RVp1MDNJNzJCZ3oxNlFTcTMtV3pkMmQzZkJSLVcyd1Q1ZWdtSS04TzRHMFhSZ2R5TFNiV29kWlVvZzF3T2NnbF84OWYtRzNLZndTekpXb2xQeE1LdGFDN0ZRallxaTNHVnMwZ194ZlBvLXRQQ2NPUHdkQmZTZw?oc=5",
+       "timestamp": "2026-11-10T19:21:55+00:00",
+       "text": "Should I Trade Karl-Anthony Towns for Tyler Burton? | Fantasy Basketball - FantasyPros",
+       "status": null
+      },
+      {
+       "player": "Karl-Anthony Towns",
+       "team": "NYK",
+       "flag_type": "trade",
+       "severity": 1,
+       "source": "Google News / FantasyPros",
+       "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxQdzNqMUhleU4yOF9RMy1HR0VlR2gxVS1abG12YktfazloM2p6MVdjbElnUUV5c1FvS2VvcTI5TFZvcnhTMzk0Z3FhWFowV1lSZjNhZ2pYYXJEWGFLNW5BSnFuRjB5WlVTQ2htaDBUb21jdldLMXQyWmNKOGdlR09rMjB4NA?oc=5",
+       "timestamp": "2026-11-09T06:04:32+00:00",
+       "text": "Should I Trade Hannes Steinbach for Karl-Anthony Towns? | Fantasy Basketball - FantasyPros",
+       "status": null
+      },
+      {
+       "player": "Karl-Anthony Towns",
+       "team": "NYK",
+       "flag_type": "trade",
+       "severity": 1,
+       "source": "Google News / FantasyPros",
+       "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxQcEduU21kNlBrMjRGWjd1cjhieVh2NDRoUzZ0cUg3THhodkhHRl96RDdRYnZoUHY3TWdKQUV6S0Q1UzZuLWVSMDdheHhjVnl3ZXc5UkRJZDlXYl9LUzFsSWg5cl8xNzRHWS0tVDNQemE1UE9LV1FIMkZRTkhFY3RlVFNaUQ?oc=5",
+       "timestamp": "2026-11-09T05:15:19+00:00",
+       "text": "Should I Trade Karl-Anthony Towns for Terrence Shannon Jr.? | Fantasy Basketball - FantasyPros",
+       "status": null
+      },
+      {
+       "player": "Tyler Herro",
+       "team": "MIL",
+       "flag_type": "injury",
+       "severity": 2,
+       "source": "Google News / Behind the Buck Pass",
+       "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxObFphMzJLUU5wWTJQbGZkYVZ1d1JJZjBTTllnYWZvckFKc18wNmJ5RVdnMFdIaGNycmZPcjkwRFBfTEl2cm5HMXp4T1JRMWU5TW5JeVlnZFpqRTlyTWFnbnU5cUdrWEpjSHFpNWN6MGE0MG5uUFVRRzhET2NLdzN3aHFINmlnTGdFRC1HWHR5MktGUEU?oc=5",
+       "timestamp": "2026-11-10T19:50:00+00:00",
+       "text": "Tyler Herro's injury is an opportunity for a Ryan Rollins statement game - Behind the Buck Pass",
+       "status": null
+      },
+      {
+       "player": "Tyler Herro",
+       "team": "MIL",
+       "flag_type": "injury",
+       "severity": 2,
+       "source": "Google News / roundtable.io",
+       "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxPVVRKVkxhdmMtTkNBeTQ0N053Y3pCbFk0SFoydUxhLThYRFEwOUFOYWRiWERiSFpsd0JIMUdkbzQxbzlMeDZsX3lTWjRENDk3cEVmWnlha0RSSkNFeGtMZVl3RzhrcDBKWUpySUpwVUtvcGdFWWdKMGpCX2hVMXR2dGtiU3RvYURING50VGRiODdnLWxTSzlxVTlLN1pyRjVDcVVLeG1n?oc=5",
+       "timestamp": "2026-11-10T20:21:33+00:00",
+       "text": "Bucks vs Knicks Injury Report: Tyler Herro\u2019s Status Revealed - roundtable.io",
+       "status": null
+      },
+      {
+       "player": "Tyler Herro",
+       "team": "MIL",
+       "flag_type": "injury",
+       "severity": 2,
+       "source": "Google News / SILive.com",
+       "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxNZEMwTXNxSEh2SXpZU21ZbTlPUDlQX08yY3gyN3BkX25HSE04VVFVdWdXYnh1NjJIb3U1TnBNSGM3R2NEcnFVQnJkVzFJcnNRdE5qZE1QQU1rSmRaLVFQbHMtZzJEYUt1a29LTzEwdHlBeEpoRE9qWnh1endENmdBYXhQSGpQNGtWWFdFNHJvRUE2UF9zTzUwVGlHVXlaSmVqNUVHUXc4d3MyVEVlQk9haW9Bem1MMHRhYXo0aXRoMjFJekw2dDAtRw?oc=5",
+       "timestamp": "2026-11-10T18:15:00+00:00",
+       "text": "Experts adjust Bucks vs. Knicks predictions after Josh Hart, Tyler Herro injury updates - SILive.com",
+       "status": null
+      },
+      {
+       "player": "Tyler Herro",
+       "team": "MIL",
+       "flag_type": "game_time_decision",
+       "severity": 2,
+       "source": "Google News / NBC Sports",
+       "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNWV9jb051NENKNUxsM2c0NENNd0VOdGZVQXhBczJld1IzWmtHNllzcXNqX29Zckd4WVZGUUlMMnI1NUF6a1hvWFJHRlNiY3VKX0tNa0Q0bERzNTAyRkNrYU5xUWtGX2YxWjlUNVc1dFd2alkxTlp6N0tLc1BndWkwR1JuVTVGeGEyVzc0ZGd2eVpoWEtROS1CaEJrSHp6SFFsalg4Y1NMbi1FRHJNUXdtaA?oc=5",
+       "timestamp": "2026-11-10T04:57:08+00:00",
+       "text": "Tyler Herro (leg) questionable Tuesday vs. NYK - NBC Sports",
+       "status": null
+      },
+      {
+       "player": "Tyler Herro",
+       "team": "MIL",
+       "flag_type": "injury",
+       "severity": 2,
+       "source": "Google News / Yardbarker",
+       "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxNWm04RlQ1SUtrbUwyUHprX3RVbDk2cVdaS21wNEs3SlRndnZtVXI0X1ZQVGozemlSWWx0dms1dEotU3dtajhCWFlIcFZfV1ZCdVQ0LWJTdTJYUURtNEJXMkZGb2pKa3NmR3JzSTJGbU1rVWhoMkl4TGJUTjdaYW51dVJpYnk0MGxvMml0NjE5STl3WGhlOXByZ3QxUGNFQm5iRWxsdGxzSGpfZDd4cDRJTXNOcVdxTVgyb3NBVWNkLUdpX1NI?oc=5",
+       "timestamp": "2026-11-10T21:38:59+00:00",
+       "text": "Final Injury Report for Bucks-Knicks: Will Josh Hart, Tyler Herro Play? - Yardbarker",
+       "status": null
+      }
+     ],
+     "notes": [
+      "stake scaled x0.95 to respect the 5% daily cap"
+     ]
     },
     "MODERATE": {
-     "bet": null,
-     "message": "NO BET",
-     "reason": "card build failed; see logs"
+     "id": "2308a50724b9e6e7",
+     "tier": "MODERATE",
+     "status": "WAIT",
+     "recheck_at": "2026-11-11T00:30:00+00:00",
+     "description": "Under 218.5 (BOS @ PHI) + POR ML + POR +2.5",
+     "book": "betriversnj",
+     "price": 738,
+     "legs": [
+      {
+       "label": "Under 218.5 (BOS @ PHI)",
+       "game": "BOS @ PHI",
+       "kickoff": "2026-11-11T01:00Z",
+       "market": "total",
+       "side": "under",
+       "point": 218.5,
+       "player": null,
+       "book": "betriversnj",
+       "price": -107.0,
+       "price_source": "posted",
+       "p_final": 0.548,
+       "p_fair": 0.548,
+       "p_model": 0.4551,
+       "p_push": 0.0,
+       "novig_implied": 0.548,
+       "game_key": "NBA_20261110_BOS_PHI"
+      },
+      {
+       "label": "POR ML",
+       "game": "OKC @ POR",
+       "kickoff": "2026-11-12T03:00Z",
+       "market": "moneyline",
+       "side": "home",
+       "point": null,
+       "player": null,
+       "book": "betriversnj",
+       "price": 123.0,
+       "price_source": "posted",
+       "p_final": 0.4471,
+       "p_fair": 0.4471,
+       "p_model": 0.4144,
+       "p_push": 0.0084,
+       "novig_implied": 0.4509,
+       "game_key": "NBA_20261111_OKC_POR"
+      },
+      {
+       "label": "POR +2.5",
+       "game": "OKC @ POR",
+       "kickoff": "2026-11-12T03:00Z",
+       "market": "spread",
+       "side": "home",
+       "point": 2.5,
+       "player": null,
+       "book": "betriversnj",
+       "price": -106.0,
+       "price_source": "posted",
+       "p_final": 0.5108,
+       "p_fair": 0.5108,
+       "p_model": 0.4755,
+       "p_push": 0.0,
+       "novig_implied": 0.5108,
+       "game_key": "NBA_20261111_OKC_POR"
+      }
+     ],
+     "model_prob": 0.2503,
+     "novig_market_prob": 0.2503,
+     "price_implied_prob": 0.1193,
+     "edge": 0.131,
+     "ev_per_100": 109.82,
+     "stake": 189.28,
+     "kelly_fraction_used": 0.0372,
+     "correlated_joint": true,
+     "min_acceptable_price": 308,
+     "reasons": [
+      "Under 218.5 (BOS @ PHI): Best price -107 at betriversnj vs market-consensus fair -121 (fair win prob 54.8%; break-even at this price 51.7%).",
+      "POR ML: Best price +123 at betriversnj vs market-consensus fair +122 (fair win prob 44.7%; break-even at this price 44.5%).",
+      "POR +2.5: Best price -106 at betriversnj vs market-consensus fair -104 (fair win prob 51.1%; break-even at this price 51.5%)."
+     ],
+     "flags": [
+      {
+       "player": "Tyrese Maxey",
+       "team": "PHI",
+       "flag_type": "trade",
+       "severity": 1,
+       "source": "Google News / FantasyPros",
+       "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTFBLd1RFdkFlMTIwNmhZbGJjVXdwQVNwUEtYUmJIekU2czIzQlZ4M1dtd2RrWUc1WUVUV3NEQUMzUUdRdWlRWllMZW16RjV0WE5VMC1MZi1OOVAycEJmQkltLXBJM0FaQnYyX3ZFNElsNjBHM1JMUmc?oc=5",
+       "timestamp": "2026-11-10T16:59:35+00:00",
+       "text": "Should I Trade Caleb Wilson for Tyrese Maxey? | Fantasy Basketball - FantasyPros",
+       "status": null
+      },
+      {
+       "player": "Tyrese Maxey",
+       "team": "PHI",
+       "flag_type": "trade",
+       "severity": 1,
+       "source": "Google News / FantasyPros",
+       "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTE5DbHNSelNMaVNhV0ZVd2JxZ3c3Z0Rxa0xTcktCZml4QWR1Z0I3VXVDVFZoYlBkTFF0NEp4Tzk2dTFSTnFXYU9FczdGUXNCal9tVjVxd0FCVUhYR3hwcWd3TFNIdmgtTk1mT2FUa0xCSWIxNm41MjdwNnk2RQ?oc=5",
+       "timestamp": "2026-11-09T00:06:50+00:00",
+       "text": "Should I Trade Joshua Jefferson for Tyrese Maxey? | Fantasy Basketball - FantasyPros",
+       "status": null
+      },
+      {
+       "player": "Joel Embiid",
+       "team": "PHI",
+       "flag_type": "injury",
+       "severity": 2,
+       "source": "Google News / Liberty Ballers",
+       "url": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxNbW8xN0dQMFhtaVBwLW1PMk5DMm1NNmJtQ085M2dmX1JiMWNaTm5fYjN0dlRmdUlsTWdpckFGdFR4a2I2R1VwYldkaUh4SV9MT0ZXVURvUzRybEJIWnp4Z1Y2YkRXRkxodkRKNzFXbmtTQThjazVld05FVHRfbUVJOHFNRGhnWkNzclFjYkdWWC1nMlpTdkE4MEhqZDcwVFk5X0RIcEViU3FNdTZXeUVzU25BOUpNT1czRWpPeDlPT0lXd0ZIWFpmcWZtTFFUeFQ5VV9IUWlWSE9EUGs?oc=5",
+       "timestamp": "2026-11-09T22:15:57+00:00",
+       "text": "Adem Bona out, Joel Embiid not listed on injury report for Sixers\u2019 big tilt with Boston - Liberty Ballers",
+       "status": null
+      },
+      {
+       "player": "Joel Embiid",
+       "team": "PHI",
+       "flag_type": "injury",
+       "severity": 2,
+       "source": "Google News / Yahoo Sports",
+       "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxQYmdjTUVTYW5pd0pvc2x4UVJEZmxHYUd1UnZWYVotSmN4aFNTX05nZU93dFVoTGl5NFRqMVBweDFDX3BYQkh0Zk9RSHh5NTJWYWpmTXB0Q2pFSVhXMWR1U3NfSi1naWxFZ2VTQzc5cjhsS0llM0M4TVdIdVRNN1RiajM0SmxDdWM?oc=5",
+       "timestamp": "2026-11-09T20:10:06+00:00",
+       "text": "\"Set my clock to it\" - Olden Polynice warned Joel Embiid's inevitable injury will derail 76ers - Yahoo Sports",
+       "status": null
+      },
+      {
+       "player": "Joel Embiid",
+       "team": "PHI",
+       "flag_type": "load_management",
+       "severity": 2,
+       "source": "Google News / BVM Sports",
+       "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxQVFhUaW9YeUJxMENHZHpsUm43YUV1TGpLT2xIcGswbGd6LVY5ME9Nd2E0VkRtNmQxZDBlbUczUlpES190VHFSX1NuWVhqZUo3bms4RFEySW9jRW5VbEtGQVl5bjItOG85OWZjZTNjUGhoaU5oOGZmM1ZDSWZPNURfamRHU3Z3Z1VfMzRIcWE5TTlXRTA?oc=5",
+       "timestamp": "2026-11-09T11:33:48+00:00",
+       "text": "Jabari Walker Gave Embiid Valuable Rest Against Chicago - BVM Sports",
+       "status": null
+      },
+      {
+       "player": "LeBron James",
+       "team": "PHI",
+       "flag_type": "injury",
+       "severity": 2,
+       "source": "Google News / Covers.com",
+       "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTE9Kd1BBOGhVT1kyY3hVV2REOFR3SkNwcTYzZklVUUM1YXRkQ1FjN0JqMmx5SXZ3eUpTXzE5dlNydjdvYXRFZ1JtTldGUV9ZNWI1bDZFd1dIRHlyUkdPSXhodnljVl9jQS01YlhQeHNvc21pRUt3RnNvQ2lQNA?oc=5",
+       "timestamp": "2026-11-10T16:50:00+00:00",
+       "text": "Is LeBron James Playing Tonight? Latest Injury Updates & Odds Impact - Covers.com",
+       "status": null
+      },
+      {
+       "player": "LeBron James",
+       "team": "PHI",
+       "flag_type": "conflict",
+       "severity": 1,
+       "source": "Google News / Newsweek",
+       "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNbE1mdzduNGJNUm9Vb19KNDBKRFVpNC00SDN2T1RuVGNWbGk0UGpRVzlwR3htTEl4RTBmUHBUMFZoZHUyRktBdjNaMy1qYkZYbFp1b2gzcnNzb0phWHoxbVRLU3BkRzRONG15dHEyY29FS0pnUktGbnplaDhlby1rck1GYkFiMm9EUGhSMy0wRjN3QV92dU5vbmRjbVdPSGREM25lenVvcWdDOUFJR3h2eQ?oc=5",
+       "timestamp": "2026-11-10T02:29:00+00:00",
+       "text": "Stephen A. Smith makes surprising admission about LeBron James feud - Newsweek",
+       "status": null
+      },
+      {
+       "player": "LeBron James",
+       "team": "PHI",
+       "flag_type": "injury",
+       "severity": 2,
+       "source": "Google News / BasketballNews.com",
+       "url": "https://news.google.com/rss/articles/CBMimgJBVV95cUxNRmNUeWZRb250bHozVzZwTXhlbmY0Smd5Y0kzRmdKMzEtMExudndRXzJzQXVhZjhvaVRFa2JUVE1nYVViM1A5d3dpMWRpMW9RR3hBUmxHNkptU2YtV194bVk1UkxkbnNnSmUxcTZMVmctZ2w5Y0NZVEhQVUFtYWxubFlERml6OHF6M3hxYUJQQ21IMjE0bnhMMzA1cXVMZHVDNWV6VUZKbXRseXBRU3dIeEJRbC1ZU2w2VWlkcVg4S200aXlVUGNSdFB2dVZzSGozbDZlRldadHVSYTIxRHpzblNrd05mWUlsZFRKdzN2MHVpU2ZpdkF4UFBfWUpyZzI2ZWRWa0JveDdkNmtRWWtLWkVHLUJxbGVyaGc?oc=5",
+       "timestamp": "2026-11-09T20:52:29+00:00",
+       "text": "\u201cIt\u2019s Cheating Itself\u201d: Byron Scott Calls Out LeBron James After Sixers Star Admits Fearing Injury While Dunking - BasketballNews.com",
+       "status": null
+      },
+      {
+       "player": "Jayson Tatum",
+       "team": "BOS",
+       "flag_type": "conflict",
+       "severity": 1,
+       "source": "Google News / BasketNews.com",
+       "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxNTGpjc0stTE1Fb0hYS1VkMFpsSlpmMkxMTGN3QVFROFNWRE9KbjhyNkxiVXBoUlpHYldsYXZzRmlUWXdWZU10a2lCZTBseVF1ckg3aEQ2cldOZjFEcC1jbXhKM1Y0Q0p5dnR1bHZxVXVFN1l4TDkwbUhEM1BfR3QxLWdJd1hOTzgzMkR0NXJDd1lFUDhrX0hIYU1vQ0F5ZXdiNHBBQ19QMm56LU5HM3dpaWxrYkZNcFFDVVdUZFdn?oc=5",
+       "timestamp": "2026-11-10T18:01:00+00:00",
+       "text": "Celtics hilariously troll Jayson Tatum-Jaylen Brown feud ahead of 76ers game - BasketNews.com",
+       "status": null
+      },
+      {
+       "player": "Jayson Tatum",
+       "team": "BOS",
+       "flag_type": "trade",
+       "severity": 1,
+       "source": "Google News / Bleacher Report",
+       "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxObUo1YlZmWmZYSmJMWk94Wm5mekZJQ0NGc3ZKQ3NKb21INTNucHJUZ2Y4RTBKM2Z5dUNzdUQ2TE9WR1V6eU9JazNmanNQMlVSa0ppZ014VGxSdmtWUWU1U1lPNmVMcVM1RkZlN19oZm0wUTZadkI3MVVrN1YwbnJmb3c0X3h1cTg5aVoyYW9ic1VXU1Y4eGRwbF9oUHdGSHRrSV9hRU81dWczRnBQY2k1dWpmTkQzOUR4aDFIa29qSHRkWThydFo2ZQ?oc=5",
+       "timestamp": "2026-11-10T21:50:34+00:00",
+       "text": "Jaylen Brown, Jayson Tatum Reportedly Had 'Heart-to-Heart' Talk in France Before Celtics-76ers Trade - Bleacher Report",
+       "status": null
+      },
+      {
+       "player": "Jayson Tatum",
+       "team": "BOS",
+       "flag_type": "injury",
+       "severity": 2,
+       "source": "Google News / Yahoo Sports",
+       "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxQSGlOTFZ5QUFFSVFTWEMxVWFrdzFSblNNaVdReTc5UUlnbGd3Q0ZaNzlTSkVYWHkwRGNtbElFUTg4Q0hTNlppaHZmTzdIeG9EZFlaNmUzSzBrNjA0UGEwYUw1YWZmcFBTaWN6RE1JcUQ2bE1ocHVLbzdESEdWTk1mS1dNeXB3dw?oc=5",
+       "timestamp": "2026-11-10T16:56:47+00:00",
+       "text": "Celtics vs. 76ers injury report: Are Jayson Tatum, Jaylen Brown listed for much-hyped meeting? - Yahoo Sports",
+       "status": null
+      },
+      {
+       "player": "Jayson Tatum",
+       "team": "BOS",
+       "flag_type": "conflict",
+       "severity": 1,
+       "source": "Google News / MassLive.com",
+       "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxOMkZtZnp3dDZTQ0QtaG5NdENJZWNLQUVZMkx0b1pCM0xPbU9Lb3RhY0w2WUZ2SFpxcjNwdktxTUI1LWMyUFgwN3A1UGRVQUtxT3BZM0tpR2owS1lLWDdPQkx4d1Ita3k4bFRfSzJIQ0Z5SkFtTXpwbzBhNV93ODg2X3FpRzd4WG5JMFJaR3dZNHZJSk4xNkFxOS1lNGxVaG5KNXlwMWlrYkxEOTFXY3lORXZ5OEVhajhLazhGVVhENGFrMmJPa05MLVNB?oc=5",
+       "timestamp": "2026-11-10T17:49:00+00:00",
+       "text": "Payton Pritchard talks about Jayson Tatum-Jaylen Brown feud without even being asked - MassLive.com",
+       "status": null
+      }
+     ],
+     "notes": [
+      "stake scaled x0.95 to respect the 5% daily cap",
+      "Same-game joint probability comes from the correlated simulation; books adjust SGP prices for correlation and free sources don't publish them \u2014 bet only if the book's SGP price is +308 or better."
+     ]
     },
     "LONG SHOT": {
-     "bet": null,
-     "message": "NO BET",
-     "reason": "card build failed; see logs"
+     "id": "6defce12d6da0444",
+     "tier": "LONG SHOT",
+     "status": "WAIT",
+     "recheck_at": "2026-11-11T00:30:00+00:00",
+     "description": "PHI ML + Under 218.5 (BOS @ PHI) + POR ML + POR +2.5",
+     "book": "betriversnj",
+     "price": 1610,
+     "legs": [
+      {
+       "label": "PHI ML",
+       "game": "BOS @ PHI",
+       "kickoff": "2026-11-11T01:00Z",
+       "market": "moneyline",
+       "side": "home",
+       "point": null,
+       "player": null,
+       "book": "betriversnj",
+       "price": 104.0,
+       "price_source": "posted",
+       "p_final": 0.4805,
+       "p_fair": 0.4805,
+       "p_model": 0.4184,
+       "p_push": 0.0084,
+       "novig_implied": 0.4846,
+       "game_key": "NBA_20261110_BOS_PHI"
+      },
+      {
+       "label": "Under 218.5 (BOS @ PHI)",
+       "game": "BOS @ PHI",
+       "kickoff": "2026-11-11T01:00Z",
+       "market": "total",
+       "side": "under",
+       "point": 218.5,
+       "player": null,
+       "book": "betriversnj",
+       "price": -107.0,
+       "price_source": "posted",
+       "p_final": 0.548,
+       "p_fair": 0.548,
+       "p_model": 0.4551,
+       "p_push": 0.0,
+       "novig_implied": 0.548,
+       "game_key": "NBA_20261110_BOS_PHI"
+      },
+      {
+       "label": "POR ML",
+       "game": "OKC @ POR",
+       "kickoff": "2026-11-12T03:00Z",
+       "market": "moneyline",
+       "side": "home",
+       "point": null,
+       "player": null,
+       "book": "betriversnj",
+       "price": 123.0,
+       "price_source": "posted",
+       "p_final": 0.4471,
+       "p_fair": 0.4471,
+       "p_model": 0.4144,
+       "p_push": 0.0084,
+       "novig_implied": 0.4509,
+       "game_key": "NBA_20261111_OKC_POR"
+      },
+      {
+       "label": "POR +2.5",
+       "game": "OKC @ POR",
+       "kickoff": "2026-11-12T03:00Z",
+       "market": "spread",
+       "side": "home",
+       "point": 2.5,
+       "player": null,
+       "book": "betriversnj",
+       "price": -106.0,
+       "price_source": "posted",
+       "p_final": 0.5108,
+       "p_fair": 0.5108,
+       "p_model": 0.4755,
+       "p_push": 0.0,
+       "novig_implied": 0.5108,
+       "game_key": "NBA_20261111_OKC_POR"
+      }
+     ],
+     "model_prob": 0.1314,
+     "novig_market_prob": 0.1314,
+     "price_implied_prob": 0.0585,
+     "edge": 0.073,
+     "ev_per_100": 124.8,
+     "stake": 183.36,
+     "kelly_fraction_used": 0.0194,
+     "correlated_joint": true,
+     "min_acceptable_price": 676,
+     "reasons": [
+      "PHI ML: Best price +104 at betriversnj vs market-consensus fair +106 (fair win prob 48.1%; break-even at this price 48.6%).",
+      "Under 218.5 (BOS @ PHI): Best price -107 at betriversnj vs market-consensus fair -121 (fair win prob 54.8%; break-even at this price 51.7%).",
+      "POR ML: Best price +123 at betriversnj vs market-consensus fair +122 (fair win prob 44.7%; break-even at this price 44.5%)."
+     ],
+     "flags": [
+      {
+       "player": "Tyrese Maxey",
+       "team": "PHI",
+       "flag_type": "trade",
+       "severity": 1,
+       "source": "Google News / FantasyPros",
+       "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTFBLd1RFdkFlMTIwNmhZbGJjVXdwQVNwUEtYUmJIekU2czIzQlZ4M1dtd2RrWUc1WUVUV3NEQUMzUUdRdWlRWllMZW16RjV0WE5VMC1MZi1OOVAycEJmQkltLXBJM0FaQnYyX3ZFNElsNjBHM1JMUmc?oc=5",
+       "timestamp": "2026-11-10T16:59:35+00:00",
+       "text": "Should I Trade Caleb Wilson for Tyrese Maxey? | Fantasy Basketball - FantasyPros",
+       "status": null
+      },
+      {
+       "player": "Tyrese Maxey",
+       "team": "PHI",
+       "flag_type": "trade",
+       "severity": 1,
+       "source": "Google News / FantasyPros",
+       "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTE5DbHNSelNMaVNhV0ZVd2JxZ3c3Z0Rxa0xTcktCZml4QWR1Z0I3VXVDVFZoYlBkTFF0NEp4Tzk2dTFSTnFXYU9FczdGUXNCal9tVjVxd0FCVUhYR3hwcWd3TFNIdmgtTk1mT2FUa0xCSWIxNm41MjdwNnk2RQ?oc=5",
+       "timestamp": "2026-11-09T00:06:50+00:00",
+       "text": "Should I Trade Joshua Jefferson for Tyrese Maxey? | Fantasy Basketball - FantasyPros",
+       "status": null
+      },
+      {
+       "player": "Joel Embiid",
+       "team": "PHI",
+       "flag_type": "injury",
+       "severity": 2,
+       "source": "Google News / Liberty Ballers",
+       "url": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxNbW8xN0dQMFhtaVBwLW1PMk5DMm1NNmJtQ085M2dmX1JiMWNaTm5fYjN0dlRmdUlsTWdpckFGdFR4a2I2R1VwYldkaUh4SV9MT0ZXVURvUzRybEJIWnp4Z1Y2YkRXRkxodkRKNzFXbmtTQThjazVld05FVHRfbUVJOHFNRGhnWkNzclFjYkdWWC1nMlpTdkE4MEhqZDcwVFk5X0RIcEViU3FNdTZXeUVzU25BOUpNT1czRWpPeDlPT0lXd0ZIWFpmcWZtTFFUeFQ5VV9IUWlWSE9EUGs?oc=5",
+       "timestamp": "2026-11-09T22:15:57+00:00",
+       "text": "Adem Bona out, Joel Embiid not listed on injury report for Sixers\u2019 big tilt with Boston - Liberty Ballers",
+       "status": null
+      },
+      {
+       "player": "Joel Embiid",
+       "team": "PHI",
+       "flag_type": "injury",
+       "severity": 2,
+       "source": "Google News / Yahoo Sports",
+       "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxQYmdjTUVTYW5pd0pvc2x4UVJEZmxHYUd1UnZWYVotSmN4aFNTX05nZU93dFVoTGl5NFRqMVBweDFDX3BYQkh0Zk9RSHh5NTJWYWpmTXB0Q2pFSVhXMWR1U3NfSi1naWxFZ2VTQzc5cjhsS0llM0M4TVdIdVRNN1RiajM0SmxDdWM?oc=5",
+       "timestamp": "2026-11-09T20:10:06+00:00",
+       "text": "\"Set my clock to it\" - Olden Polynice warned Joel Embiid's inevitable injury will derail 76ers - Yahoo Sports",
+       "status": null
+      },
+      {
+       "player": "Joel Embiid",
+       "team": "PHI",
+       "flag_type": "load_management",
+       "severity": 2,
+       "source": "Google News / BVM Sports",
+       "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxQVFhUaW9YeUJxMENHZHpsUm43YUV1TGpLT2xIcGswbGd6LVY5ME9Nd2E0VkRtNmQxZDBlbUczUlpES190VHFSX1NuWVhqZUo3bms4RFEySW9jRW5VbEtGQVl5bjItOG85OWZjZTNjUGhoaU5oOGZmM1ZDSWZPNURfamRHU3Z3Z1VfMzRIcWE5TTlXRTA?oc=5",
+       "timestamp": "2026-11-09T11:33:48+00:00",
+       "text": "Jabari Walker Gave Embiid Valuable Rest Against Chicago - BVM Sports",
+       "status": null
+      },
+      {
+       "player": "LeBron James",
+       "team": "PHI",
+       "flag_type": "injury",
+       "severity": 2,
+       "source": "Google News / Covers.com",
+       "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTE9Kd1BBOGhVT1kyY3hVV2REOFR3SkNwcTYzZklVUUM1YXRkQ1FjN0JqMmx5SXZ3eUpTXzE5dlNydjdvYXRFZ1JtTldGUV9ZNWI1bDZFd1dIRHlyUkdPSXhodnljVl9jQS01YlhQeHNvc21pRUt3RnNvQ2lQNA?oc=5",
+       "timestamp": "2026-11-10T16:50:00+00:00",
+       "text": "Is LeBron James Playing Tonight? Latest Injury Updates & Odds Impact - Covers.com",
+       "status": null
+      },
+      {
+       "player": "LeBron James",
+       "team": "PHI",
+       "flag_type": "conflict",
+       "severity": 1,
+       "source": "Google News / Newsweek",
+       "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNbE1mdzduNGJNUm9Vb19KNDBKRFVpNC00SDN2T1RuVGNWbGk0UGpRVzlwR3htTEl4RTBmUHBUMFZoZHUyRktBdjNaMy1qYkZYbFp1b2gzcnNzb0phWHoxbVRLU3BkRzRONG15dHEyY29FS0pnUktGbnplaDhlby1rck1GYkFiMm9EUGhSMy0wRjN3QV92dU5vbmRjbVdPSGREM25lenVvcWdDOUFJR3h2eQ?oc=5",
+       "timestamp": "2026-11-10T02:29:00+00:00",
+       "text": "Stephen A. Smith makes surprising admission about LeBron James feud - Newsweek",
+       "status": null
+      },
+      {
+       "player": "LeBron James",
+       "team": "PHI",
+       "flag_type": "injury",
+       "severity": 2,
+       "source": "Google News / BasketballNews.com",
+       "url": "https://news.google.com/rss/articles/CBMimgJBVV95cUxNRmNUeWZRb250bHozVzZwTXhlbmY0Smd5Y0kzRmdKMzEtMExudndRXzJzQXVhZjhvaVRFa2JUVE1nYVViM1A5d3dpMWRpMW9RR3hBUmxHNkptU2YtV194bVk1UkxkbnNnSmUxcTZMVmctZ2w5Y0NZVEhQVUFtYWxubFlERml6OHF6M3hxYUJQQ21IMjE0bnhMMzA1cXVMZHVDNWV6VUZKbXRseXBRU3dIeEJRbC1ZU2w2VWlkcVg4S200aXlVUGNSdFB2dVZzSGozbDZlRldadHVSYTIxRHpzblNrd05mWUlsZFRKdzN2MHVpU2ZpdkF4UFBfWUpyZzI2ZWRWa0JveDdkNmtRWWtLWkVHLUJxbGVyaGc?oc=5",
+       "timestamp": "2026-11-09T20:52:29+00:00",
+       "text": "\u201cIt\u2019s Cheating Itself\u201d: Byron Scott Calls Out LeBron James After Sixers Star Admits Fearing Injury While Dunking - BasketballNews.com",
+       "status": null
+      },
+      {
+       "player": "Jayson Tatum",
+       "team": "BOS",
+       "flag_type": "conflict",
+       "severity": 1,
+       "source": "Google News / BasketNews.com",
+       "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxNTGpjc0stTE1Fb0hYS1VkMFpsSlpmMkxMTGN3QVFROFNWRE9KbjhyNkxiVXBoUlpHYldsYXZzRmlUWXdWZU10a2lCZTBseVF1ckg3aEQ2cldOZjFEcC1jbXhKM1Y0Q0p5dnR1bHZxVXVFN1l4TDkwbUhEM1BfR3QxLWdJd1hOTzgzMkR0NXJDd1lFUDhrX0hIYU1vQ0F5ZXdiNHBBQ19QMm56LU5HM3dpaWxrYkZNcFFDVVdUZFdn?oc=5",
+       "timestamp": "2026-11-10T18:01:00+00:00",
+       "text": "Celtics hilariously troll Jayson Tatum-Jaylen Brown feud ahead of 76ers game - BasketNews.com",
+       "status": null
+      },
+      {
+       "player": "Jayson Tatum",
+       "team": "BOS",
+       "flag_type": "trade",
+       "severity": 1,
+       "source": "Google News / Bleacher Report",
+       "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxObUo1YlZmWmZYSmJMWk94Wm5mekZJQ0NGc3ZKQ3NKb21INTNucHJUZ2Y4RTBKM2Z5dUNzdUQ2TE9WR1V6eU9JazNmanNQMlVSa0ppZ014VGxSdmtWUWU1U1lPNmVMcVM1RkZlN19oZm0wUTZadkI3MVVrN1YwbnJmb3c0X3h1cTg5aVoyYW9ic1VXU1Y4eGRwbF9oUHdGSHRrSV9hRU81dWczRnBQY2k1dWpmTkQzOUR4aDFIa29qSHRkWThydFo2ZQ?oc=5",
+       "timestamp": "2026-11-10T21:50:34+00:00",
+       "text": "Jaylen Brown, Jayson Tatum Reportedly Had 'Heart-to-Heart' Talk in France Before Celtics-76ers Trade - Bleacher Report",
+       "status": null
+      },
+      {
+       "player": "Jayson Tatum",
+       "team": "BOS",
+       "flag_type": "injury",
+       "severity": 2,
+       "source": "Google News / Yahoo Sports",
+       "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxQSGlOTFZ5QUFFSVFTWEMxVWFrdzFSblNNaVdReTc5UUlnbGd3Q0ZaNzlTSkVYWHkwRGNtbElFUTg4Q0hTNlppaHZmTzdIeG9EZFlaNmUzSzBrNjA0UGEwYUw1YWZmcFBTaWN6RE1JcUQ2bE1ocHVLbzdESEdWTk1mS1dNeXB3dw?oc=5",
+       "timestamp": "2026-11-10T16:56:47+00:00",
+       "text": "Celtics vs. 76ers injury report: Are Jayson Tatum, Jaylen Brown listed for much-hyped meeting? - Yahoo Sports",
+       "status": null
+      },
+      {
+       "player": "Jayson Tatum",
+       "team": "BOS",
+       "flag_type": "conflict",
+       "severity": 1,
+       "source": "Google News / MassLive.com",
+       "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxOMkZtZnp3dDZTQ0QtaG5NdENJZWNLQUVZMkx0b1pCM0xPbU9Lb3RhY0w2WUZ2SFpxcjNwdktxTUI1LWMyUFgwN3A1UGRVQUtxT3BZM0tpR2owS1lLWDdPQkx4d1Ita3k4bFRfSzJIQ0Z5SkFtTXpwbzBhNV93ODg2X3FpRzd4WG5JMFJaR3dZNHZJSk4xNkFxOS1lNGxVaG5KNXlwMWlrYkxEOTFXY3lORXZ5OEVhajhLazhGVVhENGFrMmJPa05MLVNB?oc=5",
+       "timestamp": "2026-11-10T17:49:00+00:00",
+       "text": "Payton Pritchard talks about Jayson Tatum-Jaylen Brown feud without even being asked - MassLive.com",
+       "status": null
+      }
+     ],
+     "notes": [
+      "stake scaled x0.95 to respect the 5% daily cap",
+      "Same-game joint probability comes from the correlated simulation; books adjust SGP prices for correlation and free sources don't publish them \u2014 bet only if the book's SGP price is +676 or better."
+     ]
     }
-   }
+   },
+   "model": {
+    "weights": {
+     "ml_home": 0.0,
+     "spread_home": 0.0,
+     "over": 0.0
+    },
+    "feature_groups": [
+     "base",
+     "efficiency",
+     "style",
+     "fatigue",
+     "altitude",
+     "motivation",
+     "h2h"
+    ],
+    "trained_through": "2026-11-09",
+    "note": "model weight is 0 in every market: bets below come only from price differences between books (line shopping), never from the model's opinion"
+   },
+   "shadow_props": {
+    "status": "SHADOW ONLY \u2014 tracked for calibration, not recommended (no free prop prices; model unproven vs prop markets)",
+    "rows": []
+   },
+   "flags_checked": 233
   }
  },
  "disclaimer": "Probabilities, not guarantees. Paper mode: nothing here is a real wager.",
  "backtest": {
   "NFL": {
    "verdicts": [
-    "moneyline: did NOT beat the no-vig closing line out of sample (final 0.6098 vs market 0.6098; model alone 0.6440). Edges in this market should be treated as noise.",
-    "moneyline: the model on its own is worse than the market by 0.0342 log loss.",
-    "spread: did NOT beat the no-vig closing line out of sample (final 0.6924 vs market 0.6924; model alone 0.7032). Edges in this market should be treated as noise.",
-    "spread: the model on its own is worse than the market by 0.0108 log loss.",
-    "total: did NOT beat the no-vig closing line out of sample (final 0.6930 vs market 0.6930; model alone 0.6995). Edges in this market should be treated as noise.",
-    "total: the model on its own is worse than the market by 0.0065 log loss.",
+    "moneyline: did NOT beat the no-vig closing line out of sample (final 0.6082 vs market 0.6082; model alone 0.6423). Edges in this market should be treated as noise.",
+    "moneyline: the model on its own is worse than the market by 0.0341 log loss.",
+    "spread: did NOT beat the no-vig closing line out of sample (final 0.6924 vs market 0.6924; model alone 0.7030). Edges in this market should be treated as noise.",
+    "spread: the model on its own is worse than the market by 0.0106 log loss.",
+    "total: did NOT beat the no-vig closing line out of sample (final 0.6930 vs market 0.6930; model alone 0.6994). Edges in this market should be treated as noise.",
+    "total: the model on its own is worse than the market by 0.0064 log loss.",
     "No historical bets cleared the edge threshold: the model never disagreed with the close enough to act."
    ],
    "test_seasons": [
@@ -571,16 +744,16 @@
     "motivation",
     "altitude"
    ],
-   "generated_at": "2026-11-03T18:25:39"
+   "generated_at": "2026-11-10T18:41:43"
   },
   "NBA": {
    "verdicts": [
-    "moneyline: did NOT beat the no-vig closing line out of sample (final 0.5807 vs market 0.5807; model alone 0.6138). Edges in this market should be treated as noise.",
-    "moneyline: the model on its own is worse than the market by 0.0331 log loss.",
-    "spread: did NOT beat the no-vig closing line out of sample (final 0.6924 vs market 0.6924; model alone 0.6952). Edges in this market should be treated as noise.",
-    "spread: the model on its own is worse than the market by 0.0028 log loss.",
-    "total: did NOT beat the no-vig closing line out of sample (final 0.6928 vs market 0.6928; model alone 0.6955). Edges in this market should be treated as noise.",
-    "total: the model on its own is worse than the market by 0.0027 log loss.",
+    "moneyline: did NOT beat the no-vig closing line out of sample (final 0.5799 vs market 0.5799; model alone 0.6122). Edges in this market should be treated as noise.",
+    "moneyline: the model on its own is worse than the market by 0.0324 log loss.",
+    "spread: did NOT beat the no-vig closing line out of sample (final 0.6925 vs market 0.6925; model alone 0.6955). Edges in this market should be treated as noise.",
+    "spread: the model on its own is worse than the market by 0.0030 log loss.",
+    "total: did NOT beat the no-vig closing line out of sample (final 0.6928 vs market 0.6928; model alone 0.6970). Edges in this market should be treated as noise.",
+    "total: the model on its own is worse than the market by 0.0042 log loss.",
     "No historical bets cleared the edge threshold: the model never disagreed with the close enough to act."
    ],
    "test_seasons": [
@@ -588,136 +761,135 @@
     2026
    ],
    "kept_groups": [
+    "efficiency",
     "style",
     "fatigue",
+    "altitude",
     "motivation",
     "h2h"
    ],
-   "dropped_groups": [
-    "efficiency",
-    "altitude"
-   ],
-   "generated_at": "2026-11-03T18:27:40"
+   "dropped_groups": [],
+   "generated_at": "2026-11-10T18:44:13"
   }
  },
  "freshness": {
   "nfl.espn.schedule": {
    "ok": true,
-   "rows": 15,
+   "rows": 14,
    "note": "upcoming events",
-   "checked_at": "2026-11-09T23:10:55+00:00",
+   "checked_at": "2026-11-10T21:54:44+00:00",
    "data_as_of": null
   },
   "nfl.espn.odds": {
    "ok": true,
-   "rows": 180,
+   "rows": 168,
    "note": "",
-   "checked_at": "2026-11-09T23:11:01+00:00",
+   "checked_at": "2026-11-10T21:54:50+00:00",
    "data_as_of": null
   },
   "nfl.actionnetwork.odds": {
-   "ok": true,
-   "rows": 144,
+   "ok": false,
+   "rows": 0,
    "note": "",
-   "checked_at": "2026-11-09T23:11:03+00:00",
+   "checked_at": "2026-11-10T21:54:51+00:00",
    "data_as_of": null
   },
   "nfl.kalshi.moneyline": {
    "ok": true,
-   "rows": 28,
+   "rows": 26,
    "note": "",
-   "checked_at": "2026-11-09T23:11:03+00:00",
+   "checked_at": "2026-11-10T21:54:51+00:00",
    "data_as_of": null
   },
   "nfl.espn.props": {
-   "ok": true,
-   "rows": 92,
+   "ok": false,
+   "rows": 0,
    "note": "DraftKings lines; prices not published",
-   "checked_at": "2026-11-09T23:11:05+00:00",
+   "checked_at": "2026-11-10T21:54:51+00:00",
    "data_as_of": null
   },
   "nba.espn.schedule": {
    "ok": true,
-   "rows": 24,
+   "rows": 20,
    "note": "upcoming events",
-   "checked_at": "2026-11-09T23:11:06+00:00",
+   "checked_at": "2026-11-10T21:54:52+00:00",
    "data_as_of": null
   },
   "nba.espn.odds": {
    "ok": true,
-   "rows": 118,
+   "rows": 72,
    "note": "",
-   "checked_at": "2026-11-09T23:11:15+00:00",
+   "checked_at": "2026-11-10T21:54:59+00:00",
    "data_as_of": null
   },
   "nba.actionnetwork.odds": {
-   "ok": true,
-   "rows": 408,
+   "ok": false,
+   "rows": 0,
    "note": "",
-   "checked_at": "2026-11-09T23:11:17+00:00",
+   "checked_at": "2026-11-10T21:55:01+00:00",
    "data_as_of": null
   },
   "nba.kalshi.moneyline": {
    "ok": true,
-   "rows": 48,
+   "rows": 40,
    "note": "",
-   "checked_at": "2026-11-09T23:11:17+00:00",
+   "checked_at": "2026-11-10T21:55:01+00:00",
    "data_as_of": null
   },
   "nba.espn.props": {
    "ok": true,
-   "rows": 536,
+   "rows": 437,
    "note": "DraftKings lines; prices not published",
-   "checked_at": "2026-11-09T23:11:30+00:00",
+   "checked_at": "2026-11-10T21:55:14+00:00",
    "data_as_of": null
   },
   "nfl.espn.injuries": {
    "ok": true,
    "rows": 800,
    "note": "",
-   "checked_at": "2026-11-09T23:11:44+00:00",
+   "checked_at": "2026-11-10T21:55:34+00:00",
    "data_as_of": null
   },
   "nfl.news.google_rss": {
    "ok": true,
    "rows": 40,
    "note": "per-player/team queries, last 48h",
-   "checked_at": "2026-11-09T23:12:19+00:00",
+   "checked_at": "2026-11-10T21:56:09+00:00",
    "data_as_of": null
   },
   "nfl.news.league_feeds": {
    "ok": true,
    "rows": 116,
    "note": "",
-   "checked_at": "2026-11-09T23:12:20+00:00",
+   "checked_at": "2026-11-10T21:56:10+00:00",
    "data_as_of": null
   },
   "nfl.open_meteo.forecast": {
    "ok": true,
-   "rows": 6,
+   "rows": 7,
    "note": "outdoor venues only",
-   "checked_at": "2026-11-09T23:11:44+00:00",
+   "checked_at": "2026-11-10T21:55:33+00:00",
    "data_as_of": null
   },
   "nba.espn.injuries": {
    "ok": true,
-   "rows": 102,
+   "rows": 92,
    "note": "",
-   "checked_at": "2026-11-09T23:12:22+00:00",
+   "checked_at": "2026-11-10T21:56:13+00:00",
    "data_as_of": null
   },
   "nba.news.google_rss": {
    "ok": true,
    "rows": 40,
    "note": "per-player/team queries, last 48h",
-   "checked_at": "2026-11-07T23:53:02+00:00",
+   "checked_at": "2026-11-10T21:56:43+00:00",
    "data_as_of": null
   },
   "nba.news.league_feeds": {
    "ok": true,
    "rows": 86,
    "note": "",
-   "checked_at": "2026-11-07T23:53:02+00:00",
+   "checked_at": "2026-11-10T21:56:43+00:00",
    "data_as_of": null
   }
  },
