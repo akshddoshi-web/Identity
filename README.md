@@ -36,6 +36,12 @@ them together for the person using the app. See "Is Status what makes the
 accountability engine a unifying core?" below for how the ranking works and
 what it does and doesn't prove.
 
+**Stage 7**: real (sandbox) bank linking via **Plaid**, added to Home's
+Accounts sub-tab alongside the seed data, not in place of it. A minimal
+serverless backend (`api/`) holds the Plaid secret; the browser never sees
+it. See "Plaid (Stage 7): sandbox bank linking" below for the setup, the
+architecture, and the explicit "add alongside seed data" decision.
+
 ## Stack
 
 - [Vite](https://vitejs.dev/) + React + TypeScript
@@ -46,8 +52,13 @@ what it does and doesn't prove.
   `localStorage`
 - [react-router-dom](https://reactrouter.com/) for tab/sub-tab routing
   (`/:tabId/:subSlug`)
+- [Plaid](https://plaid.com/) (sandbox) for real bank-linking on the Accounts
+  sub-tab, via Vercel serverless functions under `api/`
 
 ## Run it
+
+The frontend runs standalone with seed data only — you don't need a Plaid
+account or the API backend just to browse the app:
 
 ```bash
 npm install
@@ -56,10 +67,40 @@ npm run dev
 
 Then open **http://localhost:5173**.
 
-Run the unit tests (`src/lib/settleUp.ts`, the debt-simplification engine,
-and `src/lib/statusOverview.ts`, Status's cross-domain ranking — Fitness and
-Planner's own logic is exercised through the app itself rather than a
-dedicated test file; see "Did the accountability engine actually
+### Running Plaid Link too
+
+"Link another account" on Home → Accounts needs the `api/` backend running
+alongside Vite, plus a free Plaid account:
+
+1. Sign up at [dashboard.plaid.com](https://dashboard.plaid.com/signup) (no
+   payment info needed for sandbox).
+2. In the dashboard, go to **Team Settings → Keys** and copy your
+   **client_id** and your **sandbox secret** (not production/development).
+3. Copy `.env.example` to `.env` and paste those two values in:
+   ```
+   PLAID_CLIENT_ID=...
+   PLAID_SECRET=...
+   PLAID_ENV=sandbox
+   ```
+   `.env` is gitignored — never commit real keys. The frontend never reads
+   this file; only `api/` does, and it's never bundled into client code.
+4. Run the backend and frontend in two terminals:
+   ```bash
+   npm run dev:api   # vercel dev, serves api/ on :3000
+   npm run dev        # vite, serves the app on :5173 and proxies /api to :3000
+   ```
+   (`vercel dev` will ask a couple of one-time setup questions the first run —
+   accept the defaults, it's just linking the local checkout to a scratch
+   Vercel project so it knows how to run `api/`.)
+5. Open **http://localhost:5173**, go to Home → Accounts → "Link another
+   account," and use Plaid's sandbox test credentials
+   (`user_good` / `pass_good`) at any institution in the picker.
+
+Run the unit tests (`src/lib/settleUp.ts`, the debt-simplification engine;
+`src/lib/statusOverview.ts`, Status's cross-domain ranking; and
+`api/_lib/plaidMapping.ts`, Plaid's account/transaction/category mapping —
+Fitness and Planner's own logic is exercised through the app itself rather
+than a dedicated test file; see "Did the accountability engine actually
 generalize?" below for why nothing there needed new tests):
 
 ```bash
@@ -115,6 +156,13 @@ src/
     status/      StatusView — the 6th top-level tab, no sub-tabs
     placeholder/ Kept as the defensive fallback for an unrecognized tabId typed into the URL bar
   types/domain.ts, stocks.ts, fantasy.ts, fitness.ts, planner.ts    Shared data types
+  lib/usePlaidConnect.ts  Frontend hook driving Plaid Link (see below)
+api/                      Serverless backend (Vercel functions), Plaid-only, holds the Plaid secret
+  plaid/create-link-token.ts     POST: starts a Plaid Link session
+  plaid/exchange-public-token.ts POST: exchanges Link's public_token for an access_token server-side,
+                                  fetches that Item's accounts + transactions, and returns them mapped
+  _lib/plaidClient.ts      Builds the Plaid SDK client from env vars; never imported from src/
+  _lib/plaidMapping.ts     Pure Plaid → Account/Transaction mapping functions, with unit tests
 ```
 
 ## The accountability engine
@@ -395,6 +443,119 @@ on "did the workout happen") where those inputs quietly disagree. A
 unifying view can rank what each domain believes; it can't make the
 domains believe the same thing without becoming a much bigger project
 than "Stage 6." That's the honest boundary of what got built here.
+
+## Plaid (Stage 7): sandbox bank linking
+
+### The architecture decision: alongside seed data, not instead of it
+
+Linked (Plaid) accounts and transactions live in the exact same
+`useHomeStore` arrays as seed data — `accounts: Account[]`,
+`transactions: Transaction[]` — distinguished only by a new optional
+`source?: "seed" | "plaid"` field on each. There is no second store, no
+"real mode" toggle, no branch anywhere that says "if Plaid is connected,
+hide the demo data." Linking an account in the sandbox adds its accounts
+and transactions to the lists that already render on Accounts/Transactions;
+net worth, the transaction list/search, and everything downstream just sum
+and iterate a slightly longer array than before.
+
+This was a deliberate choice, not the only option. The alternative — a
+parallel "real" dataset with a mode switch — would better model a
+production app (where you'd eventually want to drop the fake data
+entirely), but it fails this app's actual constraint: **it has to stay
+demoable with fake data for anyone who skips Plaid Link.** A mode switch
+means the default view for a first-time visitor is either the seed data
+(and linking silently does nothing visible until you flip a switch you
+don't know exists) or empty (and the demo is broken until you complete an
+OAuth-like flow with a third party just to see the app work). Adding
+alongside means the seed data is always there, Plaid Link is a strictly
+additive action with an immediately visible result, and the two data
+sources need no reconciliation logic — they just co-exist as more rows in
+the same arrays, tagged for anyone who wants to filter by source later (the
+"· sandbox" label on a linked account's card is the one place that
+currently does).
+
+The one piece of merge logic that exists: `addPlaidData()` in
+`useHomeStore.ts` de-dupes by id before appending, so re-linking the same
+sandbox Item (Plaid issues a new Item, but sandbox test institutions return
+the same underlying account_ids) replaces its own rows instead of
+duplicating them — it does not touch any other account/transaction, seeded
+or previously linked.
+
+### What the backend does, and why it exists at all
+
+The frontend never talks to Plaid directly for anything that needs the
+secret. Two endpoints, both server-only (`api/plaid/*.ts`, Vercel
+serverless functions):
+
+- **`POST /api/plaid/create-link-token`** — calls Plaid's
+  `linkTokenCreate` with this app's `client_id`/`secret` and returns just
+  the `link_token` the frontend needs to open Plaid Link. No user input.
+- **`POST /api/plaid/exchange-public-token`** — takes the `public_token`
+  Plaid Link hands back on success, exchanges it server-side for an
+  `access_token` (a real, sensitive, long-lived credential — this is the
+  one step that categorically cannot happen in browser code), immediately
+  uses that token to fetch the Item's accounts (`accountsGet`) and
+  transactions (`transactionsSync`, paginated), maps them to this app's
+  types, and returns *only* the mapped accounts/transactions. The
+  `access_token` itself is never returned to the client and never
+  persisted anywhere — this app has no database. That's a real, named
+  scope limit: a linked sandbox account can't be silently re-synced later
+  (there's nothing to sync from) — relinking it means going through Plaid
+  Link again. Acceptable for a demo of the linking flow; the first thing a
+  production version would need is somewhere to store `access_token`
+  per-Item, keyed to a real signed-in user this app doesn't have either.
+
+`PLAID_CLIENT_ID`/`PLAID_SECRET` live only in `.env` locally and in
+Vercel's project Environment Variables in production — never in any file
+this repo commits, and never sent to or read by anything under `src/`.
+
+### Mapping Plaid's shapes onto this app's types
+
+Stage 1's `Account`/`Transaction` types are five stages old and used
+everywhere (Status, the accountability engine's budget alerts, Overview's
+net-worth math); they weren't widened to match Plaid's shapes. Instead
+`api/_lib/plaidMapping.ts` adapts Plaid's richer data down to fit them:
+
+- **Account type** — Plaid's `type`/`subtype` pair maps onto this app's
+  closed `"Checking" | "Credit Card" | "Savings" | "Investing"` union
+  where there's a confident match (`depository`/`checking` →
+  `"Checking"`, `credit` → `"Credit Card"`, etc.); anything with no clean
+  bucket (`loan`, sandbox's `"cd"`/money-market subtypes, `"other"`) is
+  **skipped**, not forced into the wrong category. `exchange-public-token`
+  returns a `skippedAccountCount` for exactly this reason, in case that
+  ever needs surfacing in the UI (it doesn't currently render — sandbox's
+  default test institutions don't produce any skips in practice — but the
+  count exists rather than being silently dropped).
+- **Balance sign** — Plaid reports a credit card's balance as a positive
+  "amount owed"; this app has always used negative-for-debt (Overview sums
+  balances straight into net worth). The mapper flips the sign for
+  `"Credit Card"` accounts so a linked card behaves exactly like a seeded
+  one in every downstream calculation, with zero special-casing anywhere
+  else in the app.
+- **Category** — Plaid's `personal_finance_category` taxonomy is far
+  richer than this app's six avenue names (Investing, Entertainment,
+  Savings, Food, Subscriptions, Income, plus the seed data's implicit
+  "Other"). `mapPlaidCategory()` is a best-effort heuristic, not a real
+  categorizer: a short table of high-confidence Plaid categories maps onto
+  the closest existing avenue vocabulary; everything else becomes
+  `"Other"` rather than guessing. This affects display/filtering in the
+  Transactions list only — **it does not feed avenue `spent` totals**,
+  which stay purely seed-data-driven; teaching a linked transaction to
+  count against a budget's spend would mean designing how a Plaid category
+  maps onto avenue budgets with actual confidence, not shoehorning it in
+  as a side effect of a demo-scope linking feature.
+- **Amount sign** — same flip as balance, for the same reason
+  (Plaid: positive = money out; this app: negative = money out).
+
+### Running it locally
+
+Two processes, because Vite serves the static frontend and `api/` needs
+Vercel's serverless runtime (`vercel dev`) to execute — see "Run it" above
+for the exact commands. `vite.config.ts` proxies `/api/*` from :5173 to
+:3000 in dev so the frontend's `fetch("/api/plaid/...")` calls work
+identically to how they'll resolve in production, where Vercel routes
+`/api/*` to these same function files with no proxy needed at all (same
+project, same deploy — no second host to configure or pay for).
 
 ## Notable decisions not spelled out in the brief
 

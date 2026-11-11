@@ -3,6 +3,7 @@ import { Card } from "@/components/ui/Card";
 import { Pill } from "@/components/ui/Pill";
 import { fmt } from "@/lib/format";
 import { clsx } from "@/lib/clsx";
+import { usePlaidConnect } from "@/lib/usePlaidConnect";
 
 const TYPE_ACCENT: Record<string, string> = {
   Checking: "var(--blue)",
@@ -14,6 +15,7 @@ const TYPE_ACCENT: Record<string, string> = {
 export function AccountsView() {
   const accounts = useHomeStore((s) => s.accounts);
   const netWorth = accounts.reduce((s, a) => s + a.balance, 0);
+  const { connect, status, error, isBusy } = usePlaidConnect();
 
   return (
     <div className="grid grid-cols-12 gap-3.5">
@@ -35,7 +37,10 @@ export function AccountsView() {
                 style={{ background: "linear-gradient(155deg, var(--panel3), var(--panel))" }}
               >
                 <div className="flex items-start justify-between">
-                  <div className="font-mono text-[10px] uppercase tracking-[1.5px] text-sub">{a.type}</div>
+                  <div className="font-mono text-[10px] uppercase tracking-[1.5px] text-sub">
+                    {a.type}
+                    {a.source === "plaid" && <span className="ml-1.5 text-text">· sandbox</span>}
+                  </div>
                   <span className="h-2.5 w-2.5 rounded-full" style={{ background: accent }} />
                 </div>
                 <div>
@@ -50,8 +55,11 @@ export function AccountsView() {
           })}
         </div>
 
-        <div className="mt-3.5">
-          <Pill>+ Link another account</Pill>
+        <div className="mt-3.5 flex items-center gap-3">
+          <Pill onClick={connect} disabled={isBusy}>
+            {isBusy ? "Connecting..." : "+ Link another account"}
+          </Pill>
+          {status === "error" && error && <span className="text-xs text-neg">{error}</span>}
         </div>
       </Card>
     </div>

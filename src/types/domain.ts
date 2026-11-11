@@ -4,6 +4,10 @@ export interface Account {
   type: "Checking" | "Credit Card" | "Savings" | "Investing";
   last4: string;
   balance: number;
+  /** Absent (seed) or "seed" means demo data; "plaid" means it came from a
+   *  real (sandbox) Plaid Link connection. Additive since Stage 7 — every
+   *  seed record simply omits it. */
+  source?: "seed" | "plaid";
 }
 
 export interface AvenueSubItem {
@@ -33,6 +37,8 @@ export interface Transaction {
   cat: TransactionCategory;
   amt: number;
   date: string;
+  /** See Account.source — same meaning, same additive-since-Stage-7 field. */
+  source?: "seed" | "plaid";
 }
 
 export interface SavingsGoal {
