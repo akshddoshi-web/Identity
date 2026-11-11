@@ -1,0 +1,675 @@
+{
+ "generated_at": "2026-11-11T22:56:58+00:00",
+ "generated_at_et": "Wed Nov 11 05:56 PM ET",
+ "mode": "recheck",
+ "paper_mode": true,
+ "bankroll": 10000.0,
+ "leagues": {
+  "NFL": {
+   "league": "NFL",
+   "n_games": 14,
+   "tiers": {
+    "SAFE": {
+     "bet": null,
+     "message": "NO BET",
+     "reason": "best candidate in the 55%-100% band has edge -1.8% over its break-even \u2014 below the 2% threshold; nothing is forced",
+     "best_candidates_considered": 0
+    },
+    "MODERATE": {
+     "bet": null,
+     "message": "NO BET",
+     "reason": "best candidate in the 20%-45% band has edge -0.4% over its break-even \u2014 below the 2% threshold; nothing is forced",
+     "best_candidates_considered": 0
+    },
+    "LONG SHOT": {
+     "bet": null,
+     "message": "NO LONG SHOT TODAY",
+     "reason": "no single bet or same-book combination lands in the 3%-15% win-probability band with positive EV",
+     "best_candidates_considered": 0
+    }
+   },
+   "model": {
+    "weights": {
+     "ml_home": 0.0,
+     "spread_home": 0.0,
+     "over": 0.0
+    },
+    "feature_groups": [
+     "base",
+     "opp_adjusted",
+     "pressure_redzone",
+     "turnover_luck",
+     "cohesion",
+     "weather",
+     "h2h"
+    ],
+    "trained_through": "2026-11-09",
+    "note": "model weight is 0 in every market: bets below come only from price differences between books (line shopping), never from the model's opinion"
+   },
+   "shadow_props": {
+    "status": "SHADOW ONLY \u2014 tracked for calibration, not recommended (no free prop prices; model unproven vs prop markets)",
+    "rows": [
+     {
+      "player": "Thomas Fidone II",
+      "team": "NYG",
+      "market": "anytime_td",
+      "line": NaN,
+      "p_over_sim": 0.001,
+      "sim_median": 0.0,
+      "game_key": "NFL_20261112_WAS_NYG",
+      "book": "draftkings",
+      "price": "not published (assumed -110)"
+     },
+     {
+      "player": "Luke McCaffrey",
+      "team": "WAS",
+      "market": "anytime_td",
+      "line": NaN,
+      "p_over_sim": 0.002,
+      "sim_median": 0.0,
+      "game_key": "NFL_20261112_WAS_NYG",
+      "book": "draftkings",
+      "price": "not published (assumed -110)"
+     },
+     {
+      "player": "Jaden Bradley",
+      "team": "WAS",
+      "market": "anytime_td",
+      "line": NaN,
+      "p_over_sim": 0.002,
+      "sim_median": 0.0,
+      "game_key": "NFL_20261112_WAS_NYG",
+      "book": "draftkings",
+      "price": "not published (assumed -110)"
+     },
+     {
+      "player": "Jalin Hyatt",
+      "team": "NYG",
+      "market": "anytime_td",
+      "line": NaN,
+      "p_over_sim": 0.002,
+      "sim_median": 0.0,
+      "game_key": "NFL_20261112_WAS_NYG",
+      "book": "draftkings",
+      "price": "not published (assumed -110)"
+     },
+     {
+      "player": "Charlie Jones",
+      "team": "NYG",
+      "market": "anytime_td",
+      "line": NaN,
+      "p_over_sim": 0.003,
+      "sim_median": 0.0,
+      "game_key": "NFL_20261112_WAS_NYG",
+      "book": "draftkings",
+      "price": "not published (assumed -110)"
+     },
+     {
+      "player": "John Bates",
+      "team": "WAS",
+      "market": "anytime_td",
+      "line": NaN,
+      "p_over_sim": 0.005,
+      "sim_median": 0.0,
+      "game_key": "NFL_20261112_WAS_NYG",
+      "book": "draftkings",
+      "price": "not published (assumed -110)"
+     },
+     {
+      "player": "J.J. McCarthy",
+      "team": "NYG",
+      "market": "anytime_td",
+      "line": NaN,
+      "p_over_sim": 0.012,
+      "sim_median": 0.0,
+      "game_key": "NFL_20261112_WAS_NYG",
+      "book": "draftkings",
+      "price": "not published (assumed -110)"
+     },
+     {
+      "player": "Darnell Mooney",
+      "team": "NYG",
+      "market": "anytime_td",
+      "line": NaN,
+      "p_over_sim": 0.029,
+      "sim_median": 0.0,
+      "game_key": "NFL_20261112_WAS_NYG",
+      "book": "draftkings",
+      "price": "not published (assumed -110)"
+     },
+     {
+      "player": "Chig Okonkwo",
+      "team": "WAS",
+      "market": "anytime_td",
+      "line": NaN,
+      "p_over_sim": 0.029,
+      "sim_median": 0.0,
+      "game_key": "NFL_20261112_WAS_NYG",
+      "book": "draftkings",
+      "price": "not published (assumed -110)"
+     },
+     {
+      "player": "Austin Ekeler",
+      "team": "WAS",
+      "market": "anytime_td",
+      "line": NaN,
+      "p_over_sim": 0.046,
+      "sim_median": 0.0,
+      "game_key": "NFL_20261112_WAS_NYG",
+      "book": "draftkings",
+      "price": "not published (assumed -110)"
+     },
+     {
+      "player": "Van Jefferson",
+      "team": "WAS",
+      "market": "anytime_td",
+      "line": NaN,
+      "p_over_sim": 0.106,
+      "sim_median": 0.0,
+      "game_key": "NFL_20261112_WAS_NYG",
+      "book": "draftkings",
+      "price": "not published (assumed -110)"
+     },
+     {
+      "player": "Antonio Williams",
+      "team": "WAS",
+      "market": "anytime_td",
+      "line": NaN,
+      "p_over_sim": 0.126,
+      "sim_median": 0.0,
+      "game_key": "NFL_20261112_WAS_NYG",
+      "book": "draftkings",
+      "price": "not published (assumed -110)"
+     },
+     {
+      "player": "Malachi Fields",
+      "team": "NYG",
+      "market": "anytime_td",
+      "line": NaN,
+      "p_over_sim": 0.134,
+      "sim_median": 0.0,
+      "game_key": "NFL_20261112_WAS_NYG",
+      "book": "draftkings",
+      "price": "not published (assumed -110)"
+     },
+     {
+      "player": "Devin Singletary",
+      "team": "NYG",
+      "market": "rush_att",
+      "line": 7.5,
+      "p_over_sim": 0.813,
+      "sim_median": 10.0,
+      "game_key": "NFL_20261112_WAS_NYG",
+      "book": "draftkings",
+      "price": "not published (assumed -110)"
+     },
+     {
+      "player": "Jayden Daniels",
+      "team": "WAS",
+      "market": "anytime_td",
+      "line": NaN,
+      "p_over_sim": 0.206,
+      "sim_median": 0.0,
+      "game_key": "NFL_20261112_WAS_NYG",
+      "book": "draftkings",
+      "price": "not published (assumed -110)"
+     },
+     {
+      "player": "J.J. McCarthy",
+      "team": "NYG",
+      "market": "rush_yds",
+      "line": 14.5,
+      "p_over_sim": 0.225,
+      "sim_median": 7.0,
+      "game_key": "NFL_20261112_WAS_NYG",
+      "book": "draftkings",
+      "price": "not published (assumed -110)"
+     },
+     {
+      "player": "Devin Singletary",
+      "team": "NYG",
+      "market": "anytime_td",
+      "line": NaN,
+      "p_over_sim": 0.227,
+      "sim_median": 0.0,
+      "game_key": "NFL_20261112_WAS_NYG",
+      "book": "draftkings",
+      "price": "not published (assumed -110)"
+     },
+     {
+      "player": "Malik Nabers",
+      "team": "NYG",
+      "market": "anytime_td",
+      "line": NaN,
+      "p_over_sim": 0.245,
+      "sim_median": 0.0,
+      "game_key": "NFL_20261112_WAS_NYG",
+      "book": "draftkings",
+      "price": "not published (assumed -110)"
+     },
+     {
+      "player": "Austin Ekeler",
+      "team": "WAS",
+      "market": "receptions",
+      "line": 1.5,
+      "p_over_sim": 0.269,
+      "sim_median": 1.0,
+      "game_key": "NFL_20261112_WAS_NYG",
+      "book": "draftkings",
+      "price": "not published (assumed -110)"
+     },
+     {
+      "player": "Devin Singletary",
+      "team": "NYG",
+      "market": "rush_yds",
+      "line": 23.5,
+      "p_over_sim": 0.714,
+      "sim_median": 35.0,
+      "game_key": "NFL_20261112_WAS_NYG",
+      "book": "draftkings",
+      "price": "not published (assumed -110)"
+     },
+     {
+      "player": "Devin Singletary",
+      "team": "NYG",
+      "market": "rush_rec_yds",
+      "line": 36.5,
+      "p_over_sim": 0.714,
+      "sim_median": 50.0,
+      "game_key": "NFL_20261112_WAS_NYG",
+      "book": "draftkings",
+      "price": "not published (assumed -110)"
+     },
+     {
+      "player": "Austin Ekeler",
+      "team": "WAS",
+      "market": "rec_yds",
+      "line": 9.5,
+      "p_over_sim": 0.302,
+      "sim_median": 4.0,
+      "game_key": "NFL_20261112_WAS_NYG",
+      "book": "draftkings",
+      "price": "not published (assumed -110)"
+     },
+     {
+      "player": "Rachaad White",
+      "team": "WAS",
+      "market": "anytime_td",
+      "line": NaN,
+      "p_over_sim": 0.302,
+      "sim_median": 0.0,
+      "game_key": "NFL_20261112_WAS_NYG",
+      "book": "draftkings",
+      "price": "not published (assumed -110)"
+     },
+     {
+      "player": "Austin Ekeler",
+      "team": "WAS",
+      "market": "rush_att",
+      "line": 8.5,
+      "p_over_sim": 0.318,
+      "sim_median": 7.0,
+      "game_key": "NFL_20261112_WAS_NYG",
+      "book": "draftkings",
+      "price": "not published (assumed -110)"
+     },
+     {
+      "player": "Jayden Daniels",
+      "team": "WAS",
+      "market": "rush_att",
+      "line": 5.5,
+      "p_over_sim": 0.667,
+      "sim_median": 7.0,
+      "game_key": "NFL_20261112_WAS_NYG",
+      "book": "draftkings",
+      "price": "not published (assumed -110)"
+     }
+    ]
+   },
+   "flags_checked": 974
+  },
+  "NBA": {
+   "league": "NBA",
+   "n_games": 14,
+   "tiers": {
+    "SAFE": {
+     "id": "d7860c533196ebba",
+     "tier": "SAFE",
+     "status": "OK",
+     "recheck_at": null,
+     "description": "OKC +2.5",
+     "book": "draftkings",
+     "price": -106,
+     "legs": [
+      {
+       "label": "OKC +2.5",
+       "game": "OKC @ POR",
+       "kickoff": "2026-11-12T03:00Z",
+       "market": "spread",
+       "side": "away",
+       "point": 2.5,
+       "player": null,
+       "book": "draftkings",
+       "price": -106.0,
+       "price_source": "posted",
+       "p_final": 0.5962,
+       "p_fair": 0.5962,
+       "p_model": 0.6503,
+       "p_push": 0.0,
+       "novig_implied": 0.5962,
+       "game_key": "NBA_20261111_OKC_POR"
+      }
+     ],
+     "model_prob": 0.5962,
+     "novig_market_prob": 0.5962,
+     "price_implied_prob": 0.5146,
+     "edge": 0.0817,
+     "ev_per_100": 15.87,
+     "stake": 200.0,
+     "kelly_fraction_used": 0.0421,
+     "correlated_joint": false,
+     "min_acceptable_price": -141,
+     "reasons": [
+      "Best price -106 at draftkings vs market-consensus fair -148 (fair win prob 59.6%; break-even at this price 51.5%).",
+      "Prices seen for this side: caesars -110 (-1.5), dknj -105 (-2.5), fanduel -114 (-1.5), betriversnj -117 (-2.5), betmgm -105 (-2.5), draftkings -106 (+2.5).",
+      "Model: margin -3.4, total 224.4 -> 65.0% for this side; weight used 0.00 (not trusted: no out-of-sample edge vs closing line)."
+     ],
+     "flags": [],
+     "notes": []
+    },
+    "MODERATE": {
+     "id": "645107a9416ac4fc",
+     "tier": "MODERATE",
+     "status": "OK",
+     "recheck_at": null,
+     "description": "OKC ML + OKC +2.5 + Over 224.5 (OKC @ POR)",
+     "book": "draftkings",
+     "price": 738,
+     "legs": [
+      {
+       "label": "OKC ML",
+       "game": "OKC @ POR",
+       "kickoff": "2026-11-12T03:00Z",
+       "market": "moneyline",
+       "side": "away",
+       "point": null,
+       "player": null,
+       "book": "draftkings",
+       "price": 124.0,
+       "price_source": "posted",
+       "p_final": 0.5382,
+       "p_fair": 0.5382,
+       "p_model": 0.594,
+       "p_push": 0.0084,
+       "novig_implied": 0.5427,
+       "game_key": "NBA_20261111_OKC_POR"
+      },
+      {
+       "label": "OKC +2.5",
+       "game": "OKC @ POR",
+       "kickoff": "2026-11-12T03:00Z",
+       "market": "spread",
+       "side": "away",
+       "point": 2.5,
+       "player": null,
+       "book": "draftkings",
+       "price": -106.0,
+       "price_source": "posted",
+       "p_final": 0.5962,
+       "p_fair": 0.5962,
+       "p_model": 0.6503,
+       "p_push": 0.0,
+       "novig_implied": 0.5962,
+       "game_key": "NBA_20261111_OKC_POR"
+      },
+      {
+       "label": "Over 224.5 (OKC @ POR)",
+       "game": "OKC @ POR",
+       "kickoff": "2026-11-12T03:00Z",
+       "market": "total",
+       "side": "over",
+       "point": 224.5,
+       "player": null,
+       "book": "draftkings",
+       "price": -108.0,
+       "price_source": "posted",
+       "p_final": 0.5382,
+       "p_fair": 0.5382,
+       "p_model": 0.5028,
+       "p_push": 0.0,
+       "novig_implied": 0.5382,
+       "game_key": "NBA_20261111_OKC_POR"
+      }
+     ],
+     "model_prob": 0.3027,
+     "novig_market_prob": 0.3027,
+     "price_implied_prob": 0.1193,
+     "edge": 0.1834,
+     "ev_per_100": 153.78,
+     "stake": 200.0,
+     "kelly_fraction_used": 0.0521,
+     "correlated_joint": true,
+     "min_acceptable_price": 237,
+     "reasons": [
+      "OKC ML: Best price +124 at draftkings vs market-consensus fair -119 (fair win prob 53.8%; break-even at this price 44.3%).",
+      "OKC +2.5: Best price -106 at draftkings vs market-consensus fair -148 (fair win prob 59.6%; break-even at this price 51.5%).",
+      "Over 224.5 (OKC @ POR): Best price -108 at draftkings vs market-consensus fair -117 (fair win prob 53.8%; break-even at this price 51.9%)."
+     ],
+     "flags": [],
+     "notes": [
+      "Same-game joint probability comes from the correlated simulation; books adjust SGP prices for correlation and free sources don't publish them \u2014 bet only if the book's SGP price is +237 or better."
+     ]
+    },
+    "LONG SHOT": {
+     "bet": null,
+     "message": "NO LONG SHOT TODAY",
+     "reason": "best candidate in the 3%-15% band has edge -0.1% over its break-even \u2014 below the 1% threshold; nothing is forced",
+     "best_candidates_considered": 0
+    }
+   },
+   "model": {
+    "weights": {
+     "ml_home": 0.0,
+     "spread_home": 0.0,
+     "over": 0.0
+    },
+    "feature_groups": [
+     "base",
+     "efficiency",
+     "style",
+     "fatigue",
+     "altitude",
+     "motivation",
+     "h2h"
+    ],
+    "trained_through": "2026-11-09",
+    "note": "model weight is 0 in every market: bets below come only from price differences between books (line shopping), never from the model's opinion"
+   },
+   "shadow_props": {
+    "status": "SHADOW ONLY \u2014 tracked for calibration, not recommended (no free prop prices; model unproven vs prop markets)",
+    "rows": []
+   },
+   "flags_checked": 255
+  }
+ },
+ "disclaimer": "Probabilities, not guarantees. Paper mode: nothing here is a real wager.",
+ "backtest": {
+  "NFL": {
+   "verdicts": [
+    "moneyline: did NOT beat the no-vig closing line out of sample (final 0.6082 vs market 0.6082; model alone 0.6423). Edges in this market should be treated as noise.",
+    "moneyline: the model on its own is worse than the market by 0.0341 log loss.",
+    "spread: did NOT beat the no-vig closing line out of sample (final 0.6924 vs market 0.6924; model alone 0.7030). Edges in this market should be treated as noise.",
+    "spread: the model on its own is worse than the market by 0.0106 log loss.",
+    "total: did NOT beat the no-vig closing line out of sample (final 0.6930 vs market 0.6930; model alone 0.6994). Edges in this market should be treated as noise.",
+    "total: the model on its own is worse than the market by 0.0064 log loss.",
+    "No historical bets cleared the edge threshold: the model never disagreed with the close enough to act."
+   ],
+   "test_seasons": [
+    2020,
+    2026
+   ],
+   "kept_groups": [
+    "opp_adjusted",
+    "pressure_redzone",
+    "turnover_luck",
+    "cohesion",
+    "weather",
+    "h2h"
+   ],
+   "dropped_groups": [
+    "special_teams",
+    "fatigue",
+    "motivation",
+    "altitude"
+   ],
+   "generated_at": "2026-11-10T18:41:43"
+  },
+  "NBA": {
+   "verdicts": [
+    "moneyline: did NOT beat the no-vig closing line out of sample (final 0.5799 vs market 0.5799; model alone 0.6122). Edges in this market should be treated as noise.",
+    "moneyline: the model on its own is worse than the market by 0.0324 log loss.",
+    "spread: did NOT beat the no-vig closing line out of sample (final 0.6925 vs market 0.6925; model alone 0.6955). Edges in this market should be treated as noise.",
+    "spread: the model on its own is worse than the market by 0.0030 log loss.",
+    "total: did NOT beat the no-vig closing line out of sample (final 0.6928 vs market 0.6928; model alone 0.6970). Edges in this market should be treated as noise.",
+    "total: the model on its own is worse than the market by 0.0042 log loss.",
+    "No historical bets cleared the edge threshold: the model never disagreed with the close enough to act."
+   ],
+   "test_seasons": [
+    2023,
+    2026
+   ],
+   "kept_groups": [
+    "efficiency",
+    "style",
+    "fatigue",
+    "altitude",
+    "motivation",
+    "h2h"
+   ],
+   "dropped_groups": [],
+   "generated_at": "2026-11-10T18:44:13"
+  }
+ },
+ "freshness": {
+  "nfl.espn.schedule": {
+   "ok": true,
+   "rows": 14,
+   "note": "upcoming events",
+   "checked_at": "2026-11-11T22:56:24+00:00",
+   "data_as_of": null
+  },
+  "nfl.espn.odds": {
+   "ok": true,
+   "rows": 168,
+   "note": "",
+   "checked_at": "2026-11-11T22:56:29+00:00",
+   "data_as_of": null
+  },
+  "nfl.actionnetwork.odds": {
+   "ok": false,
+   "rows": 0,
+   "note": "",
+   "checked_at": "2026-11-11T22:56:30+00:00",
+   "data_as_of": null
+  },
+  "nfl.kalshi.moneyline": {
+   "ok": true,
+   "rows": 26,
+   "note": "",
+   "checked_at": "2026-11-11T22:56:30+00:00",
+   "data_as_of": null
+  },
+  "nfl.espn.props": {
+   "ok": true,
+   "rows": 83,
+   "note": "DraftKings lines; prices not published",
+   "checked_at": "2026-11-11T22:56:32+00:00",
+   "data_as_of": null
+  },
+  "nba.espn.schedule": {
+   "ok": true,
+   "rows": 23,
+   "note": "upcoming events",
+   "checked_at": "2026-11-11T22:56:33+00:00",
+   "data_as_of": null
+  },
+  "nba.espn.odds": {
+   "ok": true,
+   "rows": 120,
+   "note": "",
+   "checked_at": "2026-11-11T22:56:41+00:00",
+   "data_as_of": null
+  },
+  "nba.actionnetwork.odds": {
+   "ok": false,
+   "rows": 0,
+   "note": "",
+   "checked_at": "2026-11-11T22:56:42+00:00",
+   "data_as_of": null
+  },
+  "nba.kalshi.moneyline": {
+   "ok": true,
+   "rows": 46,
+   "note": "",
+   "checked_at": "2026-11-11T22:56:42+00:00",
+   "data_as_of": null
+  },
+  "nba.espn.props": {
+   "ok": true,
+   "rows": 689,
+   "note": "DraftKings lines; prices not published",
+   "checked_at": "2026-11-11T22:56:57+00:00",
+   "data_as_of": null
+  },
+  "nfl.espn.injuries": {
+   "ok": true,
+   "rows": 800,
+   "note": "",
+   "checked_at": "2026-11-11T22:57:15+00:00",
+   "data_as_of": null
+  },
+  "nfl.news.google_rss": {
+   "ok": true,
+   "rows": 40,
+   "note": "per-player/team queries, last 48h",
+   "checked_at": "2026-11-11T22:57:50+00:00",
+   "data_as_of": null
+  },
+  "nfl.news.league_feeds": {
+   "ok": true,
+   "rows": 116,
+   "note": "",
+   "checked_at": "2026-11-11T22:57:50+00:00",
+   "data_as_of": null
+  },
+  "nfl.open_meteo.forecast": {
+   "ok": true,
+   "rows": 7,
+   "note": "outdoor venues only",
+   "checked_at": "2026-11-11T22:57:15+00:00",
+   "data_as_of": null
+  },
+  "nba.espn.injuries": {
+   "ok": true,
+   "rows": 96,
+   "note": "",
+   "checked_at": "2026-11-11T22:57:53+00:00",
+   "data_as_of": null
+  },
+  "nba.news.google_rss": {
+   "ok": true,
+   "rows": 40,
+   "note": "per-player/team queries, last 48h",
+   "checked_at": "2026-11-11T22:58:23+00:00",
+   "data_as_of": null
+  },
+  "nba.news.league_feeds": {
+   "ok": true,
+   "rows": 86,
+   "note": "",
+   "checked_at": "2026-11-11T22:58:23+00:00",
+   "data_as_of": null
+  }
+ },
+ "warnings": []
+}
