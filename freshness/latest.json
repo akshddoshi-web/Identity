@@ -1,72 +1,72 @@
 {
  "nfl.espn.schedule": {
   "ok": true,
-  "rows": 14,
+  "rows": 25,
   "note": "upcoming events",
-  "checked_at": "2026-11-15T02:04:36+00:00",
+  "checked_at": "2026-11-15T09:47:35+00:00",
   "data_as_of": null
  },
  "nfl.espn.odds": {
   "ok": true,
-  "rows": 168,
+  "rows": 300,
   "note": "",
-  "checked_at": "2026-11-15T02:04:42+00:00",
+  "checked_at": "2026-11-15T09:47:45+00:00",
   "data_as_of": null
  },
  "nfl.actionnetwork.odds": {
   "ok": false,
   "rows": 0,
   "note": "",
-  "checked_at": "2026-11-15T02:04:43+00:00",
+  "checked_at": "2026-11-15T09:47:47+00:00",
   "data_as_of": null
  },
  "nfl.kalshi.moneyline": {
   "ok": true,
-  "rows": 26,
+  "rows": 46,
   "note": "",
-  "checked_at": "2026-11-15T02:04:43+00:00",
+  "checked_at": "2026-11-15T09:47:47+00:00",
   "data_as_of": null
  },
  "nfl.espn.props": {
   "ok": true,
-  "rows": 1033,
+  "rows": 1025,
   "note": "DraftKings lines; prices not published",
-  "checked_at": "2026-11-15T02:04:58+00:00",
+  "checked_at": "2026-11-15T09:48:03+00:00",
   "data_as_of": null
  },
  "nba.espn.schedule": {
   "ok": true,
-  "rows": 17,
+  "rows": 22,
   "note": "upcoming events",
-  "checked_at": "2026-11-15T02:04:59+00:00",
+  "checked_at": "2026-11-15T09:48:04+00:00",
   "data_as_of": null
  },
  "nba.espn.odds": {
   "ok": true,
-  "rows": 24,
+  "rows": 104,
   "note": "",
-  "checked_at": "2026-11-15T02:05:06+00:00",
+  "checked_at": "2026-11-15T09:48:13+00:00",
   "data_as_of": null
  },
  "nba.actionnetwork.odds": {
   "ok": false,
   "rows": 0,
   "note": "",
-  "checked_at": "2026-11-15T02:05:06+00:00",
+  "checked_at": "2026-11-15T09:48:14+00:00",
   "data_as_of": null
  },
  "nba.kalshi.moneyline": {
   "ok": true,
-  "rows": 34,
+  "rows": 44,
   "note": "",
-  "checked_at": "2026-11-15T02:05:06+00:00",
+  "checked_at": "2026-11-15T09:48:14+00:00",
   "data_as_of": null
  },
  "nba.espn.props": {
-  "ok": false,
-  "rows": 0,
+  "ok": true,
+  "rows": 528,
   "note": "DraftKings lines; prices not published",
-  "checked_at": "2026-11-15T02:05:10+00:00",
+  "checked_at": "2026-11-15T09:48:25+00:00",
   "data_as_of": null
  },
  "nfl.espn.injuries": {
