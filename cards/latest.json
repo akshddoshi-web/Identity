@@ -1,18 +1,18 @@
 {
- "generated_at": "2026-11-18T21:38:09+00:00",
- "generated_at_et": "Wed Nov 18 04:38 PM ET",
+ "generated_at": "2026-11-19T21:51:18+00:00",
+ "generated_at_et": "Thu Nov 19 04:51 PM ET",
  "mode": "recheck",
  "paper_mode": true,
  "bankroll": 10000.0,
  "leagues": {
   "NFL": {
    "league": "NFL",
-   "n_games": 13,
+   "n_games": 16,
    "tiers": {
     "SAFE": {
      "bet": null,
      "message": "NO BET",
-     "reason": "best candidate in the 55%-100% band has edge -1.5% over its break-even \u2014 below the 2% threshold; nothing is forced",
+     "reason": "best candidate in the 55%-100% band has edge -1.7% over its break-even \u2014 below the 2% threshold; nothing is forced",
      "best_candidates_considered": 0
     },
     "MODERATE": {
@@ -24,7 +24,7 @@
     "LONG SHOT": {
      "bet": null,
      "message": "NO LONG SHOT TODAY",
-     "reason": "best candidate in the 3%-15% band has edge +0.2% over its break-even \u2014 below the 1% threshold; nothing is forced",
+     "reason": "best candidate in the 3%-15% band has edge -0.0% over its break-even \u2014 below the 1% threshold; nothing is forced",
      "best_candidates_considered": 0
     }
    },
@@ -50,18 +50,7 @@
       "team": "IND",
       "market": "anytime_td",
       "line": NaN,
-      "p_over_sim": 0.003,
-      "sim_median": 0.0,
-      "game_key": "NFL_20261119_IND_HOU",
-      "book": "draftkings",
-      "price": "not published (assumed -110)"
-     },
-     {
-      "player": "Cade Stover",
-      "team": "HOU",
-      "market": "anytime_td",
-      "line": NaN,
-      "p_over_sim": 0.005,
+      "p_over_sim": 0.002,
       "sim_median": 0.0,
       "game_key": "NFL_20261119_IND_HOU",
       "book": "draftkings",
@@ -72,7 +61,18 @@
       "team": "IND",
       "market": "anytime_td",
       "line": NaN,
-      "p_over_sim": 0.006,
+      "p_over_sim": 0.005,
+      "sim_median": 0.0,
+      "game_key": "NFL_20261119_IND_HOU",
+      "book": "draftkings",
+      "price": "not published (assumed -110)"
+     },
+     {
+      "player": "Cade Stover",
+      "team": "HOU",
+      "market": "anytime_td",
+      "line": NaN,
+      "p_over_sim": 0.008,
       "sim_median": 0.0,
       "game_key": "NFL_20261119_IND_HOU",
       "book": "draftkings",
@@ -83,7 +83,7 @@
       "team": "IND",
       "market": "anytime_td",
       "line": NaN,
-      "p_over_sim": 0.009,
+      "p_over_sim": 0.01,
       "sim_median": 0.0,
       "game_key": "NFL_20261119_IND_HOU",
       "book": "draftkings",
@@ -94,7 +94,7 @@
       "team": "IND",
       "market": "anytime_td",
       "line": NaN,
-      "p_over_sim": 0.016,
+      "p_over_sim": 0.015,
       "sim_median": 0.0,
       "game_key": "NFL_20261119_IND_HOU",
       "book": "draftkings",
@@ -105,7 +105,7 @@
       "team": "IND",
       "market": "receptions",
       "line": 2.5,
-      "p_over_sim": 0.028,
+      "p_over_sim": 0.029,
       "sim_median": 0.0,
       "game_key": "NFL_20261119_IND_HOU",
       "book": "draftkings",
@@ -116,7 +116,7 @@
       "team": "HOU",
       "market": "anytime_td",
       "line": NaN,
-      "p_over_sim": 0.033,
+      "p_over_sim": 0.036,
       "sim_median": 0.0,
       "game_key": "NFL_20261119_IND_HOU",
       "book": "draftkings",
@@ -126,8 +126,8 @@
       "player": "Emari Demercado",
       "team": "HOU",
       "market": "rush_yds",
-      "line": 21.5,
-      "p_over_sim": 0.921,
+      "line": 20.5,
+      "p_over_sim": 0.93,
       "sim_median": 59.0,
       "game_key": "NFL_20261119_IND_HOU",
       "book": "draftkings",
@@ -138,18 +138,7 @@
       "team": "IND",
       "market": "anytime_td",
       "line": NaN,
-      "p_over_sim": 0.101,
-      "sim_median": 0.0,
-      "game_key": "NFL_20261119_IND_HOU",
-      "book": "draftkings",
-      "price": "not published (assumed -110)"
-     },
-     {
-      "player": "Anthony Gould",
-      "team": "IND",
-      "market": "rec_yds",
-      "line": 24.5,
-      "p_over_sim": 0.122,
+      "p_over_sim": 0.102,
       "sim_median": 0.0,
       "game_key": "NFL_20261119_IND_HOU",
       "book": "draftkings",
@@ -160,7 +149,7 @@
       "team": "IND",
       "market": "anytime_td",
       "line": NaN,
-      "p_over_sim": 0.123,
+      "p_over_sim": 0.119,
       "sim_median": 0.0,
       "game_key": "NFL_20261119_IND_HOU",
       "book": "draftkings",
@@ -171,7 +160,7 @@
       "team": "IND",
       "market": "anytime_td",
       "line": NaN,
-      "p_over_sim": 0.125,
+      "p_over_sim": 0.127,
       "sim_median": 0.0,
       "game_key": "NFL_20261119_IND_HOU",
       "book": "draftkings",
@@ -182,7 +171,7 @@
       "team": "HOU",
       "market": "anytime_td",
       "line": NaN,
-      "p_over_sim": 0.131,
+      "p_over_sim": 0.13,
       "sim_median": 0.0,
       "game_key": "NFL_20261119_IND_HOU",
       "book": "draftkings",
@@ -193,7 +182,7 @@
       "team": "IND",
       "market": "anytime_td",
       "line": NaN,
-      "p_over_sim": 0.134,
+      "p_over_sim": 0.137,
       "sim_median": 0.0,
       "game_key": "NFL_20261119_IND_HOU",
       "book": "draftkings",
@@ -204,7 +193,7 @@
       "team": "HOU",
       "market": "anytime_td",
       "line": NaN,
-      "p_over_sim": 0.143,
+      "p_over_sim": 0.138,
       "sim_median": 0.0,
       "game_key": "NFL_20261119_IND_HOU",
       "book": "draftkings",
@@ -215,19 +204,19 @@
       "team": "HOU",
       "market": "anytime_td",
       "line": NaN,
-      "p_over_sim": 0.147,
+      "p_over_sim": 0.149,
       "sim_median": 0.0,
       "game_key": "NFL_20261119_IND_HOU",
       "book": "draftkings",
       "price": "not published (assumed -110)"
      },
      {
-      "player": "Daniel Jones",
+      "player": "Anthony Gould",
       "team": "IND",
-      "market": "rush_yds",
-      "line": 7.5,
-      "p_over_sim": 0.835,
-      "sim_median": 21.0,
+      "market": "rec_yds",
+      "line": 20.5,
+      "p_over_sim": 0.155,
+      "sim_median": 0.0,
       "game_key": "NFL_20261119_IND_HOU",
       "book": "draftkings",
       "price": "not published (assumed -110)"
@@ -237,8 +226,19 @@
       "team": "HOU",
       "market": "rush_yds",
       "line": 10.5,
-      "p_over_sim": 0.806,
-      "sim_median": 23.0,
+      "p_over_sim": 0.82,
+      "sim_median": 24.0,
+      "game_key": "NFL_20261119_IND_HOU",
+      "book": "draftkings",
+      "price": "not published (assumed -110)"
+     },
+     {
+      "player": "Daniel Jones",
+      "team": "IND",
+      "market": "rush_yds",
+      "line": 8.5,
+      "p_over_sim": 0.814,
+      "sim_median": 21.0,
       "game_key": "NFL_20261119_IND_HOU",
       "book": "draftkings",
       "price": "not published (assumed -110)"
@@ -248,7 +248,7 @@
       "team": "IND",
       "market": "anytime_td",
       "line": NaN,
-      "p_over_sim": 0.198,
+      "p_over_sim": 0.192,
       "sim_median": 0.0,
       "game_key": "NFL_20261119_IND_HOU",
       "book": "draftkings",
@@ -259,7 +259,7 @@
       "team": "HOU",
       "market": "anytime_td",
       "line": NaN,
-      "p_over_sim": 0.227,
+      "p_over_sim": 0.231,
       "sim_median": 0.0,
       "game_key": "NFL_20261119_IND_HOU",
       "book": "draftkings",
@@ -270,7 +270,7 @@
       "team": "IND",
       "market": "receptions",
       "line": 1.5,
-      "p_over_sim": 0.241,
+      "p_over_sim": 0.24,
       "sim_median": 1.0,
       "game_key": "NFL_20261119_IND_HOU",
       "book": "draftkings",
@@ -281,19 +281,8 @@
       "team": "HOU",
       "market": "receptions",
       "line": 2.5,
-      "p_over_sim": 0.244,
-      "sim_median": 2.0,
-      "game_key": "NFL_20261119_IND_HOU",
-      "book": "draftkings",
-      "price": "not published (assumed -110)"
-     },
-     {
-      "player": "Deion Burks",
-      "team": "IND",
-      "market": "rec_yds",
-      "line": 17.5,
       "p_over_sim": 0.245,
-      "sim_median": 5.0,
+      "sim_median": 2.0,
       "game_key": "NFL_20261119_IND_HOU",
       "book": "draftkings",
       "price": "not published (assumed -110)"
@@ -303,7 +292,7 @@
       "team": "IND",
       "market": "receptions",
       "line": 1.5,
-      "p_over_sim": 0.246,
+      "p_over_sim": 0.245,
       "sim_median": 1.0,
       "game_key": "NFL_20261119_IND_HOU",
       "book": "draftkings",
@@ -314,7 +303,18 @@
       "team": "IND",
       "market": "rush_att",
       "line": 3.5,
-      "p_over_sim": 0.735,
+      "p_over_sim": 0.738,
+      "sim_median": 5.0,
+      "game_key": "NFL_20261119_IND_HOU",
+      "book": "draftkings",
+      "price": "not published (assumed -110)"
+     },
+     {
+      "player": "Deion Burks",
+      "team": "IND",
+      "market": "rec_yds",
+      "line": 16.5,
+      "p_over_sim": 0.262,
       "sim_median": 5.0,
       "game_key": "NFL_20261119_IND_HOU",
       "book": "draftkings",
@@ -322,28 +322,28 @@
      }
     ]
    },
-   "flags_checked": 876
+   "flags_checked": 887
   },
   "NBA": {
    "league": "NBA",
-   "n_games": 16,
+   "n_games": 13,
    "tiers": {
     "SAFE": {
      "bet": null,
      "message": "NO BET",
-     "reason": "best candidate in the 55%-100% band has edge -2.2% over its break-even \u2014 below the 2% threshold; nothing is forced",
+     "reason": "best candidate in the 55%-100% band has edge -2.0% over its break-even \u2014 below the 2% threshold; nothing is forced",
      "best_candidates_considered": 0
     },
     "MODERATE": {
      "bet": null,
      "message": "NO BET",
-     "reason": "best candidate in the 20%-45% band has edge -1.1% over its break-even \u2014 below the 2% threshold; nothing is forced",
+     "reason": "best candidate in the 20%-45% band has edge -1.3% over its break-even \u2014 below the 2% threshold; nothing is forced",
      "best_candidates_considered": 0
     },
     "LONG SHOT": {
      "bet": null,
      "message": "NO LONG SHOT TODAY",
-     "reason": "no single bet or same-book combination lands in the 3%-15% win-probability band with positive EV",
+     "reason": "best candidate in the 3%-15% band has edge +0.0% over its break-even \u2014 below the 1% threshold; nothing is forced",
      "best_candidates_considered": 0
     }
    },
@@ -368,7 +368,7 @@
     "status": "SHADOW ONLY \u2014 tracked for calibration, not recommended (no free prop prices; model unproven vs prop markets)",
     "rows": []
    },
-   "flags_checked": 237
+   "flags_checked": 219
   }
  },
  "disclaimer": "Probabilities, not guarantees. Paper mode: nothing here is a real wager.",
@@ -433,121 +433,121 @@
  "freshness": {
   "nfl.espn.schedule": {
    "ok": true,
-   "rows": 14,
+   "rows": 17,
    "note": "upcoming events",
-   "checked_at": "2026-11-18T21:37:34+00:00",
+   "checked_at": "2026-11-19T21:50:48+00:00",
    "data_as_of": null
   },
   "nfl.espn.odds": {
    "ok": true,
-   "rows": 168,
+   "rows": 204,
    "note": "",
-   "checked_at": "2026-11-18T21:37:39+00:00",
+   "checked_at": "2026-11-19T21:50:55+00:00",
    "data_as_of": null
   },
   "nfl.actionnetwork.odds": {
    "ok": false,
    "rows": 0,
    "note": "",
-   "checked_at": "2026-11-18T21:37:40+00:00",
+   "checked_at": "2026-11-19T21:50:57+00:00",
    "data_as_of": null
   },
   "nfl.kalshi.moneyline": {
    "ok": true,
-   "rows": 24,
+   "rows": 30,
    "note": "",
-   "checked_at": "2026-11-18T21:37:40+00:00",
+   "checked_at": "2026-11-19T21:50:57+00:00",
    "data_as_of": null
   },
   "nfl.espn.props": {
    "ok": true,
-   "rows": 73,
+   "rows": 87,
    "note": "DraftKings lines; prices not published",
-   "checked_at": "2026-11-18T21:37:42+00:00",
+   "checked_at": "2026-11-19T21:50:58+00:00",
    "data_as_of": null
   },
   "nba.espn.schedule": {
    "ok": true,
-   "rows": 25,
+   "rows": 19,
    "note": "upcoming events",
-   "checked_at": "2026-11-18T21:37:43+00:00",
+   "checked_at": "2026-11-19T21:51:00+00:00",
    "data_as_of": null
   },
   "nba.espn.odds": {
    "ok": true,
-   "rows": 144,
+   "rows": 48,
    "note": "",
-   "checked_at": "2026-11-18T21:37:52+00:00",
+   "checked_at": "2026-11-19T21:51:07+00:00",
    "data_as_of": null
   },
   "nba.actionnetwork.odds": {
    "ok": false,
    "rows": 0,
    "note": "",
-   "checked_at": "2026-11-18T21:37:53+00:00",
+   "checked_at": "2026-11-19T21:51:08+00:00",
    "data_as_of": null
   },
   "nba.kalshi.moneyline": {
    "ok": true,
-   "rows": 50,
+   "rows": 38,
    "note": "",
-   "checked_at": "2026-11-18T21:37:53+00:00",
+   "checked_at": "2026-11-19T21:51:08+00:00",
    "data_as_of": null
   },
   "nba.espn.props": {
    "ok": true,
-   "rows": 829,
+   "rows": 294,
    "note": "DraftKings lines; prices not published",
-   "checked_at": "2026-11-18T21:38:08+00:00",
+   "checked_at": "2026-11-19T21:51:17+00:00",
    "data_as_of": null
   },
   "nfl.espn.injuries": {
    "ok": true,
    "rows": 800,
    "note": "",
-   "checked_at": "2026-11-18T21:38:23+00:00",
+   "checked_at": "2026-11-19T21:52:14+00:00",
    "data_as_of": null
   },
   "nfl.news.google_rss": {
    "ok": true,
    "rows": 40,
    "note": "per-player/team queries, last 48h",
-   "checked_at": "2026-11-18T21:38:58+00:00",
+   "checked_at": "2026-11-19T21:52:48+00:00",
    "data_as_of": null
   },
   "nfl.news.league_feeds": {
    "ok": true,
    "rows": 116,
    "note": "",
-   "checked_at": "2026-11-18T21:38:58+00:00",
+   "checked_at": "2026-11-19T21:52:48+00:00",
    "data_as_of": null
   },
   "nfl.open_meteo.forecast": {
    "ok": true,
-   "rows": 9,
+   "rows": 7,
    "note": "outdoor venues only",
-   "checked_at": "2026-11-18T21:38:23+00:00",
+   "checked_at": "2026-11-19T21:52:14+00:00",
    "data_as_of": null
   },
   "nba.espn.injuries": {
    "ok": true,
-   "rows": 106,
+   "rows": 105,
    "note": "",
-   "checked_at": "2026-11-18T21:39:01+00:00",
+   "checked_at": "2026-11-19T21:52:51+00:00",
    "data_as_of": null
   },
   "nba.news.google_rss": {
    "ok": true,
    "rows": 40,
    "note": "per-player/team queries, last 48h",
-   "checked_at": "2026-11-18T21:39:31+00:00",
+   "checked_at": "2026-11-19T21:53:20+00:00",
    "data_as_of": null
   },
   "nba.news.league_feeds": {
    "ok": true,
    "rows": 86,
    "note": "",
-   "checked_at": "2026-11-18T21:39:31+00:00",
+   "checked_at": "2026-11-19T21:53:20+00:00",
    "data_as_of": null
   }
  },
