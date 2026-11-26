@@ -1,30 +1,30 @@
 {
- "generated_at": "2026-11-25T22:50:17+00:00",
- "generated_at_et": "Wed Nov 25 05:50 PM ET",
+ "generated_at": "2026-11-26T22:38:38+00:00",
+ "generated_at_et": "Thu Nov 26 05:38 PM ET",
  "mode": "recheck",
  "paper_mode": true,
  "bankroll": 10000.0,
  "leagues": {
   "NFL": {
    "league": "NFL",
-   "n_games": 16,
+   "n_games": 13,
    "tiers": {
     "SAFE": {
      "bet": null,
      "message": "NO BET",
-     "reason": "best candidate in the 55%-100% band has edge -1.9% over its break-even \u2014 below the 2% threshold; nothing is forced",
+     "reason": "best candidate in the 55%-100% band has edge -1.4% over its break-even \u2014 below the 2% threshold; nothing is forced",
      "best_candidates_considered": 0
     },
     "MODERATE": {
      "bet": null,
      "message": "NO BET",
-     "reason": "best candidate in the 20%-45% band has edge -0.1% over its break-even \u2014 below the 2% threshold; nothing is forced",
+     "reason": "best candidate in the 20%-45% band has edge -0.3% over its break-even \u2014 below the 2% threshold; nothing is forced",
      "best_candidates_considered": 0
     },
     "LONG SHOT": {
      "bet": null,
      "message": "NO LONG SHOT TODAY",
-     "reason": "best candidate in the 3%-15% band has edge -0.5% over its break-even \u2014 below the 1% threshold; nothing is forced",
+     "reason": "best candidate in the 3%-15% band has edge -0.4% over its break-even \u2014 below the 1% threshold; nothing is forced",
      "best_candidates_considered": 0
     }
    },
@@ -48,79 +48,13 @@
     "status": "SHADOW ONLY \u2014 tracked for calibration, not recommended (no free prop prices; model unproven vs prop markets)",
     "rows": [
      {
-      "player": "Jahdae Walker",
-      "team": "CHI",
+      "player": "Robert Tonyan",
+      "team": "PIT",
       "market": "anytime_td",
       "line": NaN,
       "p_over_sim": 0.001,
       "sim_median": 0.0,
-      "game_key": "NFL_20261126_CHI_DET",
-      "book": "draftkings",
-      "price": "not published (assumed -110)"
-     },
-     {
-      "player": "Jaydon Blue",
-      "team": "PHI",
-      "market": "anytime_td",
-      "line": NaN,
-      "p_over_sim": 0.001,
-      "sim_median": 0.0,
-      "game_key": "NFL_20261126_PHI_DAL",
-      "book": "draftkings",
-      "price": "not published (assumed -110)"
-     },
-     {
-      "player": "CJ Daniels",
-      "team": "LA",
-      "market": "anytime_td",
-      "line": NaN,
-      "p_over_sim": 0.002,
-      "sim_median": 0.0,
-      "game_key": "NFL_20261125_GB_LA",
-      "book": "draftkings",
-      "price": "not published (assumed -110)"
-     },
-     {
-      "player": "DeAndre Carter",
-      "team": "DET",
-      "market": "anytime_td",
-      "line": NaN,
-      "p_over_sim": 0.002,
-      "sim_median": 0.0,
-      "game_key": "NFL_20261126_CHI_DET",
-      "book": "draftkings",
-      "price": "not published (assumed -110)"
-     },
-     {
-      "player": "Tay Martin",
-      "team": "DET",
-      "market": "anytime_td",
-      "line": NaN,
-      "p_over_sim": 0.002,
-      "sim_median": 0.0,
-      "game_key": "NFL_20261126_CHI_DET",
-      "book": "draftkings",
-      "price": "not published (assumed -110)"
-     },
-     {
-      "player": "Jacob Saylors",
-      "team": "DET",
-      "market": "anytime_td",
-      "line": NaN,
-      "p_over_sim": 0.002,
-      "sim_median": 0.0,
-      "game_key": "NFL_20261126_CHI_DET",
-      "book": "draftkings",
-      "price": "not published (assumed -110)"
-     },
-     {
-      "player": "Grant Calcaterra",
-      "team": "PHI",
-      "market": "anytime_td",
-      "line": NaN,
-      "p_over_sim": 0.002,
-      "sim_median": 0.0,
-      "game_key": "NFL_20261126_PHI_DAL",
+      "game_key": "NFL_20261127_DEN_PIT",
       "book": "draftkings",
       "price": "not published (assumed -110)"
      },
@@ -136,55 +70,11 @@
       "price": "not published (assumed -110)"
      },
      {
-      "player": "Skyy Moore",
-      "team": "GB",
-      "market": "anytime_td",
-      "line": NaN,
-      "p_over_sim": 0.003,
-      "sim_median": 0.0,
-      "game_key": "NFL_20261125_GB_LA",
-      "book": "draftkings",
-      "price": "not published (assumed -110)"
-     },
-     {
-      "player": "Mark Redman",
-      "team": "GB",
-      "market": "anytime_td",
-      "line": NaN,
-      "p_over_sim": 0.003,
-      "sim_median": 0.0,
-      "game_key": "NFL_20261125_GB_LA",
-      "book": "draftkings",
-      "price": "not published (assumed -110)"
-     },
-     {
-      "player": "James Mitchell",
-      "team": "DAL",
-      "market": "anytime_td",
-      "line": NaN,
-      "p_over_sim": 0.003,
-      "sim_median": 0.0,
-      "game_key": "NFL_20261126_PHI_DAL",
-      "book": "draftkings",
-      "price": "not published (assumed -110)"
-     },
-     {
-      "player": "Luke Schoonmaker",
-      "team": "DAL",
-      "market": "anytime_td",
-      "line": NaN,
-      "p_over_sim": 0.003,
-      "sim_median": 0.0,
-      "game_key": "NFL_20261126_PHI_DAL",
-      "book": "draftkings",
-      "price": "not published (assumed -110)"
-     },
-     {
       "player": "Tyrell Shavers",
       "team": "BUF",
       "market": "anytime_td",
       "line": NaN,
-      "p_over_sim": 0.003,
+      "p_over_sim": 0.002,
       "sim_median": 0.0,
       "game_key": "NFL_20261126_KC_BUF",
       "book": "draftkings",
@@ -202,46 +92,35 @@
       "price": "not published (assumed -110)"
      },
      {
-      "player": "Bo Melton",
-      "team": "GB",
+      "player": "Mason Rudolph",
+      "team": "PIT",
+      "market": "anytime_td",
+      "line": NaN,
+      "p_over_sim": 0.003,
+      "sim_median": 0.0,
+      "game_key": "NFL_20261127_DEN_PIT",
+      "book": "draftkings",
+      "price": "not published (assumed -110)"
+     },
+     {
+      "player": "Travis Homer",
+      "team": "PIT",
       "market": "anytime_td",
       "line": NaN,
       "p_over_sim": 0.004,
       "sim_median": 0.0,
-      "game_key": "NFL_20261125_GB_LA",
+      "game_key": "NFL_20261127_DEN_PIT",
       "book": "draftkings",
       "price": "not published (assumed -110)"
      },
      {
-      "player": "Tyler Conklin",
-      "team": "DET",
+      "player": "Lil'Jordan Humphrey",
+      "team": "DEN",
       "market": "anytime_td",
       "line": NaN,
-      "p_over_sim": 0.005,
+      "p_over_sim": 0.004,
       "sim_median": 0.0,
-      "game_key": "NFL_20261126_CHI_DET",
-      "book": "draftkings",
-      "price": "not published (assumed -110)"
-     },
-     {
-      "player": "Sam Roush",
-      "team": "CHI",
-      "market": "anytime_td",
-      "line": NaN,
-      "p_over_sim": 0.005,
-      "sim_median": 0.0,
-      "game_key": "NFL_20261126_CHI_DET",
-      "book": "draftkings",
-      "price": "not published (assumed -110)"
-     },
-     {
-      "player": "Hunter Luepke",
-      "team": "DAL",
-      "market": "anytime_td",
-      "line": NaN,
-      "p_over_sim": 0.005,
-      "sim_median": 0.0,
-      "game_key": "NFL_20261126_PHI_DAL",
+      "game_key": "NFL_20261127_DEN_PIT",
       "book": "draftkings",
       "price": "not published (assumed -110)"
      },
@@ -257,39 +136,6 @@
       "price": "not published (assumed -110)"
      },
      {
-      "player": "Matthew Stafford",
-      "team": "LA",
-      "market": "anytime_td",
-      "line": NaN,
-      "p_over_sim": 0.006,
-      "sim_median": 0.0,
-      "game_key": "NFL_20261125_GB_LA",
-      "book": "draftkings",
-      "price": "not published (assumed -110)"
-     },
-     {
-      "player": "Elijah Moore",
-      "team": "PHI",
-      "market": "anytime_td",
-      "line": NaN,
-      "p_over_sim": 0.006,
-      "sim_median": 0.0,
-      "game_key": "NFL_20261126_PHI_DAL",
-      "book": "draftkings",
-      "price": "not published (assumed -110)"
-     },
-     {
-      "player": "Eli Stowers",
-      "team": "PHI",
-      "market": "anytime_td",
-      "line": NaN,
-      "p_over_sim": 0.007,
-      "sim_median": 0.0,
-      "game_key": "NFL_20261126_PHI_DAL",
-      "book": "draftkings",
-      "price": "not published (assumed -110)"
-     },
-     {
       "player": "Jaydn Ott",
       "team": "KC",
       "market": "anytime_td",
@@ -301,45 +147,199 @@
       "price": "not published (assumed -110)"
      },
      {
-      "player": "Chris Brooks",
-      "team": "GB",
+      "player": "Jalen Royals",
+      "team": "KC",
       "market": "anytime_td",
       "line": NaN,
-      "p_over_sim": 0.008,
+      "p_over_sim": 0.007,
       "sim_median": 0.0,
-      "game_key": "NFL_20261125_GB_LA",
+      "game_key": "NFL_20261126_KC_BUF",
       "book": "draftkings",
       "price": "not published (assumed -110)"
      },
      {
-      "player": "Brock Wright",
-      "team": "DET",
+      "player": "Patrick Mahomes",
+      "team": "KC",
       "market": "anytime_td",
       "line": NaN,
-      "p_over_sim": 0.008,
+      "p_over_sim": 0.009,
       "sim_median": 0.0,
-      "game_key": "NFL_20261126_CHI_DET",
+      "game_key": "NFL_20261126_KC_BUF",
+      "book": "draftkings",
+      "price": "not published (assumed -110)"
+     },
+     {
+      "player": "Troy Franklin",
+      "team": "DEN",
+      "market": "anytime_td",
+      "line": NaN,
+      "p_over_sim": 0.012,
+      "sim_median": 0.0,
+      "game_key": "NFL_20261127_DEN_PIT",
+      "book": "draftkings",
+      "price": "not published (assumed -110)"
+     },
+     {
+      "player": "Ray Davis",
+      "team": "BUF",
+      "market": "anytime_td",
+      "line": NaN,
+      "p_over_sim": 0.014,
+      "sim_median": 0.0,
+      "game_key": "NFL_20261126_KC_BUF",
+      "book": "draftkings",
+      "price": "not published (assumed -110)"
+     },
+     {
+      "player": "Dawson Knox",
+      "team": "BUF",
+      "market": "anytime_td",
+      "line": NaN,
+      "p_over_sim": 0.018,
+      "sim_median": 0.0,
+      "game_key": "NFL_20261126_KC_BUF",
+      "book": "draftkings",
+      "price": "not published (assumed -110)"
+     },
+     {
+      "player": "Marvin Mims Jr.",
+      "team": "DEN",
+      "market": "anytime_td",
+      "line": NaN,
+      "p_over_sim": 0.023,
+      "sim_median": 0.0,
+      "game_key": "NFL_20261127_DEN_PIT",
+      "book": "draftkings",
+      "price": "not published (assumed -110)"
+     },
+     {
+      "player": "Ty Johnson",
+      "team": "BUF",
+      "market": "anytime_td",
+      "line": NaN,
+      "p_over_sim": 0.026,
+      "sim_median": 0.0,
+      "game_key": "NFL_20261126_KC_BUF",
+      "book": "draftkings",
+      "price": "not published (assumed -110)"
+     },
+     {
+      "player": "Evan Engram",
+      "team": "DEN",
+      "market": "anytime_td",
+      "line": NaN,
+      "p_over_sim": 0.03,
+      "sim_median": 0.0,
+      "game_key": "NFL_20261127_DEN_PIT",
+      "book": "draftkings",
+      "price": "not published (assumed -110)"
+     },
+     {
+      "player": "Josh Downs",
+      "team": "KC",
+      "market": "receptions",
+      "line": 3.5,
+      "p_over_sim": 0.052,
+      "sim_median": 1.0,
+      "game_key": "NFL_20261126_KC_BUF",
+      "book": "draftkings",
+      "price": "not published (assumed -110)"
+     },
+     {
+      "player": "Andrew Armstrong",
+      "team": "KC",
+      "market": "anytime_td",
+      "line": NaN,
+      "p_over_sim": 0.081,
+      "sim_median": 0.0,
+      "game_key": "NFL_20261126_KC_BUF",
+      "book": "draftkings",
+      "price": "not published (assumed -110)"
+     },
+     {
+      "player": "Cyrus Allen",
+      "team": "KC",
+      "market": "anytime_td",
+      "line": NaN,
+      "p_over_sim": 0.082,
+      "sim_median": 0.0,
+      "game_key": "NFL_20261126_KC_BUF",
+      "book": "draftkings",
+      "price": "not published (assumed -110)"
+     },
+     {
+      "player": "Josh Downs",
+      "team": "KC",
+      "market": "anytime_td",
+      "line": NaN,
+      "p_over_sim": 0.084,
+      "sim_median": 0.0,
+      "game_key": "NFL_20261126_KC_BUF",
+      "book": "draftkings",
+      "price": "not published (assumed -110)"
+     },
+     {
+      "player": "Noah Gray",
+      "team": "KC",
+      "market": "anytime_td",
+      "line": NaN,
+      "p_over_sim": 0.085,
+      "sim_median": 0.0,
+      "game_key": "NFL_20261126_KC_BUF",
+      "book": "draftkings",
+      "price": "not published (assumed -110)"
+     },
+     {
+      "player": "Keleki Latu",
+      "team": "BUF",
+      "market": "anytime_td",
+      "line": NaN,
+      "p_over_sim": 0.092,
+      "sim_median": 0.0,
+      "game_key": "NFL_20261126_KC_BUF",
+      "book": "draftkings",
+      "price": "not published (assumed -110)"
+     },
+     {
+      "player": "Germie Bernard",
+      "team": "PIT",
+      "market": "anytime_td",
+      "line": NaN,
+      "p_over_sim": 0.097,
+      "sim_median": 0.0,
+      "game_key": "NFL_20261127_DEN_PIT",
+      "book": "draftkings",
+      "price": "not published (assumed -110)"
+     },
+     {
+      "player": "Xavier Worthy",
+      "team": "KC",
+      "market": "anytime_td",
+      "line": NaN,
+      "p_over_sim": 0.099,
+      "sim_median": 0.0,
+      "game_key": "NFL_20261126_KC_BUF",
       "book": "draftkings",
       "price": "not published (assumed -110)"
      }
     ]
    },
-   "flags_checked": 886
+   "flags_checked": 880
   },
   "NBA": {
    "league": "NBA",
-   "n_games": 8,
+   "n_games": 11,
    "tiers": {
     "SAFE": {
      "bet": null,
      "message": "NO BET",
-     "reason": "best candidate in the 55%-100% band has edge -2.6% over its break-even \u2014 below the 2% threshold; nothing is forced",
+     "reason": "best candidate in the 55%-100% band has edge -2.0% over its break-even \u2014 below the 2% threshold; nothing is forced",
      "best_candidates_considered": 0
     },
     "MODERATE": {
      "bet": null,
      "message": "NO BET",
-     "reason": "best candidate in the 20%-45% band has edge -0.2% over its break-even \u2014 below the 2% threshold; nothing is forced",
+     "reason": "best candidate in the 20%-45% band has edge +0.5% over its break-even \u2014 below the 2% threshold; nothing is forced",
      "best_candidates_considered": 0
     },
     "LONG SHOT": {
@@ -371,7 +371,7 @@
     "status": "SHADOW ONLY \u2014 tracked for calibration, not recommended (no free prop prices; model unproven vs prop markets)",
     "rows": []
    },
-   "flags_checked": 205
+   "flags_checked": 289
   }
  },
  "disclaimer": "Probabilities, not guarantees. Paper mode: nothing here is a real wager.",
@@ -435,121 +435,121 @@
  "freshness": {
   "nfl.espn.schedule": {
    "ok": true,
-   "rows": 16,
+   "rows": 14,
    "note": "upcoming events",
-   "checked_at": "2026-11-25T22:49:43+00:00",
+   "checked_at": "2026-11-26T22:38:11+00:00",
    "data_as_of": null
   },
   "nfl.espn.odds": {
    "ok": true,
-   "rows": 192,
+   "rows": 168,
    "note": "",
-   "checked_at": "2026-11-25T22:49:49+00:00",
+   "checked_at": "2026-11-26T22:38:16+00:00",
    "data_as_of": null
   },
   "nfl.actionnetwork.odds": {
    "ok": false,
    "rows": 0,
    "note": "",
-   "checked_at": "2026-11-25T22:49:51+00:00",
+   "checked_at": "2026-11-26T22:38:18+00:00",
    "data_as_of": null
   },
   "nfl.kalshi.moneyline": {
    "ok": true,
-   "rows": 28,
+   "rows": 24,
    "note": "",
-   "checked_at": "2026-11-25T22:49:51+00:00",
+   "checked_at": "2026-11-26T22:38:18+00:00",
    "data_as_of": null
   },
   "nfl.espn.props": {
    "ok": true,
-   "rows": 364,
+   "rows": 175,
    "note": "DraftKings lines; prices not published",
-   "checked_at": "2026-11-25T22:49:56+00:00",
+   "checked_at": "2026-11-26T22:38:20+00:00",
    "data_as_of": null
   },
   "nba.espn.schedule": {
    "ok": true,
-   "rows": 19,
+   "rows": 16,
    "note": "upcoming events",
-   "checked_at": "2026-11-25T22:49:58+00:00",
+   "checked_at": "2026-11-26T22:38:21+00:00",
    "data_as_of": null
   },
   "nba.espn.odds": {
    "ok": true,
-   "rows": 96,
+   "rows": 132,
    "note": "",
-   "checked_at": "2026-11-25T22:50:05+00:00",
+   "checked_at": "2026-11-26T22:38:27+00:00",
    "data_as_of": null
   },
   "nba.actionnetwork.odds": {
    "ok": false,
    "rows": 0,
    "note": "",
-   "checked_at": "2026-11-25T22:50:06+00:00",
+   "checked_at": "2026-11-26T22:38:28+00:00",
    "data_as_of": null
   },
   "nba.kalshi.moneyline": {
    "ok": true,
-   "rows": 38,
+   "rows": 32,
    "note": "",
-   "checked_at": "2026-11-25T22:50:06+00:00",
+   "checked_at": "2026-11-26T22:38:28+00:00",
    "data_as_of": null
   },
   "nba.espn.props": {
    "ok": true,
-   "rows": 554,
+   "rows": 125,
    "note": "DraftKings lines; prices not published",
-   "checked_at": "2026-11-25T22:50:16+00:00",
+   "checked_at": "2026-11-26T22:38:37+00:00",
    "data_as_of": null
   },
   "nfl.espn.injuries": {
    "ok": true,
    "rows": 800,
    "note": "",
-   "checked_at": "2026-11-25T22:50:33+00:00",
+   "checked_at": "2026-11-26T22:38:54+00:00",
    "data_as_of": null
   },
   "nfl.news.google_rss": {
    "ok": true,
    "rows": 40,
    "note": "per-player/team queries, last 48h",
-   "checked_at": "2026-11-25T22:51:09+00:00",
+   "checked_at": "2026-11-26T22:39:28+00:00",
    "data_as_of": null
   },
   "nfl.news.league_feeds": {
    "ok": true,
    "rows": 116,
    "note": "",
-   "checked_at": "2026-11-25T22:51:09+00:00",
+   "checked_at": "2026-11-26T22:39:28+00:00",
    "data_as_of": null
   },
   "nfl.open_meteo.forecast": {
    "ok": true,
    "rows": 8,
    "note": "outdoor venues only",
-   "checked_at": "2026-11-25T22:50:32+00:00",
+   "checked_at": "2026-11-26T22:38:53+00:00",
    "data_as_of": null
   },
   "nba.espn.injuries": {
    "ok": true,
-   "rows": 94,
+   "rows": 97,
    "note": "",
-   "checked_at": "2026-11-25T22:51:12+00:00",
+   "checked_at": "2026-11-26T22:39:32+00:00",
    "data_as_of": null
   },
   "nba.news.google_rss": {
    "ok": true,
-   "rows": 35,
+   "rows": 40,
    "note": "per-player/team queries, last 48h",
-   "checked_at": "2026-11-25T22:51:39+00:00",
+   "checked_at": "2026-11-26T22:40:01+00:00",
    "data_as_of": null
   },
   "nba.news.league_feeds": {
    "ok": true,
    "rows": 86,
    "note": "",
-   "checked_at": "2026-11-25T22:51:39+00:00",
+   "checked_at": "2026-11-26T22:40:01+00:00",
    "data_as_of": null
   }
  },
